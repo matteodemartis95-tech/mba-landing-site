@@ -23,7 +23,7 @@
   }
   let candidates = load();
   let editMode = false;
-  let filters = { q: "", programme: "all", school: "all", stage: "all", team: "all", sort: "next" };
+  let filters = { q: "", programme: "all", school: "all", stage: "all", team: "all" };
 
   function load() {
     try {
@@ -146,10 +146,9 @@
   /* ---------- rendering: home ---------- */
   function renderHome() {
     const total = candidates.length;
-    const scheduled = candidates.reduce((n, c) => n + c.applications.filter(a => parseDates(a.interview && a.interview.date).some(d => daysFrom(d) >= 0)).length, 0);
-    const pending = candidates.reduce((n, c) => n + pendingInterviews(c).length, 0);
+    const scheduledApps = candidates.reduce((n, c) => n + c.applications.filter(a => a.status === "scheduled").length, 0);
+    const withDate = candidates.reduce((n, c) => n + c.applications.filter(a => a.status === "scheduled" && parseDates(a.interview && a.interview.date).length).length, 0);
     const submitted = candidates.reduce((n, c) => n + c.applications.filter(a => status(a.status).stage >= 1).length, 0);
-    const drafting = candidates.reduce((n, c) => n + c.applications.filter(a => status(a.status).stage < 1).length, 0);
     const admitted = candidates.reduce((n, c) => n + c.applications.filter(a => a.status === "admitted").length, 0);
 
     const tile = (key, label, value, sub, dot) =>
@@ -166,10 +165,8 @@
       </div>
       <div class="tiles">
         ${tile("all", "Candidates", total, `${candidates.filter(c => c.programme === "Jahizoun").length} Jahizoun · ${candidates.filter(c => c.programme === "EDGE").length} EDGE`, "accent")}
-        ${tile("scheduled", "Interviews scheduled", scheduled, "with a confirmed date", "warning")}
-        ${tile("invited", "Interview date pending", pending, "interview stage, date not yet set", "serious")}
-        ${tile("submitted", "Applications submitted", submitted, "awaiting a decision", "accent")}
-        ${tile("drafting", "Applying", drafting, "not yet submitted", "violet")}
+        ${tile("submitted", "Applications submitted", submitted, "across all schools", "accent")}
+        ${tile("scheduled", "Interviews scheduled", scheduledApps, `${withDate} with a confirmed date`, "warning")}
         ${tile("admitted", "Admitted", admitted, "offers received", "good")}
       </div>
       <div class="overview">
@@ -181,11 +178,6 @@
             </div>
             <select id="schoolSel"><option value="all">All schools</option>${schoolOpts}</select>
             <select id="teamSel"><option value="all">All teams</option>${teamOpts}</select>
-            <select id="sortSel">
-              <option value="next" ${filters.sort === "next" ? "selected" : ""}>Sort: next interview</option>
-              <option value="name" ${filters.sort === "name" ? "selected" : ""}>Sort: name</option>
-              <option value="stage" ${filters.sort === "stage" ? "selected" : ""}>Sort: furthest stage</option>
-            </select>
             <span class="count">${list.length} of ${total}</span>
           </div>
           ${list.length ? `<div class="grid">${list.map(card).join("")}</div>` : `<div class="empty">No candidates match these filters.</div>`}
@@ -200,38 +192,22 @@
       if (filters.programme !== "all" && c.programme !== filters.programme) return false;
       if (filters.school !== "all" && !c.applications.some(a => a.school === filters.school)) return false;
       if (filters.team !== "all" && c.team !== filters.team) return false;
-      if (filters.stage === "scheduled" && !c.applications.some(a => parseDates(a.interview && a.interview.date).some(d => daysFrom(d) >= 0))) return false;
-      if (filters.stage === "invited" && !pendingInterviews(c).length) return false;
+      if (filters.stage === "scheduled" && !c.applications.some(a => a.status === "scheduled")) return false;
       if (filters.stage === "submitted" && !c.applications.some(a => status(a.status).stage >= 1)) return false;
-      if (filters.stage === "drafting" && !c.applications.some(a => status(a.status).stage < 1)) return false;
       if (filters.stage === "admitted" && !c.applications.some(a => a.status === "admitted")) return false;
       return true;
     });
-    const maxStage = c => Math.max(0, ...c.applications.map(a => status(a.status).stage));
-    if (filters.sort === "name") list.sort((a, b) => a.name.localeCompare(b.name));
-    else if (filters.sort === "stage") list.sort((a, b) => maxStage(b) - maxStage(a) || a.name.localeCompare(b.name));
-    else list.sort((a, b) => {
-      const na = nextInterview(a), nb = nextInterview(b);
-      if (na && nb) return na.date - nb.date;
-      if (na) return -1; if (nb) return 1;
-      const pa = pendingInterviews(a).length, pb = pendingInterviews(b).length;
-      if (pa !== pb) return pb - pa;
-      return maxStage(b) - maxStage(a) || a.name.localeCompare(b.name);
-    });
+    list.sort((a, b) => a.name.localeCompare(b.name));
     return list;
   }
 
   function card(c) {
     const ni = nextInterview(c);
     const pend = pendingInterviews(c);
-    let footK, footV;
+    let footK = "Interview", footV;
     if (ni) { footK = "Next interview"; footV = `<strong class="${daysFrom(ni.date) <= 7 ? "soon" : ""}">${fmt(ni.date, true)}</strong> · ${esc(school(ni.school).short)}`; }
-    else if (pend.length) { footK = "Interview date"; footV = `<strong class="pending">Pending</strong> · ${pend.map(a => esc(school(a.school).short)).join(", ")}`; }
-    else {
-      const top = c.applications.slice().sort((a, b) => status(b.status).stage - status(a.status).stage)[0];
-      footK = "Latest stage";
-      footV = top ? `<strong>${esc(status(top.status).label)}</strong> · ${esc(school(top.school).short)}` : `<span class="muted">No applications yet</span>`;
-    }
+    else if (pend.length) footV = `<strong class="pending">Date pending</strong> · ${pend.map(a => esc(school(a.school).short)).join(", ")}`;
+    else footV = `<span class="muted">None scheduled yet</span>`;
     return `
       <a class="card ${c.programme === "EDGE" ? "edge" : "jahizoun"}" href="#/candidate/${esc(c.id)}">
         <div class="card-top">
@@ -579,7 +555,6 @@
     document.getElementById("progSeg").addEventListener("click", e => { const b = e.target.closest("button"); if (b) { filters.programme = b.dataset.p; route(); } });
     document.getElementById("schoolSel").addEventListener("change", e => { filters.school = e.target.value; route(); });
     document.getElementById("teamSel").addEventListener("change", e => { filters.team = e.target.value; route(); });
-    document.getElementById("sortSel").addEventListener("change", e => { filters.sort = e.target.value; route(); });
     document.querySelectorAll(".tile").forEach(t => t.addEventListener("click", () => { filters.stage = filters.stage === t.dataset.stage ? "all" : t.dataset.stage; route(); }));
   }
   function refreshHomeList() {

@@ -89,9 +89,9 @@ const DEADLINES = [
   {
     school: "NYUAD", intake: "January 2027",
     rounds: [
-      { round: "Final deadline", application: "2026-08-06", interviewDecision: "", finalDecision: "" }
+      { round: "Final deadline", application: "2026-08-06", interviewDecision: "2026-09-10", finalDecision: "2026-10-10" }
     ],
-    note: "Applications are reviewed on an ongoing basis. Candidates receive an initial notification (interview invitation, waitlist or deny) after the deadline; Stern at NYUAD does not publish fixed dates."
+    note: "Applications are reviewed on an ongoing basis. Interview decisions by 10 September, final decisions by 10 October."
   }
 ];
 
