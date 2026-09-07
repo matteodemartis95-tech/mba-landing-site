@@ -500,7 +500,7 @@
 
   function buildDataJs() {
     // Rebuild data.js from the original source text, replacing only the CANDIDATES block.
-    return fetch("js/data.js").then(r => r.text()).then(src => {
+    return fetch("js/data.js?v=" + Date.now(), { cache: "no-store" }).then(r => r.text()).then(src => {
       const start = src.indexOf("const CANDIDATES = [");
       const end = src.indexOf("/* Do not edit below this line. */");
       const body = "const CANDIDATES = " + JSON.stringify(candidates, null, 2) + ";\n\n";
