@@ -154,6 +154,15 @@ const CANDIDATES = [
           "note": ""
         },
         "notes": "IMD under final review with an alumnus."
+      },
+      {
+        "school": "CBS",
+        "status": "submitted",
+        "interview": {
+          "date": "",
+          "note": ""
+        },
+        "notes": ""
       }
     ]
   },
@@ -183,6 +192,24 @@ const CANDIDATES = [
           "note": ""
         },
         "notes": "IMD under editing."
+      },
+      {
+        "school": "INSEAD",
+        "status": "submitted",
+        "interview": {
+          "date": "",
+          "note": ""
+        },
+        "notes": ""
+      },
+      {
+        "school": "NYUAD",
+        "status": "submitted",
+        "interview": {
+          "date": "",
+          "note": ""
+        },
+        "notes": ""
       }
     ]
   },
@@ -212,6 +239,15 @@ const CANDIDATES = [
           "note": ""
         },
         "notes": "IMD under editing."
+      },
+      {
+        "school": "NYUAD",
+        "status": "submitted",
+        "interview": {
+          "date": "",
+          "note": ""
+        },
+        "notes": ""
       }
     ]
   },
@@ -302,7 +338,7 @@ const CANDIDATES = [
       },
       {
         "school": "CBS",
-        "status": "submitted",
+        "status": "scheduled",
         "interview": {
           "date": "",
           "note": ""
@@ -520,3 +556,4 @@ const CANDIDATES = [
 
 /* Do not edit below this line. */
 window.MBA_DATA = { STATUSES, SCHOOLS, DEADLINES, CANDIDATES };
+
