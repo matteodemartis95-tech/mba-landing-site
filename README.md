@@ -16,8 +16,8 @@ It is a static site (plain HTML, CSS and JavaScript, no build step). Everything 
 
 1. Open the dashboard and click **Edit mode** (top right).
 2. Open a candidate and click **Edit** (or use **+ Add candidate**). Change statuses, interview dates, notes, photo, team, and save.
-3. Changes are stored in *your* browser only. To publish them for everyone, click **Export data.js**: a new `data.js` is downloaded.
-4. In GitHub, open `js/data.js`, click the pencil (edit), paste the content of the downloaded file over the old one, and commit. The site updates within a minute or two.
+3. Changes are stored in *your* browser only. To publish them for everyone, click **Copy data.js**: the complete new file is copied to your clipboard. (**Export data.js** downloads it as a file instead; open that file with Notepad, not by double-clicking it, and copy its content.)
+4. In GitHub, open `js/data.js`, click the pencil (edit), select all, paste over the old content, and commit. The site updates within a minute or two.
 5. After committing, click **Discard local changes** in the banner so your browser shows the published version again.
 
 ### Option B: edit `js/data.js` directly

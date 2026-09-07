@@ -502,22 +502,34 @@
     });
   }
 
-  function exportData() {
+  function buildDataJs() {
     // Rebuild data.js from the original source text, replacing only the CANDIDATES block.
-    fetch("js/data.js").then(r => r.text()).then(src => {
+    return fetch("js/data.js").then(r => r.text()).then(src => {
       const start = src.indexOf("const CANDIDATES = [");
       const end = src.indexOf("/* Do not edit below this line. */");
       const body = "const CANDIDATES = " + JSON.stringify(candidates, null, 2) + ";\n\n";
-      const out = start >= 0 && end > start ? src.slice(0, start) + body + src.slice(end) : "const CANDIDATES = " + JSON.stringify(candidates, null, 2) + ";";
-      const blob = new Blob([out], { type: "text/javascript" });
+      return start >= 0 && end > start ? src.slice(0, start) + body + src.slice(end) : "const CANDIDATES = " + JSON.stringify(candidates, null, 2) + ";";
+    }).catch(() => "const CANDIDATES = " + JSON.stringify(candidates, null, 2) + ";");
+  }
+  function exportData() {
+    buildDataJs().then(out => {
+      const blob = new Blob([out], { type: "text/plain" });
       const a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = "data.js"; a.click();
-      toast("data.js downloaded. Replace js/data.js in the repository and commit.");
-    }).catch(() => {
-      // file:// fallback: copy to clipboard
-      const out = "const CANDIDATES = " + JSON.stringify(candidates, null, 2) + ";";
-      navigator.clipboard && navigator.clipboard.writeText(out);
-      toast("Copied the CANDIDATES block to the clipboard. Paste it into js/data.js.");
+      toast("data.js downloaded. Open it with Notepad (right-click → Open with), copy everything, and paste into js/data.js on GitHub.");
     });
+  }
+  function copyData() {
+    buildDataJs().then(out => {
+      const done = () => toast("Copied. Now open js/data.js on GitHub, click the pencil, select all, paste, and commit.");
+      if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(out).then(done, () => fallbackCopy(out, done));
+      else fallbackCopy(out, done);
+    });
+  }
+  function fallbackCopy(text, done) {
+    const ta = document.createElement("textarea"); ta.value = text; ta.style.position = "fixed"; ta.style.opacity = "0";
+    document.body.appendChild(ta); ta.select();
+    try { document.execCommand("copy"); done(); } catch (e) { toast("Could not copy automatically. Use Export data.js instead."); }
+    ta.remove();
   }
 
   let toastTimer;
@@ -567,6 +579,7 @@
   });
   document.getElementById("addBtn").addEventListener("click", () => openEditor(null));
   document.getElementById("exportBtn").addEventListener("click", exportData);
+  document.getElementById("copyBtn").addEventListener("click", copyData);
   document.getElementById("resetBtn").addEventListener("click", () => {
     if (!hasLocalChanges()) { toast("No local changes to discard."); return; }
     if (confirm("Discard all changes saved in this browser and reload the data from data.js?")) {
