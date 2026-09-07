@@ -214,7 +214,7 @@
           ${avatar(c)}
           <div>
             <div class="card-name">${esc(c.name)}</div>
-            <div class="card-meta">${programmeBadge(c)}${teamBadge(c)}${c.intake && c.intake !== "January 2027" ? `<span class="badge intake">${esc(c.intake)}</span>` : ""}</div>
+            <div class="card-meta">${programmeBadge(c)}${teamBadge(c)}${c.test ? `<span class="badge test">${esc(c.test)}</span>` : ""}${c.intake && c.intake !== "January 2027" ? `<span class="badge intake">${esc(c.intake)}</span>` : ""}</div>
           </div>
         </div>
         <div class="card-schools">
@@ -267,7 +267,7 @@
         ${avatar(c, true)}
         <div>
           <h1>${esc(c.name)}</h1>
-          <div class="meta">${programmeBadge(c)}${teamBadge(c)}<span class="badge intake">Target intake: ${esc(c.intake || "—")}</span></div>
+          <div class="meta">${programmeBadge(c)}${teamBadge(c)}${c.test ? `<span class="badge test">${esc(c.test)}</span>` : ""}<span class="badge intake">Target intake: ${esc(c.intake || "—")}</span></div>
           ${c.notes ? `<div class="notes">${esc(c.notes)}</div>` : ""}
         </div>
         <div class="actions">
@@ -287,6 +287,7 @@
               <dt>Programme</dt><dd>${esc(c.programme)}</dd>
               ${c.programme === "Jahizoun" ? `<dt>EO team</dt><dd>${esc(c.team || "—")}</dd>` : ""}
               <dt>Intake</dt><dd>${esc(c.intake || "—")}</dd>
+              <dt>Test score</dt><dd>${esc(c.test || "—")}</dd>
             </dl>
           </div>
           <div class="panel">
@@ -402,7 +403,7 @@
   /* ---------- editing ---------- */
   function openEditor(id) {
     const isNew = !id;
-    const c = isNew ? { id: "", name: "", programme: "Jahizoun", team: "", photo: "", intake: "January 2027", notes: "", applications: [] } : deepClone(candidates.find(x => x.id === id));
+    const c = isNew ? { id: "", name: "", programme: "Jahizoun", team: "", photo: "", intake: "January 2027", test: "", notes: "", applications: [] } : deepClone(candidates.find(x => x.id === id));
     const bg = document.createElement("div");
     bg.className = "modal-bg";
     const statusOpts = sel => Object.keys(STATUSES).map(k => `<option value="${k}" ${sel === k ? "selected" : ""}>${esc(STATUSES[k].label)}</option>`).join("");
@@ -435,6 +436,7 @@
               <div class="field"><label>Full name</label><input name="name" value="${esc(c.name)}" required></div>
               <div class="field"><label>Programme</label><select name="programme"><option ${c.programme === "Jahizoun" ? "selected" : ""}>Jahizoun</option><option ${c.programme === "EDGE" ? "selected" : ""}>EDGE</option></select></div>
               <div class="field"><label>EO team (Jahizoun only)</label><input name="team" value="${esc(c.team)}" list="teamList"><datalist id="teamList">${teams().map(t => `<option value="${esc(t)}">`).join("")}</datalist></div>
+              <div class="field"><label>GMAT / EA score</label><input name="test" value="${esc(c.test || "")}" placeholder="e.g. GMAT 665 or EA 160"></div>
               <div class="field"><label>Target intake</label><input name="intake" value="${esc(c.intake)}" list="intakeList"><datalist id="intakeList"><option value="January 2027"><option value="September 2027"><option value="January 2028"></datalist></div>
               <div class="field wide"><label>General notes</label><textarea name="notes">${esc(c.notes)}</textarea></div>
             </div>
@@ -448,7 +450,7 @@
     const readForm = () => {
       const f = bg.querySelector("#editForm");
       c.name = f.name.value.trim(); c.programme = f.programme.value; c.team = f.team.value.trim();
-      c.intake = f.intake.value.trim(); c.notes = f.notes.value.trim(); c.photo = f.photo.value.trim();
+      c.intake = f.intake.value.trim(); c.test = f.test.value.trim(); c.notes = f.notes.value.trim(); c.photo = f.photo.value.trim();
       c.applications = [...bg.querySelectorAll(".app-edit")].map(row => ({
         school: row.querySelector("[name=school]").value, status: row.querySelector("[name=status]").value,
         interview: { date: row.querySelector("[name=idate]").value.trim(), note: row.querySelector("[name=inote]").value.trim() },

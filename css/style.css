@@ -196,6 +196,7 @@ h1 { font-size: 22px; } h2 { font-size: 17px; } h3 { font-size: 15px; }
 .badge.jahizoun { background: var(--accent-soft); color: var(--accent-ink); }
 .badge.edge { background: var(--violet-soft); color: var(--violet); }
 .badge.team { background: var(--muted-soft); color: var(--muted-ink); font-weight: 500; }
+.badge.test { background: var(--good-soft); color: var(--good-ink); font-weight: 600; }
 .badge.intake { background: var(--surface-2); color: var(--text-2); border: 1px solid var(--border); font-weight: 500; }
 .card-schools { display: flex; flex-wrap: wrap; gap: 6px; }
 .school-chip {
