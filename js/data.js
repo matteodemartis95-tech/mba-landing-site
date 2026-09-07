@@ -332,8 +332,8 @@ const CANDIDATES = [
         "school": "IMD",
         "status": "scheduled",
         "interview": {
-          "date": "",
-          "note": ""
+          "date": "2026-09-25",
+          "note": "IMD Assessment Day."
         },
         "notes": ""
       },
@@ -341,8 +341,8 @@ const CANDIDATES = [
         "school": "CBS",
         "status": "scheduled",
         "interview": {
-          "date": "",
-          "note": ""
+          "date": "2026-09-16",
+          "note": "Tentative date, to be confirmed."
         },
         "notes": ""
       }
@@ -370,8 +370,8 @@ const CANDIDATES = [
         "school": "IMD",
         "status": "scheduled",
         "interview": {
-          "date": "",
-          "note": ""
+          "date": "2026-09-25",
+          "note": "IMD Assessment Day."
         },
         "notes": ""
       },
@@ -379,8 +379,8 @@ const CANDIDATES = [
         "school": "CBS",
         "status": "scheduled",
         "interview": {
-          "date": "",
-          "note": ""
+          "date": "2026-09-16",
+          "note": "Tentative date, to be confirmed."
         },
         "notes": ""
       }
