@@ -7,7 +7,8 @@
   const STATUSES = BASE.STATUSES;
   const SCHOOLS = BASE.SCHOOLS;
   const DEADLINES = BASE.DEADLINES;
-  const STAGE_LABELS = ["Plan", "Draft", "Essays", "Submitted", "Invited", "Interview", "Decision"];
+  const STAGE_LABELS = ["Applying", "Submitted", "Interview", "Interviewed", "Decision"];
+  const FINAL_STAGE = STAGE_LABELS.length - 1;
 
   /* ---------- state ---------- */
   let candidates = load();
@@ -76,7 +77,7 @@
     });
     return best;
   }
-  function pendingInterviews(c) { return c.applications.filter(a => (a.status === "invited" || a.status === "scheduled") && !parseDates(a.interview && a.interview.date).length); }
+  function pendingInterviews(c) { return c.applications.filter(a => a.status === "scheduled" && !parseDates(a.interview && a.interview.date).length); }
   function teams() { return [...new Set(candidates.filter(c => c.programme === "Jahizoun" && c.team).map(c => c.team))].sort(); }
   const MONTH_INDEX = { jan: 0, feb: 1, mar: 2, apr: 3, may: 4, jun: 5, jul: 6, aug: 7, sep: 8, oct: 9, nov: 10, dec: 11 };
   function intakeKey(s) {
@@ -128,8 +129,8 @@
     const total = candidates.length;
     const scheduled = candidates.reduce((n, c) => n + c.applications.filter(a => parseDates(a.interview && a.interview.date).some(d => daysFrom(d) >= 0)).length, 0);
     const pending = candidates.reduce((n, c) => n + pendingInterviews(c).length, 0);
-    const submitted = candidates.reduce((n, c) => n + c.applications.filter(a => status(a.status).stage >= 3).length, 0);
-    const drafting = candidates.reduce((n, c) => n + c.applications.filter(a => status(a.status).stage < 3).length, 0);
+    const submitted = candidates.reduce((n, c) => n + c.applications.filter(a => status(a.status).stage >= 1).length, 0);
+    const drafting = candidates.reduce((n, c) => n + c.applications.filter(a => status(a.status).stage < 1).length, 0);
     const admitted = candidates.reduce((n, c) => n + c.applications.filter(a => a.status === "admitted").length, 0);
 
     const tile = (key, label, value, sub, dot) =>
@@ -147,9 +148,9 @@
       <div class="tiles">
         ${tile("all", "Candidates", total, `${candidates.filter(c => c.programme === "Jahizoun").length} Jahizoun · ${candidates.filter(c => c.programme === "EDGE").length} EDGE`, "accent")}
         ${tile("scheduled", "Interviews scheduled", scheduled, "with a confirmed date", "warning")}
-        ${tile("invited", "Interview date pending", pending, "invited, date not yet set", "serious")}
+        ${tile("invited", "Interview date pending", pending, "interview stage, date not yet set", "serious")}
         ${tile("submitted", "Applications submitted", submitted, "awaiting a decision", "accent")}
-        ${tile("drafting", "In preparation", drafting, "drafting or finalising essays", "violet")}
+        ${tile("drafting", "Applying", drafting, "not yet submitted", "violet")}
         ${tile("admitted", "Admitted", admitted, "offers received", "good")}
       </div>
       <div class="overview">
@@ -182,8 +183,8 @@
       if (filters.team !== "all" && c.team !== filters.team) return false;
       if (filters.stage === "scheduled" && !c.applications.some(a => parseDates(a.interview && a.interview.date).some(d => daysFrom(d) >= 0))) return false;
       if (filters.stage === "invited" && !pendingInterviews(c).length) return false;
-      if (filters.stage === "submitted" && !c.applications.some(a => status(a.status).stage >= 3)) return false;
-      if (filters.stage === "drafting" && !c.applications.some(a => status(a.status).stage < 3)) return false;
+      if (filters.stage === "submitted" && !c.applications.some(a => status(a.status).stage >= 1)) return false;
+      if (filters.stage === "drafting" && !c.applications.some(a => status(a.status).stage < 1)) return false;
       if (filters.stage === "admitted" && !c.applications.some(a => a.status === "admitted")) return false;
       return true;
     });
@@ -308,7 +309,7 @@
     const hasDate = dates.length > 0;
     const stageBars = STAGE_LABELS.map((l, i) => {
       let cls = "stage";
-      if (s.stage === 7 && i === 6) cls += " " + (s.tone === "good" ? "good" : s.tone === "critical" ? "critical" : "done");
+      if (s.stage === FINAL_STAGE && i === FINAL_STAGE) cls += " " + (s.tone === "good" ? "good" : s.tone === "critical" ? "critical" : "done");
       else if (i < s.stage) cls += " done";
       else if (i === s.stage) cls += " current";
       return `<div class="${cls}" title="${esc(l)}"></div>`;
@@ -323,8 +324,8 @@
     };
     let interviewVal, interviewCls = "";
     if (hasDate) interviewVal = fmtList(a.interview.date);
-    else if (s.stage >= 4 && s.stage < 7) { interviewVal = "Pending"; interviewCls = "pending"; }
-    else if (s.stage >= 7) interviewVal = a.status === "admitted" || a.status === "interviewed" ? "Completed" : "—";
+    else if (a.status === "interviewed") interviewVal = "Completed";
+    else if (s.stage >= FINAL_STAGE) interviewVal = "—";
     else { interviewVal = "Pending"; interviewCls = "pending"; }
     return `
       <div class="panel app">
@@ -353,7 +354,7 @@
       const r = nextRound(block);
       if (!r) return;
       const idd = parseDate(r.interviewDecision), fdd = parseDate(r.finalDecision), add = parseDate(r.application);
-      if (add && daysFrom(add) >= 0 && status(a.status).stage < 3) items.push({ date: add, type: "deadline", title: `${school(a.school).short} application deadline`, sub: r.round });
+      if (add && daysFrom(add) >= 0 && status(a.status).stage < 1) items.push({ date: add, type: "deadline", title: `${school(a.school).short} application deadline`, sub: r.round });
       if (idd) items.push({ date: idd, type: "deadline", title: `${school(a.school).short} interview decisions${r.interviewDecisionApprox ? " (approx.)" : ""}`, sub: r.round });
       if (fdd) items.push({ date: fdd, type: "deadline", title: `${school(a.school).short} final decisions${r.finalDecisionApprox ? " (approx.)" : ""}`, sub: r.round });
     });
@@ -463,7 +464,7 @@
     document.body.appendChild(bg);
     bg.addEventListener("click", e => {
       if (e.target === bg || e.target.closest("[data-close]")) { bg.remove(); return; }
-      if (e.target.closest("[data-add-app]")) { readForm(); c.applications.push({ school: "INSEAD", status: "considering", interview: { date: "", note: "" }, notes: "" }); render(); }
+      if (e.target.closest("[data-add-app]")) { readForm(); c.applications.push({ school: "INSEAD", status: "applying", interview: { date: "", note: "" }, notes: "" }); render(); }
       const rm = e.target.closest("[data-remove]");
       if (rm) { readForm(); c.applications.splice(+rm.dataset.remove, 1); render(); }
     });

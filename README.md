@@ -29,7 +29,7 @@ The file is commented. Each candidate looks like this:
   id: "saoud-alkaabi",          // unique, used in the profile link
   name: "Saoud AlKaabi",
   programme: "Jahizoun",        // "Jahizoun" or "EDGE"
-  team: "TBC",                  // shown for Jahizoun only
+  team: "Al-Emad",              // Executive Office function, shown for Jahizoun only
   photo: "",                    // e.g. "photos/saoud-alkaabi.jpg"; "" = placeholder circle
   intake: "January 2027",       // target MBA intake
   notes: "",
@@ -39,7 +39,7 @@ The file is commented. Each candidate looks like this:
 }
 ```
 
-Status values (in order): `considering`, `drafting`, `essays_final`, `submitted`, `invited`, `scheduled`, `interviewed`, `admitted`, `waitlisted`, `rejected`, `withdrawn`.
+Status values (in order): `applying`, `submitted`, `scheduled` (interview scheduled), `interviewed`, `admitted`, `waitlisted`, `rejected`, `withdrawn`.
 
 Interview dates are `YYYY-MM-DD`. Several dates can be listed with commas (`"2026-09-15, 2026-09-16"`). An empty date shows **Pending**.
 

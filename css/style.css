@@ -256,12 +256,12 @@ h1 { font-size: 22px; } h2 { font-size: 17px; } h3 { font-size: 15px; }
 .status.warning { background: var(--warning-soft); color: var(--warning-ink); }
 .status.good { background: var(--good-soft); color: var(--good-ink); }
 .status.critical { background: var(--critical-soft); color: var(--critical-ink); }
-.stages { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; margin: 14px 0 6px; }
+.stages { display: grid; grid-template-columns: repeat(5, 1fr); gap: 4px; margin: 14px 0 6px; }
 .stage { height: 6px; border-radius: 3px; background: var(--border); position: relative; }
 .stage.done { background: var(--accent); }
 .stage.current { background: var(--warning); }
 .stage.good { background: var(--good); } .stage.critical { background: var(--critical); }
-.stage-labels { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; font-size: 10px; color: var(--text-3); text-transform: uppercase; letter-spacing: .04em; }
+.stage-labels { display: grid; grid-template-columns: repeat(5, 1fr); gap: 4px; font-size: 10px; color: var(--text-3); text-transform: uppercase; letter-spacing: .04em; }
 .stage-labels span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .app-facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 10px; margin-top: 14px; }
 .fact { background: var(--surface-2); border: 1px solid var(--border); border-radius: 10px; padding: 10px 12px; }
