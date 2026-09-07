@@ -42,6 +42,7 @@ const SCHOOLS = {
    DEADLINES (per school, per intake, per round)
    "approx" = the school publishes a rule (e.g. "5 weeks after the deadline")
    rather than a fixed date; the date shown is computed from that rule.
+   "interviewDecisionLabel" = optional text shown instead of the date (e.g. several interview days).
    Only the rounds our candidates are in (or can still apply to) are listed.
    ===================================================================== */
 const DEADLINES = [
@@ -74,10 +75,10 @@ const DEADLINES = [
   {
     school: "IMD", intake: "January 2027",
     rounds: [
-      { round: "Round 5", application: "2026-09-15", interviewDecision: "", finalDecision: "" },
-      { round: "Round 6", application: "2026-10-13", interviewDecision: "", finalDecision: "" }
+      { round: "Round 5", application: "2026-09-15", interviewDecision: "2026-09-25", interviewDecisionLabel: "25 Sep or 2 & 3 Oct 2026", finalDecision: "" },
+      { round: "Round 6", application: "2026-10-13", interviewDecision: "2026-10-23", interviewDecisionLabel: "23 Oct or 30 & 31 Oct 2026", finalDecision: "" }
     ],
-    note: "Nobody applied by the July deadline, so all our IMD candidates are working towards the 15 September deadline. Shortlisted candidates are invited to an Assessment Day linked to their round; IMD does not publish fixed interview or decision dates."
+    note: "Nobody applied by the July deadline, so all our IMD candidates are working towards the 15 September deadline. Shortlisted candidates are invited to an Assessment Day (interview) on one of the dates linked to their round; the final decision follows a few weeks after the Assessment Day."
   },
   {
     school: "CBS", intake: "January 2027 (J-Term)",

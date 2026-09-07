@@ -237,7 +237,7 @@
       b.rounds.forEach(r => {
         [["interviewDecision", "Interview decisions", r.interviewDecisionApprox], ["finalDecision", "Final decisions", r.finalDecisionApprox], ["application", "Application deadline", false]].forEach(([k, label, approx]) => {
           const d = parseDate(r[k]);
-          if (d && daysFrom(d) >= -3 && daysFrom(d) <= 120) items.push({ date: d, type: "deadline", title: `${school(b.school).short} · ${label}${approx ? " (approx.)" : ""}`, sub: `${r.round}, ${b.intake} intake`, href: "#/deadlines" });
+          if (d && daysFrom(d) >= -3 && daysFrom(d) <= 120) items.push({ date: d, type: "deadline", title: `${school(b.school).short} · ${label}${approx ? " (approx.)" : ""}`, sub: `${r.round}, ${b.intake} intake${k === "interviewDecision" && r.interviewDecisionLabel ? " · " + r.interviewDecisionLabel : ""}`, href: "#/deadlines" });
         });
       });
     });
@@ -311,11 +311,11 @@
     }).join("");
     const block = intakeForDeadlines(c, a.school);
     const r = block ? nextRound(block) : null;
-    const dl = (key, approxKey) => {
+    const dl = (key, approxKey, labelKey) => {
       if (!r) return `<span class="muted">Not published</span>`;
       const d = parseDate(r[key]);
       if (!d) return `<span class="muted">Not published</span>`;
-      return `${fmt(d)}${r[approxKey] ? `<span class="approx">approx.</span>` : ""}`;
+      return `${labelKey && r[labelKey] ? esc(r[labelKey]) : fmt(d)}${r[approxKey] ? `<span class="approx">approx.</span>` : ""}`;
     };
     let interviewVal, interviewCls = "";
     if (hasDate) interviewVal = fmtList(a.interview.date);
@@ -333,7 +333,7 @@
         <div class="stage-labels">${STAGE_LABELS.map(l => `<span>${l}</span>`).join("")}</div>
         <div class="app-facts">
           <div class="fact"><div class="k">Interview</div><div class="v ${interviewCls}">${interviewVal}</div>${a.interview && a.interview.note ? `<div class="n">${esc(a.interview.note)}</div>` : ""}</div>
-          <div class="fact"><div class="k">Interview decision deadline</div><div class="v">${dl("interviewDecision", "interviewDecisionApprox")}</div></div>
+          <div class="fact"><div class="k">Interview decision deadline</div><div class="v">${dl("interviewDecision", "interviewDecisionApprox", "interviewDecisionLabel")}</div></div>
           <div class="fact"><div class="k">Final decision deadline</div><div class="v">${dl("finalDecision", "finalDecisionApprox")}</div></div>
         </div>
         ${a.notes ? `<div class="app-notes">${esc(a.notes)}</div>` : ""}
@@ -350,7 +350,7 @@
       if (!r) return;
       const idd = parseDate(r.interviewDecision), fdd = parseDate(r.finalDecision), add = parseDate(r.application);
       if (add && daysFrom(add) >= 0 && status(a.status).stage < 1) items.push({ date: add, type: "deadline", title: `${school(a.school).short} application deadline`, sub: r.round });
-      if (idd) items.push({ date: idd, type: "deadline", title: `${school(a.school).short} interview decisions${r.interviewDecisionApprox ? " (approx.)" : ""}`, sub: r.round });
+      if (idd) items.push({ date: idd, type: "deadline", title: `${school(a.school).short} interview decisions${r.interviewDecisionApprox ? " (approx.)" : ""}`, sub: r.interviewDecisionLabel ? `${r.round} · ${r.interviewDecisionLabel}` : r.round });
       if (fdd) items.push({ date: fdd, type: "deadline", title: `${school(a.school).short} final decisions${r.finalDecisionApprox ? " (approx.)" : ""}`, sub: r.round });
     });
     items.sort((a, b) => a.date - b.date);
@@ -366,11 +366,11 @@
   function renderDeadlines() {
     const usedSchools = new Set(candidates.flatMap(c => c.applications.map(a => a.school)));
     const blocks = DEADLINES.slice().sort((a, b) => (usedSchools.has(b.school) - usedSchools.has(a.school)) || a.school.localeCompare(b.school));
-    const cell = (v, approx) => {
+    const cell = (v, approx, label) => {
       const d = parseDate(v);
       if (!d) return `<span class="muted">Not published</span>`;
       const n = daysFrom(d);
-      return `<span class="pill-date">${fmt(d)}${approx ? `<span class="approx">approx.</span>` : ""}${n >= 0 && n <= 14 ? `<span class="soon">${relative(d)}</span>` : ""}</span>`;
+      return `<span class="pill-date">${label ? esc(label) : fmt(d)}${approx ? `<span class="approx">approx.</span>` : ""}${n >= 0 && n <= 14 ? `<span class="soon">${relative(d)}</span>` : ""}</span>`;
     };
     return `
       <div class="page-head">
@@ -390,7 +390,7 @@
             <tbody>${b.rounds.map(r => {
               const fin = parseDate(r.finalDecision) || parseDate(r.application);
               const past = fin && daysFrom(fin) < 0 && r !== nr;
-              return `<tr class="${r === nr ? "current-round" : ""} ${past ? "past" : ""}"><td>${esc(r.round)}</td><td class="num">${cell(r.application)}</td><td class="num">${cell(r.interviewDecision, r.interviewDecisionApprox)}</td><td class="num">${cell(r.finalDecision, r.finalDecisionApprox)}</td></tr>`;
+              return `<tr class="${r === nr ? "current-round" : ""} ${past ? "past" : ""}"><td>${esc(r.round)}</td><td class="num">${cell(r.application)}</td><td class="num">${cell(r.interviewDecision, r.interviewDecisionApprox, r.interviewDecisionLabel)}</td><td class="num">${cell(r.finalDecision, r.finalDecisionApprox)}</td></tr>`;
             }).join("")}</tbody>
           </table></div>
           ${who.length ? `<div class="dl-who">Candidates: ${who.map(c => `<a href="#/candidate/${esc(c.id)}">${esc(c.name)}</a>`).join("")}</div>` : ""}
