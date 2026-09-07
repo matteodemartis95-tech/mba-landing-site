@@ -11,6 +11,16 @@
   const FINAL_STAGE = STAGE_LABELS.length - 1;
 
   /* ---------- state ---------- */
+  // Fingerprint of the published data.js. Local edits are only kept while the published data
+  // is unchanged; once a new data.js is published (normally: your own edits, committed on GitHub),
+  // the dashboard switches back to the published version automatically.
+  const BASE_HASH = hashString(JSON.stringify(BASE.CANDIDATES));
+  let staleLocalDiscarded = false;
+  function hashString(str) {
+    let h = 5381;
+    for (let i = 0; i < str.length; i++) h = ((h << 5) + h + str.charCodeAt(i)) | 0;
+    return String(h >>> 0);
+  }
   let candidates = load();
   let editMode = false;
   let filters = { q: "", programme: "all", school: "all", stage: "all", team: "all", sort: "next" };
@@ -18,12 +28,21 @@
   function load() {
     try {
       const raw = localStorage.getItem(STORAGE_KEY);
-      if (raw) return JSON.parse(raw);
+      if (raw) {
+        if (localStorage.getItem(STORAGE_KEY + ":base") === BASE_HASH) return JSON.parse(raw);
+        localStorage.setItem(STORAGE_KEY + ":backup", raw);
+        localStorage.removeItem(STORAGE_KEY);
+        localStorage.removeItem(STORAGE_KEY + ":base");
+        staleLocalDiscarded = true;
+      }
     } catch (e) { /* ignore */ }
     return deepClone(BASE.CANDIDATES);
   }
   function persist() {
-    try { localStorage.setItem(STORAGE_KEY, JSON.stringify(candidates)); } catch (e) { toast("Could not save locally: " + e.message); }
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(candidates));
+      localStorage.setItem(STORAGE_KEY + ":base", BASE_HASH);
+    } catch (e) { toast("Could not save locally: " + e.message); }
   }
   function hasLocalChanges() { try { return !!localStorage.getItem(STORAGE_KEY); } catch (e) { return false; } }
   function deepClone(o) { return JSON.parse(JSON.stringify(o)); }
@@ -584,7 +603,7 @@
   document.getElementById("resetBtn").addEventListener("click", () => {
     if (!hasLocalChanges()) { toast("No local changes to discard."); return; }
     if (confirm("Discard all changes saved in this browser and reload the data from data.js?")) {
-      localStorage.removeItem(STORAGE_KEY); candidates = deepClone(BASE.CANDIDATES); route(); toast("Local changes discarded.");
+      localStorage.removeItem(STORAGE_KEY); localStorage.removeItem(STORAGE_KEY + ":base"); candidates = deepClone(BASE.CANDIDATES); route(); toast("Local changes discarded.");
     }
   });
   app.addEventListener("click", e => {
@@ -610,5 +629,6 @@
 
   window.addEventListener("hashchange", route);
   route();
-  if (hasLocalChanges()) toast("Showing changes saved in this browser. Export data.js to publish them.");
+  if (staleLocalDiscarded) toast("The published dashboard was updated on GitHub, so it replaced the copy saved in this browser.");
+  else if (hasLocalChanges()) toast("Showing unpublished changes saved in this browser. Use Copy data.js to publish them.");
 })();
