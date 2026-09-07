@@ -476,15 +476,6 @@ const CANDIDATES = [
     "notes": "",
     "applications": [
       {
-        "school": "INSEAD",
-        "status": "submitted",
-        "interview": {
-          "date": "",
-          "note": ""
-        },
-        "notes": "Interview decision pending."
-      },
-      {
         "school": "CBS",
         "status": "submitted",
         "interview": {
