@@ -201,7 +201,7 @@
 
     return `
       <div class="page-head">
-        <div><h1>Candidates</h1><p>Quarterly evaluations and MBA applications of the Jahizoun and EDGE candidates on EO secondment. Click a card to open a profile.</p></div>
+        <div><h1>Candidates</h1><p>Quarterly evaluations and MBA applications of the Jahizoun and EDGE candidates. Click a card to open a profile.</p></div>
         <div class="muted small">Updated ${fmt(today, true)}</div>
       </div>
       <div class="tiles">
@@ -312,7 +312,7 @@
     const snap = ev ? [
       ["Line manager", ev.lineManager], ["Function at the Executive Office", ev.function || c.team],
       ["Corporate Exchange project", ev.corporateExchangeProject], ["Previous MOD function", ev.previousFunction],
-      ["Academic qualifications", ev.academicQualifications], ["Corporate Exchange assessment", ev.reportFirm ? "Final report by " + ev.reportFirm : ""]
+      ["Academic qualifications", ev.academicQualifications], ["Corporate Exchange company", ev.reportFirm]
     ].filter(x => x[1]) : [];
     return `
       <a class="back" href="#/">← All candidates</a>
@@ -366,7 +366,10 @@
   const CURRENT_Q = (() => { const d = today; return d.getFullYear() + " Q" + (Math.floor(d.getMonth() / 3) + 1); })();
   function renderEvaluation(c, ev) {
     if (!ev) return `<div class="empty">No evaluation data for this candidate yet.${editMode ? " Use “Edit evaluation” to add it." : ""}</div>`;
-    const Q = META.quarters, comps = META.competencies;
+    const comps = META.competencies;
+    // show quarters only up to the last one that has a phase or a rating for this person (never before the current quarter)
+    const lastIdx = Math.max(META.quarters.indexOf(CURRENT_Q), ...META.quarters.map((q, k) => (ev.phases[q] || comps.some(cp => (ev.ratings[cp] || {})[q])) ? k : -1));
+    const Q = META.quarters.slice(0, lastIdx + 1);
     // phase spans
     const spans = []; let i = 0;
     while (i < Q.length) { const ph = ev.phases[Q[i]] || ""; let j = i; while (j + 1 < Q.length && (ev.phases[Q[j + 1]] || "") === ph) j++; spans.push({ phase: ph, from: i, to: j }); i = j + 1; }
@@ -394,7 +397,7 @@
               <span class="sep"></span>
               <span><i class="sw ph-corporate-exchange"></i>Corporate Exchange</span><span><i class="sw ph-eo-secondment"></i>EO Secondment</span><span><i class="sw ph-mba"></i>MBA</span>
             </div>
-            <div class="ev-foot">${ev.reportFirm ? `Corporate Exchange phase assessed in the final report by ${esc(ev.reportFirm)}; ` : ""}EO Secondment phase assessed through the quarterly evaluations. The outlined column is the current quarter.</div>
+            <div class="ev-foot">${ev.reportFirm ? `Corporate Exchange at ${esc(ev.reportFirm)}, assessed in its final report; ` : ""}EO Secondment assessed through the quarterly evaluations. The outlined column is the current quarter.</div>
           </div>
         </div>
         <div class="side">
@@ -663,7 +666,7 @@
             ${field("Corporate Exchange project", "corporateExchangeProject", ev.corporateExchangeProject)}
             ${field("Previous MOD function", "previousFunction", ev.previousFunction)}
             ${field("Academic qualifications", "academicQualifications", ev.academicQualifications)}
-            ${field("Corporate Exchange final report by", "reportFirm", ev.reportFirm)}
+            ${field("Corporate Exchange company", "reportFirm", ev.reportFirm)}
           </div>
           <div>
             <h3 style="margin-bottom:8px">Timeline and ratings</h3>
