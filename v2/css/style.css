@@ -395,3 +395,6 @@ td .approx { color: var(--text-3); font-size: 11px; margin-left: 4px; }
 .tile.static:hover { border-color: var(--border); }
 .tile .value-sub { font-size: 14px; font-weight: 500; color: var(--text-2); }
 .agenda-item.evaluation .agenda-date { background: var(--violet-soft); border-color: transparent; color: var(--violet); }
+
+/* V2: photos anchored top-left of the card */
+.card-top { align-items: flex-start; }

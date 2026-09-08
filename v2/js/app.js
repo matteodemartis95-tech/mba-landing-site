@@ -257,7 +257,6 @@
           <div>
             <div class="card-name">${esc(nameOf(c))}</div>
             <div class="card-meta">${programmeBadge(c)}${teamBadge(c)}${testBadge(c)}${c.intake && c.intake !== "January 2027" ? `<span class="badge intake">${esc(c.intake)}</span>` : ""}${noMba(c) ? `<span class="badge nomba">No MBA planned</span>` : ""}</div>
-            ${evalOf(c) && evalOf(c).lineManager ? `<div class="card-lm">Line manager · ${esc(evalOf(c).lineManager)}</div>` : ""}
           </div>
         </div>
         <div class="card-schools">
