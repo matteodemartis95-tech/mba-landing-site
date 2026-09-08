@@ -168,6 +168,13 @@
                           : `<span class="initials" title="Photo to be added">${esc(initials(nameOf(c)))}</span>`;
     return `<div class="${cls}">${inner}</div>`;
   }
+  function testBadge(c) {
+    if (!c.test) return "";
+    const m = String(c.test).match(/(GMAT|EA)\D*(\d{3})/i);
+    let cls = "";
+    if (m) { const kind = m[1].toUpperCase(), n = +m[2]; cls = (kind === "GMAT" ? n >= 600 : n >= 150) ? "score-good" : "score-low"; }
+    return `<span class="badge test ${cls}">${esc(c.test)}</span>`;
+  }
   function noMba(c) { return !c.applications.length && c.mbaPlanned === false; }
   function programmeBadge(c) { return `<span class="badge ${c.programme === "EDGE" ? "edge" : "jahizoun"}">${esc(c.programme)}</span>`; }
   function teamBadge(c) { return c.programme === "Jahizoun" && c.team ? `<span class="badge team">${esc(c.team)}</span>` : ""; }
@@ -183,6 +190,10 @@
 
     const tile = (key, label, value, sub, dot) =>
       `<button class="tile ${filters.stage === key ? "active" : ""}" data-stage="${key}"><div class="label"><span class="dot ${dot}"></span>${label}</div><div class="value">${value}</div><div class="sub">${sub}</div></button>`;
+    const QE = META.quarterlyEvaluations || [];
+    const doneQE = QE.filter(q => q.status === "completed"); const lastQE = doneQE[doneQE.length - 1];
+    const nextQE = QE.find(q => q.status !== "completed" && parseDate(q.date) && daysFrom(parseDate(q.date)) >= 0);
+    const qeTile = `<div class="tile static"><div class="label"><span class="dot violet"></span>Quarterly evaluation</div><div class="value">${lastQE ? esc(lastQE.label) + " <span class=\"value-sub\">completed</span>" : "—"}</div><div class="sub">${nextQE ? `Next: ${esc(nextQE.label)} evaluation by ${fmt(parseDate(nextQE.date))}` : "No further evaluation planned"}</div></div>`;
 
     const list = filtered();
     const teamOpts = teams().map(t => `<option value="${esc(t)}" ${filters.team === t ? "selected" : ""}>${esc(t)}</option>`).join("");
@@ -190,7 +201,7 @@
 
     return `
       <div class="page-head">
-        <div><h1>Candidates</h1><p>MBA application status for the Jahizoun and EDGE candidates on EO secondment. Click a card to open the profile.</p></div>
+        <div><h1>Candidates</h1><p>Quarterly evaluations and MBA applications of the Jahizoun and EDGE candidates on EO secondment. Click a card to open a profile.</p></div>
         <div class="muted small">Updated ${fmt(today, true)}</div>
       </div>
       <div class="tiles">
@@ -198,6 +209,7 @@
         ${tile("submitted", "Applications submitted", submitted, "across all schools", "accent")}
         ${tile("scheduled", "Interviews scheduled", scheduledApps, `${withDate} with a confirmed date`, "warning")}
         ${tile("admitted", "Admitted", admitted, "offers received", "good")}
+        ${qeTile}
       </div>
       <div class="overview">
         <div>
@@ -244,7 +256,7 @@
           ${avatar(c)}
           <div>
             <div class="card-name">${esc(nameOf(c))}</div>
-            <div class="card-meta">${programmeBadge(c)}${teamBadge(c)}${c.test ? `<span class="badge test">${esc(c.test)}</span>` : ""}${c.intake && c.intake !== "January 2027" ? `<span class="badge intake">${esc(c.intake)}</span>` : ""}${noMba(c) ? `<span class="badge nomba">No MBA planned</span>` : ""}</div>
+            <div class="card-meta">${programmeBadge(c)}${teamBadge(c)}${testBadge(c)}${c.intake && c.intake !== "January 2027" ? `<span class="badge intake">${esc(c.intake)}</span>` : ""}${noMba(c) ? `<span class="badge nomba">No MBA planned</span>` : ""}</div>
             ${evalOf(c) && evalOf(c).lineManager ? `<div class="card-lm">Line manager · ${esc(evalOf(c).lineManager)}</div>` : ""}
           </div>
         </div>
@@ -272,8 +284,12 @@
         });
       });
     });
+    (META.quarterlyEvaluations || []).forEach(q => {
+      const d = parseDate(q.date);
+      if (d && q.status !== "completed" && daysFrom(d) >= -3 && daysFrom(d) <= 120) items.push({ date: d, type: "evaluation", title: `${q.label} quarterly evaluation`, sub: "all candidates on EO secondment", href: "#/" });
+    });
     items.sort((a, b) => a.date - b.date);
-    const shown = items.slice(0, 14);
+    const shown = items.slice(0, 16);
     return `
       <div class="panel">
         <div class="panel-head"><h2>Coming up</h2><span class="muted small">next 120 days</span></div>
@@ -304,7 +320,7 @@
         ${avatar(c, true)}
         <div>
           <h1>${esc(nameOf(c))}</h1>
-          <div class="meta">${programmeBadge(c)}${teamBadge(c)}${c.test ? `<span class="badge test">${esc(c.test)}</span>` : ""}${noMba(c) ? `<span class="badge nomba">No MBA planned</span>` : `<span class="badge intake">Target intake: ${esc(c.intake || "—")}</span>`}</div>
+          <div class="meta">${programmeBadge(c)}${teamBadge(c)}${testBadge(c)}${noMba(c) ? `<span class="badge nomba">No MBA planned</span>` : `<span class="badge intake">Target intake: ${esc(c.intake || "—")}</span>`}</div>
           ${c.notes ? `<div class="notes">${esc(c.notes)}</div>` : ""}
         </div>
         <div class="actions">

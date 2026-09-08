@@ -17,7 +17,19 @@ const EVAL_META = {
   ratings: { strong: "Strong", effective: "Effective", developing: "Developing", na: "Not assessed" },
   phases: ["Corporate Exchange", "EO Secondment", "MBA"],
   commentaryTitle: "Commentary as of 1st Quarterly Evaluation",
-  commentaryDate: "August 2026"
+  commentaryDate: "August 2026",
+  /* Quarterly evaluation cycle (every 3 months). status: "completed" or "planned". */
+  quarterlyEvaluations: [
+    { label: "1st", date: "2026-08-31", status: "completed" },
+    { label: "2nd", date: "2026-09-30", status: "planned" },
+    { label: "3rd", date: "2026-12-31", status: "planned" },
+    { label: "4th", date: "2027-03-31", status: "planned" },
+    { label: "5th", date: "2027-06-30", status: "planned" },
+    { label: "6th", date: "2027-09-30", status: "planned" },
+    { label: "7th", date: "2027-12-31", status: "planned" },
+    { label: "8th", date: "2028-03-31", status: "planned" },
+    { label: "9th", date: "2028-06-30", status: "planned" }
+  ]
 };
 
 const EXTRA_CANDIDATES = [
@@ -240,7 +252,8 @@ const EVALUATIONS = {
       "2027 Q3": "MBA",
       "2028 Q1": "EO Secondment",
       "2028 Q2": "EO Secondment",
-      "2028 Q3": "EO Secondment"
+      "2028 Q3": "EO Secondment",
+      "2027 Q4": "MBA"
     },
     "ratings": {
       "Effective Communication & Influence": {
@@ -301,7 +314,8 @@ const EVALUATIONS = {
       "2027 Q3": "MBA",
       "2028 Q1": "EO Secondment",
       "2028 Q2": "EO Secondment",
-      "2028 Q3": "EO Secondment"
+      "2028 Q3": "EO Secondment",
+      "2027 Q4": "MBA"
     },
     "ratings": {
       "Effective Communication & Influence": {
@@ -359,7 +373,8 @@ const EVALUATIONS = {
       "2026 Q4": "EO Secondment",
       "2027 Q1": "MBA",
       "2027 Q2": "MBA",
-      "2027 Q3": "MBA"
+      "2027 Q3": "MBA",
+      "2027 Q4": "MBA"
     },
     "ratings": {
       "Effective Communication & Influence": {
@@ -419,7 +434,8 @@ const EVALUATIONS = {
       "2027 Q3": "MBA",
       "2028 Q1": "EO Secondment",
       "2028 Q2": "EO Secondment",
-      "2028 Q3": "EO Secondment"
+      "2028 Q3": "EO Secondment",
+      "2027 Q4": "MBA"
     },
     "ratings": {
       "Effective Communication & Influence": {
@@ -480,7 +496,8 @@ const EVALUATIONS = {
       "2027 Q3": "MBA",
       "2028 Q1": "EO Secondment",
       "2028 Q2": "EO Secondment",
-      "2028 Q3": "EO Secondment"
+      "2028 Q3": "EO Secondment",
+      "2027 Q4": "MBA"
     },
     "ratings": {
       "Effective Communication & Influence": {
@@ -541,7 +558,8 @@ const EVALUATIONS = {
       "2027 Q3": "MBA",
       "2028 Q1": "EO Secondment",
       "2028 Q2": "EO Secondment",
-      "2028 Q3": "EO Secondment"
+      "2028 Q3": "EO Secondment",
+      "2027 Q4": "MBA"
     },
     "ratings": {
       "Effective Communication & Influence": {
@@ -602,7 +620,8 @@ const EVALUATIONS = {
       "2027 Q3": "MBA",
       "2028 Q1": "EO Secondment",
       "2028 Q2": "EO Secondment",
-      "2028 Q3": "EO Secondment"
+      "2028 Q3": "EO Secondment",
+      "2027 Q4": "MBA"
     },
     "ratings": {
       "Effective Communication & Influence": {
@@ -663,7 +682,8 @@ const EVALUATIONS = {
       "2027 Q3": "MBA",
       "2028 Q1": "EO Secondment",
       "2028 Q2": "EO Secondment",
-      "2028 Q3": "EO Secondment"
+      "2028 Q3": "EO Secondment",
+      "2027 Q4": "MBA"
     },
     "ratings": {
       "Effective Communication & Influence": {
@@ -724,7 +744,8 @@ const EVALUATIONS = {
       "2027 Q3": "MBA",
       "2028 Q1": "EO Secondment",
       "2028 Q2": "EO Secondment",
-      "2028 Q3": "EO Secondment"
+      "2028 Q3": "EO Secondment",
+      "2027 Q4": "MBA"
     },
     "ratings": {
       "Effective Communication & Influence": {
@@ -785,7 +806,8 @@ const EVALUATIONS = {
       "2027 Q3": "MBA",
       "2028 Q1": "EO Secondment",
       "2028 Q2": "EO Secondment",
-      "2028 Q3": "EO Secondment"
+      "2028 Q3": "EO Secondment",
+      "2027 Q4": "MBA"
     },
     "ratings": {
       "Effective Communication & Influence": {
@@ -846,7 +868,8 @@ const EVALUATIONS = {
       "2027 Q3": "MBA",
       "2028 Q1": "EO Secondment",
       "2028 Q2": "EO Secondment",
-      "2028 Q3": "EO Secondment"
+      "2028 Q3": "EO Secondment",
+      "2027 Q4": "MBA"
     },
     "ratings": {
       "Effective Communication & Influence": {
@@ -907,7 +930,8 @@ const EVALUATIONS = {
       "2027 Q3": "MBA",
       "2028 Q1": "EO Secondment",
       "2028 Q2": "EO Secondment",
-      "2028 Q3": "EO Secondment"
+      "2028 Q3": "EO Secondment",
+      "2027 Q4": "MBA"
     },
     "ratings": {
       "Effective Communication & Influence": {
@@ -968,7 +992,8 @@ const EVALUATIONS = {
       "2027 Q3": "MBA",
       "2028 Q1": "EO Secondment",
       "2028 Q2": "EO Secondment",
-      "2028 Q3": "EO Secondment"
+      "2028 Q3": "EO Secondment",
+      "2027 Q4": "MBA"
     },
     "ratings": {
       "Effective Communication & Influence": {

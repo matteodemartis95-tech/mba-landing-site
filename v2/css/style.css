@@ -385,3 +385,13 @@ td .approx { color: var(--text-3); font-size: 11px; margin-left: 4px; }
 .ev-edit select { width: 100%; min-width: 74px; padding: 4px 2px; border-radius: 6px; border: 1px solid var(--border-strong); background: var(--surface); font-size: 11px; }
 .ev-edit select.r-strong, .ev-edit select.r-effective, .ev-edit select.r-developing, .ev-edit select.r-na { color: #111; }
 @media (max-width: 640px) { .ev-grid { min-width: 640px; } }
+
+/* ---------- V2: score colours, evaluation tile, agenda ---------- */
+.badge.test.score-good { background: var(--good-soft); color: var(--good-ink); }
+.badge.test.score-low { background: #fdecea; color: #a23b2f; }
+:root[data-theme="dark"] .badge.test.score-low { background: #3e1f1b; color: #f2a79d; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .badge.test.score-low { background: #3e1f1b; color: #f2a79d; } }
+.tile.static { cursor: default; }
+.tile.static:hover { border-color: var(--border); }
+.tile .value-sub { font-size: 14px; font-weight: 500; color: var(--text-2); }
+.agenda-item.evaluation .agenda-date { background: var(--violet-soft); border-color: transparent; color: var(--violet); }
