@@ -3,6 +3,11 @@
   "use strict";
 
   const BASE = window.MBA_DATA;
+  const EV = window.MBA_EVAL || { EVAL_META: { competencies: [], quarters: [], ratings: {}, phases: [] }, EXTRA_CANDIDATES: [], NAME_OVERRIDES: {}, EVALUATIONS: {} };
+  const META = EV.EVAL_META;
+  const EVAL_KEY = "jahizoun-mba-tracker:v2-eval";
+  const nameOf = c => EV.NAME_OVERRIDES[c.id] || c.name;
+  const evalOf = c => evalState.evaluations[c.id] || null;
   const ASSET_BASE = window.ASSET_BASE || "";   // "" for the main page, "../" for the V2 preview in /v2
   const asset = p => (p && !/^(data:|https?:)/.test(p) ? ASSET_BASE + p : p);
   const STORAGE_KEY = "jahizoun-mba-tracker:v1";
@@ -23,8 +28,12 @@
     for (let i = 0; i < str.length; i++) h = ((h << 5) + h + str.charCodeAt(i)) | 0;
     return String(h >>> 0);
   }
-  let candidates = load();
+  let shared = load();                 // MBA data from the shared ../js/data.js (plus local edits)
+  let evalState = loadEval();          // V2-only: extra candidates + evaluations (plus local edits)
+  let candidates = merge();
   let editMode = false;
+  function merge() { return shared.concat(evalState.extras); }
+  function isExtra(id) { return evalState.extras.some(x => x.id === id); }
   let filters = { q: "", programme: "all", school: "all", stage: "all", team: "all" };
 
   function load() {
@@ -42,10 +51,28 @@
   }
   function persist() {
     try {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(candidates));
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(shared));
       localStorage.setItem(STORAGE_KEY + ":base", BASE_HASH);
     } catch (e) { toast("Could not save locally: " + e.message); }
   }
+  const EVAL_HASH = hashString(JSON.stringify([EV.EXTRA_CANDIDATES, EV.EVALUATIONS]));
+  function loadEval() {
+    try {
+      const raw = localStorage.getItem(EVAL_KEY);
+      if (raw) {
+        if (localStorage.getItem(EVAL_KEY + ":base") === EVAL_HASH) return JSON.parse(raw);
+        localStorage.removeItem(EVAL_KEY); localStorage.removeItem(EVAL_KEY + ":base");
+      }
+    } catch (e) { /* ignore */ }
+    return { extras: deepClone(EV.EXTRA_CANDIDATES), evaluations: deepClone(EV.EVALUATIONS) };
+  }
+  function persistEval() {
+    try {
+      localStorage.setItem(EVAL_KEY, JSON.stringify(evalState));
+      localStorage.setItem(EVAL_KEY + ":base", EVAL_HASH);
+    } catch (e) { toast("Could not save locally: " + e.message); }
+  }
+  function hasLocalEval() { try { return !!localStorage.getItem(EVAL_KEY); } catch (e) { return false; } }
   function hasLocalChanges() { try { return !!localStorage.getItem(STORAGE_KEY); } catch (e) { return false; } }
   function deepClone(o) { return JSON.parse(JSON.stringify(o)); }
 
@@ -137,10 +164,11 @@
   /* ---------- rendering: shared ---------- */
   function avatar(c, large) {
     const cls = "avatar" + (large ? " large" : "") + (c.photo ? "" : " placeholder");
-    const inner = c.photo ? `<img src="${esc(asset(c.photo))}" alt="${esc(c.name)}" onerror="this.parentNode.classList.add('placeholder');this.outerHTML='<span class=initials>${esc(initials(c.name))}</span>'">`
-                          : `<span class="initials" title="Photo to be added">${esc(initials(c.name))}</span>`;
+    const inner = c.photo ? `<img src="${esc(asset(c.photo))}" alt="${esc(nameOf(c))}" onerror="this.parentNode.classList.add('placeholder');this.outerHTML='<span class=initials>${esc(initials(nameOf(c)))}</span>'">`
+                          : `<span class="initials" title="Photo to be added">${esc(initials(nameOf(c)))}</span>`;
     return `<div class="${cls}">${inner}</div>`;
   }
+  function noMba(c) { return !c.applications.length && c.mbaPlanned === false; }
   function programmeBadge(c) { return `<span class="badge ${c.programme === "EDGE" ? "edge" : "jahizoun"}">${esc(c.programme)}</span>`; }
   function teamBadge(c) { return c.programme === "Jahizoun" && c.team ? `<span class="badge team">${esc(c.team)}</span>` : ""; }
   function statusPill(a) { const s = status(a.status); return `<span class="status ${s.tone}"><span class="st ${s.tone}"></span>${esc(s.label)}</span>`; }
@@ -190,7 +218,7 @@
 
   function filtered() {
     let list = candidates.filter(c => {
-      if (filters.q && !c.name.toLowerCase().includes(filters.q.toLowerCase())) return false;
+      if (filters.q && !nameOf(c).toLowerCase().includes(filters.q.toLowerCase())) return false;
       if (filters.programme !== "all" && c.programme !== filters.programme) return false;
       if (filters.school !== "all" && !c.applications.some(a => a.school === filters.school)) return false;
       if (filters.team !== "all" && c.team !== filters.team) return false;
@@ -199,7 +227,7 @@
       if (filters.stage === "admitted" && !c.applications.some(a => a.status === "admitted")) return false;
       return true;
     });
-    list.sort((a, b) => a.name.localeCompare(b.name));
+    list.sort((a, b) => nameOf(a).localeCompare(nameOf(b)));
     return list;
   }
 
@@ -215,8 +243,9 @@
         <div class="card-top">
           ${avatar(c)}
           <div>
-            <div class="card-name">${esc(c.name)}</div>
-            <div class="card-meta">${programmeBadge(c)}${teamBadge(c)}${c.test ? `<span class="badge test">${esc(c.test)}</span>` : ""}${c.intake && c.intake !== "January 2027" ? `<span class="badge intake">${esc(c.intake)}</span>` : ""}</div>
+            <div class="card-name">${esc(nameOf(c))}</div>
+            <div class="card-meta">${programmeBadge(c)}${teamBadge(c)}${c.test ? `<span class="badge test">${esc(c.test)}</span>` : ""}${c.intake && c.intake !== "January 2027" ? `<span class="badge intake">${esc(c.intake)}</span>` : ""}${noMba(c) ? `<span class="badge nomba">No MBA planned</span>` : ""}</div>
+            ${evalOf(c) && evalOf(c).lineManager ? `<div class="card-lm">Line manager · ${esc(evalOf(c).lineManager)}</div>` : ""}
           </div>
         </div>
         <div class="card-schools">
@@ -230,7 +259,7 @@
     const items = [];
     candidates.forEach(c => c.applications.forEach(a => {
       parseDates(a.interview && a.interview.date).forEach(d => {
-        if (daysFrom(d) >= -3) items.push({ date: d, type: "interview", title: `${c.name}`, sub: `${school(a.school).short} interview`, href: `#/candidate/${c.id}` });
+        if (daysFrom(d) >= -3) items.push({ date: d, type: "interview", title: `${nameOf(c)}`, sub: `${school(a.school).short} interview`, href: `#/candidate/${c.id}` });
       });
     }));
     const usedSchools = new Set(candidates.flatMap(c => c.applications.map(a => a.school)));
@@ -259,26 +288,43 @@
   }
 
   /* ---------- rendering: profile ---------- */
-  function renderProfile(id) {
+  function renderProfile(id, tab) {
     const c = candidates.find(x => x.id === id);
     if (!c) return `<a class="back" href="#/">← All candidates</a><div class="empty">Candidate not found.</div>`;
-    const ni = nextInterview(c);
+    const ev = evalOf(c);
+    tab = tab === "mba" ? "mba" : "evaluation";
+    const snap = ev ? [
+      ["Line manager", ev.lineManager], ["Function at the Executive Office", ev.function || c.team],
+      ["Corporate Exchange project", ev.corporateExchangeProject], ["Previous MOD function", ev.previousFunction],
+      ["Academic qualifications", ev.academicQualifications], ["Corporate Exchange assessment", ev.reportFirm ? "Final report by " + ev.reportFirm : ""]
+    ].filter(x => x[1]) : [];
     return `
       <a class="back" href="#/">← All candidates</a>
       <div class="panel profile-head">
         ${avatar(c, true)}
         <div>
-          <h1>${esc(c.name)}</h1>
-          <div class="meta">${programmeBadge(c)}${teamBadge(c)}${c.test ? `<span class="badge test">${esc(c.test)}</span>` : ""}<span class="badge intake">Target intake: ${esc(c.intake || "—")}</span></div>
+          <h1>${esc(nameOf(c))}</h1>
+          <div class="meta">${programmeBadge(c)}${teamBadge(c)}${c.test ? `<span class="badge test">${esc(c.test)}</span>` : ""}${noMba(c) ? `<span class="badge nomba">No MBA planned</span>` : `<span class="badge intake">Target intake: ${esc(c.intake || "—")}</span>`}</div>
           ${c.notes ? `<div class="notes">${esc(c.notes)}</div>` : ""}
         </div>
         <div class="actions">
-          ${editMode ? `<button class="btn" data-edit="${esc(c.id)}">Edit</button><button class="btn danger" data-del="${esc(c.id)}">Delete</button>` : ""}
+          ${editMode ? `<button class="btn" data-edit-eval="${esc(c.id)}">Edit evaluation</button><button class="btn" data-edit="${esc(c.id)}">Edit MBA</button><button class="btn danger" data-del="${esc(c.id)}">Delete</button>` : ""}
         </div>
+        ${snap.length ? `<div class="snapshot">${snap.map(([k, v]) => `<div class="snap"><div class="k">${esc(k)}</div><div class="v">${esc(v)}</div></div>`).join("")}</div>` : ""}
       </div>
+      <div class="tabs">
+        <a class="tab ${tab === "evaluation" ? "on" : ""}" href="#/candidate/${esc(c.id)}">Evaluation</a>
+        <a class="tab ${tab === "mba" ? "on" : ""}" href="#/candidate/${esc(c.id)}/mba">MBA</a>
+      </div>
+      ${tab === "mba" ? renderMba(c) : renderEvaluation(c, ev)}`;
+  }
+
+  function renderMba(c) {
+    const ni = nextInterview(c);
+    return `
       <div class="profile-grid">
         <div class="apps">
-          ${c.applications.length ? c.applications.map(a => appCard(c, a)).join("") : `<div class="empty">No applications recorded yet.</div>`}
+          ${c.applications.length ? c.applications.map(a => appCard(c, a)).join("") : `<div class="empty">${noMba(c) ? "No MBA planned at the moment." : "No applications recorded yet."}</div>`}
         </div>
         <div class="side">
           <div class="panel">
@@ -287,7 +333,7 @@
               <dt>Schools</dt><dd>${c.applications.map(a => esc(school(a.school).short)).join(", ") || "—"}</dd>
               <dt>Next interview</dt><dd>${ni ? `${fmt(ni.date, true)} · ${esc(school(ni.school).short)}` : (pendingInterviews(c).length ? "Pending" : "—")}</dd>
               <dt>Programme</dt><dd>${esc(c.programme)}</dd>
-              ${c.programme === "Jahizoun" ? `<dt>EO team</dt><dd>${esc(c.team || "—")}</dd>` : ""}
+              ${c.programme === "Jahizoun" ? `<dt>EO function</dt><dd>${esc(c.team || "—")}</dd>` : ""}
               <dt>Intake</dt><dd>${esc(c.intake || "—")}</dd>
               <dt>Test score</dt><dd>${esc(c.test || "—")}</dd>
             </dl>
@@ -298,6 +344,58 @@
           </div>
         </div>
       </div>`;
+  }
+
+  /* ---------- evaluation view (V2) ---------- */
+  const CURRENT_Q = (() => { const d = today; return d.getFullYear() + " Q" + (Math.floor(d.getMonth() / 3) + 1); })();
+  function renderEvaluation(c, ev) {
+    if (!ev) return `<div class="empty">No evaluation data for this candidate yet.${editMode ? " Use “Edit evaluation” to add it." : ""}</div>`;
+    const Q = META.quarters, comps = META.competencies;
+    // phase spans
+    const spans = []; let i = 0;
+    while (i < Q.length) { const ph = ev.phases[Q[i]] || ""; let j = i; while (j + 1 < Q.length && (ev.phases[Q[j + 1]] || "") === ph) j++; spans.push({ phase: ph, from: i, to: j }); i = j + 1; }
+    const years = []; Q.forEach((q, k) => { const y = q.slice(0, 4); const last = years[years.length - 1]; if (last && last.year === y) last.to = k; else years.push({ year: y, from: k, to: k }); });
+    const assessed = Q.filter(q => comps.some(cp => (ev.ratings[cp] || {})[q]));
+    const latest = assessed[assessed.length - 1];
+    const cols = `grid-template-columns: 190px repeat(${Q.length}, minmax(34px, 1fr));`;
+    const cell = (cp, q) => { const r = (ev.ratings[cp] || {})[q]; const lbl = r ? META.ratings[r] : ""; return `<div class="ev-cell ${r ? "r-" + r : "r-empty"} ${q === latest ? "latest" : ""}" title="${esc(cp)} · ${esc(q)}${lbl ? ": " + esc(lbl) : ""}"></div>`; };
+    return `
+      <div class="profile-grid">
+        <div>
+          <div class="panel ev-panel">
+            <div class="panel-head"><h2>Competency evaluation</h2><span class="small muted">${latest ? "Latest assessment: " + esc(latest) : "No assessment yet"}</span></div>
+            <div class="ev-scroll"><div class="ev-grid" style="${cols}">
+              <div class="ev-corner"></div>
+              ${spans.map(sp => `<div class="ev-phase ${sp.phase ? "ph-" + slug(sp.phase) : "ph-none"}" style="grid-column: ${sp.from + 2} / ${sp.to + 3}">${esc(sp.phase)}</div>`).join("")}
+              <div class="ev-corner"></div>
+              ${years.map(y => `<div class="ev-year" style="grid-column: ${y.from + 2} / ${y.to + 3}">${y.year}</div>`).join("")}
+              <div class="ev-corner"></div>
+              ${Q.map(q => `<div class="ev-q ${q === CURRENT_Q ? "now" : ""} ${q === latest ? "latest" : ""}" title="${esc(q)}">${q.slice(5)}</div>`).join("")}
+              ${comps.map(cp => `<div class="ev-label">${esc(cp)}</div>${Q.map(q => cell(cp, q)).join("")}`).join("")}
+            </div></div>
+            <div class="ev-legend">
+              <span><i class="sw r-strong"></i>Strong</span><span><i class="sw r-effective"></i>Effective</span><span><i class="sw r-developing"></i>Developing</span><span><i class="sw r-na"></i>Not assessed</span>
+              <span class="sep"></span>
+              <span><i class="sw ph-corporate-exchange"></i>Corporate Exchange</span><span><i class="sw ph-eo-secondment"></i>EO Secondment</span><span><i class="sw ph-mba"></i>MBA</span>
+            </div>
+            <div class="ev-foot">${ev.reportFirm ? `Corporate Exchange phase assessed in the final report by ${esc(ev.reportFirm)}; ` : ""}EO Secondment phase assessed through the quarterly evaluations. The outlined column is the current quarter.</div>
+          </div>
+        </div>
+        <div class="side">
+          <div class="panel">
+            <div class="panel-head"><div><h2>${esc(META.commentaryTitle || "Commentary")}</h2>${META.commentaryDate ? `<div class="small muted">${esc(META.commentaryDate)}</div>` : ""}</div></div>
+            <div class="comm">
+              ${commBlock("Strengths", ev.strengths, "ic-plus")}
+              ${commBlock("Areas of improvement", ev.improvements, "ic-arrow")}
+              ${commBlock("Masters situation", ev.masters, "ic-dot")}
+            </div>
+          </div>
+        </div>
+      </div>`;
+  }
+  function commBlock(title, items, icon) {
+    if (!items || !items.length) return "";
+    return `<div class="comm-block"><h3 class="comm-title ${icon}">${esc(title)}</h3><ul class="comm-list ${icon}">${items.map(t => `<li>${esc(t)}</li>`).join("")}</ul></div>`;
   }
 
   function appCard(c, a) {
@@ -396,7 +494,7 @@
               return `<tr class="${r === nr ? "current-round" : ""} ${past ? "past" : ""}"><td>${esc(r.round)}</td><td class="num">${cell(r.application)}</td><td class="num">${cell(r.interviewDecision, r.interviewDecisionApprox, r.interviewDecisionLabel)}</td><td class="num">${cell(r.finalDecision, r.finalDecisionApprox)}</td></tr>`;
             }).join("")}</tbody>
           </table></div>
-          ${who.length ? `<div class="dl-who">Candidates: ${who.map(c => `<a href="#/candidate/${esc(c.id)}">${esc(c.name)}</a>`).join("")}</div>` : ""}
+          ${who.length ? `<div class="dl-who">Candidates: ${who.map(c => `<a href="#/candidate/${esc(c.id)}">${esc(nameOf(c))}</a>`).join("")}</div>` : ""}
           ${b.note ? `<div class="dl-note">${esc(b.note)}</div>` : ""}
         </div>`;
       }).join("")}`;
@@ -406,6 +504,7 @@
   function openEditor(id) {
     const isNew = !id;
     const c = isNew ? { id: "", name: "", programme: "Jahizoun", team: "", photo: "", intake: "January 2027", test: "", notes: "", applications: [] } : deepClone(candidates.find(x => x.id === id));
+    const extra = !isNew && isExtra(id);
     const bg = document.createElement("div");
     bg.className = "modal-bg";
     const statusOpts = sel => Object.keys(STATUSES).map(k => `<option value="${k}" ${sel === k ? "selected" : ""}>${esc(STATUSES[k].label)}</option>`).join("");
@@ -446,7 +545,7 @@
               <div style="display:grid;gap:10px" id="appRows">${c.applications.map(appRow).join("") || `<div class="hint">No schools yet. Add one above.</div>`}</div>
             </div>
           </div>
-          <div class="modal-foot"><span class="hint" style="margin-right:auto">Saved in this browser. Export data.js to publish.</span><button type="button" class="btn" data-close>Cancel</button><button class="btn primary" type="submit">Save</button></div>
+          <div class="modal-foot"><span class="hint" style="margin-right:auto">${isNew ? "New people added in V2 are stored in evaluation.js (V2 only)." : extra ? "This person exists only in V2 (evaluation.js)." : "Saved in this browser. Copy data.js to publish."}</span><button type="button" class="btn" data-close>Cancel</button><button class="btn primary" type="submit">Save</button></div>
         </form>`;
     };
     const readForm = () => {
@@ -480,11 +579,13 @@
       if (isNew) {
         let base = slug(c.name) || "candidate", id2 = base, n = 2;
         while (candidates.some(x => x.id === id2)) id2 = base + "-" + n++;
-        c.id = id2; candidates.push(c);
+        c.id = id2; c.mbaPlanned = c.applications.length > 0; evalState.extras.push(c); persistEval();
+      } else if (extra) {
+        const i = evalState.extras.findIndex(x => x.id === c.id); evalState.extras[i] = c; persistEval();
       } else {
-        const i = candidates.findIndex(x => x.id === c.id); candidates[i] = c;
+        const i = shared.findIndex(x => x.id === c.id); shared[i] = c; persist();
       }
-      persist(); bg.remove(); toast("Saved locally"); route();
+      candidates = merge(); bg.remove(); toast("Saved locally"); route();
       if (isNew) location.hash = "#/candidate/" + c.id;
     });
   }
@@ -507,9 +608,79 @@
     return fetch(ASSET_BASE + "js/data.js?v=" + Date.now(), { cache: "no-store" }).then(r => r.text()).then(src => {
       const start = src.indexOf("const CANDIDATES = [");
       const end = src.indexOf("/* Do not edit below this line. */");
-      const body = "const CANDIDATES = " + JSON.stringify(candidates, null, 2) + ";\n\n";
-      return start >= 0 && end > start ? src.slice(0, start) + body + src.slice(end) : "const CANDIDATES = " + JSON.stringify(candidates, null, 2) + ";";
-    }).catch(() => "const CANDIDATES = " + JSON.stringify(candidates, null, 2) + ";");
+      const body = "const CANDIDATES = " + JSON.stringify(shared, null, 2) + ";\n\n";
+      return start >= 0 && end > start ? src.slice(0, start) + body + src.slice(end) : "const CANDIDATES = " + JSON.stringify(shared, null, 2) + ";";
+    }).catch(() => "const CANDIDATES = " + JSON.stringify(shared, null, 2) + ";");
+  }
+  function buildEvalJs() {
+    return fetch("js/evaluation.js?v=" + Date.now(), { cache: "no-store" }).then(r => r.text()).then(src => {
+      const start = src.indexOf("const EXTRA_CANDIDATES = [");
+      const end = src.indexOf("/* Do not edit below this line. */");
+      const body = "const EXTRA_CANDIDATES = " + JSON.stringify(evalState.extras, null, 2) + ";\n\nconst NAME_OVERRIDES = " + JSON.stringify(EV.NAME_OVERRIDES, null, 2) + ";\n\nconst EVALUATIONS = " + JSON.stringify(evalState.evaluations, null, 2) + ";\n\n";
+      return start >= 0 && end > start ? src.slice(0, start) + body + src.slice(end) : body;
+    });
+  }
+  function copyEval() {
+    buildEvalJs().then(out => {
+      const done = () => toast("Copied. Now open v2/js/evaluation.js on GitHub, click the pencil, select all, paste, and commit.");
+      if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(out).then(done, () => fallbackCopy(out, done));
+      else fallbackCopy(out, done);
+    });
+  }
+
+  /* ---------- evaluation editor (V2) ---------- */
+  function openEvalEditor(id) {
+    const c = candidates.find(x => x.id === id); if (!c) return;
+    const ev = deepClone(evalState.evaluations[id] || { lineManager: "", function: c.team || "", corporateExchangeProject: "", previousFunction: "", academicQualifications: "", reportFirm: "", phases: {}, ratings: {}, strengths: [], improvements: [], masters: [] });
+    const Q = META.quarters, comps = META.competencies;
+    const bg = document.createElement("div"); bg.className = "modal-bg";
+    const field = (label, name, val) => `<div class="field"><label>${esc(label)}</label><input name="${name}" value="${esc(val || "")}"></div>`;
+    const ratingSel = (cp, q) => `<select data-cp="${esc(cp)}" data-q="${q}" class="r-sel ${(ev.ratings[cp] || {})[q] ? "r-" + (ev.ratings[cp] || {})[q] : ""}"><option value="">–</option>${Object.keys(META.ratings).map(k => `<option value="${k}" ${(ev.ratings[cp] || {})[q] === k ? "selected" : ""}>${esc(META.ratings[k])}</option>`).join("")}</select>`;
+    const phaseSel = q => `<select data-phase="${q}" class="ph-sel"><option value="">–</option>${META.phases.map(ph => `<option ${ev.phases[q] === ph ? "selected" : ""}>${esc(ph)}</option>`).join("")}</select>`;
+    bg.innerHTML = `
+      <form class="modal wide" id="evalForm">
+        <div class="modal-head"><h2>Edit evaluation · ${esc(nameOf(c))}</h2><button type="button" class="btn ghost" data-close>✕</button></div>
+        <div class="modal-body">
+          <div class="form-grid">
+            ${field("Line manager", "lineManager", ev.lineManager)}
+            ${field("Function at the Executive Office", "function", ev.function)}
+            ${field("Corporate Exchange project", "corporateExchangeProject", ev.corporateExchangeProject)}
+            ${field("Previous MOD function", "previousFunction", ev.previousFunction)}
+            ${field("Academic qualifications", "academicQualifications", ev.academicQualifications)}
+            ${field("Corporate Exchange final report by", "reportFirm", ev.reportFirm)}
+          </div>
+          <div>
+            <h3 style="margin-bottom:8px">Timeline and ratings</h3>
+            <div class="ev-scroll"><table class="ev-edit"><thead><tr><th></th>${Q.map(q => `<th>${q}</th>`).join("")}</tr></thead><tbody>
+              <tr><td>Phase</td>${Q.map(q => `<td>${phaseSel(q)}</td>`).join("")}</tr>
+              ${comps.map(cp => `<tr><td>${esc(cp)}</td>${Q.map(q => `<td>${ratingSel(cp, q)}</td>`).join("")}</tr>`).join("")}
+            </tbody></table></div>
+            <div class="hint">Leave a quarter as “–” when it has not been assessed yet.</div>
+          </div>
+          <div class="form-grid">
+            <div class="field"><label>Strengths (one per line)</label><textarea name="strengths" rows="5">${esc((ev.strengths || []).join("\n"))}</textarea></div>
+            <div class="field"><label>Areas of improvement (one per line)</label><textarea name="improvements" rows="5">${esc((ev.improvements || []).join("\n"))}</textarea></div>
+            <div class="field"><label>Masters situation (one per line)</label><textarea name="masters" rows="5">${esc((ev.masters || []).join("\n"))}</textarea></div>
+          </div>
+        </div>
+        <div class="modal-foot"><span class="hint" style="margin-right:auto">Saved in this browser. Use “Copy evaluation.js” to publish.</span><button type="button" class="btn" data-close>Cancel</button><button class="btn primary" type="submit">Save</button></div>
+      </form>`;
+    document.body.appendChild(bg);
+    bg.addEventListener("click", e => { if (e.target === bg || e.target.closest("[data-close]")) bg.remove(); });
+    bg.addEventListener("change", e => { if (e.target.classList.contains("r-sel")) e.target.className = "r-sel " + (e.target.value ? "r-" + e.target.value : ""); });
+    bg.addEventListener("submit", e => {
+      e.preventDefault();
+      const f = bg.querySelector("#evalForm");
+      ["lineManager", "function", "corporateExchangeProject", "previousFunction", "academicQualifications", "reportFirm"].forEach(k => ev[k] = f[k].value.trim());
+      const lines = k => f[k].value.split("\n").map(x => x.trim()).filter(Boolean);
+      ev.strengths = lines("strengths"); ev.improvements = lines("improvements"); ev.masters = lines("masters");
+      ev.phases = {}; bg.querySelectorAll(".ph-sel").forEach(sel => { if (sel.value) ev.phases[sel.dataset.phase] = sel.value; });
+      ev.ratings = {}; comps.forEach(cp => ev.ratings[cp] = {});
+      bg.querySelectorAll(".r-sel").forEach(sel => { if (sel.value) ev.ratings[sel.dataset.cp][sel.dataset.q] = sel.value; });
+      evalState.evaluations[id] = ev;
+      if (ev.function && isExtra(id)) { const x = evalState.extras.find(y => y.id === id); if (x) x.team = ev.function; candidates = merge(); }
+      persistEval(); bg.remove(); toast("Evaluation saved locally"); route();
+    });
   }
   function exportData() {
     buildDataJs().then(out => {
@@ -544,8 +715,8 @@
   function route() {
     const h = location.hash || "#/";
     let view = "home", html;
-    const m = h.match(/^#\/candidate\/([^/]+)/);
-    if (m) { view = "profile"; html = renderProfile(decodeURIComponent(m[1])); }
+    const m = h.match(/^#\/candidate\/([^/]+)(?:\/(mba|evaluation))?/);
+    if (m) { view = "profile"; html = renderProfile(decodeURIComponent(m[1]), m[2]); }
     else if (h.startsWith("#/deadlines")) { view = "deadlines"; html = renderDeadlines(); }
     else html = renderHome();
     app.innerHTML = html;
@@ -579,18 +750,26 @@
   document.getElementById("addBtn").addEventListener("click", () => openEditor(null));
   document.getElementById("exportBtn").addEventListener("click", exportData);
   document.getElementById("copyBtn").addEventListener("click", copyData);
+  document.getElementById("copyEvalBtn").addEventListener("click", copyEval);
   document.getElementById("resetBtn").addEventListener("click", () => {
-    if (!hasLocalChanges()) { toast("No local changes to discard."); return; }
-    if (confirm("Discard all changes saved in this browser and reload the data from data.js?")) {
-      localStorage.removeItem(STORAGE_KEY); localStorage.removeItem(STORAGE_KEY + ":base"); candidates = deepClone(BASE.CANDIDATES); route(); toast("Local changes discarded.");
+    if (!hasLocalChanges() && !hasLocalEval()) { toast("No local changes to discard."); return; }
+    if (confirm("Discard all changes saved in this browser and reload the published data?")) {
+      localStorage.removeItem(STORAGE_KEY); localStorage.removeItem(STORAGE_KEY + ":base");
+      localStorage.removeItem(EVAL_KEY); localStorage.removeItem(EVAL_KEY + ":base");
+      shared = deepClone(BASE.CANDIDATES); evalState = { extras: deepClone(EV.EXTRA_CANDIDATES), evaluations: deepClone(EV.EVALUATIONS) }; candidates = merge(); route(); toast("Local changes discarded.");
     }
   });
   app.addEventListener("click", e => {
+    const ee = e.target.closest("[data-edit-eval]"); if (ee) { openEvalEditor(ee.dataset.editEval); return; }
     const ed = e.target.closest("[data-edit]"); if (ed) { openEditor(ed.dataset.edit); return; }
     const del = e.target.closest("[data-del]");
     if (del) {
       const c = candidates.find(x => x.id === del.dataset.del);
-      if (c && confirm(`Delete ${c.name} from the tracker?`)) { candidates = candidates.filter(x => x.id !== c.id); persist(); location.hash = "#/"; }
+      if (c && confirm(`Delete ${nameOf(c)} from the tracker?`)) {
+        if (isExtra(c.id)) { evalState.extras = evalState.extras.filter(x => x.id !== c.id); persistEval(); }
+        else { shared = shared.filter(x => x.id !== c.id); persist(); }
+        candidates = merge(); location.hash = "#/";
+      }
     }
   });
 
@@ -609,5 +788,5 @@
   window.addEventListener("hashchange", route);
   route();
   if (staleLocalDiscarded) toast("The published dashboard was updated on GitHub, so it replaced the copy saved in this browser.");
-  else if (hasLocalChanges()) toast("Showing unpublished changes saved in this browser. Use Copy data.js to publish them.");
+  else if (hasLocalChanges() || hasLocalEval()) toast("Showing unpublished changes saved in this browser. Use the Copy buttons to publish them.");
 })();

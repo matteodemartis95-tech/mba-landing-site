@@ -74,4 +74,4 @@ Open `index.html` in a browser, or serve the folder (for example `python3 -m htt
 
 ## V2 preview
 
-`v2/` is a second copy of the page, styles and code used to try out a new design without touching the current dashboard. It shares `js/data.js` and the `Logos/` folder, so the data is always the same. It is published at `https://matteodemartis95-tech.github.io/mba-landing-site/v2/`. When V2 is ready, its `index.html`, `css/` and `js/app.js` replace the ones in the root folder.
+`v2/` is a second copy of the page, styles and code used to try out a new design without touching the current dashboard. It shares `js/data.js` and the `Logos/` folder, so the MBA data is always the same. V2 adds `v2/js/evaluation.js` (competency evaluations from the profile cards deck, plus people who are in the deck but not in the MBA tracker); that file is used by V2 only. In V2's Edit mode, "Copy evaluation.js" produces the updated file to paste into `v2/js/evaluation.js`. It is published at `https://matteodemartis95-tech.github.io/mba-landing-site/v2/`. When V2 is ready, its `index.html`, `css/` and `js/app.js` replace the ones in the root folder.
