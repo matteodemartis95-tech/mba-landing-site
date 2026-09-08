@@ -370,8 +370,8 @@ const CANDIDATES = [
         "school": "HEC",
         "status": "scheduled",
         "interview": {
-          "date": "",
-          "note": "Two HEC alumni interviews this week; dates to be confirmed."
+          "date": "2026-09-07, 2026-09-11",
+          "note": "Two HEC alumni interviews: first completed on 7 Sep, second on 11 Sep."
         },
         "notes": ""
       },

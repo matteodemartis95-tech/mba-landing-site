@@ -260,9 +260,9 @@
           </div>
         </div>
         <div class="card-schools">
-          ${c.applications.map(a => `<span class="school-chip" title="${esc(school(a.school).name)}: ${esc(status(a.status).label)}"><img class="logo" src="${esc(asset(school(a.school).logo))}" alt=""><span>${esc(school(a.school).short)}</span><span class="st ${status(a.status).tone}"></span></span>`).join("") || `<span class="muted small">No schools yet</span>`}
+          ${c.applications.map(a => `<span class="school-chip" title="${esc(school(a.school).name)}: ${esc(status(a.status).label)}"><img class="logo" src="${esc(asset(school(a.school).logo))}" alt=""><span>${esc(school(a.school).short)}</span><span class="st ${status(a.status).tone}"></span></span>`).join("") || (noMba(c) ? "" : `<span class="muted small">No schools yet</span>`)}
         </div>
-        <div class="card-foot"><div><div class="foot-k">${footK}</div><div class="foot-v">${footV}</div></div><span class="muted">${c.applications.length} school${c.applications.length === 1 ? "" : "s"}</span></div>
+        <div class="card-foot"><div><div class="foot-k">${footK}</div><div class="foot-v">${footV}</div></div>${noMba(c) ? "" : `<span class="muted">${c.applications.length} school${c.applications.length === 1 ? "" : "s"}</span>`}</div>
       </a>`;
   }
 
