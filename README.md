@@ -64,3 +64,7 @@ Note: a GitHub Pages site from a public repository is publicly reachable by anyo
 ## Running locally
 
 Open `index.html` in a browser, or serve the folder (for example `python3 -m http.server`) so that *Export data.js* can download a complete file.
+
+## V2 preview
+
+`v2/` is a second copy of the page, styles and code used to try out a new design without touching the current dashboard. It shares `js/data.js` and the `Logos/` folder, so the data is always the same. It is published at `https://matteodemartis95-tech.github.io/mba-landing-site/v2/`. When V2 is ready, its `index.html`, `css/` and `js/app.js` replace the ones in the root folder.
