@@ -308,11 +308,11 @@
     if (!c) return `<a class="back" href="#/">← All candidates</a><div class="empty">Candidate not found.</div>`;
     const ev = evalOf(c);
     tab = tab === "mba" ? "mba" : "evaluation";
+    // always the same six fields in the same order, so every profile lines up identically
     const snap = ev ? [
-      ["Line manager", ev.lineManager], ["Function at the Executive Office", ev.function || c.team],
-      ["Corporate Exchange project", ev.corporateExchangeProject], ["Previous MOD function", ev.previousFunction],
-      ["Academic qualifications", ev.academicQualifications], ["Corporate Exchange company", ev.reportFirm]
-    ].filter(x => x[1]) : [];
+      ["Line manager", ev.lineManager], ["Function at the Executive Office", ev.function || c.team], ["Academic qualifications", ev.academicQualifications],
+      ["Previous MOD function", ev.previousFunction], ["Corporate Exchange company", ev.reportFirm], ["Corporate Exchange project", ev.corporateExchangeProject]
+    ] : [];
     return `
       <a class="back" href="#/">← All candidates</a>
       <div class="panel profile-head">
@@ -325,7 +325,7 @@
         <div class="actions">
           ${editMode ? `<button class="btn" data-edit-eval="${esc(c.id)}">Edit evaluation</button><button class="btn" data-edit="${esc(c.id)}">Edit MBA</button><button class="btn danger" data-del="${esc(c.id)}">Delete</button>` : ""}
         </div>
-        ${snap.length ? `<div class="snapshot">${snap.map(([k, v]) => `<div class="snap"><div class="k">${esc(k)}</div><div class="v">${esc(v)}</div></div>`).join("")}</div>` : ""}
+        ${snap.length ? `<div class="snapshot">${snap.map(([k, v]) => `<div class="snap"><div class="k">${esc(k)}</div><div class="v ${v ? "" : "muted"}">${esc(v || "—")}</div></div>`).join("")}</div>` : ""}
       </div>
       <div class="tabs">
         <a class="tab ${tab === "evaluation" ? "on" : ""}" href="#/candidate/${esc(c.id)}">Evaluation</a>

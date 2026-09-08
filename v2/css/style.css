@@ -334,9 +334,11 @@ td .approx { color: var(--text-3); font-size: 11px; margin-left: 4px; }
 .badge.nomba { background: var(--muted-soft); color: var(--muted-ink); font-weight: 600; }
 .card-lm { font-size: 12px; color: var(--text-3); margin-top: 6px; }
 .profile-head { flex-wrap: wrap; }
-.snapshot { flex-basis: 100%; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; border-top: 1px solid var(--border); padding-top: 16px; margin-top: 4px; }
-.snap .k { font-size: 11px; color: var(--text-3); text-transform: uppercase; letter-spacing: .05em; }
-.snap .v { font-weight: 500; margin-top: 3px; }
+.snapshot { flex-basis: 100%; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px 28px; border-top: 1px solid var(--border); padding-top: 16px; margin-top: 4px; }
+.snap { display: grid; grid-template-rows: 16px auto; gap: 4px; }
+.snap .k { font-size: 11px; color: var(--text-3); text-transform: uppercase; letter-spacing: .05em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; line-height: 16px; }
+.snap .v { font-weight: 500; line-height: 1.35; }
+@media (max-width: 760px) { .snapshot { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 .tabs { display: flex; gap: 6px; margin-bottom: 16px; border-bottom: 1px solid var(--border); }
 .tab { padding: 10px 18px; font-weight: 600; color: var(--text-2); border-bottom: 2px solid transparent; margin-bottom: -1px; }
 .tab:hover { color: var(--text); }
