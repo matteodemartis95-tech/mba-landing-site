@@ -6,7 +6,10 @@
   <title>Jahizoun / EDGE Tracker V2</title>
   <meta name="robots" content="noindex, nofollow">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%232a78d6'/><text x='32' y='42' font-size='30' font-family='Arial' font-weight='700' fill='white' text-anchor='middle'>J</text></svg>">
-  <link rel="stylesheet" href="css/style.css">
+  <script>
+    // Stylesheet loaded with a unique query string so style updates are never served from a cache.
+    document.write('<link rel="stylesheet" href="css/style.css?v=' + Date.now() + '">');
+  </script>
   <script>window.ASSET_BASE = "../";</script>
   <meta http-equiv="Cache-Control" content="no-cache">
 </head>
