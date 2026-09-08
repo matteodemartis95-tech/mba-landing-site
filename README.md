@@ -2,6 +2,13 @@
 
 Internal dashboard to follow the MBA applications of the Jahizoun and EDGE candidates on EO secondment.
 
+**Open the dashboard (live pages, served by GitHub Pages):**
+
+- Current version: https://matteodemartis95-tech.github.io/mba-landing-site/
+- V2 preview: https://matteodemartis95-tech.github.io/mba-landing-site/v2/
+
+Clicking files here on GitHub shows their source code, not the dashboard. Use the links above to see the pages.
+
 It is a static site (plain HTML, CSS and JavaScript, no build step). Everything it shows comes from one file: **`js/data.js`**.
 
 ## Pages
