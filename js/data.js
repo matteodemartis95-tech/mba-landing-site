@@ -161,10 +161,10 @@ const CANDIDATES = [
       },
       {
         "school": "CBS",
-        "status": "submitted",
+        "status": "scheduled",
         "interview": {
           "date": "",
-          "note": ""
+          "note": "Interview next week, date to be confirmed."
         },
         "notes": ""
       }
@@ -200,19 +200,19 @@ const CANDIDATES = [
       },
       {
         "school": "INSEAD",
-        "status": "submitted",
+        "status": "scheduled",
         "interview": {
           "date": "",
-          "note": ""
+          "note": "Interview invite received; date to be confirmed."
         },
         "notes": ""
       },
       {
         "school": "NYUAD",
-        "status": "submitted",
+        "status": "scheduled",
         "interview": {
           "date": "",
-          "note": ""
+          "note": "Interview invite received; date to be confirmed."
         },
         "notes": ""
       }
@@ -239,19 +239,19 @@ const CANDIDATES = [
       },
       {
         "school": "IMD",
-        "status": "applying",
+        "status": "scheduled",
         "interview": {
-          "date": "",
-          "note": ""
+          "date": "2026-09-25",
+          "note": "IMD Assessment Day."
         },
-        "notes": "IMD under editing."
+        "notes": ""
       },
       {
         "school": "NYUAD",
-        "status": "submitted",
+        "status": "scheduled",
         "interview": {
           "date": "",
-          "note": ""
+          "note": "Interview invite received; date to be confirmed."
         },
         "notes": ""
       }
@@ -293,6 +293,15 @@ const CANDIDATES = [
           "note": ""
         },
         "notes": "Awaiting IMD drafts."
+      },
+      {
+        "school": "CBS",
+        "status": "rejected",
+        "interview": {
+          "date": "",
+          "note": ""
+        },
+        "notes": "Rejected by Columbia without an interview."
       }
     ]
   },
@@ -308,12 +317,12 @@ const CANDIDATES = [
     "applications": [
       {
         "school": "INSEAD",
-        "status": "submitted",
+        "status": "scheduled",
         "interview": {
-          "date": "",
-          "note": ""
+          "date": "2026-09-10",
+          "note": "First interview completed on 10 Sep; second interview next week, date to be confirmed."
         },
-        "notes": "Awaiting INSEAD outcome."
+        "notes": ""
       }
     ]
   },
@@ -470,12 +479,12 @@ const CANDIDATES = [
     "applications": [
       {
         "school": "INSEAD",
-        "status": "submitted",
+        "status": "scheduled",
         "interview": {
           "date": "",
-          "note": ""
+          "note": "Interview invite received; date to be confirmed."
         },
-        "notes": "Interview decision pending."
+        "notes": ""
       }
     ]
   },
@@ -500,12 +509,12 @@ const CANDIDATES = [
       },
       {
         "school": "NYUAD",
-        "status": "submitted",
+        "status": "scheduled",
         "interview": {
           "date": "",
-          "note": ""
+          "note": "Interview invite received; date to be confirmed."
         },
-        "notes": "Interview decision pending."
+        "notes": ""
       }
     ]
   },
