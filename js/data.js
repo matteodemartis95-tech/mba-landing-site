@@ -530,9 +530,9 @@ const CANDIDATES = [
     "applications": [
       {
         "school": "NYUAD",
-        "status": "submitted",
+        "status": "scheduled",
         "interview": {
-          "date": "",
+          "date": "2026-09-15",
           "note": ""
         },
         "notes": "Interview decision pending"
