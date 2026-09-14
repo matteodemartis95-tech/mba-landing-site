@@ -194,24 +194,147 @@ const COURSES = [
   {
     "id": "ldp",
     "name": "LDP",
-    "fullName": "Leadership Development Programme",
+    "fullName": "Leadership Development Programme · Leadership Bootcamp with HNI",
     "trained": 450,
-    "target": null,
+    "target": 1000,
     "unit": "people trained",
     "status": "",
     "nextDate": "",
     "nextLabel": "",
     "notes": "",
-    "description": "",
-    "audience": "",
-    "programmeFormat": "",
+    "description": "Arabic-delivered Leadership Bootcamp, run with HNI, to accelerate leadership readiness across the MOD workforce by building both self-leadership and people-leadership capabilities. Each cohort follows a 4.5-day face-to-face journey: Leading Self (2 days), Leading Others (2 days) and a half-day integration and reflection session, delivered by certified Arabic-speaking facilitators through simulations, role-plays and reflection circles.",
+    "audience": "MOD employees across the organisation; 1,000 participants in rotating cohorts.",
+    "programmeFormat": "4.5-day cohorts, Monday to Friday",
     "targetPeriod": "",
     "objectives": [],
-    "modules": [],
-    "cohorts": [],
-    "cohortsDone": null,
-    "cohortsTotal": null,
-    "kpis": []
+    "modules": [
+      {
+        "title": "Leading Self",
+        "summary": "Self-leadership, ownership and growth mindset; self-awareness (Personal SWOT); communication with clarity, confidence and presence (2 days)"
+      },
+      {
+        "title": "Leading Others",
+        "summary": "Team dynamics and performance stages; constructive feedback (CEDAR); team goals aligned with the MOD mission; trust, accountability and conflict resolution (2 days)"
+      },
+      {
+        "title": "Integration & Reflection",
+        "summary": "Experiential group activities connecting both modules to real workplace scenarios; leadership commitments and improvement plans (half day)"
+      }
+    ],
+    "cohorts": [
+      {
+        "label": "Cohort 21",
+        "start": "2026-09-14",
+        "end": "2026-09-18",
+        "participants": null,
+        "status": "planned",
+        "note": "Venue to be confirmed"
+      },
+      {
+        "label": "Cohort 22",
+        "start": "2026-09-21",
+        "end": "2026-09-25",
+        "participants": null,
+        "status": "planned",
+        "note": "Multi-purpose Rooms 1, 5th Floor (Mon–Fri)"
+      },
+      {
+        "label": "Cohort 23",
+        "start": "2026-09-21",
+        "end": "2026-09-25",
+        "participants": null,
+        "status": "planned",
+        "note": "MOD Dubai – TBC"
+      },
+      {
+        "label": "Cohort 25",
+        "start": "2026-10-05",
+        "end": "2026-10-09",
+        "participants": null,
+        "status": "planned",
+        "note": "Multi-purpose Rooms 1, 5th Floor (Mon–Fri)"
+      },
+      {
+        "label": "Cohort 26",
+        "start": "2026-10-12",
+        "end": "2026-10-16",
+        "participants": null,
+        "status": "planned",
+        "note": "Venue to be confirmed"
+      },
+      {
+        "label": "Cohort 27",
+        "start": "2026-10-19",
+        "end": "2026-10-23",
+        "participants": null,
+        "status": "planned",
+        "note": "Multi-purpose Rooms 1, 5th Floor (Mon–Fri)"
+      },
+      {
+        "label": "Cohort 28",
+        "start": "2026-11-02",
+        "end": "2026-11-06",
+        "participants": null,
+        "status": "planned",
+        "note": "Multi-purpose Rooms 1, 5th Floor (Mon–Fri)"
+      },
+      {
+        "label": "Cohort 29",
+        "start": "2026-11-09",
+        "end": "2026-11-13",
+        "participants": null,
+        "status": "planned",
+        "note": "Multi-purpose Rooms 1, 5th Floor (Mon–Fri)"
+      },
+      {
+        "label": "Dubai cohort",
+        "start": "2026-11-09",
+        "end": "2026-11-13",
+        "participants": null,
+        "status": "planned",
+        "note": "MOD Dubai – TBC"
+      },
+      {
+        "label": "Cohort 30",
+        "start": "2026-11-16",
+        "end": "2026-11-20",
+        "participants": null,
+        "status": "planned",
+        "note": "Venue to be confirmed"
+      },
+      {
+        "label": "Cohort 31",
+        "start": "2026-12-14",
+        "end": "2026-12-18",
+        "participants": null,
+        "status": "planned",
+        "note": "Venue to be confirmed"
+      },
+      {
+        "label": "Cohort 32",
+        "start": "2026-12-21",
+        "end": "2026-12-25",
+        "participants": null,
+        "status": "planned",
+        "note": "Multi-purpose Rooms 1, 5th Floor (Mon–Fri)"
+      },
+      {
+        "label": "Cohort 33",
+        "start": "2027-01-18",
+        "end": "2027-01-22",
+        "participants": null,
+        "status": "planned",
+        "note": "Multi-purpose Rooms 1, 5th Floor (Mon–Fri)"
+      }
+    ],
+    "cohortsDone": 20,
+    "cohortsTotal": 33,
+    "kpis": [
+      {
+        "label": "Attendance rate",
+        "value": "75%"
+      }
+    ]
   },
   {
     "id": "mbzuai-ai-for-all",
