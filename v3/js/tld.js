@@ -82,8 +82,8 @@ const COURSES = [
     "category": "Development programmes",
     "docs": [
       {
-        "label": "Media Training curriculum",
-        "url": ""
+        "label": "Media Training curriculum (IMI Media Academy proposal)",
+        "url": "docs/media-training-curriculum.pdf"
       }
     ]
   },
