@@ -333,7 +333,7 @@
           <div><div class="card-name">${esc(k.name)}</div>${k.fullName ? `<div class="small muted">${esc(k.fullName)}</div>` : ""}</div>
           <span class="badge pmo">PMO</span>
         </div>
-        <div class="course-num"><span class="big">${fmtNum(k.trained)}</span><span class="of">/ ${hasTarget ? fmtNum(k.target) : "<span class=tbc>target TBC</span>"}</span></div>
+        <div class="course-num"><span class="big">${fmtNum(k.trained)}</span><span class="of">/ ${hasTarget ? fmtNum(k.target) + (k.targetPeriod ? " " + esc(k.targetPeriod) : "") : "<span class=tbc>target TBC</span>"}</span></div>
         <div class="small muted">${esc(k.unit || "people trained")}</div>
         <div class="meter"><div class="fill" style="width:${pct == null ? 0 : pct}%"></div></div>
         <div class="course-foot">
@@ -384,34 +384,69 @@
     if (!k) return `<a class="back" href="#/">← T&amp;LD</a><div class="empty">Course not found.</div>`;
     const hasTarget = k.target != null && k.target !== "";
     const pct = hasTarget && k.target > 0 ? Math.min(100, Math.round(100 * (k.trained || 0) / k.target)) : null;
-    const nd = parseDate(k.nextDate);
+    const cohorts = (k.cohorts || []).slice().sort((a, b) => (parseDate(a.start) || 0) - (parseDate(b.start) || 0));
+    const next = cohorts.find(c => c.status !== "completed" && parseDate(c.start) && daysFrom(parseDate(c.start)) >= 0) || cohorts.find(c => c.status === "running");
+    const nd = next ? parseDate(next.start) : parseDate(k.nextDate);
+    const hasDesc = k.description || k.audience || (k.objectives || []).length || (k.modules || []).length;
+    const cohortRow = c => { const sd = parseDate(c.start), ed = parseDate(c.end); return `
+      <div class="agenda-item deadline ${c.status === "completed" ? "past" : ""}">
+        <div class="agenda-date">${sd ? `<b>${sd.getDate()}</b><span>${MONTHS[sd.getMonth()]}</span>` : `<b>—</b><span>TBC</span>`}</div>
+        <div class="agenda-text"><b>${esc(c.label)}</b>${c.participants ? ` · ${fmtNum(c.participants)} participants` : ""}<span class="small">${sd ? fmt(sd) : "Date TBC"}${ed ? " – " + fmt(ed) : ""} · ${esc(c.status || "planned")}${c.note ? " · " + esc(c.note) : ""}</span></div>
+      </div>`; };
     return `
       <a class="back" href="#/">← T&amp;LD</a>
       <div class="panel profile-head">
         <div class="course-icon">${esc((k.name.split(/\s+/).length > 1 ? k.name.split(/\s+/).map(w => w[0]).join("") : k.name).slice(0, 3).toUpperCase())}</div>
         <div>
           <h1>${esc(k.name)}</h1>
-          <div class="meta"><span class="badge pmo">PMO</span>${k.fullName ? `<span class="badge intake">${esc(k.fullName)}</span>` : ""}</div>
+          <div class="meta"><span class="badge pmo">PMO</span>${k.fullName ? `<span class="badge intake">${esc(k.fullName)}</span>` : ""}${k.programmeFormat ? `<span class="badge intake">${esc(k.programmeFormat)}</span>` : ""}</div>
           ${k.notes ? `<div class="notes">${esc(k.notes)}</div>` : ""}
         </div>
         <div class="actions">${editMode ? `<button class="btn" data-edit-course="${esc(k.id)}">Edit course</button><button class="btn danger" data-del-course="${esc(k.id)}">Delete</button>` : ""}</div>
         <div class="snapshot">
           <div class="snap"><div class="k">${esc(k.unit || "People trained")}</div><div class="v">${fmtNum(k.trained)}</div></div>
-          <div class="snap"><div class="k">Target</div><div class="v ${hasTarget ? "" : "muted"}">${hasTarget ? fmtNum(k.target) : "TBC"}</div></div>
+          <div class="snap"><div class="k">Target${k.targetPeriod ? " " + esc(k.targetPeriod) : ""}</div><div class="v ${hasTarget ? "" : "muted"}">${hasTarget ? fmtNum(k.target) : "TBC"}</div></div>
           <div class="snap"><div class="k">Progress</div><div class="v ${pct == null ? "muted" : ""}">${pct == null ? "—" : pct + "%"}</div></div>
-          <div class="snap"><div class="k">Next milestone</div><div class="v ${nd ? "" : "muted"}">${nd ? fmt(nd, true) + (k.nextLabel ? " · " + esc(k.nextLabel) : "") : "—"}</div></div>
+          <div class="snap"><div class="k">Next cohort</div><div class="v ${nd ? "" : "muted"}">${next ? `${fmt(nd, true)} · ${esc(next.label)}${next.participants ? " · " + fmtNum(next.participants) + " participants" : ""}` : (nd ? fmt(nd, true) + (k.nextLabel ? " · " + esc(k.nextLabel) : "") : "Not scheduled")}</div></div>
           <div class="snap"><div class="k">Status</div><div class="v ${k.status ? "" : "muted"}">${esc(k.status || "—")}</div></div>
         </div>
       </div>
-      <div class="empty">The content of this PMO page (sessions, participants, milestones, budget…) is still to be defined.</div>`;
+      <div class="profile-grid">
+        <div>
+          ${hasDesc ? `
+          <div class="panel">
+            <div class="panel-head"><h2>About the programme</h2></div>
+            <div class="about">
+              ${k.description ? `<p>${esc(k.description)}</p>` : ""}
+              ${k.audience ? `<div class="about-row"><div class="k">Target audience</div><div>${esc(k.audience)}</div></div>` : ""}
+              ${(k.objectives || []).length ? `<div class="about-row"><div class="k">Objectives</div><ul class="comm-list ic-plus">${k.objectives.map(o => `<li>${esc(o)}</li>`).join("")}</ul></div>` : ""}
+            </div>
+          </div>` : ""}
+          ${(k.modules || []).length ? `
+          <div class="panel" style="margin-top:16px">
+            <div class="panel-head"><h2>Curriculum</h2><span class="small muted">${esc(k.programmeFormat || (k.modules.length + " modules"))}</span></div>
+            <div class="modules">
+              ${k.modules.map((m, i) => `<div class="module"><div class="module-n">${i + 1}</div><div><div class="module-t">${esc(m.title)}</div>${m.summary ? `<div class="module-s">${esc(m.summary)}</div>` : ""}</div></div>`).join("")}
+            </div>
+          </div>` : ""}
+          ${!hasDesc && !(k.modules || []).length ? `<div class="empty">Programme description still to be added.</div>` : ""}
+        </div>
+        <div class="side">
+          <div class="panel">
+            <div class="panel-head"><h2>Cohorts</h2><span class="small muted">${cohorts.length ? cohorts.length + " planned" : ""}</span></div>
+            <div class="panel-body">${cohorts.length ? cohorts.map(cohortRow).join("") : `<div class="muted" style="padding:12px 16px">No cohorts scheduled yet.</div>`}</div>
+          </div>
+        </div>
+      </div>`;
   }
   function openCourseEditor(id) {
     const isNew = !id;
-    const k = isNew ? { id: "", name: "", fullName: "", trained: 0, target: null, unit: "people trained", status: "", nextDate: "", nextLabel: "", notes: "" } : deepClone(courses.find(x => x.id === id));
+    const k = isNew ? { id: "", name: "", fullName: "", trained: 0, target: null, targetPeriod: "", unit: "people trained", status: "", nextDate: "", nextLabel: "", description: "", audience: "", programmeFormat: "", objectives: [], modules: [], cohorts: [], notes: "" } : deepClone(courses.find(x => x.id === id));
+    const lines = (arr, f) => (arr || []).map(f).join("\n");
     const bg = document.createElement("div"); bg.className = "modal-bg";
     const field = (label, name, val, type, ph) => `<div class="field"><label>${esc(label)}</label><input name="${name}" type="${type || "text"}" value="${esc(val == null ? "" : val)}" placeholder="${esc(ph || "")}"></div>`;
     bg.innerHTML = `
-      <form class="modal" id="courseForm">
+      <form class="modal wide" id="courseForm">
         <div class="modal-head"><h2>${isNew ? "Add course" : "Edit " + esc(k.name)}</h2><button type="button" class="btn ghost" data-close>✕</button></div>
         <div class="modal-body">
           <div class="form-grid">
@@ -419,10 +454,17 @@
             ${field("Full name (optional)", "fullName", k.fullName)}
             ${field("Trained so far", "trained", k.trained, "number")}
             ${field("Target (leave empty if not confirmed)", "target", k.target, "number")}
+            ${field("Target period", "targetPeriod", k.targetPeriod, "text", "per year")}
             ${field("What is counted", "unit", k.unit, "text", "people trained / users activated")}
             ${field("Status line", "status", k.status, "text", "e.g. First training starts 21 Sep 2026")}
             ${field("Next milestone date (YYYY-MM-DD)", "nextDate", k.nextDate, "text", "2026-09-21")}
             ${field("Next milestone label", "nextLabel", k.nextLabel)}
+            ${field("Programme format", "programmeFormat", k.programmeFormat, "text", "e.g. Progressive five-day programme")}
+            <div class="field wide"><label>Quick description</label><textarea name="description" rows="4">${esc(k.description || "")}</textarea></div>
+            <div class="field wide"><label>Target audience</label><textarea name="audience" rows="2">${esc(k.audience || "")}</textarea></div>
+            <div class="field wide"><label>Objectives (one per line)</label><textarea name="objectives" rows="4">${esc(lines(k.objectives, o => o))}</textarea></div>
+            <div class="field wide"><label>Curriculum modules (one per line: Title: summary)</label><textarea name="modules" rows="5">${esc(lines(k.modules, m => m.summary ? m.title + ": " + m.summary : m.title))}</textarea></div>
+            <div class="field wide"><label>Cohorts (one per line: Label | start YYYY-MM-DD | end YYYY-MM-DD | participants | status | note)</label><textarea name="cohorts" rows="3">${esc(lines(k.cohorts, c => [c.label, c.start, c.end, c.participants, c.status, c.note].map(x => x == null ? "" : x).join(" | ")))}</textarea></div>
             <div class="field wide"><label>Notes</label><textarea name="notes">${esc(k.notes)}</textarea></div>
           </div>
         </div>
@@ -433,7 +475,11 @@
     bg.addEventListener("submit", e => {
       e.preventDefault();
       const f = bg.querySelector("#courseForm");
-      ["name", "fullName", "unit", "status", "nextDate", "nextLabel", "notes"].forEach(x => k[x] = f[x].value.trim());
+      ["name", "fullName", "unit", "status", "nextDate", "nextLabel", "notes", "targetPeriod", "programmeFormat", "description", "audience"].forEach(x => k[x] = f[x].value.trim());
+      const ln = x => f[x].value.split("\n").map(t => t.trim()).filter(Boolean);
+      k.objectives = ln("objectives");
+      k.modules = ln("modules").map(t => { const i = t.indexOf(":"); return i > 0 ? { title: t.slice(0, i).trim(), summary: t.slice(i + 1).trim() } : { title: t, summary: "" }; });
+      k.cohorts = ln("cohorts").map(t => { const p = t.split("|").map(x => x.trim()); return { label: p[0] || "Cohort", start: p[1] || "", end: p[2] || "", participants: p[3] ? +p[3] : null, status: p[4] || "planned", note: p[5] || "" }; });
       k.trained = f.trained.value === "" ? 0 : +f.trained.value;
       k.target = f.target.value === "" ? null : +f.target.value;
       if (!k.name) return;
