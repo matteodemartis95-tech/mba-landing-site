@@ -100,12 +100,12 @@ const COURSES = [
     "name": "Ruwaad",
     "fullName": "Change management and institutional transformation programme",
     "trained": 325,
-    "target": 1000,
+    "target": 840,
     "unit": "people trained",
-    "status": "12 of 20 cohorts delivered",
+    "status": "",
     "nextDate": "",
     "nextLabel": "",
-    "notes": "",
+    "notes": "Cohort size reduced from 50 to 30 participants; target adjusted to 840.",
     "description": "Programme building incremental change management and institutional transformation.",
     "audience": "",
     "programmeFormat": "Two-day cohorts",
@@ -187,7 +187,7 @@ const COURSES = [
       },
       {
         "label": "Satisfaction",
-        "value": ">90%"
+        "value": "93%"
       }
     ]
   },
