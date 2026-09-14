@@ -2,6 +2,7 @@
    T&LD DASHBOARD V3 — COURSES & PROGRAMMES (V3 only)
    ---------------------------------------------------------------------
    One entry per course / programme run by the T&LD practice.
+   - color: the programme colour used on its box, bar, page and calendar entries (hex, e.g. "#2a78d6")
    - trained: people trained so far (or users activated, see "unit")
    - target:  the target number; leave null while not confirmed (shown as "TBC")
    - unit:    what is counted, e.g. "people trained", "users activated"
@@ -22,6 +23,7 @@ const COURSES = [
     "id": "media-training",
     "name": "Media Training",
     "fullName": "Media training programme for MOD leaders",
+    "color": "#2a78d6",
     "trained": 0,
     "target": 100,
     "unit": "people trained",
@@ -79,6 +81,7 @@ const COURSES = [
     "id": "eap",
     "name": "EAP",
     "fullName": "Enterprise Accelerator Programme",
+    "color": "#eb6834",
     "trained": 34,
     "target": 60,
     "unit": "participants",
@@ -200,6 +203,7 @@ const COURSES = [
     "id": "ruwaad",
     "name": "Ruwaad",
     "fullName": "Change management and institutional transformation programme",
+    "color": "#1baf7a",
     "trained": 325,
     "target": 840,
     "unit": "people trained",
@@ -296,6 +300,7 @@ const COURSES = [
     "id": "ldp",
     "name": "LDP",
     "fullName": "Leadership Development Programme · Leadership Bootcamp with HNI",
+    "color": "#4a3aa7",
     "trained": 450,
     "target": 1000,
     "unit": "people trained",
@@ -441,6 +446,7 @@ const COURSES = [
     "id": "mbzuai",
     "name": "MBZUAI",
     "fullName": "Mohamed bin Zayed University of Artificial Intelligence · partnership",
+    "color": "#e87ba4",
     "trained": 237,
     "target": null,
     "unit": "participants across both programmes",
@@ -520,6 +526,7 @@ const COURSES = [
     "id": "functional-capability",
     "name": "Functional Capability",
     "fullName": "",
+    "color": "#eda100",
     "trained": 30,
     "target": null,
     "unit": "people trained",

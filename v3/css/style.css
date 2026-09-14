@@ -475,3 +475,14 @@ td .approx { color: var(--text-3); font-size: 11px; margin-left: 4px; }
 .sub-ms { border-top: 1px solid var(--border); margin-top: 10px; padding-top: 6px; }
 .sub-ms .agenda-item { padding: 6px 0; }
 .bignums { display: flex; gap: 36px; flex-wrap: wrap; }
+
+/* V3: one colour per programme */
+.card.course { border-top: 4px solid var(--c, var(--accent)); }
+.card.course .badge.pmo { background: var(--c-soft); color: var(--c); }
+.card.course .meter { background: var(--c-soft); }
+.card.course .meter .fill { background: var(--c); }
+.card.course .course-foot strong { color: var(--c); }
+.card.course .sub-num b { color: var(--c); }
+.course-page .course-icon { background: var(--c-soft); color: var(--c); }
+.course-page .badge.pmo { background: var(--c-soft); color: var(--c); }
+.agenda-item.coloured .agenda-date { background: var(--c-soft); border-color: transparent; color: var(--c); }

@@ -326,6 +326,9 @@
     const cs = (k.cohorts || []).filter(c => parseDate(c.start)).sort((a, b) => parseDate(a.start) - parseDate(b.start));
     return cs.find(c => c.status === "running") || cs.find(c => c.status !== "completed" && daysFrom(parseDate(c.start)) >= 0) || null;
   }
+  const PALETTE = ["#2a78d6", "#eb6834", "#1baf7a", "#4a3aa7", "#e87ba4", "#eda100", "#008300", "#e34948"];
+  function courseColor(k) { const i = courses.indexOf(k); return k.color || PALETTE[(i < 0 ? 0 : i) % PALETTE.length]; }
+  function courseStyle(k) { return `--c: ${courseColor(k)}; --c-soft: color-mix(in srgb, ${courseColor(k)} 14%, var(--surface));`; }
   function fmtNum(n) { return (n == null || n === "") ? "—" : Number(n).toLocaleString("en-GB"); }
   function courseCard(k) {
     const hasTarget = k.target != null && k.target !== "";
@@ -334,7 +337,7 @@
     const nd = nc ? parseDate(nc.start) : parseDate(k.nextDate);
     const ndLabel = nc ? `${nc.label}${nc.participants ? " · " + fmtNum(nc.participants) + " participants" : ""}` : (k.nextLabel || k.status || "next milestone");
     if ((k.subProgrammes || []).length) return `
-      <a class="card course" href="#/course/${esc(k.id)}">
+      <a class="card course" href="#/course/${esc(k.id)}" style="${courseStyle(k)}">
         <div class="course-head">
           <div><div class="card-name">${esc(k.name)}</div>${k.fullName ? `<div class="small muted">${esc(k.fullName)}</div>` : ""}</div>
           <span class="badge pmo">PMO</span>
@@ -350,7 +353,7 @@
         <div class="course-foot"><span class="muted">${k.subProgrammes.length} programmes · ${fmtNum(k.trained)} ${esc(k.unit || "participants")}</span></div>
       </a>`;
     return `
-      <a class="card course" href="#/course/${esc(k.id)}">
+      <a class="card course" href="#/course/${esc(k.id)}" style="${courseStyle(k)}">
         <div class="course-head">
           <div><div class="card-name">${esc(k.name)}</div>${k.fullName ? `<div class="small muted">${esc(k.fullName)}</div>` : ""}</div>
           <span class="badge pmo">PMO</span>
@@ -368,8 +371,8 @@
     const items = [];
     courses.forEach(k => {
       const cs = (k.cohorts || []).filter(c => parseDate(c.start));
-      if (cs.length) cs.forEach(c => { const d = parseDate(c.start); if (c.status !== "completed" && daysFrom(d) >= -3 && daysFrom(d) <= 120) items.push({ date: d, title: `${k.name} · ${c.label}`, sub: (parseDate(c.end) ? fmt(d) + " – " + fmt(parseDate(c.end)) : fmt(d)) + (c.participants ? " · " + fmtNum(c.participants) + " participants" : ""), href: "#/course/" + k.id }); });
-      else { const d = parseDate(k.nextDate); if (d && daysFrom(d) >= -3) items.push({ date: d, title: k.name, sub: k.nextLabel || k.status || "Milestone", href: "#/course/" + k.id }); }
+      if (cs.length) cs.forEach(c => { const d = parseDate(c.start); if (c.status !== "completed" && daysFrom(d) >= -3 && daysFrom(d) <= 120) items.push({ date: d, title: `${k.name} · ${c.label}`, sub: (parseDate(c.end) ? fmt(d) + " – " + fmt(parseDate(c.end)) : fmt(d)) + (c.participants ? " · " + fmtNum(c.participants) + " participants" : ""), href: "#/course/" + k.id, color: courseColor(k) }); });
+      else { const d = parseDate(k.nextDate); if (d && daysFrom(d) >= -3) items.push({ date: d, title: k.name, sub: k.nextLabel || k.status || "Milestone", href: "#/course/" + k.id, color: courseColor(k) }); }
     });
     (META.quarterlyEvaluations || []).forEach(q => { const d = parseDate(q.date); if (d && q.status !== "completed" && daysFrom(d) >= -3 && daysFrom(d) <= 120) items.push({ date: d, title: `${q.label} quarterly evaluation`, sub: "Jahizoun / EDGE candidates", href: "#/jahizoun", type: "evaluation" }); });
     items.sort((a, b) => a.date - b.date);
@@ -378,7 +381,7 @@
         <div class="panel-head"><h2>Coming up</h2><span class="muted small">T&amp;LD milestones</span></div>
         <div class="panel-body">
           ${items.length ? items.slice(0, 12).map(i => `
-            <a class="agenda-item ${i.type || "deadline"} ${daysFrom(i.date) < 0 ? "past" : ""}" href="${i.href}">
+            <a class="agenda-item ${i.type || "deadline"} ${i.color ? "coloured" : ""} ${daysFrom(i.date) < 0 ? "past" : ""}" href="${i.href}" ${i.color ? `style="--c: ${i.color}; --c-soft: color-mix(in srgb, ${i.color} 14%, var(--surface));"` : ""}>
               <div class="agenda-date"><b>${i.date.getDate()}</b><span>${MONTHS[i.date.getMonth()]}</span></div>
               <div class="agenda-text"><b>${esc(i.title)}</b><span class="small">${esc(i.sub)} · ${relative(i.date)}</span></div>
             </a>`).join("") : `<div class="muted" style="padding:16px">Nothing scheduled.</div>`}
@@ -421,7 +424,7 @@
       </div>`; };
     return `
       <a class="back" href="#/">← T&amp;LD</a>
-      <div class="panel profile-head">
+      <div class="panel profile-head course-page" style="${courseStyle(k)}">
         <div class="course-icon">${esc((k.name.split(/\s+/).length > 1 ? k.name.split(/\s+/).map(w => w[0]).join("") : k.name).slice(0, 3).toUpperCase())}</div>
         <div>
           <h1>${esc(k.name)}</h1>
@@ -522,6 +525,7 @@
           <div class="form-grid">
             ${field("Course name", "name", k.name)}
             ${field("Full name (optional)", "fullName", k.fullName)}
+            <div class="field"><label>Colour</label><input name="color" type="color" value="${esc(k.color || courseColor(k))}"></div>
             ${field("Trained so far", "trained", k.trained, "number")}
             ${field("Target (leave empty if not confirmed)", "target", k.target, "number")}
             ${field("Target period", "targetPeriod", k.targetPeriod, "text", "per year")}
@@ -548,7 +552,7 @@
     bg.addEventListener("submit", e => {
       e.preventDefault();
       const f = bg.querySelector("#courseForm");
-      ["name", "fullName", "unit", "status", "nextDate", "nextLabel", "notes", "targetPeriod", "programmeFormat", "description", "audience"].forEach(x => k[x] = f[x].value.trim());
+      ["name", "fullName", "unit", "status", "nextDate", "nextLabel", "notes", "targetPeriod", "programmeFormat", "description", "audience", "color"].forEach(x => k[x] = f[x].value.trim());
       const ln = x => f[x].value.split("\n").map(t => t.trim()).filter(Boolean);
       k.objectives = ln("objectives");
       k.cohortsDone = f.cohortsDone.value === "" ? null : +f.cohortsDone.value;
