@@ -12,6 +12,8 @@
    - cohorts: [{ label, start "YYYY-MM-DD", end, participants, note, status: "planned" | "running" | "completed" }]
    - cohortsDone / cohortsTotal: cohorts delivered so far / planned in total (optional)
    - kpis: extra figures shown on the PMO page, e.g. [{ label: "Attendance rate", value: "39%" }]
+   - subProgrammes: for a partnership box with several programmes (e.g. MBZUAI): each has its own
+     name, trained, target, unit, description, kpis and milestones [{ label, date }]
    Easiest way to update: Edit mode in V3 → Edit on a course → "Copy tld.js",
    then paste over this file on GitHub.
    ===================================================================== */
@@ -436,17 +438,17 @@ const COURSES = [
     ]
   },
   {
-    "id": "mbzuai-ai-for-all",
-    "name": "MBZUAI AI for All",
-    "fullName": "",
-    "trained": 231,
+    "id": "mbzuai",
+    "name": "MBZUAI",
+    "fullName": "Mohamed bin Zayed University of Artificial Intelligence · partnership",
+    "trained": 237,
     "target": null,
-    "unit": "users activated",
+    "unit": "participants across both programmes",
     "status": "",
     "nextDate": "",
     "nextLabel": "",
-    "notes": "",
-    "description": "",
+    "notes": "Users activated (231) exceed the 125 licences in the May 2026 order form; to be reconciled.",
+    "description": "Two programmes delivered with MBZUAI: the online AI for All course, rolled out at scale across the Executive Office, and the Global Leadership Development Programme for a small group of senior leaders.",
     "audience": "",
     "programmeFormat": "",
     "targetPeriod": "",
@@ -455,7 +457,53 @@ const COURSES = [
     "cohorts": [],
     "cohortsDone": null,
     "cohortsTotal": null,
-    "kpis": []
+    "kpis": [],
+    "subProgrammes": [
+      {
+        "id": "ai-for-all",
+        "name": "AI for All",
+        "format": "Online, self-paced",
+        "trained": 231,
+        "target": null,
+        "unit": "users activated",
+        "description": "Online course on the MBZUAI learning platform: four modules and about six learning hours of video lectures, interactive materials, activities and module-based assessments. Each user has two months of access from activation.",
+        "kpis": [
+          {
+            "label": "Licences ordered",
+            "value": "125 (order of 12 May 2026)"
+          },
+          {
+            "label": "Access per user",
+            "value": "2 months"
+          },
+          {
+            "label": "Fee",
+            "value": "AED 380 per user · AED 95,000 total, excl. VAT"
+          }
+        ],
+        "milestones": [
+          {
+            "label": "Subscription effective",
+            "date": "2026-05-12"
+          },
+          {
+            "label": "Access window closes (order of 12 May)",
+            "date": "2026-07-12"
+          }
+        ]
+      },
+      {
+        "id": "gldp",
+        "name": "Global Leadership Development Programme",
+        "format": "Executive programme",
+        "trained": 6,
+        "target": null,
+        "unit": "participants",
+        "description": "MBZUAI executive programme completed by six Executive Office leaders.",
+        "kpis": [],
+        "milestones": []
+      }
+    ]
   },
   {
     "id": "functional-capability",

@@ -333,6 +333,22 @@
     const nc = nextCohort(k);
     const nd = nc ? parseDate(nc.start) : parseDate(k.nextDate);
     const ndLabel = nc ? `${nc.label}${nc.participants ? " · " + fmtNum(nc.participants) + " participants" : ""}` : (k.nextLabel || k.status || "next milestone");
+    if ((k.subProgrammes || []).length) return `
+      <a class="card course" href="#/course/${esc(k.id)}">
+        <div class="course-head">
+          <div><div class="card-name">${esc(k.name)}</div>${k.fullName ? `<div class="small muted">${esc(k.fullName)}</div>` : ""}</div>
+          <span class="badge pmo">PMO</span>
+        </div>
+        <div class="subs">
+          ${k.subProgrammes.map(sp => { const ht = sp.target != null && sp.target !== ""; const p = ht && sp.target > 0 ? Math.min(100, Math.round(100 * (sp.trained || 0) / sp.target)) : null; return `
+            <div class="sub">
+              <div class="sub-head"><span class="sub-name">${esc(sp.name)}</span><span class="sub-num"><b>${fmtNum(sp.trained)}</b>${ht ? " / " + fmtNum(sp.target) : ""}</span></div>
+              <div class="small muted">${esc(sp.unit || "participants")}${sp.format ? " · " + esc(sp.format) : ""}</div>
+              ${p != null ? `<div class="meter"><div class="fill" style="width:${p}%"></div></div>` : ""}
+            </div>`; }).join("")}
+        </div>
+        <div class="course-foot"><span class="muted">${k.subProgrammes.length} programmes · ${fmtNum(k.trained)} ${esc(k.unit || "participants")}</span></div>
+      </a>`;
     return `
       <a class="card course" href="#/course/${esc(k.id)}">
         <div class="course-head">
@@ -390,7 +406,7 @@
       </div>`;
   }
   function renderCourse(id) {
-    const k = courses.find(x => x.id === id);
+    const k = courses.find(x => x.id === id) || (id === "mbzuai-ai-for-all" ? courses.find(x => x.id === "mbzuai") : null);
     if (!k) return `<a class="back" href="#/">← T&amp;LD</a><div class="empty">Course not found.</div>`;
     const hasTarget = k.target != null && k.target !== "";
     const pct = hasTarget && k.target > 0 ? Math.min(100, Math.round(100 * (k.trained || 0) / k.target)) : null;
@@ -415,15 +431,16 @@
         <div class="actions">${editMode ? `<button class="btn" data-edit-course="${esc(k.id)}">Edit course</button><button class="btn danger" data-del-course="${esc(k.id)}">Delete</button>` : ""}</div>
         <div class="snapshot">
           <div class="snap"><div class="k">${esc(k.unit || "People trained")}</div><div class="v">${fmtNum(k.trained)}</div></div>
-          <div class="snap"><div class="k">Target${k.targetPeriod ? " " + esc(k.targetPeriod) : ""}</div><div class="v ${hasTarget ? "" : "muted"}">${hasTarget ? fmtNum(k.target) : "TBC"}</div></div>
-          <div class="snap"><div class="k">${next && next.status === "running" ? "Current session" : "Next session"}</div><div class="v ${nd ? "" : "muted"}">${next ? `${fmt(nd, true)} · ${esc(next.label)}${next.participants ? " · " + fmtNum(next.participants) + " participants" : ""}` : (nd ? fmt(nd, true) + (k.nextLabel ? " · " + esc(k.nextLabel) : "") : "Not scheduled")}</div></div>
+          ${(k.subProgrammes || []).length ? `<div class="snap"><div class="k">Programmes</div><div class="v">${k.subProgrammes.length}</div></div>` : `<div class="snap"><div class="k">Target${k.targetPeriod ? " " + esc(k.targetPeriod) : ""}</div><div class="v ${hasTarget ? "" : "muted"}">${hasTarget ? fmtNum(k.target) : "TBC"}</div></div>`}
+          ${(k.subProgrammes || []).length ? "" : `<div class="snap"><div class="k">${next && next.status === "running" ? "Current session" : "Next session"}</div><div class="v ${nd ? "" : "muted"}">${next ? `${fmt(nd, true)} · ${esc(next.label)}${next.participants ? " · " + fmtNum(next.participants) + " participants" : ""}` : (nd ? fmt(nd, true) + (k.nextLabel ? " · " + esc(k.nextLabel) : "") : "Not scheduled")}</div></div>`}
           ${k.status ? `<div class="snap"><div class="k">Status</div><div class="v">${esc(k.status)}</div></div>` : ""}
           ${k.cohortsTotal ? `<div class="snap"><div class="k">Cohorts delivered</div><div class="v">${fmtNum(k.cohortsDone || 0)} of ${fmtNum(k.cohortsTotal)}</div></div>` : ""}
           ${(k.kpis || []).map(x => `<div class="snap"><div class="k">${esc(x.label)}</div><div class="v">${esc(x.value)}</div></div>`).join("")}
         </div>
       </div>
+      ${(k.subProgrammes || []).length ? (k.description ? `<p class="partner-intro">${esc(k.description)}</p>` : "") + subProgrammePanels(k) : ""}
       ${cohortTimeline(k, cohorts)}
-      <div class="profile-grid">
+      ${(k.subProgrammes || []).length ? "" : `<div class="profile-grid">
         <div>
           ${hasDesc ? `
           <div class="panel">
@@ -449,6 +466,25 @@
             <div class="panel-body">${cohorts.length ? cohorts.map(cohortRow).join("") : `<div class="muted" style="padding:12px 16px">No cohorts scheduled yet.</div>`}</div>
           </div>
         </div>
+      </div>`}`;
+  }
+  function subProgrammePanels(k) {
+    return `
+      <div class="sub-grid">
+        ${k.subProgrammes.map(sp => { const ht = sp.target != null && sp.target !== ""; const p = ht && sp.target > 0 ? Math.min(100, Math.round(100 * (sp.trained || 0) / sp.target)) : null;
+          const ms = (sp.milestones || []).map(x => ({ ...x, d: parseDate(x.date) })).filter(x => x.d).sort((a, b) => a.d - b.d);
+          return `
+          <div class="panel sub-panel">
+            <div class="panel-head"><div><h2>${esc(sp.name)}</h2>${sp.format ? `<div class="small muted">${esc(sp.format)}</div>` : ""}</div><span class="badge pmo">Programme</span></div>
+            <div class="sub-body">
+              <div class="course-num"><span class="big">${fmtNum(sp.trained)}</span><span class="of">${ht ? "/ " + fmtNum(sp.target) : ""}</span></div>
+              <div class="small muted">${esc(sp.unit || "participants")}</div>
+              ${p != null ? `<div class="meter"><div class="fill" style="width:${p}%"></div></div><div class="small muted" style="margin-top:4px">${p}% of target</div>` : ""}
+              ${sp.description ? `<p class="sub-desc">${esc(sp.description)}</p>` : ""}
+              ${(sp.kpis || []).length ? `<dl class="kv sub-kv">${sp.kpis.map(x => `<dt>${esc(x.label)}</dt><dd>${esc(x.value)}</dd>`).join("")}</dl>` : ""}
+              ${ms.length ? `<div class="sub-ms">${ms.map(x => `<div class="agenda-item deadline ${daysFrom(x.d) < 0 ? "past" : ""}"><div class="agenda-date"><b>${x.d.getDate()}</b><span>${MONTHS[x.d.getMonth()]}</span></div><div class="agenda-text"><b>${esc(x.label)}</b><span class="small">${fmt(x.d)} · ${relative(x.d)}</span></div></div>`).join("")}</div>` : ""}
+            </div>
+          </div>`; }).join("")}
       </div>`;
   }
   function cohortTimeline(k, cohorts) {
