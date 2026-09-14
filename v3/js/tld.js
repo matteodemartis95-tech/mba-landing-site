@@ -13,7 +13,7 @@
    - cohortsDone / cohortsTotal: cohorts delivered so far / planned in total (optional)
    - kpis: extra figures shown on the PMO page, e.g. [{ label: "Attendance rate", value: "39%" }]
    - subProgrammes: for a partnership box with several programmes (e.g. MBZUAI): each has its own
-     name, trained, target, unit, description, kpis and milestones [{ label, date }]
+     name, trained, completed (optional), target, unit, description, kpis and milestones [{ label, date }]
    Easiest way to update: Edit mode in V3 → Edit on a course → "Copy tld.js",
    then paste over this file on GitHub.
    ===================================================================== */
@@ -448,7 +448,7 @@ const COURSES = [
     "nextDate": "",
     "nextLabel": "",
     "notes": "Users activated (231) exceed the 125 licences in the May 2026 order form; to be reconciled.",
-    "description": "Two programmes delivered with MBZUAI: the online AI for All course, rolled out at scale across the Executive Office, and the Global Leadership Development Programme for a small group of senior leaders.",
+    "description": "Two programmes delivered with MBZUAI: the online AI for All course, rolled out at scale across the Executive Office, and the Global AI Leadership Programme, an executive programme completed by six Executive Office leaders.",
     "audience": "",
     "programmeFormat": "",
     "targetPeriod": "",
@@ -465,9 +465,13 @@ const COURSES = [
         "format": "Online, self-paced",
         "trained": 231,
         "target": null,
-        "unit": "users activated",
+        "unit": "active users",
         "description": "Online course on the MBZUAI learning platform: four modules and about six learning hours of video lectures, interactive materials, activities and module-based assessments. Each user has two months of access from activation.",
         "kpis": [
+          {
+            "label": "Completed the course",
+            "value": "82 (35% of active users)"
+          },
           {
             "label": "Licences ordered",
             "value": "125 (order of 12 May 2026)"
@@ -490,18 +494,37 @@ const COURSES = [
             "label": "Access window closes (order of 12 May)",
             "date": "2026-07-12"
           }
-        ]
+        ],
+        "completed": 82
       },
       {
-        "id": "gldp",
-        "name": "Global Leadership Development Programme",
-        "format": "Executive programme",
+        "id": "gailp",
+        "name": "Global AI Leadership Programme",
+        "format": "5-day executive programme at MBZUAI",
         "trained": 6,
         "target": null,
-        "unit": "participants",
-        "description": "MBZUAI executive programme completed by six Executive Office leaders.",
-        "kpis": [],
-        "milestones": []
+        "unit": "leaders completed",
+        "description": "Five-day executive programme at the MBZUAI Academy in Abu Dhabi blending AI strategy, ethics and hands-on practice: sessions with AI scientists, site visits and workshops, and practical frameworks to drive AI initiatives and inspire teams. Aimed at C-level executives, government leaders and advisors; no technical background required, delivered in English.",
+        "kpis": [
+          {
+            "label": "Executive Office participants",
+            "value": "6 completed"
+          },
+          {
+            "label": "Fee",
+            "value": "AED 45,000 per participant, incl. VAT"
+          },
+          {
+            "label": "Admissions",
+            "value": "Rolling; apply at least six weeks before the start"
+          }
+        ],
+        "milestones": [
+          {
+            "label": "Next edition (5–9 April 2027)",
+            "date": "2027-04-05"
+          }
+        ]
       }
     ]
   },
