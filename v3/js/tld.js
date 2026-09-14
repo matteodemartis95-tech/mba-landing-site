@@ -447,7 +447,7 @@ const COURSES = [
     "status": "",
     "nextDate": "",
     "nextLabel": "",
-    "notes": "Users activated (231) exceed the 125 licences in the May 2026 order form; to be reconciled.",
+    "notes": "",
     "description": "Two programmes delivered with MBZUAI: the online AI for All course, rolled out at scale across the Executive Office, and the Global AI Leadership Programme, an executive programme completed by six Executive Office leaders.",
     "audience": "",
     "programmeFormat": "",
@@ -471,14 +471,6 @@ const COURSES = [
           {
             "label": "Licences ordered",
             "value": "125 (order of 12 May 2026)"
-          },
-          {
-            "label": "Access per user",
-            "value": "2 months"
-          },
-          {
-            "label": "Fee",
-            "value": "AED 380 per user · AED 95,000 total, excl. VAT"
           }
         ],
         "milestones": [

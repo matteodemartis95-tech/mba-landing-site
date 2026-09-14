@@ -466,7 +466,9 @@ td .approx { color: var(--text-3); font-size: 11px; margin-left: 4px; }
 .sub-num b { font-size: 20px; font-weight: 700; color: var(--text); letter-spacing: -.02em; }
 .sub .meter { margin-top: 6px; }
 .partner-intro { margin: 0 0 16px; color: var(--text-2); font-size: 13.5px; max-width: 900px; }
-.sub-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 16px; margin-bottom: 20px; align-items: start; }
+.sub-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 16px; margin-bottom: 20px; align-items: stretch; }
+.sub-panel { display: flex; flex-direction: column; }
+.sub-panel .sub-body { flex: 1; }
 .sub-body { padding: 14px 16px 16px; }
 .sub-desc { margin: 12px 0 6px; font-size: 13.5px; line-height: 1.5; }
 .sub-kv { padding: 8px 0 0; grid-template-columns: 140px 1fr; }
