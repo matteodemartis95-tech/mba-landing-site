@@ -343,8 +343,8 @@
           ${k.subProgrammes.map(sp => { const ht = sp.target != null && sp.target !== ""; const p = ht && sp.target > 0 ? Math.min(100, Math.round(100 * (sp.trained || 0) / sp.target)) : null; return `
             <div class="sub">
               <div class="sub-head"><span class="sub-name">${esc(sp.name)}</span><span class="sub-num"><b>${fmtNum(sp.trained)}</b>${ht ? " / " + fmtNum(sp.target) : ""}</span></div>
-              <div class="small muted">${esc(sp.unit || "participants")}${sp.format ? " · " + esc(sp.format) : ""}</div>
-              ${p != null ? `<div class="meter"><div class="fill" style="width:${p}%"></div></div>` : (sp.completed != null && sp.trained ? `<div class="meter"><div class="fill" style="width:${Math.min(100, Math.round(100 * sp.completed / sp.trained))}%"></div></div><div class="small muted" style="margin-top:3px">${fmtNum(sp.completed)} completed · ${Math.round(100 * sp.completed / sp.trained)}%</div>` : "")}
+              <div class="small muted">${esc(sp.unit || "participants")}${sp.completed != null ? ` · <b>${fmtNum(sp.completed)}</b> completed` : ""}${sp.format ? " · " + esc(sp.format) : ""}</div>
+              ${p != null ? `<div class="meter"><div class="fill" style="width:${p}%"></div></div>` : ""}
             </div>`; }).join("")}
         </div>
         <div class="course-foot"><span class="muted">${k.subProgrammes.length} programmes · ${fmtNum(k.trained)} ${esc(k.unit || "participants")}</span></div>
@@ -477,9 +477,11 @@
           <div class="panel sub-panel">
             <div class="panel-head"><div><h2>${esc(sp.name)}</h2>${sp.format ? `<div class="small muted">${esc(sp.format)}</div>` : ""}</div><span class="badge pmo">Programme</span></div>
             <div class="sub-body">
-              <div class="course-num"><span class="big">${fmtNum(sp.trained)}</span><span class="of">${ht ? "/ " + fmtNum(sp.target) : ""}</span></div>
-              <div class="small muted">${esc(sp.unit || "participants")}</div>
-              ${p != null ? `<div class="meter"><div class="fill" style="width:${p}%"></div></div><div class="small muted" style="margin-top:4px">${p}% of target</div>` : (sp.completed != null && sp.trained ? `<div class="meter"><div class="fill" style="width:${Math.min(100, Math.round(100 * sp.completed / sp.trained))}%"></div></div><div class="small muted" style="margin-top:4px">${fmtNum(sp.completed)} completed · ${Math.round(100 * sp.completed / sp.trained)}% of active users</div>` : "")}
+              <div class="bignums">
+                <div><div class="course-num"><span class="big">${fmtNum(sp.trained)}</span><span class="of">${ht ? "/ " + fmtNum(sp.target) : ""}</span></div><div class="small muted">${esc(sp.unit || "participants")}</div></div>
+                ${sp.completed != null ? `<div><div class="course-num"><span class="big">${fmtNum(sp.completed)}</span></div><div class="small muted">completed the course</div></div>` : ""}
+              </div>
+              ${p != null ? `<div class="meter"><div class="fill" style="width:${p}%"></div></div><div class="small muted" style="margin-top:4px">${p}% of target</div>` : ""}
               ${sp.description ? `<p class="sub-desc">${esc(sp.description)}</p>` : ""}
               ${(sp.kpis || []).length ? `<dl class="kv sub-kv">${sp.kpis.map(x => `<dt>${esc(x.label)}</dt><dd>${esc(x.value)}</dd>`).join("")}</dl>` : ""}
               ${ms.length ? `<div class="sub-ms">${ms.map(x => `<div class="agenda-item deadline ${daysFrom(x.d) < 0 ? "past" : ""}"><div class="agenda-date"><b>${x.d.getDate()}</b><span>${MONTHS[x.d.getMonth()]}</span></div><div class="agenda-text"><b>${esc(x.label)}</b><span class="small">${fmt(x.d)} · ${relative(x.d)}</span></div></div>`).join("")}</div>` : ""}

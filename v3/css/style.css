@@ -472,3 +472,4 @@ td .approx { color: var(--text-3); font-size: 11px; margin-left: 4px; }
 .sub-kv { padding: 8px 0 0; grid-template-columns: 140px 1fr; }
 .sub-ms { border-top: 1px solid var(--border); margin-top: 10px; padding-top: 6px; }
 .sub-ms .agenda-item { padding: 6px 0; }
+.bignums { display: flex; gap: 36px; flex-wrap: wrap; }

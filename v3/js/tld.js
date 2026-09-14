@@ -469,10 +469,6 @@ const COURSES = [
         "description": "Online course on the MBZUAI learning platform: four modules and about six learning hours of video lectures, interactive materials, activities and module-based assessments. Each user has two months of access from activation.",
         "kpis": [
           {
-            "label": "Completed the course",
-            "value": "82 (35% of active users)"
-          },
-          {
             "label": "Licences ordered",
             "value": "125 (order of 12 May 2026)"
           },
