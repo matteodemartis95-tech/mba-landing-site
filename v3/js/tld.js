@@ -114,28 +114,20 @@ const COURSES = [
     "modules": [],
     "cohorts": [
       {
-        "label": "Cohort 13",
-        "start": "",
-        "end": "",
-        "participants": null,
-        "status": "planned",
-        "note": "Date to be confirmed"
-      },
-      {
-        "label": "Cohort 14",
-        "start": "",
-        "end": "",
-        "participants": null,
-        "status": "planned",
-        "note": "Date to be confirmed"
-      },
-      {
-        "label": "Additional session",
+        "label": "Cohort 5 (April cohort)",
         "start": "2026-10-19",
-        "end": "2026-10-21",
+        "end": "2026-10-20",
         "participants": null,
         "status": "planned",
-        "note": ""
+        "note": "Multi-purpose Rooms 1&2"
+      },
+      {
+        "label": "Cohort 6 (April cohort)",
+        "start": "2026-10-21",
+        "end": "2026-10-22",
+        "participants": null,
+        "status": "planned",
+        "note": "Multi-purpose Rooms 1&2"
       },
       {
         "label": "Cohort 15",
