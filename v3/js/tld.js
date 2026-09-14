@@ -228,7 +228,7 @@ const COURSES = [
         "end": "2026-09-18",
         "participants": null,
         "status": "planned",
-        "note": "Venue to be confirmed"
+        "note": "National Defence College (NDC) · dates to be confirmed"
       },
       {
         "label": "Cohort 22",
@@ -236,7 +236,7 @@ const COURSES = [
         "end": "2026-09-25",
         "participants": null,
         "status": "planned",
-        "note": "Multi-purpose Rooms 1, 5th Floor (Mon–Fri)"
+        "note": "National Defence College (NDC)"
       },
       {
         "label": "Cohort 23",
@@ -244,7 +244,7 @@ const COURSES = [
         "end": "2026-09-25",
         "participants": null,
         "status": "planned",
-        "note": "MOD Dubai – TBC"
+        "note": "MOD Dubai"
       },
       {
         "label": "Cohort 25",
@@ -252,7 +252,7 @@ const COURSES = [
         "end": "2026-10-09",
         "participants": null,
         "status": "planned",
-        "note": "Multi-purpose Rooms 1, 5th Floor (Mon–Fri)"
+        "note": "National Defence College (NDC)"
       },
       {
         "label": "Cohort 26",
@@ -260,7 +260,7 @@ const COURSES = [
         "end": "2026-10-16",
         "participants": null,
         "status": "planned",
-        "note": "Venue to be confirmed"
+        "note": "National Defence College (NDC) · dates to be confirmed"
       },
       {
         "label": "Cohort 27",
@@ -268,7 +268,7 @@ const COURSES = [
         "end": "2026-10-23",
         "participants": null,
         "status": "planned",
-        "note": "Multi-purpose Rooms 1, 5th Floor (Mon–Fri)"
+        "note": "National Defence College (NDC)"
       },
       {
         "label": "Cohort 28",
@@ -276,7 +276,7 @@ const COURSES = [
         "end": "2026-11-06",
         "participants": null,
         "status": "planned",
-        "note": "Multi-purpose Rooms 1, 5th Floor (Mon–Fri)"
+        "note": "National Defence College (NDC)"
       },
       {
         "label": "Cohort 29",
@@ -284,7 +284,7 @@ const COURSES = [
         "end": "2026-11-13",
         "participants": null,
         "status": "planned",
-        "note": "Multi-purpose Rooms 1, 5th Floor (Mon–Fri)"
+        "note": "National Defence College (NDC)"
       },
       {
         "label": "Dubai cohort",
@@ -292,7 +292,7 @@ const COURSES = [
         "end": "2026-11-13",
         "participants": null,
         "status": "planned",
-        "note": "MOD Dubai – TBC"
+        "note": "MOD Dubai"
       },
       {
         "label": "Cohort 30",
@@ -300,7 +300,7 @@ const COURSES = [
         "end": "2026-11-20",
         "participants": null,
         "status": "planned",
-        "note": "Venue to be confirmed"
+        "note": "National Defence College (NDC) · dates to be confirmed"
       },
       {
         "label": "Cohort 31",
@@ -308,7 +308,7 @@ const COURSES = [
         "end": "2026-12-18",
         "participants": null,
         "status": "planned",
-        "note": "Venue to be confirmed"
+        "note": "National Defence College (NDC) · dates to be confirmed"
       },
       {
         "label": "Cohort 32",
@@ -316,7 +316,7 @@ const COURSES = [
         "end": "2026-12-25",
         "participants": null,
         "status": "planned",
-        "note": "Multi-purpose Rooms 1, 5th Floor (Mon–Fri)"
+        "note": "National Defence College (NDC)"
       },
       {
         "label": "Cohort 33",
@@ -324,7 +324,7 @@ const COURSES = [
         "end": "2027-01-22",
         "participants": null,
         "status": "planned",
-        "note": "Multi-purpose Rooms 1, 5th Floor (Mon–Fri)"
+        "note": "National Defence College (NDC)"
       }
     ],
     "cohortsDone": 20,
