@@ -367,6 +367,13 @@
         </div>
       </a>`;
   }
+  function courseSections() {
+    const cats = [...new Set(courses.map(k => k.category || ""))];
+    if (cats.length <= 1) return `<div class="grid courses">${courses.map(courseCard).join("")}</div>`;
+    return cats.map(cat => `
+      <div class="cat-head"><h2>${esc(cat || "Other programmes")}</h2><span class="muted small">${courses.filter(k => (k.category || "") === cat).length} programme${courses.filter(k => (k.category || "") === cat).length === 1 ? "" : "s"}</span></div>
+      <div class="grid courses">${courses.filter(k => (k.category || "") === cat).map(courseCard).join("")}</div>`).join("");
+  }
   function tldAgenda() {
     const items = [];
     courses.forEach(k => {
@@ -404,7 +411,7 @@
         ${tile("Jahizoun / EDGE", jahizoun + edge, `${jahizoun} Jahizoun · ${edge} EDGE`, "violet", "#/jahizoun")}
       </div>
       <div class="overview">
-        <div>${courses.length ? `<div class="grid courses">${courses.map(courseCard).join("")}</div>` : `<div class="empty">No courses yet.</div>`}</div>
+        <div>${courses.length ? courseSections() : `<div class="empty">No courses yet.</div>`}</div>
         <aside>${tldAgenda()}</aside>
       </div>`;
   }
@@ -435,13 +442,14 @@
         <div class="snapshot">
           <div class="snap"><div class="k">${esc(k.unit || "People trained")}</div><div class="v">${fmtNum(k.trained)}</div></div>
           ${(k.subProgrammes || []).length ? `<div class="snap"><div class="k">Programmes</div><div class="v">${k.subProgrammes.length}</div></div>` : `<div class="snap"><div class="k">Target${k.targetPeriod ? " " + esc(k.targetPeriod) : ""}</div><div class="v ${hasTarget ? "" : "muted"}">${hasTarget ? fmtNum(k.target) : "TBC"}</div></div>`}
-          ${(k.subProgrammes || []).length ? "" : `<div class="snap"><div class="k">${next && next.status === "running" ? "Current session" : "Next session"}</div><div class="v ${nd ? "" : "muted"}">${next ? `${fmt(nd, true)} · ${esc(next.label)}${next.participants ? " · " + fmtNum(next.participants) + " participants" : ""}` : (nd ? fmt(nd, true) + (k.nextLabel ? " · " + esc(k.nextLabel) : "") : "Not scheduled")}</div></div>`}
+          ${(k.subProgrammes || []).length || (!nd && (k.steps || []).length) ? "" : `<div class="snap"><div class="k">${next && next.status === "running" ? "Current session" : "Next session"}</div><div class="v ${nd ? "" : "muted"}">${next ? `${fmt(nd, true)} · ${esc(next.label)}${next.participants ? " · " + fmtNum(next.participants) + " participants" : ""}` : (nd ? fmt(nd, true) + (k.nextLabel ? " · " + esc(k.nextLabel) : "") : "Not scheduled")}</div></div>`}
           ${k.status ? `<div class="snap"><div class="k">Status</div><div class="v">${esc(k.status)}</div></div>` : ""}
           ${k.cohortsTotal ? `<div class="snap"><div class="k">Cohorts delivered</div><div class="v">${fmtNum(k.cohortsDone || 0)} of ${fmtNum(k.cohortsTotal)}</div></div>` : ""}
           ${(k.kpis || []).map(x => `<div class="snap"><div class="k">${esc(x.label)}</div><div class="v">${esc(x.value)}</div></div>`).join("")}
         </div>
       </div>
       ${(k.subProgrammes || []).length ? (k.description ? `<p class="partner-intro">${esc(k.description)}</p>` : "") + subProgrammePanels(k) : ""}
+      ${pmoSections(k)}
       ${cohortTimeline(k, cohorts)}
       ${(k.subProgrammes || []).length ? "" : `<div class="profile-grid">
         <div>
@@ -464,12 +472,40 @@
           ${!hasDesc && !(k.modules || []).length ? `<div class="empty">Programme description still to be added.</div>` : ""}
         </div>
         <div class="side">
-          <div class="panel">
+          ${!cohorts.length && (k.steps || []).length ? "" : `<div class="panel">
             <div class="panel-head"><h2>Cohorts</h2><span class="small muted">${cohorts.length ? cohorts.length + " planned" : ""}</span></div>
             <div class="panel-body">${cohorts.length ? cohorts.map(cohortRow).join("") : `<div class="muted" style="padding:12px 16px">No cohorts scheduled yet.</div>`}</div>
-          </div>
+          </div>`}
         </div>
       </div>`}`;
+  }
+  function pmoSections(k) {
+    const has = (k.steps || []).length || (k.budget || []).length || (k.vendors && ((k.vendors.issued || []).length || (k.vendors.received || []).length)) || (k.ownership || []).length;
+    if (!has) return "";
+    const steps = k.steps || [], budget = k.budget || [], v = k.vendors || {}, own = k.ownership || [];
+    return `
+      <div class="pmo-grid">
+        ${budget.length ? `
+        <div class="panel"><div class="panel-head"><h2>Scope &amp; budget</h2>${k.programmeFormat ? `<span class="small muted">${esc(k.programmeFormat)}</span>` : ""}</div>
+          <div class="budget">${budget.map(b => `<div class="budget-row ${b.total ? "total" : ""}"><span>${esc(b.label)}</span><b>${esc(b.amount)}</b></div>`).join("")}</div>
+        </div>` : ""}
+        ${steps.length ? `
+        <div class="panel"><div class="panel-head"><h2>Status update</h2><span class="small muted">${steps.filter(x => x.status === "done").length} of ${steps.length} steps done</span></div>
+          <div class="steps">${steps.map((x, i) => `<div class="step ${esc(x.status || "pending")}"><div class="step-n">${x.status === "done" ? "✓" : i + 1}</div><div><div class="step-t">${esc(x.label)}</div>${x.note ? `<div class="step-s">${esc(x.note)}</div>` : ""}</div></div>`).join("")}</div>
+        </div>` : ""}
+        ${(v.issued || []).length || (v.received || []).length ? `
+        <div class="panel"><div class="panel-head"><h2>Vendors</h2></div>
+          <div class="vendors">
+            ${(v.issued || []).length ? `<div class="vendor-row"><div class="k">RFPs issued</div><div class="chips">${v.issued.map(x => `<span class="chip">${esc(x)}</span>`).join("")}</div></div>` : ""}
+            ${(v.received || []).length ? `<div class="vendor-row"><div class="k">Proposals received</div><div class="chips">${v.received.map(x => `<span class="chip on">${esc(x)}</span>`).join("")}</div></div>` : ""}
+            ${v.note ? `<div class="vendor-note">⚠ ${esc(v.note)}</div>` : ""}
+          </div>
+        </div>` : ""}
+        ${own.length ? `
+        <div class="panel"><div class="panel-head"><h2>Ownership</h2></div>
+          <div class="own">${own.map(o => `<div class="own-row"><span class="own-who">${esc(o.owner)}</span><span class="own-what">${esc(o.item)}</span></div>`).join("")}</div>
+        </div>` : ""}
+      </div>`;
   }
   function subProgrammePanels(k) {
     return `
@@ -526,6 +562,7 @@
             ${field("Course name", "name", k.name)}
             ${field("Full name (optional)", "fullName", k.fullName)}
             <div class="field"><label>Colour</label><input name="color" type="color" value="${esc(k.color || courseColor(k))}"></div>
+            <div class="field"><label>Category</label><input name="category" value="${esc(k.category || "")}" list="catList"><datalist id="catList">${[...new Set(courses.map(x => x.category).filter(Boolean))].map(x => `<option value="${esc(x)}">`).join("")}</datalist></div>
             ${field("Trained so far", "trained", k.trained, "number")}
             ${field("Target (leave empty if not confirmed)", "target", k.target, "number")}
             ${field("Target period", "targetPeriod", k.targetPeriod, "text", "per year")}
@@ -552,7 +589,7 @@
     bg.addEventListener("submit", e => {
       e.preventDefault();
       const f = bg.querySelector("#courseForm");
-      ["name", "fullName", "unit", "status", "nextDate", "nextLabel", "notes", "targetPeriod", "programmeFormat", "description", "audience", "color"].forEach(x => k[x] = f[x].value.trim());
+      ["name", "fullName", "unit", "status", "nextDate", "nextLabel", "notes", "targetPeriod", "programmeFormat", "description", "audience", "color", "category"].forEach(x => k[x] = f[x].value.trim());
       const ln = x => f[x].value.split("\n").map(t => t.trim()).filter(Boolean);
       k.objectives = ln("objectives");
       k.cohortsDone = f.cohortsDone.value === "" ? null : +f.cohortsDone.value;

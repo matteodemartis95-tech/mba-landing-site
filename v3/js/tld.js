@@ -2,6 +2,8 @@
    T&LD DASHBOARD V3 — COURSES & PROGRAMMES (V3 only)
    ---------------------------------------------------------------------
    One entry per course / programme run by the T&LD practice.
+   - category: boxes are grouped by category on the T&LD page (e.g. "Development programmes", "Baseline competency programmes")
+   - budget / steps / vendors / ownership: optional PMO sections (see the HR Capability Development Programme)
    - color: the programme colour used on its box, bar, page and calendar entries (hex, e.g. "#2a78d6")
    - trained: people trained so far (or users activated, see "unit")
    - target:  the target number; leave null while not confirmed (shown as "TBC")
@@ -75,7 +77,8 @@ const COURSES = [
     ],
     "cohortsDone": null,
     "cohortsTotal": null,
-    "kpis": []
+    "kpis": [],
+    "category": "Development programmes"
   },
   {
     "id": "eap",
@@ -197,7 +200,8 @@ const COURSES = [
         "label": "Senior cohort 1",
         "value": "8 / 15 (53%)"
       }
-    ]
+    ],
+    "category": "Development programmes"
   },
   {
     "id": "ruwaad",
@@ -294,7 +298,8 @@ const COURSES = [
         "label": "Satisfaction",
         "value": "93%"
       }
-    ]
+    ],
+    "category": "Development programmes"
   },
   {
     "id": "ldp",
@@ -440,7 +445,8 @@ const COURSES = [
         "label": "Attendance rate",
         "value": "75%"
       }
-    ]
+    ],
+    "category": "Development programmes"
   },
   {
     "id": "mbzuai",
@@ -520,30 +526,108 @@ const COURSES = [
           }
         ]
       }
-    ]
+    ],
+    "category": "Development programmes"
   },
   {
-    "id": "functional-capability",
-    "name": "Functional Capability",
-    "fullName": "",
+    "id": "hr-capability",
+    "name": "HR Capability Development Programme",
+    "fullName": "Baseline competency · HR",
     "color": "#eda100",
-    "trained": 30,
-    "target": null,
-    "unit": "people trained",
-    "status": "",
-    "nextDate": "",
-    "nextLabel": "",
-    "notes": "",
-    "description": "",
-    "audience": "",
-    "programmeFormat": "",
+    "category": "Baseline competency programmes",
+    "trained": 0,
+    "target": 160,
     "targetPeriod": "",
+    "unit": "HR personnel assessed or trained",
+    "status": "Vendor selection pending approval",
+    "programmeFormat": "~6-month programme",
+    "description": "Assess the technical HR capability of 130 HR personnel across 11 domains, from workforce planning to HR analytics, and close the gaps through a pilot training for 30 FTEs.",
+    "audience": "130 HR personnel for the assessment; 30 FTEs for the pilot training.",
     "objectives": [],
     "modules": [],
     "cohorts": [],
     "cohortsDone": null,
     "cohortsTotal": null,
-    "kpis": []
+    "kpis": [],
+    "budget": [
+      {
+        "label": "Assessment of 130 FTEs",
+        "amount": "AED 1.8 Mn"
+      },
+      {
+        "label": "Training of 30 FTEs",
+        "amount": "AED 3.5 Mn"
+      },
+      {
+        "label": "Total",
+        "amount": "AED 5.3 Mn",
+        "total": true
+      }
+    ],
+    "steps": [
+      {
+        "label": "Identify need & scope of work",
+        "status": "done"
+      },
+      {
+        "label": "Launch request for proposal",
+        "status": "done"
+      },
+      {
+        "label": "Evaluate & select vendor",
+        "status": "current",
+        "note": "Selection pending approval"
+      },
+      {
+        "label": "Mobilise and start",
+        "status": "pending"
+      }
+    ],
+    "vendors": {
+      "issued": [
+        "Aon",
+        "Mercer",
+        "Deloitte",
+        "CIPD",
+        "Korn Ferry",
+        "EY",
+        "KPMG",
+        "PwC"
+      ],
+      "received": [
+        "Aon",
+        "Mercer",
+        "Deloitte",
+        "Korn Ferry",
+        "EY"
+      ],
+      "note": "Selection pending approval"
+    },
+    "ownership": [
+      {
+        "owner": "MOD",
+        "item": "Programme ownership"
+      },
+      {
+        "owner": "MOD",
+        "item": "Funding"
+      },
+      {
+        "owner": "Executive Office",
+        "item": "Procurement & contracting"
+      },
+      {
+        "owner": "Vendor awarded",
+        "item": "Programme delivery"
+      },
+      {
+        "owner": "Executive Office + MOD",
+        "item": "Performance oversight"
+      }
+    ],
+    "nextDate": "",
+    "nextLabel": "",
+    "notes": ""
   }
 ];
 

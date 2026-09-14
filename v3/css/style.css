@@ -486,3 +486,32 @@ td .approx { color: var(--text-3); font-size: 11px; margin-left: 4px; }
 .course-page .course-icon { background: var(--c-soft); color: var(--c); }
 .course-page .badge.pmo { background: var(--c-soft); color: var(--c); }
 .agenda-item.coloured .agenda-date { background: var(--c-soft); border-color: transparent; color: var(--c); }
+
+/* V3: categories and PMO sections */
+.cat-head { display: flex; align-items: baseline; gap: 10px; margin: 6px 0 12px; }
+.cat-head + .grid { margin-bottom: 22px; }
+.pmo-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; margin-bottom: 20px; align-items: stretch; }
+.budget { padding: 8px 16px 14px; }
+.budget-row { display: flex; justify-content: space-between; gap: 12px; padding: 9px 0; border-bottom: 1px solid var(--border); font-size: 13.5px; }
+.budget-row:last-child { border-bottom: 0; }
+.budget-row.total { font-weight: 700; border-top: 2px solid var(--border-strong); }
+.budget-row.total b { color: var(--c, var(--accent)); }
+.steps { padding: 10px 16px 14px; display: grid; gap: 8px; }
+.step { display: grid; grid-template-columns: 28px 1fr; gap: 10px; align-items: start; padding: 10px 12px; border-radius: 10px; border: 1px solid var(--border); background: var(--surface-2); }
+.step-n { width: 24px; height: 24px; border-radius: 50%; display: grid; place-items: center; font-size: 12px; font-weight: 700; background: var(--border-strong); color: var(--text-2); }
+.step.done .step-n { background: var(--good); color: #fff; }
+.step.done { opacity: .85; }
+.step.current { border-color: var(--warning); background: var(--warning-soft); }
+.step.current .step-n { background: var(--warning); color: #3a2a00; }
+.step-t { font-weight: 600; font-size: 13px; }
+.step-s { font-size: 12px; color: var(--warning-ink); margin-top: 2px; }
+.vendors { padding: 8px 16px 14px; display: grid; gap: 10px; }
+.vendor-row .k { font-size: 11px; color: var(--text-3); text-transform: uppercase; letter-spacing: .05em; margin-bottom: 6px; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip { padding: 3px 9px; border-radius: 999px; border: 1px solid var(--border); background: var(--surface-2); font-size: 12px; font-weight: 500; }
+.chip.on { background: var(--good-soft); color: var(--good-ink); border-color: transparent; font-weight: 600; }
+.vendor-note { font-size: 12.5px; color: var(--warning-ink); background: var(--warning-soft); border-radius: 8px; padding: 8px 10px; font-weight: 600; }
+.own { padding: 8px 16px 14px; display: grid; gap: 6px; }
+.own-row { display: grid; grid-template-columns: 150px 1fr; gap: 10px; align-items: center; font-size: 13px; }
+.own-who { font-size: 11px; color: var(--text-3); text-transform: uppercase; letter-spacing: .05em; }
+.own-what { padding: 7px 10px; border-radius: 8px; background: var(--surface-2); border: 1px solid var(--border); font-weight: 600; }
