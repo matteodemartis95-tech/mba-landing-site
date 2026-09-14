@@ -324,7 +324,7 @@
   /* ---------- rendering: T&LD ---------- */
   function nextCohort(k) {
     const cs = (k.cohorts || []).filter(c => parseDate(c.start)).sort((a, b) => parseDate(a.start) - parseDate(b.start));
-    return cs.find(c => c.status !== "completed" && daysFrom(parseDate(c.start)) >= 0) || null;
+    return cs.find(c => c.status === "running") || cs.find(c => c.status !== "completed" && daysFrom(parseDate(c.start)) >= 0) || null;
   }
   function fmtNum(n) { return (n == null || n === "") ? "—" : Number(n).toLocaleString("en-GB"); }
   function courseCard(k) {
@@ -395,7 +395,7 @@
     const hasTarget = k.target != null && k.target !== "";
     const pct = hasTarget && k.target > 0 ? Math.min(100, Math.round(100 * (k.trained || 0) / k.target)) : null;
     const cohorts = (k.cohorts || []).slice().sort((a, b) => (parseDate(a.start) || 0) - (parseDate(b.start) || 0));
-    const next = cohorts.find(c => c.status !== "completed" && parseDate(c.start) && daysFrom(parseDate(c.start)) >= 0) || cohorts.find(c => c.status === "running");
+    const next = nextCohort(k);
     const nd = next ? parseDate(next.start) : parseDate(k.nextDate);
     const hasDesc = k.description || k.audience || (k.objectives || []).length || (k.modules || []).length;
     const cohortRow = c => { const sd = parseDate(c.start), ed = parseDate(c.end); return `
@@ -416,7 +416,7 @@
         <div class="snapshot">
           <div class="snap"><div class="k">${esc(k.unit || "People trained")}</div><div class="v">${fmtNum(k.trained)}</div></div>
           <div class="snap"><div class="k">Target${k.targetPeriod ? " " + esc(k.targetPeriod) : ""}</div><div class="v ${hasTarget ? "" : "muted"}">${hasTarget ? fmtNum(k.target) : "TBC"}</div></div>
-          <div class="snap"><div class="k">Next cohort</div><div class="v ${nd ? "" : "muted"}">${next ? `${fmt(nd, true)} · ${esc(next.label)}${next.participants ? " · " + fmtNum(next.participants) + " participants" : ""}` : (nd ? fmt(nd, true) + (k.nextLabel ? " · " + esc(k.nextLabel) : "") : "Not scheduled")}</div></div>
+          <div class="snap"><div class="k">${next && next.status === "running" ? "Current session" : "Next session"}</div><div class="v ${nd ? "" : "muted"}">${next ? `${fmt(nd, true)} · ${esc(next.label)}${next.participants ? " · " + fmtNum(next.participants) + " participants" : ""}` : (nd ? fmt(nd, true) + (k.nextLabel ? " · " + esc(k.nextLabel) : "") : "Not scheduled")}</div></div>
           ${k.status ? `<div class="snap"><div class="k">Status</div><div class="v">${esc(k.status)}</div></div>` : ""}
           ${k.cohortsTotal ? `<div class="snap"><div class="k">Cohorts delivered</div><div class="v">${fmtNum(k.cohortsDone || 0)} of ${fmtNum(k.cohortsTotal)}</div></div>` : ""}
           ${(k.kpis || []).map(x => `<div class="snap"><div class="k">${esc(x.label)}</div><div class="v">${esc(x.value)}</div></div>`).join("")}
@@ -458,7 +458,7 @@
     dated.forEach(c => { const d = parseDate(c.start); const key = d.getFullYear() + "-" + d.getMonth(); let m = months.find(x => x.key === key); if (!m) { m = { key, year: d.getFullYear(), month: d.getMonth(), items: [] }; months.push(m); } m.items.push(c); });
     months.sort((a, b) => a.year - b.year || a.month - b.month);
     const undated = cohorts.filter(c => !parseDate(c.start) && c.status !== "completed");
-    const done = k.cohortsDone || cohorts.filter(c => c.status === "completed").length;
+    const done = k.cohortsDone != null ? k.cohortsDone : cohorts.filter(c => c.status === "completed").length;
     const total = k.cohortsTotal || cohorts.length;
     return `
       <div class="panel timeline-panel">

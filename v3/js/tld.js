@@ -76,24 +76,123 @@ const COURSES = [
   {
     "id": "eap",
     "name": "EAP",
-    "fullName": "",
+    "fullName": "Enterprise Accelerator Programme",
     "trained": 34,
-    "target": null,
-    "unit": "people trained",
-    "status": "",
+    "target": 60,
+    "unit": "participants",
+    "status": "Awaiting confirmed additional participants for the two upcoming cohorts",
     "nextDate": "",
     "nextLabel": "",
     "notes": "",
-    "description": "",
-    "audience": "",
-    "programmeFormat": "",
+    "description": "Capability-building initiative designed and delivered for the MoD to strengthen core enterprise skills across MoD teams, so that participants become effective, productive contributors within the Ministry. Two streams, mid-level and senior leader, build a common language and toolkit with differentiated depth. Six core skill areas, from problem solving to stakeholder management and executive communication. Each stream follows two intensive one-week bootcamps with on-the-job application (1–2 hours a week) in between, supported by short deep-dive and refresher sessions, and closes with a celebration and graduation in mid-November.",
+    "audience": "Mid-level and senior leaders across MoD teams; 15 participants per cohort, two cohorts per stream.",
+    "programmeFormat": "Two 1-week bootcamps per stream, on-the-job application in between",
     "targetPeriod": "",
     "objectives": [],
-    "modules": [],
-    "cohorts": [],
-    "cohortsDone": null,
-    "cohortsTotal": null,
-    "kpis": []
+    "modules": [
+      {
+        "title": "Mid-level stream",
+        "summary": "Foundational enterprise skills applied directly to participants' day-to-day work"
+      },
+      {
+        "title": "Senior leader stream",
+        "summary": "Same approaches and frameworks along a more advanced track: role-modelling consistency, guiding team members, decision-making and leadership application"
+      }
+    ],
+    "cohorts": [
+      {
+        "label": "Mid-level cohort 1 · Bootcamp 1",
+        "start": "2026-08-31",
+        "end": "2026-09-04",
+        "participants": 14,
+        "status": "completed",
+        "note": "14 of 15 attended (93%)"
+      },
+      {
+        "label": "Senior cohort 1 · Bootcamp 1",
+        "start": "2026-09-07",
+        "end": "2026-09-11",
+        "participants": 8,
+        "status": "completed",
+        "note": "8 of 15 attended (53%)"
+      },
+      {
+        "label": "Mid-level cohort 2 · Bootcamp 1",
+        "start": "2026-09-14",
+        "end": "2026-09-18",
+        "participants": 12,
+        "status": "running",
+        "note": "12 of 15 (80%) · additional participants to be confirmed"
+      },
+      {
+        "label": "Senior cohort 2 · Bootcamp 1",
+        "start": "2026-09-21",
+        "end": "2026-09-25",
+        "participants": null,
+        "status": "planned",
+        "note": "Participants to be confirmed"
+      },
+      {
+        "label": "Mid-level cohort 1 · Bootcamp 2",
+        "start": "2026-10-05",
+        "end": "2026-10-09",
+        "participants": null,
+        "status": "planned",
+        "note": ""
+      },
+      {
+        "label": "Senior cohort 1 · Bootcamp 2",
+        "start": "2026-10-12",
+        "end": "2026-10-16",
+        "participants": null,
+        "status": "planned",
+        "note": ""
+      },
+      {
+        "label": "Mid-level cohort 2 · Bootcamp 2",
+        "start": "2026-10-26",
+        "end": "2026-10-30",
+        "participants": null,
+        "status": "planned",
+        "note": ""
+      },
+      {
+        "label": "Senior cohort 2 · Bootcamp 2",
+        "start": "2026-11-02",
+        "end": "2026-11-06",
+        "participants": null,
+        "status": "planned",
+        "note": ""
+      },
+      {
+        "label": "Celebration and graduation",
+        "start": "2026-11-16",
+        "end": "",
+        "participants": null,
+        "status": "planned",
+        "note": "Mid-November, exact date to be confirmed"
+      }
+    ],
+    "cohortsDone": 0,
+    "cohortsTotal": 4,
+    "kpis": [
+      {
+        "label": "Cohorts started",
+        "value": "3 of 4"
+      },
+      {
+        "label": "Mid-level cohort 1",
+        "value": "14 / 15 (93%)"
+      },
+      {
+        "label": "Mid-level cohort 2",
+        "value": "12 / 15 (80%)"
+      },
+      {
+        "label": "Senior cohort 1",
+        "value": "8 / 15 (53%)"
+      }
+    ]
   },
   {
     "id": "ruwaad",
