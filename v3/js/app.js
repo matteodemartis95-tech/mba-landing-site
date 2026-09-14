@@ -438,7 +438,7 @@
           <div class="meta"><span class="badge pmo">PMO</span>${k.fullName ? `<span class="badge intake">${esc(k.fullName)}</span>` : ""}${k.programmeFormat ? `<span class="badge intake">${esc(k.programmeFormat)}</span>` : ""}</div>
           ${k.notes ? `<div class="notes">${esc(k.notes)}</div>` : ""}
         </div>
-        <div class="actions">${editMode ? `<button class="btn" data-edit-course="${esc(k.id)}">Edit course</button><button class="btn danger" data-del-course="${esc(k.id)}">Delete</button>` : ""}</div>
+        <div class="actions">${(k.docs || []).filter(d => d.url).map(d => `<a class="btn doc-link" href="${esc(d.url)}" target="_blank" rel="noopener">📄 ${esc(d.label || "Document")}</a>`).join("")}${editMode ? `<button class="btn" data-edit-course="${esc(k.id)}">Edit course</button><button class="btn danger" data-del-course="${esc(k.id)}">Delete</button>` : ""}</div>
         <div class="snapshot">
           <div class="snap"><div class="k">${esc(k.unit || "People trained")}</div><div class="v">${fmtNum(k.trained)}</div></div>
           ${(k.subProgrammes || []).length ? `<div class="snap"><div class="k">Programmes</div><div class="v">${k.subProgrammes.length}</div></div>` : `<div class="snap"><div class="k">Target${k.targetPeriod ? " " + esc(k.targetPeriod) : ""}</div><div class="v ${hasTarget ? "" : "muted"}">${hasTarget ? fmtNum(k.target) : "TBC"}</div></div>`}
@@ -579,6 +579,7 @@
             <div class="field wide"><label>Objectives (one per line)</label><textarea name="objectives" rows="4">${esc(lines(k.objectives, o => o))}</textarea></div>
             <div class="field wide"><label>Curriculum modules (one per line: Title: summary)</label><textarea name="modules" rows="5">${esc(lines(k.modules, m => m.summary ? m.title + ": " + m.summary : m.title))}</textarea></div>
             <div class="field wide"><label>Cohorts (one per line: Label | start YYYY-MM-DD | end YYYY-MM-DD | participants | status | note)</label><textarea name="cohorts" rows="3">${esc(lines(k.cohorts, c => [c.label, c.start, c.end, c.participants, c.status, c.note].map(x => x == null ? "" : x).join(" | ")))}</textarea></div>
+            <div class="field wide"><label>Documents (one per line: Label | https://link)</label><textarea name="docs" rows="2">${esc(lines(k.docs, d => (d.label || "") + " | " + (d.url || "")))}</textarea></div>
             <div class="field wide"><label>Notes</label><textarea name="notes">${esc(k.notes)}</textarea></div>
           </div>
         </div>
@@ -592,6 +593,7 @@
       ["name", "fullName", "unit", "status", "nextDate", "nextLabel", "notes", "targetPeriod", "programmeFormat", "description", "audience", "color", "category"].forEach(x => k[x] = f[x].value.trim());
       const ln = x => f[x].value.split("\n").map(t => t.trim()).filter(Boolean);
       k.objectives = ln("objectives");
+      k.docs = ln("docs").map(t => { const p = t.split("|").map(x => x.trim()); return { label: p[0] || "Document", url: p[1] || "" }; });
       k.cohortsDone = f.cohortsDone.value === "" ? null : +f.cohortsDone.value;
       k.cohortsTotal = f.cohortsTotal.value === "" ? null : +f.cohortsTotal.value;
       k.kpis = ln("kpis").map(t => { const i = t.indexOf(":"); return i > 0 ? { label: t.slice(0, i).trim(), value: t.slice(i + 1).trim() } : { label: t, value: "" }; });

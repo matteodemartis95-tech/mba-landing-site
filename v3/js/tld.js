@@ -3,6 +3,7 @@
    ---------------------------------------------------------------------
    One entry per course / programme run by the T&LD practice.
    - category: boxes are grouped by category on the T&LD page (e.g. "Development programmes", "Baseline competency programmes")
+   - docs: links shown top-right of the PMO page, e.g. [{ label: "Curriculum", url: "https://..." }] (a link without url is hidden)
    - budget / steps / vendors / ownership: optional PMO sections (see the HR Capability Development Programme)
    - color: the programme colour used on its box, bar, page and calendar entries (hex, e.g. "#2a78d6")
    - trained: people trained so far (or users activated, see "unit")
@@ -29,12 +30,12 @@ const COURSES = [
     "trained": 0,
     "target": 100,
     "unit": "people trained",
-    "status": "First cohort starts 21 Sep 2026",
+    "status": "",
     "nextDate": "2026-09-21",
     "nextLabel": "First cohort · 23 participants",
     "notes": "",
     "targetPeriod": "per year",
-    "description": "Requested by H.E. the MDA to enhance media awareness with a more proactive approach, drawing on lessons learned from recent events. A regular cadence of media training for MOD leaders: expert-led masterclasses with applied practice, delivered by Arabic-speaking experts with an established media partner (IMI Media Academy). The first cohort is delivered in September at the National Defence College and IMI Media.",
+    "description": "Media training for MOD leaders, requested by H.E. the MDA to build a proactive approach to media awareness. Expert-led masterclasses with applied practice, delivered in Arabic with IMI Media Academy at the National Defence College.",
     "audience": "Cohorts of 20–25 MOD senior officers: Heads of Functions / Authority and senior military and civilian personnel at Brigadier and Colonel level.",
     "objectives": [
       "Strengthen understanding of clarity and message discipline",
@@ -71,14 +72,20 @@ const COURSES = [
         "start": "2026-09-21",
         "end": "",
         "participants": 23,
-        "note": "Colonel level and above · 18 MOD, 5 NDC · National Defence College and IMI Media",
+        "note": "18 from MOD and 5 from NDC · Colonel level and above · National Defence College and IMI Media",
         "status": "planned"
       }
     ],
     "cohortsDone": null,
     "cohortsTotal": null,
     "kpis": [],
-    "category": "Development programmes"
+    "category": "Development programmes",
+    "docs": [
+      {
+        "label": "Media Training curriculum",
+        "url": ""
+      }
+    ]
   },
   {
     "id": "eap",

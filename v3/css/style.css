@@ -515,3 +515,5 @@ td .approx { color: var(--text-3); font-size: 11px; margin-left: 4px; }
 .own-row { display: grid; grid-template-columns: 150px 1fr; gap: 10px; align-items: center; font-size: 13px; }
 .own-who { font-size: 11px; color: var(--text-3); text-transform: uppercase; letter-spacing: .05em; }
 .own-what { padding: 7px 10px; border-radius: 8px; background: var(--surface-2); border: 1px solid var(--border); font-weight: 600; }
+
+.doc-link { color: var(--accent-ink); }
