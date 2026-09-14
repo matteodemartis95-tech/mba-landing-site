@@ -203,7 +203,7 @@ const COURSES = [
     "nextLabel": "",
     "notes": "",
     "description": "Arabic-delivered Leadership Bootcamp, run with HNI, to accelerate leadership readiness across the MOD workforce by building both self-leadership and people-leadership capabilities. Each cohort follows a 4.5-day face-to-face journey: Leading Self (2 days), Leading Others (2 days) and a half-day integration and reflection session, delivered by certified Arabic-speaking facilitators through simulations, role-plays and reflection circles.",
-    "audience": "MOD employees across the organisation; 1,000 participants in rotating cohorts.",
+    "audience": "MOD employees",
     "programmeFormat": "4.5-day cohorts, Monday to Friday",
     "targetPeriod": "",
     "objectives": [],
