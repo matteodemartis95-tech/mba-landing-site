@@ -416,9 +416,8 @@
         <div class="snapshot">
           <div class="snap"><div class="k">${esc(k.unit || "People trained")}</div><div class="v">${fmtNum(k.trained)}</div></div>
           <div class="snap"><div class="k">Target${k.targetPeriod ? " " + esc(k.targetPeriod) : ""}</div><div class="v ${hasTarget ? "" : "muted"}">${hasTarget ? fmtNum(k.target) : "TBC"}</div></div>
-          <div class="snap"><div class="k">Progress</div><div class="v ${pct == null ? "muted" : ""}">${pct == null ? "—" : pct + "%"}</div></div>
           <div class="snap"><div class="k">Next cohort</div><div class="v ${nd ? "" : "muted"}">${next ? `${fmt(nd, true)} · ${esc(next.label)}${next.participants ? " · " + fmtNum(next.participants) + " participants" : ""}` : (nd ? fmt(nd, true) + (k.nextLabel ? " · " + esc(k.nextLabel) : "") : "Not scheduled")}</div></div>
-          <div class="snap"><div class="k">Status</div><div class="v ${k.status ? "" : "muted"}">${esc(k.status || "—")}</div></div>
+          ${k.status ? `<div class="snap"><div class="k">Status</div><div class="v">${esc(k.status)}</div></div>` : ""}
           ${k.cohortsTotal ? `<div class="snap"><div class="k">Cohorts delivered</div><div class="v">${fmtNum(k.cohortsDone || 0)} of ${fmtNum(k.cohortsTotal)}</div></div>` : ""}
           ${(k.kpis || []).map(x => `<div class="snap"><div class="k">${esc(x.label)}</div><div class="v">${esc(x.value)}</div></div>`).join("")}
         </div>
