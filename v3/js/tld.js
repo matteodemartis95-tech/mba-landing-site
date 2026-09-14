@@ -10,6 +10,8 @@
    - targetPeriod: e.g. "per year" (shown next to the target)
    - description / audience / objectives / modules: the quick description on the PMO page
    - cohorts: [{ label, start "YYYY-MM-DD", end, participants, note, status: "planned" | "running" | "completed" }]
+   - cohortsDone / cohortsTotal: cohorts delivered so far / planned in total (optional)
+   - kpis: extra figures shown on the PMO page, e.g. [{ label: "Attendance rate", value: "39%" }]
    Easiest way to update: Edit mode in V3 → Edit on a course → "Copy tld.js",
    then paste over this file on GitHub.
    ===================================================================== */
@@ -66,7 +68,10 @@ const COURSES = [
         "note": "Colonel level and above · 18 MOD, 5 NDC · National Defence College and IMI Media",
         "status": "planned"
       }
-    ]
+    ],
+    "cohortsDone": null,
+    "cohortsTotal": null,
+    "kpis": []
   },
   {
     "id": "eap",
@@ -85,26 +90,114 @@ const COURSES = [
     "targetPeriod": "",
     "objectives": [],
     "modules": [],
-    "cohorts": []
+    "cohorts": [],
+    "cohortsDone": null,
+    "cohortsTotal": null,
+    "kpis": []
   },
   {
     "id": "ruwaad",
     "name": "Ruwaad",
-    "fullName": "",
+    "fullName": "Change management and institutional transformation programme",
     "trained": 325,
-    "target": null,
+    "target": 1000,
     "unit": "people trained",
-    "status": "",
+    "status": "12 of 20 cohorts delivered",
     "nextDate": "",
     "nextLabel": "",
     "notes": "",
-    "description": "",
+    "description": "Programme building incremental change management and institutional transformation.",
     "audience": "",
-    "programmeFormat": "",
+    "programmeFormat": "Two-day cohorts",
     "targetPeriod": "",
     "objectives": [],
     "modules": [],
-    "cohorts": []
+    "cohorts": [
+      {
+        "label": "Cohort 13",
+        "start": "",
+        "end": "",
+        "participants": null,
+        "status": "planned",
+        "note": "Date to be confirmed"
+      },
+      {
+        "label": "Cohort 14",
+        "start": "",
+        "end": "",
+        "participants": null,
+        "status": "planned",
+        "note": "Date to be confirmed"
+      },
+      {
+        "label": "Additional session",
+        "start": "2026-10-19",
+        "end": "2026-10-21",
+        "participants": null,
+        "status": "planned",
+        "note": ""
+      },
+      {
+        "label": "Cohort 15",
+        "start": "2026-10-26",
+        "end": "2026-10-27",
+        "participants": null,
+        "status": "planned",
+        "note": "Multi-purpose Rooms 1&2"
+      },
+      {
+        "label": "Cohort 16",
+        "start": "2026-10-28",
+        "end": "2026-10-29",
+        "participants": null,
+        "status": "planned",
+        "note": "Multi-purpose Rooms 1&2"
+      },
+      {
+        "label": "Cohort 17",
+        "start": "2026-11-23",
+        "end": "2026-11-24",
+        "participants": null,
+        "status": "planned",
+        "note": "Multi-purpose Rooms 1&2"
+      },
+      {
+        "label": "Cohort 18",
+        "start": "2026-11-25",
+        "end": "2026-11-26",
+        "participants": null,
+        "status": "planned",
+        "note": "Multi-purpose Rooms 1&2"
+      },
+      {
+        "label": "Cohort 19",
+        "start": "2026-12-07",
+        "end": "2026-12-08",
+        "participants": null,
+        "status": "planned",
+        "note": "Multi-purpose Rooms 1&2"
+      },
+      {
+        "label": "Cohort 20",
+        "start": "2026-12-09",
+        "end": "2026-12-10",
+        "participants": null,
+        "status": "planned",
+        "note": "Multi-purpose Rooms 1&2"
+      }
+    ],
+    "cohortsDone": 12,
+    "cohortsTotal": 20,
+    "kpis": [
+      {
+        "label": "Attendance rate",
+        "value": "39%"
+      },
+      {
+        "label": "Satisfaction",
+        "value": ">90%"
+      }
+    ]
   },
   {
     "id": "ldp",
@@ -123,7 +216,10 @@ const COURSES = [
     "targetPeriod": "",
     "objectives": [],
     "modules": [],
-    "cohorts": []
+    "cohorts": [],
+    "cohortsDone": null,
+    "cohortsTotal": null,
+    "kpis": []
   },
   {
     "id": "mbzuai-ai-for-all",
@@ -142,7 +238,10 @@ const COURSES = [
     "targetPeriod": "",
     "objectives": [],
     "modules": [],
-    "cohorts": []
+    "cohorts": [],
+    "cohortsDone": null,
+    "cohortsTotal": null,
+    "kpis": []
   },
   {
     "id": "functional-capability",
@@ -161,7 +260,10 @@ const COURSES = [
     "targetPeriod": "",
     "objectives": [],
     "modules": [],
-    "cohorts": []
+    "cohorts": [],
+    "cohortsDone": null,
+    "cohortsTotal": null,
+    "kpis": []
   }
 ];
 

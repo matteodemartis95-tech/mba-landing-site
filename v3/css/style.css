@@ -438,3 +438,21 @@ td .approx { color: var(--text-3); font-size: 11px; margin-left: 4px; }
 .module-n { width: 26px; height: 26px; border-radius: 50%; background: var(--accent); color: #fff; font-weight: 700; font-size: 12px; display: grid; place-items: center; }
 .module-t { font-weight: 600; }
 .module-s { font-size: 12.5px; color: var(--text-2); margin-top: 2px; }
+
+/* V3: cohort timeline */
+.timeline-panel { margin-bottom: 20px; }
+.cohort-meter { height: 6px; background: var(--accent-soft); margin: 0 16px; border-radius: 3px; overflow: hidden; }
+.cohort-meter .fill { height: 100%; background: var(--accent); }
+.timeline { display: flex; gap: 10px; overflow-x: auto; padding: 14px 16px 16px; }
+.tl-month { flex: 1 0 150px; min-width: 150px; border: 1px solid var(--border); border-radius: 10px; background: var(--surface-2); padding: 8px; display: flex; flex-direction: column; gap: 6px; }
+.tl-month.now { border-color: var(--accent); }
+.tl-month.done { background: var(--good-soft); border-color: transparent; }
+.tl-head { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; color: var(--text-3); padding: 0 2px 4px; }
+.tl-month.done .tl-head { color: var(--good-ink); }
+.tl-pill { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 6px 8px; font-size: 12px; line-height: 1.25; }
+.tl-pill b { display: block; font-weight: 600; }
+.tl-pill span { color: var(--text-2); }
+.tl-pill.soon { border-color: var(--warning); background: var(--warning-soft); }
+.tl-pill.past { opacity: .6; }
+.tl-pill.done { background: var(--surface); color: var(--good-ink); font-weight: 600; }
+.tl-pill.tbc { color: var(--text-3); font-style: italic; }

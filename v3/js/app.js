@@ -322,11 +322,17 @@
   }
 
   /* ---------- rendering: T&LD ---------- */
+  function nextCohort(k) {
+    const cs = (k.cohorts || []).filter(c => parseDate(c.start)).sort((a, b) => parseDate(a.start) - parseDate(b.start));
+    return cs.find(c => c.status !== "completed" && daysFrom(parseDate(c.start)) >= 0) || null;
+  }
   function fmtNum(n) { return (n == null || n === "") ? "—" : Number(n).toLocaleString("en-GB"); }
   function courseCard(k) {
     const hasTarget = k.target != null && k.target !== "";
     const pct = hasTarget && k.target > 0 ? Math.min(100, Math.round(100 * (k.trained || 0) / k.target)) : null;
-    const nd = parseDate(k.nextDate);
+    const nc = nextCohort(k);
+    const nd = nc ? parseDate(nc.start) : parseDate(k.nextDate);
+    const ndLabel = nc ? `${nc.label}${nc.participants ? " · " + fmtNum(nc.participants) + " participants" : ""}` : (k.nextLabel || k.status || "next milestone");
     return `
       <a class="card course" href="#/course/${esc(k.id)}">
         <div class="course-head">
@@ -338,13 +344,17 @@
         <div class="meter"><div class="fill" style="width:${pct == null ? 0 : pct}%"></div></div>
         <div class="course-foot">
           ${pct != null ? `<span><strong>${pct}%</strong> of target</span>` : `<span class="muted">Progress shown once the target is set</span>`}
-          ${nd ? `<span class="next ${daysFrom(nd) <= 7 ? "soon" : ""}"><strong>${fmt(nd)}</strong> · ${esc(k.nextLabel || k.status || "next milestone")}</span>` : (k.status ? `<span>${esc(k.status)}</span>` : "")}
+          ${nd ? `<span class="next ${daysFrom(nd) <= 7 ? "soon" : ""}"><strong>${fmt(nd)}</strong> · ${esc(ndLabel)}</span>` : (k.status ? `<span>${esc(k.status)}</span>` : "")}
         </div>
       </a>`;
   }
   function tldAgenda() {
     const items = [];
-    courses.forEach(k => { const d = parseDate(k.nextDate); if (d && daysFrom(d) >= -3) items.push({ date: d, title: k.name, sub: k.nextLabel || k.status || "Milestone", href: "#/course/" + k.id }); });
+    courses.forEach(k => {
+      const cs = (k.cohorts || []).filter(c => parseDate(c.start));
+      if (cs.length) cs.forEach(c => { const d = parseDate(c.start); if (c.status !== "completed" && daysFrom(d) >= -3 && daysFrom(d) <= 120) items.push({ date: d, title: `${k.name} · ${c.label}`, sub: (parseDate(c.end) ? fmt(d) + " – " + fmt(parseDate(c.end)) : fmt(d)) + (c.participants ? " · " + fmtNum(c.participants) + " participants" : ""), href: "#/course/" + k.id }); });
+      else { const d = parseDate(k.nextDate); if (d && daysFrom(d) >= -3) items.push({ date: d, title: k.name, sub: k.nextLabel || k.status || "Milestone", href: "#/course/" + k.id }); }
+    });
     (META.quarterlyEvaluations || []).forEach(q => { const d = parseDate(q.date); if (d && q.status !== "completed" && daysFrom(d) >= -3 && daysFrom(d) <= 120) items.push({ date: d, title: `${q.label} quarterly evaluation`, sub: "Jahizoun / EDGE candidates", href: "#/jahizoun", type: "evaluation" }); });
     items.sort((a, b) => a.date - b.date);
     return `
@@ -409,8 +419,11 @@
           <div class="snap"><div class="k">Progress</div><div class="v ${pct == null ? "muted" : ""}">${pct == null ? "—" : pct + "%"}</div></div>
           <div class="snap"><div class="k">Next cohort</div><div class="v ${nd ? "" : "muted"}">${next ? `${fmt(nd, true)} · ${esc(next.label)}${next.participants ? " · " + fmtNum(next.participants) + " participants" : ""}` : (nd ? fmt(nd, true) + (k.nextLabel ? " · " + esc(k.nextLabel) : "") : "Not scheduled")}</div></div>
           <div class="snap"><div class="k">Status</div><div class="v ${k.status ? "" : "muted"}">${esc(k.status || "—")}</div></div>
+          ${k.cohortsTotal ? `<div class="snap"><div class="k">Cohorts delivered</div><div class="v">${fmtNum(k.cohortsDone || 0)} of ${fmtNum(k.cohortsTotal)}</div></div>` : ""}
+          ${(k.kpis || []).map(x => `<div class="snap"><div class="k">${esc(x.label)}</div><div class="v">${esc(x.value)}</div></div>`).join("")}
         </div>
       </div>
+      ${cohortTimeline(k, cohorts)}
       <div class="profile-grid">
         <div>
           ${hasDesc ? `
@@ -439,9 +452,29 @@
         </div>
       </div>`;
   }
+  function cohortTimeline(k, cohorts) {
+    const dated = cohorts.filter(c => parseDate(c.start));
+    if (!dated.length && !k.cohortsTotal) return "";
+    const months = [];
+    dated.forEach(c => { const d = parseDate(c.start); const key = d.getFullYear() + "-" + d.getMonth(); let m = months.find(x => x.key === key); if (!m) { m = { key, year: d.getFullYear(), month: d.getMonth(), items: [] }; months.push(m); } m.items.push(c); });
+    months.sort((a, b) => a.year - b.year || a.month - b.month);
+    const undated = cohorts.filter(c => !parseDate(c.start) && c.status !== "completed");
+    const done = k.cohortsDone || cohorts.filter(c => c.status === "completed").length;
+    const total = k.cohortsTotal || cohorts.length;
+    return `
+      <div class="panel timeline-panel">
+        <div class="panel-head"><h2>Cohort timeline</h2><span class="small muted">${done ? `${fmtNum(done)} of ${fmtNum(total)} cohorts delivered` : `${fmtNum(total)} cohorts`}</span></div>
+        ${total ? `<div class="cohort-meter"><div class="fill" style="width:${Math.min(100, Math.round(100 * done / total))}%"></div></div>` : ""}
+        <div class="timeline">
+          ${done ? `<div class="tl-month done"><div class="tl-head">Delivered</div><div class="tl-pill done">${fmtNum(done)} cohort${done === 1 ? "" : "s"} completed</div></div>` : ""}
+          ${undated.length ? `<div class="tl-month"><div class="tl-head">Date TBC</div>${undated.map(c => `<div class="tl-pill tbc">${esc(c.label)}</div>`).join("")}</div>` : ""}
+          ${months.map(m => `<div class="tl-month ${m.year === today.getFullYear() && m.month === today.getMonth() ? "now" : ""}"><div class="tl-head">${MONTHS[m.month]} ${m.year}</div>${m.items.sort((a, b) => parseDate(a.start) - parseDate(b.start)).map(c => { const sd = parseDate(c.start), ed = parseDate(c.end); const past = ed ? daysFrom(ed) < 0 : daysFrom(sd) < 0; return `<div class="tl-pill ${c.status === "completed" || past ? "past" : ""} ${daysFrom(sd) >= 0 && daysFrom(sd) <= 14 ? "soon" : ""}" title="${esc(c.note || "")}"><b>${esc(c.label)}</b><span>${sd.getDate()}${ed ? "–" + ed.getDate() : ""} ${MONTHS[sd.getMonth()]}${c.participants ? " · " + fmtNum(c.participants) : ""}</span></div>`; }).join("")}</div>`).join("")}
+        </div>
+      </div>`;
+  }
   function openCourseEditor(id) {
     const isNew = !id;
-    const k = isNew ? { id: "", name: "", fullName: "", trained: 0, target: null, targetPeriod: "", unit: "people trained", status: "", nextDate: "", nextLabel: "", description: "", audience: "", programmeFormat: "", objectives: [], modules: [], cohorts: [], notes: "" } : deepClone(courses.find(x => x.id === id));
+    const k = isNew ? { id: "", name: "", fullName: "", trained: 0, target: null, targetPeriod: "", unit: "people trained", status: "", nextDate: "", nextLabel: "", description: "", audience: "", programmeFormat: "", objectives: [], modules: [], cohorts: [], cohortsDone: null, cohortsTotal: null, kpis: [], notes: "" } : deepClone(courses.find(x => x.id === id));
     const lines = (arr, f) => (arr || []).map(f).join("\n");
     const bg = document.createElement("div"); bg.className = "modal-bg";
     const field = (label, name, val, type, ph) => `<div class="field"><label>${esc(label)}</label><input name="${name}" type="${type || "text"}" value="${esc(val == null ? "" : val)}" placeholder="${esc(ph || "")}"></div>`;
@@ -460,6 +493,9 @@
             ${field("Next milestone date (YYYY-MM-DD)", "nextDate", k.nextDate, "text", "2026-09-21")}
             ${field("Next milestone label", "nextLabel", k.nextLabel)}
             ${field("Programme format", "programmeFormat", k.programmeFormat, "text", "e.g. Progressive five-day programme")}
+            ${field("Cohorts delivered so far", "cohortsDone", k.cohortsDone, "number")}
+            ${field("Cohorts planned in total", "cohortsTotal", k.cohortsTotal, "number")}
+            <div class="field wide"><label>Extra figures (one per line: Label: value, e.g. Attendance rate: 39%)</label><textarea name="kpis" rows="2">${esc(lines(k.kpis, x => x.label + ": " + x.value))}</textarea></div>
             <div class="field wide"><label>Quick description</label><textarea name="description" rows="4">${esc(k.description || "")}</textarea></div>
             <div class="field wide"><label>Target audience</label><textarea name="audience" rows="2">${esc(k.audience || "")}</textarea></div>
             <div class="field wide"><label>Objectives (one per line)</label><textarea name="objectives" rows="4">${esc(lines(k.objectives, o => o))}</textarea></div>
@@ -478,6 +514,9 @@
       ["name", "fullName", "unit", "status", "nextDate", "nextLabel", "notes", "targetPeriod", "programmeFormat", "description", "audience"].forEach(x => k[x] = f[x].value.trim());
       const ln = x => f[x].value.split("\n").map(t => t.trim()).filter(Boolean);
       k.objectives = ln("objectives");
+      k.cohortsDone = f.cohortsDone.value === "" ? null : +f.cohortsDone.value;
+      k.cohortsTotal = f.cohortsTotal.value === "" ? null : +f.cohortsTotal.value;
+      k.kpis = ln("kpis").map(t => { const i = t.indexOf(":"); return i > 0 ? { label: t.slice(0, i).trim(), value: t.slice(i + 1).trim() } : { label: t, value: "" }; });
       k.modules = ln("modules").map(t => { const i = t.indexOf(":"); return i > 0 ? { title: t.slice(0, i).trim(), summary: t.slice(i + 1).trim() } : { title: t, summary: "" }; });
       k.cohorts = ln("cohorts").map(t => { const p = t.split("|").map(x => x.trim()); return { label: p[0] || "Cohort", start: p[1] || "", end: p[2] || "", participants: p[3] ? +p[3] : null, status: p[4] || "planned", note: p[5] || "" }; });
       k.trained = f.trained.value === "" ? 0 : +f.trained.value;
