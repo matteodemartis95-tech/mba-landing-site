@@ -122,10 +122,10 @@ const CANDIDATES = [
       },
       {
         "school": "IMD",
-        "status": "submitted",
+        "status": "scheduled",
         "interview": {
-          "date": "",
-          "note": ""
+          "date": "2026-09-25",
+          "note": "IMD Assessment Day."
         },
         "notes": "Awaiting IMD Outcome"
       }
