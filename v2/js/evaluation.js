@@ -543,7 +543,7 @@ const EVALUATIONS = {
     "docs": [
       {
         "label": "CV",
-        "url": ""
+        "url": "docs/mohamed-al-hameli-cv.pdf"
       }
     ]
   },
