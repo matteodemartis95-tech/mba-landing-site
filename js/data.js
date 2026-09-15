@@ -191,12 +191,12 @@ const CANDIDATES = [
       },
       {
         "school": "IMD",
-        "status": "applying",
+        "status": "submitted",
         "interview": {
           "date": "",
           "note": ""
         },
-        "notes": "IMD under editing."
+        "notes": "IMD submitted."
       },
       {
         "school": "INSEAD",
