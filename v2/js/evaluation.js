@@ -990,9 +990,9 @@ const EVALUATIONS = {
   "saeed-al-sereidi": {
     "lineManager": "Noura Al Ahbabi",
     "function": "Strategic Management",
-    "corporateExchangeProject": "TMO Activation",
-    "previousFunction": "NA",
-    "academicQualifications": "Bachelor's in Aerospace Engineering",
+    "corporateExchangeProject": "Department of Culture & Tourism (business cases and roadmaps for new public programmes, e.g. museums) and EV charging infrastructure roadmap",
+    "previousFunction": "Trainee consultant, KHUTWA Programme (MoD transformation projects delivered with Kearney)",
+    "academicQualifications": "BSc Aerospace Engineering, Khalifa University (2021)",
     "reportFirm": "Oliver Wyman",
     "phases": {
       "2025 Q4": "Corporate Exchange",
@@ -1046,6 +1046,12 @@ const EVALUATIONS = {
     "masters": [
       "Completed ScorePlus and GuideME GMAT course",
       "Applying to NYU Abu Dhabi MBA January 2027"
+    ],
+    "docs": [
+      {
+        "label": "CV",
+        "url": "docs/saeed-al-sereidi-cv.pdf"
+      }
     ]
   }
 };
