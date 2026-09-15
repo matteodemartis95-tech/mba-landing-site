@@ -230,12 +230,12 @@ const CANDIDATES = [
     "applications": [
       {
         "school": "HEC",
-        "status": "applying",
+        "status": "submitted",
         "interview": {
           "date": "",
           "note": ""
         },
-        "notes": "Awaiting HEC drafts."
+        "notes": "HEC submitted."
       },
       {
         "school": "IMD",
