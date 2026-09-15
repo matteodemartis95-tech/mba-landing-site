@@ -1071,6 +1071,63 @@ const EVALUATIONS = {
         "url": "docs/saeed-al-sereidi-cv.pdf"
       }
     ]
+  },
+  "abdulrahman-almarzooqi": {
+    "lineManager": "",
+    "function": "Manager, Electrical Engineering · Electro-Optics Centre of Excellence (EOCE), EDGE Group",
+    "corporateExchangeProject": "",
+    "previousFunction": "",
+    "academicQualifications": "M.Sc. Electrical & Computer Engineering, Khalifa University (2019)",
+    "reportFirm": "",
+    "phases": {},
+    "ratings": {},
+    "strengths": [],
+    "improvements": [],
+    "masters": [],
+    "docs": [
+      {
+        "label": "CV",
+        "url": "docs/abdulrahman-almarzooqi-cv.pdf"
+      }
+    ]
+  },
+  "mouza-al-zaabi": {
+    "lineManager": "",
+    "function": "NAS Engineer (Non-Aerospace Structures) · EPI, EDGE",
+    "corporateExchangeProject": "",
+    "previousFunction": "",
+    "academicQualifications": "Bachelor of Mechanical Engineering Technology, Higher Colleges of Technology (2022)",
+    "reportFirm": "",
+    "phases": {},
+    "ratings": {},
+    "strengths": [],
+    "improvements": [],
+    "masters": [],
+    "docs": [
+      {
+        "label": "CV",
+        "url": "docs/mouza-al-zaabi-cv.pdf"
+      }
+    ]
+  },
+  "waleed-almansoori": {
+    "lineManager": "",
+    "function": "Senior Product Owner, Secure Communication · KATIM, EDGE",
+    "corporateExchangeProject": "",
+    "previousFunction": "",
+    "academicQualifications": "BASc Information Technology, Security and Forensics, Higher Colleges of Technology (2019)",
+    "reportFirm": "",
+    "phases": {},
+    "ratings": {},
+    "strengths": [],
+    "improvements": [],
+    "masters": [],
+    "docs": [
+      {
+        "label": "CV",
+        "url": "docs/waleed-almansoori-cv.pdf"
+      }
+    ]
   }
 };
 

@@ -308,8 +308,8 @@
     if (!c) return `<a class="back" href="#/">← All candidates</a><div class="empty">Candidate not found.</div>`;
     const ev = evalOf(c);
     tab = tab === "mba" ? "mba" : "evaluation";
-    // always the same six fields in the same order, so every profile lines up identically
-    const snap = ev ? [
+    // always the same six fields in the same order, so every profile lines up identically (EDGE: function and education only)
+    const snap = ev && c.programme === "EDGE" ? [["Function at EDGE", ev.function], ["Academic qualifications", ev.academicQualifications]] : ev ? [
       ["Line manager", ev.lineManager], ["Function at the Executive Office", ev.function || c.team], ["Academic qualifications", ev.academicQualifications],
       ["Previous MOD function", ev.previousFunction], ["Corporate Exchange company", ev.reportFirm], ["Corporate Exchange project", ev.corporateExchangeProject]
     ] : [];
@@ -365,7 +365,7 @@
   /* ---------- evaluation view (V2) ---------- */
   const CURRENT_Q = (() => { const d = today; return d.getFullYear() + " Q" + (Math.floor(d.getMonth() / 3) + 1); })();
   function renderEvaluation(c, ev) {
-    if (!ev) return `<div class="empty">No evaluation data for this candidate yet.${editMode ? " Use “Edit evaluation” to add it." : ""}</div>`;
+    if (!ev || (!Object.keys(ev.phases || {}).length && !META.competencies.some(cp => Object.keys((ev.ratings || {})[cp] || {}).length))) return `<div class="empty">No evaluation data for this candidate yet.${editMode ? " Use “Edit evaluation” to add it." : ""}</div>`;
     const comps = META.competencies;
     // show quarters only up to the last one that has a phase or a rating for this person (never before the current quarter)
     const lastIdx = Math.max(META.quarters.indexOf(CURRENT_Q), ...META.quarters.map((q, k) => (ev.phases[q] || comps.some(cp => (ev.ratings[cp] || {})[q])) ? k : -1));
