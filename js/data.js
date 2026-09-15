@@ -542,21 +542,21 @@ const CANDIDATES = [
     "applications": [
       {
         "school": "CBS",
-        "status": "submitted",
+        "status": "scheduled",
         "interview": {
-          "date": "",
+          "date": "2026-09-18",
           "note": ""
         },
         "notes": ""
       },
       {
         "school": "HEC",
-        "status": "applying",
+        "status": "submitted",
         "interview": {
           "date": "",
           "note": ""
         },
-        "notes": ""
+        "notes": "HEC submitted."
       }
     ]
   }
