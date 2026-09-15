@@ -152,12 +152,12 @@ const CANDIDATES = [
       },
       {
         "school": "IMD",
-        "status": "applying",
+        "status": "scheduled",
         "interview": {
-          "date": "",
-          "note": ""
+          "date": "2026-09-25",
+          "note": "IMD Assessment Day."
         },
-        "notes": "IMD under final review with an alumnus."
+        "notes": "IMD submitted."
       },
       {
         "school": "CBS",
