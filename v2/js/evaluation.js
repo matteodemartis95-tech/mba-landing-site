@@ -946,9 +946,9 @@ const EVALUATIONS = {
   "saoud-alkaabi": {
     "lineManager": "Ansh Karha",
     "function": "Al-Emad",
-    "corporateExchangeProject": "Digital Ai Strategy & Transformation",
-    "previousFunction": "Presidential Guard",
-    "academicQualifications": "Military Diploma in Leadership & Conflict",
+    "corporateExchangeProject": "Force transformation, energy, digital transformation and AI projects",
+    "previousFunction": "Military officer, command, training and operations (2018–2025); JTAC instructor",
+    "academicQualifications": "Bachelor's in Human Resources, Abu Dhabi University (2026)",
     "reportFirm": "Oliver Wyman",
     "phases": {
       "2025 Q4": "Corporate Exchange",
@@ -1003,6 +1003,12 @@ const EVALUATIONS = {
     "masters": [
       "Completed ScorePlus GMAT course",
       "Applying to HEC and IMD MBA January 2027"
+    ],
+    "docs": [
+      {
+        "label": "CV",
+        "url": "docs/saoud-alkaabi-cv.pdf"
+      }
     ]
   },
   "saeed-al-sereidi": {
