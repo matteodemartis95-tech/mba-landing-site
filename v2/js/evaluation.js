@@ -625,8 +625,8 @@ const EVALUATIONS = {
     "lineManager": "Saif Alsiksek",
     "function": "Digital & AI",
     "corporateExchangeProject": "Compliance Level – Sorbonne",
-    "previousFunction": "Military",
-    "academicQualifications": "Bachelors in Emergency Management",
+    "previousFunction": "Head of Safety & Quality Department, Ministry of Defence (2022–2025)",
+    "academicQualifications": "Professional Diploma, Preparing Occupational Health & Safety Trainers, University of Sharjah (2023)",
     "reportFirm": "PwC",
     "phases": {
       "2025 Q4": "Corporate Exchange",
@@ -681,6 +681,12 @@ const EVALUATIONS = {
     "masters": [
       "Completed ScorePlus and GuideMe GMAT course",
       "Applying to HEC Paris and IMD MBA, January 2027"
+    ],
+    "docs": [
+      {
+        "label": "CV",
+        "url": "docs/mohamed-al-naqbi-cv.pdf"
+      }
     ]
   },
   "abdulaziz-al-yafei": {
