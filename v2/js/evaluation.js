@@ -312,9 +312,9 @@ const EVALUATIONS = {
   "khaled-alteneiji": {
     "lineManager": "Rania Roston",
     "function": "Strategic Communications",
-    "corporateExchangeProject": "UAE Financial Industry Regulatory Entity",
-    "previousFunction": "Head of Monitoring & Control of MOD Network",
-    "academicQualifications": "Bachelor's in Information technology",
+    "corporateExchangeProject": "Central Bank of the UAE reverse-solicitation policy benchmark, stablecoin payment use cases for a global payments company, and a Saudi banking-licence application",
+    "previousFunction": "Head of Monitor and Control, Signal Corps, Ministry of Defence (2024–2025)",
+    "academicQualifications": "BSc Information Technology, Networking and Security, Ajman University (2019)",
     "reportFirm": "Kearney",
     "phases": {
       "2025 Q4": "Corporate Exchange",
@@ -369,6 +369,12 @@ const EVALUATIONS = {
     "masters": [
       "Completed ScorePlus GMAT course",
       "Applying to INSEAD MBA, January 2027"
+    ],
+    "docs": [
+      {
+        "label": "CV",
+        "url": "docs/khaled-alteneiji-cv.pdf"
+      }
     ]
   },
   "buti-al-suwaidi": {
