@@ -239,9 +239,9 @@ const EVALUATIONS = {
     "lineManager": "Naguib Bebawi",
     "function": "Defense Policy",
     "corporateExchangeProject": "UAE Financial Industry Regulatory Entity",
-    "previousFunction": "Analysis Staff Officer",
-    "academicQualifications": "Masters in Intelligence Analysis",
-    "reportFirm": "",
+    "previousFunction": "Research Support & Analysis Staff Officer, Ministry of Defence (2019–2025)",
+    "academicQualifications": "MSc Intelligence Analysis, Rabdan Academy (2020)",
+    "reportFirm": "Kearney",
     "phases": {
       "2025 Q4": "Corporate Exchange",
       "2026 Q1": "Corporate Exchange",
@@ -295,6 +295,12 @@ const EVALUATIONS = {
     "masters": [
       "Completed ScorePlus GMAT course",
       "Applying to INSEAD and IMD MBA, January 2027"
+    ],
+    "docs": [
+      {
+        "label": "CV",
+        "url": "docs/theyab-almeqbaali-cv.pdf"
+      }
     ]
   },
   "khaled-alteneiji": {
@@ -551,8 +557,8 @@ const EVALUATIONS = {
     "lineManager": "Rania Rostom",
     "function": "Strategic Communications",
     "corporateExchangeProject": "DGE Survey Management",
-    "previousFunction": "Information Security Engineer",
-    "academicQualifications": "Bach. in Security Technology Engineering",
+    "previousFunction": "Signal Corps, Ministry of Defence (IT and communications infrastructure, 2024–2025)",
+    "academicQualifications": "Bachelor's in Information Security Technology Engineering, Abu Dhabi Polytechnic (2022)",
     "reportFirm": "PwC",
     "phases": {
       "2025 Q4": "Corporate Exchange",
@@ -607,6 +613,12 @@ const EVALUATIONS = {
     "masters": [
       "Completed ScorePlus GMAT course",
       "Applying to INSEAD MBA, January 2027"
+    ],
+    "docs": [
+      {
+        "label": "CV",
+        "url": "docs/haneen-aljneibi-cv.pdf"
+      }
     ]
   },
   "mohamed-al-naqabi": {
