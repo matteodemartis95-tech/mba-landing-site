@@ -329,10 +329,10 @@ const CANDIDATES = [
     "applications": [
       {
         "school": "HEC",
-        "status": "scheduled",
+        "status": "interviewed",
         "interview": {
           "date": "2026-09-10",
-          "note": "Two HEC alumni interviews this week; one on 10 Sep, second date to be confirmed."
+          "note": "HEC alumni interviews completed."
         },
         "notes": ""
       },
@@ -368,10 +368,10 @@ const CANDIDATES = [
     "applications": [
       {
         "school": "HEC",
-        "status": "scheduled",
+        "status": "interviewed",
         "interview": {
           "date": "2026-09-07, 2026-09-11",
-          "note": "Two HEC alumni interviews: first completed on 7 Sep, second on 11 Sep."
+          "note": "HEC alumni interviews completed."
         },
         "notes": ""
       },

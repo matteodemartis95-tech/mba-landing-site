@@ -144,7 +144,13 @@
     });
     return best;
   }
-  function pendingInterviews(c) { return c.applications.filter(a => a.status === "scheduled" && !parseDates(a.interview && a.interview.date).length); }
+  // effective status: a scheduled interview whose dates have all passed counts as "interviewed" without editing the data
+  function eff(a) {
+    if (a.status !== "scheduled") return a.status;
+    const ds = parseDates(a.interview && a.interview.date);
+    return ds.length && ds.every(d => daysFrom(d) < 0) ? "interviewed" : "scheduled";
+  }
+  function pendingInterviews(c) { return c.applications.filter(a => eff(a) === "scheduled" && !parseDates(a.interview && a.interview.date).length); }
   function teams() { return [...new Set(candidates.filter(c => c.programme === "Jahizoun" && c.team).map(c => c.team))].sort(); }
   const MONTH_INDEX = { jan: 0, feb: 1, mar: 2, apr: 3, may: 4, jun: 5, jul: 6, aug: 7, sep: 8, oct: 9, nov: 10, dec: 11 };
   function intakeKey(s) {
@@ -197,13 +203,13 @@
   function noMba(c) { return !c.applications.length && c.mbaPlanned === false; }
   function programmeBadge(c) { return `<span class="badge ${c.programme === "EDGE" ? "edge" : "jahizoun"}">${esc(c.programme)}</span>`; }
   function teamBadge(c) { return c.programme === "Jahizoun" && c.team ? `<span class="badge team">${esc(c.team)}</span>` : ""; }
-  function statusPill(a) { const s = status(a.status); return `<span class="status ${s.tone}"><span class="st ${s.tone}"></span>${esc(s.label)}</span>`; }
+  function statusPill(a) { const s = status(eff(a)); return `<span class="status ${s.tone}"><span class="st ${s.tone}"></span>${esc(s.label)}</span>`; }
 
   /* ---------- rendering: home ---------- */
   function renderHome() {
     const total = candidates.length;
-    const scheduledApps = candidates.reduce((n, c) => n + c.applications.filter(a => a.status === "scheduled").length, 0);
-    const withDate = candidates.reduce((n, c) => n + c.applications.filter(a => a.status === "scheduled" && parseDates(a.interview && a.interview.date).length).length, 0);
+    const scheduledApps = candidates.reduce((n, c) => n + c.applications.filter(a => eff(a) === "scheduled").length, 0);
+    const withDate = candidates.reduce((n, c) => n + c.applications.filter(a => eff(a) === "scheduled" && parseDates(a.interview && a.interview.date).length).length, 0);
     const submitted = candidates.reduce((n, c) => n + c.applications.filter(a => status(a.status).stage >= 1).length, 0);
     const admitted = candidates.reduce((n, c) => n + c.applications.filter(a => a.status === "admitted").length, 0);
 
@@ -253,7 +259,7 @@
       if (filters.programme !== "all" && c.programme !== filters.programme) return false;
       if (filters.school !== "all" && !c.applications.some(a => a.school === filters.school)) return false;
       if (filters.team !== "all" && c.team !== filters.team) return false;
-      if (filters.stage === "scheduled" && !c.applications.some(a => a.status === "scheduled")) return false;
+      if (filters.stage === "scheduled" && !c.applications.some(a => eff(a) === "scheduled")) return false;
       if (filters.stage === "submitted" && !c.applications.some(a => status(a.status).stage >= 1)) return false;
       if (filters.stage === "admitted" && !c.applications.some(a => a.status === "admitted")) return false;
       return true;
@@ -279,7 +285,7 @@
           </div>
         </div>
         <div class="card-schools">
-          ${c.applications.map(a => `<span class="school-chip" title="${esc(school(a.school).name)}: ${esc(status(a.status).label)}"><img class="logo" src="${esc(asset(school(a.school).logo))}" alt=""><span>${esc(school(a.school).short)}</span><span class="st ${status(a.status).tone}"></span></span>`).join("") || (noMba(c) ? "" : `<span class="muted small">No schools yet</span>`)}
+          ${c.applications.map(a => `<span class="school-chip" title="${esc(school(a.school).name)}: ${esc(status(eff(a)).label)}"><img class="logo" src="${esc(asset(school(a.school).logo))}" alt=""><span>${esc(school(a.school).short)}</span><span class="st ${status(eff(a)).tone}"></span></span>`).join("") || (noMba(c) ? "" : `<span class="muted small">No schools yet</span>`)}
         </div>
         <div class="card-foot"><div><div class="foot-k">${footK}</div><div class="foot-v">${footV}</div></div>${noMba(c) ? "" : `<span class="muted">${c.applications.length} school${c.applications.length === 1 ? "" : "s"}</span>`}</div>
       </a>`;
@@ -739,7 +745,7 @@
   }
 
   function appCard(c, a) {
-    const s = status(a.status);
+    const s = status(eff(a));
     const sch = school(a.school);
     const dates = parseDates(a.interview && a.interview.date);
     const hasDate = dates.length > 0;
@@ -759,7 +765,7 @@
       return `${labelKey && r[labelKey] ? esc(r[labelKey]) : fmt(d)}${r[approxKey] ? `<span class="approx">approx.</span>` : ""}`;
     };
     let interviewVal, interviewCls = "";
-    if (hasDate) interviewVal = fmtList(a.interview.date);
+    if (hasDate) interviewVal = (eff(a) === "interviewed" ? "Completed · " : "") + fmtList(a.interview.date);
     else if (a.status === "interviewed") interviewVal = "Completed";
     else if (s.stage >= FINAL_STAGE) interviewVal = "—";
     else { interviewVal = "Pending"; interviewCls = "pending"; }
