@@ -278,21 +278,12 @@ const CANDIDATES = [
       },
       {
         "school": "HEC",
-        "status": "applying",
+        "status": "submitted",
         "interview": {
           "date": "",
           "note": ""
         },
-        "notes": "HEC under editing."
-      },
-      {
-        "school": "IMD",
-        "status": "applying",
-        "interview": {
-          "date": "",
-          "note": ""
-        },
-        "notes": "Awaiting IMD drafts."
+        "notes": "HEC submitted on 15 Sep 2026."
       },
       {
         "school": "CBS",
