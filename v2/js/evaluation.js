@@ -779,8 +779,8 @@ const EVALUATIONS = {
     "lineManager": "Elvie Lahournere",
     "function": "Optimization",
     "corporateExchangeProject": "Inst. Transformation of Social Sector",
-    "previousFunction": "Officer in Army",
-    "academicQualifications": "Bachelor's in Electronic Engineering, HCT",
+    "previousFunction": "Research Specialist & Engineering Lead, UAE Armed Forces (2023–2024)",
+    "academicQualifications": "BSc Electronic Engineering, Higher Colleges of Technology, Sharjah (2021)",
     "reportFirm": "PwC",
     "phases": {
       "2025 Q4": "Corporate Exchange",
@@ -835,6 +835,12 @@ const EVALUATIONS = {
     "masters": [
       "Completed ScorePlus and GuideMe GMAT course",
       "Applying to NYU Abu Dhabi January 2027"
+    ],
+    "docs": [
+      {
+        "label": "CV",
+        "url": "docs/mohamed-al-mahri-cv.pdf"
+      }
     ]
   },
   "fatima-balnoub": {
