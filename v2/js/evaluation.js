@@ -484,7 +484,7 @@ const EVALUATIONS = {
     "function": "Strategic Management",
     "corporateExchangeProject": "DGE Survey Management",
     "previousFunction": "Captain in Leadership & Strategic Operations",
-    "academicQualifications": "LL.M. International Business Law, University Paris II Panthéon-Assas, Dubai (2025) · B.Sc. Electronic Engineering, HCT (2016) · Military Science Diploma, Zayed Military College (2017)",
+    "academicQualifications": "LL.M. International Business Law, University Paris II Panthéon-Assas (2025)",
     "reportFirm": "PwC",
     "phases": {
       "2025 Q4": "Corporate Exchange",
@@ -800,7 +800,7 @@ const EVALUATIONS = {
     "function": "T&LD",
     "corporateExchangeProject": "Energy-sector strategy for Masdar and the Abu Dhabi Department of Energy",
     "previousFunction": "National Defence College",
-    "academicQualifications": "MBA, Organizational Excellence & Quality Management, Abu Dhabi University (2021) · Bachelor in Multimedia Design, Zayed University (2015)",
+    "academicQualifications": "MBA, Organizational Excellence & Quality Management, Abu Dhabi University (2021)",
     "reportFirm": "Oliver Wyman",
     "phases": {
       "2025 Q4": "Corporate Exchange",
