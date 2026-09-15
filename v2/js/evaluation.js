@@ -121,10 +121,10 @@ const EVALUATIONS = {
   "surour-al-kaabi": {
     "lineManager": "Shobit Pareek",
     "function": "Al-Emad",
-    "corporateExchangeProject": "National IP Strategy",
-    "previousFunction": "IT & Telecom inside Presidential Guard",
-    "academicQualifications": "Masters in Engineering Management",
-    "reportFirm": "",
+    "corporateExchangeProject": "UAE National Intellectual Property Strategy and modernisation of the MoD education & training ecosystem",
+    "previousFunction": "Staff Officer 2 J6 (IT & Communications), Presidential Guard Falcons Brigade (2024–2025)",
+    "academicQualifications": "Master of Engineering Management, Abu Dhabi University (2022)",
+    "reportFirm": "Kearney",
     "phases": {
       "2025 Q4": "Corporate Exchange",
       "2026 Q1": "Corporate Exchange",
@@ -174,6 +174,12 @@ const EVALUATIONS = {
     "masters": [
       "Weights a Masters in AI/ Technology against an MBA",
       "Applying to INSEAD and SDA Bocconi MBA, September 2027"
+    ],
+    "docs": [
+      {
+        "label": "CV",
+        "url": "docs/surour-al-kaabi-cv.pdf"
+      }
     ]
   },
   "waood-alhammadi": {
@@ -426,9 +432,9 @@ const EVALUATIONS = {
   "khalifa-al-mansoori": {
     "lineManager": "Gregor Lisjak",
     "function": "Al-Emad",
-    "corporateExchangeProject": "Multiple engagements",
-    "previousFunction": "Presidential Guard",
-    "academicQualifications": "Diploma in Military Science",
+    "corporateExchangeProject": "Financial and digital transformation",
+    "previousFunction": "Officer and instructor, Presidential Guard (operations, training and strategic development, 2020–2025)",
+    "academicQualifications": "Bachelor of Human Resources Management, Abu Dhabi University (2026)",
     "reportFirm": "PwC",
     "phases": {
       "2025 Q4": "Corporate Exchange",
@@ -483,6 +489,12 @@ const EVALUATIONS = {
     "masters": [
       "Completed ScorePlus GMAT course",
       "Applying to HEC and IMD MBA, January 2027"
+    ],
+    "docs": [
+      {
+        "label": "CV",
+        "url": "docs/khalifa-al-mansoori-cv.pdf"
+      }
     ]
   },
   "mohamed-al-hameli": {
