@@ -644,6 +644,7 @@
           ${c.notes ? `<div class="notes">${esc(c.notes)}</div>` : ""}
         </div>
         <div class="actions">
+          ${ev && (ev.docs || []).filter(d => d.url).map(d => `<a class="btn doc-link" href="${esc(asset(d.url))}" target="_blank" rel="noopener">📄 ${esc(d.label || "Document")}</a>`).join("") || ""}
           ${editMode ? `<button class="btn" data-edit-eval="${esc(c.id)}">Edit evaluation</button><button class="btn" data-edit="${esc(c.id)}">Edit MBA</button><button class="btn danger" data-del="${esc(c.id)}">Delete</button>` : ""}
         </div>
         ${snap.length ? `<div class="snapshot">${snap.map(([k, v]) => `<div class="snap"><div class="k">${esc(k)}</div><div class="v ${v ? "" : "muted"}">${esc(v || "—")}</div></div>`).join("")}</div>` : ""}
@@ -987,6 +988,7 @@
             ${field("Previous MOD function", "previousFunction", ev.previousFunction)}
             ${field("Academic qualifications", "academicQualifications", ev.academicQualifications)}
             ${field("Corporate Exchange company", "reportFirm", ev.reportFirm)}
+            ${field("Documents (Label | link, separated by ;)", "docs", (ev.docs || []).map(d => (d.label || "") + " | " + (d.url || "")).join("; "))}
           </div>
           <div>
             <h3 style="margin-bottom:8px">Timeline and ratings</h3>
@@ -1011,6 +1013,7 @@
       e.preventDefault();
       const f = bg.querySelector("#evalForm");
       ["lineManager", "function", "corporateExchangeProject", "previousFunction", "academicQualifications", "reportFirm"].forEach(k => ev[k] = f[k].value.trim());
+      ev.docs = f.docs.value.split(";").map(t => t.trim()).filter(Boolean).map(t => { const p = t.split("|").map(x => x.trim()); return { label: p[0] || "Document", url: p[1] || "" }; });
       const lines = k => f[k].value.split("\n").map(x => x.trim()).filter(Boolean);
       ev.strengths = lines("strengths"); ev.improvements = lines("improvements"); ev.masters = lines("masters");
       ev.phases = {}; bg.querySelectorAll(".ph-sel").forEach(sel => { if (sel.value) ev.phases[sel.dataset.phase] = sel.value; });

@@ -402,3 +402,5 @@ td .approx { color: var(--text-3); font-size: 11px; margin-left: 4px; }
 .card { padding-top: 18px; }
 .card-top { align-items: flex-start; min-height: 72px; }
 .card-top .avatar { margin-top: 0; }
+
+.doc-link { color: var(--accent-ink); }

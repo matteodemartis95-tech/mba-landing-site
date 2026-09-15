@@ -10,6 +10,7 @@
    Easiest way to update: Edit mode in V2 → "Edit evaluation" → "Copy evaluation.js",
    then paste over this file on GitHub.
    Ratings: "strong", "effective", "developing", "na" (not assessed). Quarters "YYYY Qn".
+   docs: links shown top-right of the profile, e.g. [{ label: "CV", url: "docs/name-cv.pdf" }] (files live in the root /docs folder).
    ===================================================================== */
 const EVAL_META = {
   competencies: ["Effective Communication & Influence", "Initiative", "Decision-Making & Accountability", "Capability Development", "Systemic Analysis & Planning"],
@@ -483,7 +484,7 @@ const EVALUATIONS = {
     "function": "Strategic Management",
     "corporateExchangeProject": "DGE Survey Management",
     "previousFunction": "Captain in Leadership & Strategic Operations",
-    "academicQualifications": "Masters in International Business Law",
+    "academicQualifications": "LL.M. International Business Law, University Paris II Panthéon-Assas, Dubai (2025) · B.Sc. Electronic Engineering, HCT (2016) · Military Science Diploma, Zayed Military College (2017)",
     "reportFirm": "PwC",
     "phases": {
       "2025 Q4": "Corporate Exchange",
@@ -538,6 +539,12 @@ const EVALUATIONS = {
     "masters": [
       "Completed ScorePlus GMAT course",
       "Applying to INSEAD MBA, January 2027"
+    ],
+    "docs": [
+      {
+        "label": "CV",
+        "url": ""
+      }
     ]
   },
   "haneen-aljneibi": {
@@ -789,11 +796,11 @@ const EVALUATIONS = {
     ]
   },
   "fatima-balnoub": {
-    "lineManager": "Declan Noone",
+    "lineManager": "Cezar Gazdoiu",
     "function": "T&LD",
-    "corporateExchangeProject": "Multiple engagements",
+    "corporateExchangeProject": "Energy-sector strategy for Masdar and the Abu Dhabi Department of Energy",
     "previousFunction": "National Defence College",
-    "academicQualifications": "Diploma in Military Science",
+    "academicQualifications": "MBA, Organizational Excellence & Quality Management, Abu Dhabi University (2021) · Bachelor in Multimedia Design, Zayed University (2015)",
     "reportFirm": "Oliver Wyman",
     "phases": {
       "2025 Q4": "Corporate Exchange",
@@ -848,6 +855,12 @@ const EVALUATIONS = {
     "masters": [
       "Completed ScorePlus GMAT course",
       "Applying to IMD and HEC MBA, January 2027"
+    ],
+    "docs": [
+      {
+        "label": "CV",
+        "url": "docs/fatima-balnoub-cv.pdf"
+      }
     ]
   },
   "saif-al-hammadi": {
