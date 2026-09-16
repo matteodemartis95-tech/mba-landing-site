@@ -346,7 +346,6 @@
       <a class="card course" href="#/course/${esc(k.id)}" style="${courseStyle(k)}">
         <div class="course-head">
           <div><div class="card-name">${esc(k.name)}</div>${k.fullName ? `<div class="small muted">${esc(k.fullName)}</div>` : ""}</div>
-          <span class="badge pmo">PMO</span>
         </div>
         <div class="subs">
           ${k.subProgrammes.map(sp => { const ht = sp.target != null && sp.target !== ""; const p = ht && sp.target > 0 ? Math.min(100, Math.round(100 * (sp.trained || 0) / sp.target)) : null; return `
@@ -362,7 +361,6 @@
       <a class="card course" href="#/course/${esc(k.id)}" style="${courseStyle(k)}">
         <div class="course-head">
           <div><div class="card-name">${esc(k.name)}</div>${k.fullName ? `<div class="small muted">${esc(k.fullName)}</div>` : ""}</div>
-          <span class="badge pmo">PMO</span>
         </div>
         <div class="course-num"><span class="big">${fmtNum(k.trained)}</span><span class="of">/ ${hasTarget ? fmtNum(k.target) + (k.targetPeriod ? " " + esc(k.targetPeriod) : "") : "<span class=tbc>target TBC</span>"}</span></div>
         <div class="small muted">${esc(k.unit || "people trained")}</div>
@@ -441,7 +439,7 @@
         <div class="course-icon">${esc((k.name.split(/\s+/).length > 1 ? k.name.split(/\s+/).map(w => w[0]).join("") : k.name).slice(0, 3).toUpperCase())}</div>
         <div>
           <h1>${esc(k.name)}</h1>
-          <div class="meta"><span class="badge pmo">PMO</span>${k.fullName ? `<span class="badge intake">${esc(k.fullName)}</span>` : ""}${k.programmeFormat ? `<span class="badge intake">${esc(k.programmeFormat)}</span>` : ""}</div>
+          <div class="meta">${k.fullName ? `<span class="badge intake">${esc(k.fullName)}</span>` : ""}${k.programmeFormat ? `<span class="badge intake">${esc(k.programmeFormat)}</span>` : ""}</div>
           ${k.notes ? `<div class="notes">${esc(k.notes)}</div>` : ""}
         </div>
         <div class="actions">${(k.docs || []).filter(d => d.url).map(d => `<a class="btn doc-link" href="${esc(d.url)}" target="_blank" rel="noopener">📄 ${esc(d.label || "Document")}</a>`).join("")}${editMode ? `<button class="btn" data-edit-course="${esc(k.id)}">Edit course</button><button class="btn danger" data-del-course="${esc(k.id)}">Delete</button>` : ""}</div>

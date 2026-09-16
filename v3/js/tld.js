@@ -46,23 +46,23 @@ const COURSES = [
     "modules": [
       {
         "title": "Media Foundation & Confidence",
-        "summary": "Understand the modern media landscape and build executive presence with media"
+        "summary": "Understand the modern media landscape and its implications for senior leaders; build executive presence and familiarity with media"
       },
       {
         "title": "Strategic Messaging & Soft Power",
-        "summary": "Frame communication as an instrument of soft power; clear, consistent messages across audiences"
+        "summary": "Frame communication as an instrument of soft power and influence; define clear, consistent messages across audiences and platforms; maintain message discipline under pressure"
       },
       {
         "title": "UAE National Narrative",
-        "summary": "Embed national priorities in institutional messaging and communicate the national narrative with clarity"
+        "summary": "Embed national priorities in institutional messaging; communicate the national narrative with confidence and clarity"
       },
       {
-        "title": "Crisis Communication",
-        "summary": "Maintain message discipline under pressure; manage hostile questions and high-stakes scenarios"
+        "title": "Practical Media Simulation",
+        "summary": "Individual and paired mock interviews at Sky News Arabia studios; press conference simulation with rotating spokesperson roles; full broadcast environment with feedback"
       },
       {
-        "title": "Capstone Assessment",
-        "summary": "Television interview simulation, individual assessment and development recommendations"
+        "title": "Executive Media Assessment",
+        "summary": "High-pressure interviews with unexpected scenarios; press conference simulation under a critical situation; individual feedback and development recommendations"
       }
     ],
     "programmeFormat": "Progressive five-day programme",
