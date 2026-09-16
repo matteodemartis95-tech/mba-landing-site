@@ -382,7 +382,7 @@ const EVALUATIONS = {
     "function": "Human Resources",
     "corporateExchangeProject": "Organizational Design (OD) Support",
     "previousFunction": "Human Resources Officer",
-    "academicQualifications": "Bachelor of Science in Information Systems",
+    "academicQualifications": "BSc Information Systems and Technology Management, Zayed University (2018)",
     "reportFirm": "PwC",
     "phases": {
       "2025 Q4": "Corporate Exchange",
@@ -433,6 +433,39 @@ const EVALUATIONS = {
     ],
     "masters": [
       "Not planning to attend any Masters/ MBA"
+    ],
+    "quarterly": {
+      "2026 Q2": {
+        "manager": "Aleksandra Socevic",
+        "competencies": {
+          "Effective Communication & Influence": {
+            "rating": "developing",
+            "comment": "Strong interpersonal drive; engages readily and builds rapport across audiences\n\nAudience calibration — Adjust register and level of detail to the audience. When presenting to senior stakeholders, adopt a more executive style: lead with the key message, keep it concise, and be deliberate about how the point is framed.\n\nClarifying requirements — Where a request or brief is unclear, seek clarification in the moment rather than proceeding on assumptions, ensuring the task is correctly scoped and delivered effectively first time."
+          },
+          "Initiative": {
+            "rating": "developing",
+            "comment": "Follow-through to delivery — Ideas are readily proposed but not consistently carried through to implementation. Development focus: taking ownership of initiatives end-to-end — from proposal through to execution and delivery — rather than stopping at the pitch stage."
+          },
+          "Decision-Making & Accountability": {
+            "rating": "developing",
+            "comment": "Limited opportunity to observe decision-making in role to date; insufficient evidence to assess against this element.\n\nOwnership of assigned work — Development focus on taking full ownership of delegated tasks through to completion and standing behind the outcomes, rather than letting follow-through lapse once the task is handed over"
+          },
+          "Capability Development": {
+            "rating": "developing",
+            "comment": "Seeking stretch assignments — Development focus on proactively pursuing more challenging and unfamiliar assignments that build toward future roles, rather than concentrating on areas of more established strength such as liaison."
+          },
+          "Systemic Analysis & Planning": {
+            "rating": "developing",
+            "comment": "Structured planning and scheduling — Development focus on planning tasks more thoroughly at the outset: breaking work into clear steps, sequencing activities, and anticipating dependencies and resource needs, so timelines are set realistically and held to. Currently some tasks are progressed without sufficient upfront planning, which contributes to deadlines being pushed."
+          }
+        }
+      }
+    },
+    "docs": [
+      {
+        "label": "CV",
+        "url": "docs/buti-al-suwaidi-cv.pdf"
+      }
     ]
   },
   "khalifa-al-mansoori": {
