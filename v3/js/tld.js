@@ -546,7 +546,7 @@ const COURSES = [
     "target": 160,
     "targetPeriod": "",
     "unit": "HR personnel assessed or trained",
-    "status": "Vendor selection pending approval",
+    "status": "Pending sign-off of scope of work",
     "programmeFormat": "~6-month programme",
     "description": "Assess the technical HR capability of 130 HR personnel across 11 domains, from workforce planning to HR analytics, and close the gaps through a pilot training for 30 FTEs.",
     "audience": "130 HR personnel for the assessment; 30 FTEs for the pilot training.",
