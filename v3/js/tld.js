@@ -37,12 +37,7 @@ const COURSES = [
     "targetPeriod": "per year",
     "description": "Media training for MOD leaders, requested by H.E. the MDA to build a proactive approach to media awareness. Expert-led masterclasses with applied practice, delivered in Arabic with IMI Media Academy at the National Defence College.",
     "audience": "Cohorts of 20–25 MOD senior officers: Heads of Functions / Authority and senior military and civilian personnel at Brigadier and Colonel level.",
-    "objectives": [
-      "Strengthen understanding of clarity and message discipline",
-      "Demonstrate confidence and control in interviews, panels and press briefings",
-      "Build confidence in communicating in high-pressure media situations",
-      "Understand how to navigate and engage local, regional and global media"
-    ],
+    "objectives": [],
     "modules": [
       {
         "title": "Media Foundation & Confidence",
