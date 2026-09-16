@@ -490,7 +490,7 @@
     if (!has) return "";
     const steps = k.steps || [], budget = k.budget || [], v = k.vendors || {}, own = k.ownership || [];
     return `
-      <div class="pmo-grid">
+      <div class="pmo-grid" style="${courseStyle(k)}">
         ${budget.length ? `
         <div class="panel"><div class="panel-head"><h2>Scope &amp; budget</h2>${k.programmeFormat ? `<span class="small muted">${esc(k.programmeFormat)}</span>` : ""}</div>
           <div class="budget">${budget.map(b => `<div class="budget-row ${b.total ? "total" : ""}"><span>${esc(b.label)}</span><b>${esc(b.amount)}</b></div>`).join("")}</div>
@@ -504,6 +504,7 @@
           <div class="vendors">
             ${(v.issued || []).length ? `<div class="vendor-row"><div class="k">RFPs issued</div><div class="chips">${v.issued.map(x => `<span class="chip">${esc(x)}</span>`).join("")}</div></div>` : ""}
             ${(v.received || []).length ? `<div class="vendor-row"><div class="k">Proposals received</div><div class="chips">${v.received.map(x => `<span class="chip on">${esc(x)}</span>`).join("")}</div></div>` : ""}
+            ${(v.selected || []).length ? `<div class="vendor-row"><div class="k">Selected</div><div class="chips">${v.selected.map(x => `<span class="chip sel">✓ ${esc(x)}</span>`).join("")}</div></div>` : ""}
             ${v.note ? `<div class="vendor-note">⚠ ${esc(v.note)}</div>` : ""}
           </div>
         </div>` : ""}

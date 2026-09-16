@@ -635,6 +635,197 @@ const COURSES = [
     "nextDate": "",
     "nextLabel": "",
     "notes": ""
+  },
+  {
+    "id": "cipd-certification",
+    "name": "CIPD Certification Programme",
+    "fullName": "Baseline competency · HR",
+    "color": "#008300",
+    "category": "Baseline competency programmes",
+    "trained": 0,
+    "target": 30,
+    "targetPeriod": "",
+    "unit": "HR personnel certified",
+    "status": "Pending sign-off of scope of work",
+    "programmeFormat": "~18-month programme",
+    "description": "Certify 30 HR personnel through accredited CIPD qualifications matched to role and seniority: Level 3 for operational practice, Level 5 for people management and Level 7 for strategic leadership.",
+    "audience": "Level 3: 17 FTEs · Level 5: 9 FTEs · Level 7: 4 FTEs",
+    "objectives": [],
+    "modules": [],
+    "cohorts": [],
+    "cohortsDone": null,
+    "cohortsTotal": null,
+    "kpis": [],
+    "budget": [
+      {
+        "label": "Certification of 30 FTEs (Levels 3, 5 and 7)",
+        "amount": "AED 1.2 Mn",
+        "total": true
+      }
+    ],
+    "steps": [
+      {
+        "label": "Identify need & scope of work",
+        "status": "done"
+      },
+      {
+        "label": "Launch request for proposal",
+        "status": "done"
+      },
+      {
+        "label": "Evaluate & select vendor",
+        "status": "done",
+        "note": "PwC selected"
+      },
+      {
+        "label": "Mobilise and start",
+        "status": "pending"
+      }
+    ],
+    "vendors": {
+      "issued": [
+        "Oakwood International",
+        "PwC",
+        "Taaeen"
+      ],
+      "received": [
+        "PwC",
+        "Taaeen"
+      ],
+      "selected": [
+        "PwC"
+      ],
+      "note": ""
+    },
+    "ownership": [
+      {
+        "owner": "MOD",
+        "item": "Programme ownership"
+      },
+      {
+        "owner": "MOD",
+        "item": "Funding"
+      },
+      {
+        "owner": "Executive Office",
+        "item": "Procurement & contracting"
+      },
+      {
+        "owner": "Vendor awarded",
+        "item": "Programme delivery"
+      },
+      {
+        "owner": "Executive Office + MOD",
+        "item": "Performance oversight"
+      }
+    ],
+    "docs": [],
+    "nextDate": "",
+    "nextLabel": "",
+    "notes": ""
+  },
+  {
+    "id": "procurement-capability",
+    "name": "Procurement Capability Development Programme",
+    "fullName": "Baseline competency · Procurement",
+    "color": "#e34948",
+    "category": "Baseline competency programmes",
+    "trained": 0,
+    "target": 370,
+    "targetPeriod": "",
+    "unit": "procurement personnel assessed, trained or certified",
+    "status": "Pending sign-off of scope of work",
+    "programmeFormat": "~24-month programme",
+    "description": "Assess the procurement capability of 310 FTEs across 11 domains, from strategic sourcing to defence acquisition, train a pilot cohort of 30 FTEs, and certify 30 FTEs through an internationally recognised CIPS certification.",
+    "audience": "310 FTEs for the assessment; 30 FTEs for the pilot training; 30 FTEs for the CIPS certification.",
+    "objectives": [],
+    "modules": [],
+    "cohorts": [],
+    "cohortsDone": null,
+    "cohortsTotal": null,
+    "kpis": [],
+    "budget": [
+      {
+        "label": "Assessment of 310 FTEs",
+        "amount": "AED 2.2 Mn"
+      },
+      {
+        "label": "Training of 30 FTEs",
+        "amount": "AED 3.6 Mn"
+      },
+      {
+        "label": "Certification of 30 FTEs",
+        "amount": "AED 1.8 Mn"
+      },
+      {
+        "label": "Total",
+        "amount": "AED 7.6 Mn",
+        "total": true
+      }
+    ],
+    "steps": [
+      {
+        "label": "Identify need & scope of work",
+        "status": "done"
+      },
+      {
+        "label": "Launch request for proposal",
+        "status": "done"
+      },
+      {
+        "label": "Evaluate & select vendor",
+        "status": "current",
+        "note": "Selection pending approval"
+      },
+      {
+        "label": "Mobilise and start",
+        "status": "pending"
+      }
+    ],
+    "vendors": {
+      "issued": [
+        "Mercer",
+        "Deloitte",
+        "CIPS",
+        "Aon",
+        "Korn Ferry",
+        "EY",
+        "PwC"
+      ],
+      "received": [
+        "EY",
+        "PwC",
+        "Deloitte"
+      ],
+      "selected": [],
+      "note": "Selection pending approval"
+    },
+    "ownership": [
+      {
+        "owner": "MOD",
+        "item": "Programme ownership"
+      },
+      {
+        "owner": "MOD",
+        "item": "Funding"
+      },
+      {
+        "owner": "Executive Office",
+        "item": "Procurement & contracting"
+      },
+      {
+        "owner": "Vendor awarded",
+        "item": "Programme delivery"
+      },
+      {
+        "owner": "Executive Office + MOD",
+        "item": "Performance oversight"
+      }
+    ],
+    "docs": [],
+    "nextDate": "",
+    "nextLabel": "",
+    "notes": ""
   }
 ];
 

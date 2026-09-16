@@ -517,3 +517,5 @@ td .approx { color: var(--text-3); font-size: 11px; margin-left: 4px; }
 .own-what { padding: 7px 10px; border-radius: 8px; background: var(--surface-2); border: 1px solid var(--border); font-weight: 600; }
 
 .doc-link { color: var(--accent-ink); }
+
+.chip.sel { background: var(--c, var(--accent)); color: #fff; border-color: transparent; font-weight: 700; }
