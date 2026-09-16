@@ -390,10 +390,9 @@ const EVALUATIONS = {
       "2026 Q2": "EO Secondment",
       "2026 Q3": "EO Secondment",
       "2026 Q4": "EO Secondment",
-      "2027 Q1": "MBA",
-      "2027 Q2": "MBA",
-      "2027 Q3": "MBA",
-      "2027 Q4": "MBA"
+      "2027 Q1": "EO Secondment",
+      "2027 Q2": "EO Secondment",
+      "2027 Q3": "EO Secondment"
     },
     "ratings": {
       "Effective Communication & Influence": {
@@ -432,7 +431,7 @@ const EVALUATIONS = {
       "Improves key messages for senior stakeholders and check before deliver outputs"
     ],
     "masters": [
-      "Not planning to attend any Masters/ MBA"
+      "Not planning to attend any Masters / MBA. Programme ends after the 18-month EO Secondment (Q3 2027)."
     ],
     "quarterly": {
       "2026 Q2": {

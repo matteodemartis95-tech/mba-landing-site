@@ -726,7 +726,7 @@
             <div class="ev-legend">
               <span><i class="sw r-strong"></i>Strong</span><span><i class="sw r-effective"></i>Effective</span><span><i class="sw r-developing"></i>Developing</span><span><i class="sw r-na"></i>Not assessed</span>
               <span class="sep"></span>
-              <span><i class="sw ph-corporate-exchange"></i>Corporate Exchange</span><span><i class="sw ph-eo-secondment"></i>EO Secondment</span><span><i class="sw ph-mba"></i>MBA</span>
+              <span><i class="sw ph-corporate-exchange"></i>Corporate Exchange</span><span><i class="sw ph-eo-secondment"></i>EO Secondment</span>${Object.values(ev.phases || {}).includes("MBA") ? `<span><i class="sw ph-mba"></i>MBA</span>` : ""}
             </div>
             <div class="ev-foot">${Object.keys(ev.quarterly || {}).length ? "Cells with a dot carry the line manager’s comment: hover or tap to read it. " : ""}${ev.reportFirm ? `Corporate Exchange at ${esc(ev.reportFirm)}, assessed in its final report; ` : ""}EO Secondment assessed through the quarterly evaluations. The outlined column is the current quarter.</div>
           </div>
