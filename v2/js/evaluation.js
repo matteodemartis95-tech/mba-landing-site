@@ -637,7 +637,34 @@ const EVALUATIONS = {
         "label": "CV",
         "url": "docs/haneen-aljneibi-cv.pdf"
       }
-    ]
+    ],
+    "quarterly": {
+      "2026 Q2": {
+        "manager": "Rania Rostom",
+        "competencies": {
+          "Effective Communication & Influence": {
+            "rating": "effective",
+            "comment": "Haneen is a clear thinker and well composed in the way she structures and articulates her perspectives and in presentations.  Additionally, her outreach to different stakeholders results in the desired outcomes and actions. I admire her confidence - she is collected and effective in navigating discussions."
+          },
+          "Initiative": {
+            "rating": "strong",
+            "comment": "On Initiative, Haneen is a self-starter and drives her work with a lot of pride and a strong sense of ownership. Her inquisitive nature allows her to thoroughly think through possibilities and risks."
+          },
+          "Decision-Making & Accountability": {
+            "rating": "developing",
+            "comment": "Within her scope of assignments and responsibilities, Haneen makes sound decisions to keep the work= progressing.  As she gains a deeper understanding of communications, she will be able to take action independently and develop new approaches and solutions."
+          },
+          "Capability Development": {
+            "rating": "strong",
+            "comment": "Having come from the word of IT and entering Communications for the first time, I am well impressed with how much Haneen has immersed herself in the space.  She asks excellent questions - her curiosity is her competitive edge and she is a quick learner."
+          },
+          "Systemic Analysis & Planning": {
+            "rating": "developing",
+            "comment": "In this new space, this point requires deeper understanding of the function.  Having said that, Haneen is demonstrating a strong show of what it takes to plan a project as she has shown through her work on Project 50 media campaign and the Jahizoun communications plan."
+          }
+        }
+      }
+    }
   },
   "mohamed-al-naqabi": {
     "lineManager": "Saif Alsiksek",

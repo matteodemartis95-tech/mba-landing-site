@@ -404,3 +404,13 @@ td .approx { color: var(--text-3); font-size: 11px; margin-left: 4px; }
 .card-top .avatar { margin-top: 0; }
 
 .doc-link { color: var(--accent-ink); }
+
+/* comment bubble on evaluation cells */
+.ev-cell.has-note { cursor: pointer; position: relative; }
+.ev-cell.has-note::after { content: ""; position: absolute; right: 4px; top: 4px; width: 6px; height: 6px; border-radius: 50%; background: rgba(0,0,0,.45); }
+.ev-cell.has-note:hover, .ev-cell.has-note:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+.ev-bubble { position: absolute; z-index: 50; background: var(--surface); color: var(--text); border: 1px solid var(--border-strong); border-radius: 12px; box-shadow: 0 12px 32px -8px rgba(0,0,0,.35); padding: 12px 14px; font-size: 13px; line-height: 1.45; }
+.ev-bubble-head { display: flex; justify-content: space-between; gap: 10px; align-items: baseline; margin-bottom: 6px; }
+.ev-bubble-rating { display: inline-flex; align-items: center; gap: 6px; font-weight: 600; margin-bottom: 8px; }
+.ev-bubble-rating .sw { width: 12px; height: 12px; border-radius: 3px; border: 1px solid var(--border); display: inline-block; }
+.ev-bubble-text { white-space: pre-line; color: var(--text-2); }

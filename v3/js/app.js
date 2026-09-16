@@ -703,7 +703,12 @@
     const assessed = Q.filter(q => comps.some(cp => (ev.ratings[cp] || {})[q]));
     const latest = assessed[assessed.length - 1];
     const cols = `grid-template-columns: 190px repeat(${Q.length}, minmax(34px, 1fr));`;
-    const cell = (cp, q) => { const r = (ev.ratings[cp] || {})[q]; const lbl = r ? META.ratings[r] : ""; return `<div class="ev-cell ${r ? "r-" + r : "r-empty"} ${q === latest ? "latest" : ""}" title="${esc(cp)} · ${esc(q)}${lbl ? ": " + esc(lbl) : ""}"></div>`; };
+    const cell = (cp, q) => {
+      const r = (ev.ratings[cp] || {})[q]; const lbl = r ? META.ratings[r] : "";
+      const note = ev.quarterly && ev.quarterly[q] && ev.quarterly[q].competencies && ev.quarterly[q].competencies[cp];
+      if (note && note.comment) return `<div class="ev-cell has-note ${r ? "r-" + r : "r-empty"} ${q === latest ? "latest" : ""}" tabindex="0" data-cp="${esc(cp)}" data-q="${esc(q)}" data-rating="${esc(lbl)}" data-tone="${esc(r || "")}" data-manager="${esc((ev.quarterly[q].manager || ev.lineManager || ""))}" data-note="${esc(note.comment)}"></div>`;
+      return `<div class="ev-cell ${r ? "r-" + r : "r-empty"} ${q === latest ? "latest" : ""}" title="${esc(cp)} · ${esc(q)}${lbl ? ": " + esc(lbl) : ""}"></div>`;
+    };
     return `
       <div class="profile-grid">
         <div>
@@ -723,7 +728,7 @@
               <span class="sep"></span>
               <span><i class="sw ph-corporate-exchange"></i>Corporate Exchange</span><span><i class="sw ph-eo-secondment"></i>EO Secondment</span><span><i class="sw ph-mba"></i>MBA</span>
             </div>
-            <div class="ev-foot">${ev.reportFirm ? `Corporate Exchange at ${esc(ev.reportFirm)}, assessed in its final report; ` : ""}EO Secondment assessed through the quarterly evaluations. The outlined column is the current quarter.</div>
+            <div class="ev-foot">${Object.keys(ev.quarterly || {}).length ? "Cells with a dot carry the line manager’s comment: hover or tap to read it. " : ""}${ev.reportFirm ? `Corporate Exchange at ${esc(ev.reportFirm)}, assessed in its final report; ` : ""}EO Secondment assessed through the quarterly evaluations. The outlined column is the current quarter.</div>
           </div>
         </div>
         <div class="side">
@@ -1141,6 +1146,26 @@
     try { localStorage.setItem(STORAGE_KEY + ":theme", next); } catch (e) { /* ignore */ }
   });
 
+  // ---- comment bubble on rated cells (line manager's comment per competency and quarter) ----
+  const bubble = document.createElement("div"); bubble.className = "ev-bubble hidden"; document.body.appendChild(bubble);
+  let bubbleCell = null;
+  function showBubble(cell) {
+    bubbleCell = cell;
+    bubble.innerHTML = `<div class="ev-bubble-head"><b>${esc(cell.dataset.cp)}</b><span class="muted small">${esc(cell.dataset.q)}</span></div>
+      ${cell.dataset.rating ? `<div class="ev-bubble-rating"><i class="sw r-${esc(cell.dataset.tone)}"></i>${esc(cell.dataset.rating)}${cell.dataset.manager ? ` <span class="muted">· ${esc(cell.dataset.manager)}</span>` : ""}</div>` : ""}
+      <div class="ev-bubble-text">${esc(cell.dataset.note)}</div>`;
+    bubble.classList.remove("hidden");
+    const r = cell.getBoundingClientRect(), bw = Math.min(360, window.innerWidth - 24); bubble.style.width = bw + "px";
+    let left = r.left + r.width / 2 - bw / 2; left = Math.max(12, Math.min(left, window.innerWidth - bw - 12));
+    const bh = bubble.offsetHeight; let top = r.bottom + 8; if (top + bh > window.innerHeight - 12) top = r.top - bh - 8;
+    bubble.style.left = left + window.scrollX + "px"; bubble.style.top = top + window.scrollY + "px";
+  }
+  function hideBubble() { bubble.classList.add("hidden"); bubbleCell = null; }
+  app.addEventListener("mouseover", e => { const c = e.target.closest(".ev-cell.has-note"); if (c && c !== bubbleCell) showBubble(c); });
+  app.addEventListener("mouseout", e => { const c = e.target.closest(".ev-cell.has-note"); if (c && !bubble.contains(e.relatedTarget)) hideBubble(); });
+  app.addEventListener("click", e => { const c = e.target.closest(".ev-cell.has-note"); if (c) { e.preventDefault(); if (bubbleCell === c && !bubble.classList.contains("hidden")) hideBubble(); else showBubble(c); } else if (!bubble.contains(e.target)) hideBubble(); });
+  app.addEventListener("focusin", e => { const c = e.target.closest(".ev-cell.has-note"); if (c) showBubble(c); });
+  window.addEventListener("scroll", () => { if (bubbleCell) showBubble(bubbleCell); }, { passive: true });
   window.addEventListener("hashchange", route);
   route();
   if (staleLocalDiscarded) toast("The published dashboard was updated on GitHub, so it replaced the copy saved in this browser.");

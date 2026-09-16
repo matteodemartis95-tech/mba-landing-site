@@ -80,3 +80,7 @@ Open `index.html` in a browser, or serve the folder (for example `python3 -m htt
 ## V3 preview (T&LD dashboard)
 
 `v3/` extends V2 with a T&LD landing page: three banners (T&LD, Jahizoun, Deadlines MBAs), one PMO box per course or programme, and a PMO page per course. Courses live in `v3/js/tld.js` (V3 only); the Jahizoun pages reuse the shared `js/data.js` and `v2/js/evaluation.js`. In V3's Edit mode, "Copy tld.js" produces the updated course file to paste into `v3/js/tld.js`.
+
+## Importing a quarterly evaluation (Excel)
+
+`tools/import-evaluation.py <file.xlsx> <candidate-id> "<quarter>"` reads a "Jahizoun – Quarterly Competence Evaluation" workbook, takes the line manager's rating and comment per competency, writes them into `v2/js/evaluation.js` under `quarterly` for that quarter and updates the rating grid. The comments then appear as a bubble when hovering or tapping the quarter's cells on the evaluation grid (V2 and V3). Needs Python with `openpyxl`.
