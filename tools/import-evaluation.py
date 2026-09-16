@@ -46,15 +46,27 @@ def main(path, cid, quarter, sheet=None, cols=None, manager_override=None):
         comment = str(ws.cell(r, ccol).value or "").strip()
         rows[c] = {"rating": rating, "comment": comment}
     # the manager often writes all five comments in the first cell: split it by competency headings
+    summary, unmatched = "", []
     first = next((rows[c]["comment"] for c in COMPETENCIES if c in rows and rows[c]["comment"]), "")
     if first and sum(1 for c in COMPETENCIES if c in rows and rows[c]["comment"]) == 1:
-        parts = re.split(r"\n\s*\n", first)
-        for p in parts:
-            head = p.split("-", 1)[0] if "-" in p[:60] else p[:40]
-            c = comp_of(head)
-            if c and c in rows:
-                body = p.split("-", 1)[1].strip() if "-" in p[:60] else p.strip()
-                rows[c]["comment"] = body
+        for p in re.split(r"\n\s*\n", first):
+            p = p.strip()
+            if not p: continue
+            head, body = None, p
+            lines = p.split("\n", 1)
+            if len(lines) == 2 and len(lines[0]) <= 60 and (comp_of(lines[0]) or "summary" in lines[0].lower() or "overall" in lines[0].lower()):
+                head, body = lines[0], lines[1]                      # "Heading\nText"
+            else:
+                for sep in (" - ", " – ", ": ", "-"):
+                    if sep in p[:60] and comp_of(p.split(sep, 1)[0]):
+                        head, body = p.split(sep, 1); break         # "Heading - Text"
+            c = comp_of(head) if head else None
+            if c and c in rows: rows[c]["comment"] = body.strip()
+            elif head and ("summary" in head.lower() or "overall" in head.lower()): summary = body.strip()
+            else: unmatched.append(p)
+        for c in COMPETENCIES:
+            if c in rows and rows[c]["comment"] == first: rows[c]["comment"] = ""   # heading not found: keep nothing rather than the whole cell
+        if unmatched: print("WARNING: paragraphs not matched to a competency:", [u[:60] for u in unmatched])
     if not any(v["rating"] or v["comment"] for v in rows.values()):
         sys.exit(f"nothing to import: columns {rcol},{ccol} of sheet '{ws.title}' are empty")
     manager = manager_override
@@ -63,14 +75,14 @@ def main(path, cid, quarter, sheet=None, cols=None, manager_override=None):
             for c in (3, 4):
                 v = ws.cell(r, c).value
                 if isinstance(v, str) and v.strip() and not v.startswith("<") and v.strip().lower() != "position": manager = v.strip()
-    out = {"quarter": quarter, "manager": manager, "competencies": rows}
+    out = {"quarter": quarter, "manager": manager, "competencies": rows, "summary": summary}
     # merge into evaluation.js via node
     js = """
 const fs=require('fs'), vm=require('vm');
 const [cid, payload] = process.argv.slice(1); const data = JSON.parse(payload);
 const p='v2/js/evaluation.js'; const src=fs.readFileSync(p,'utf8'); const ctx={window:{}}; vm.runInNewContext(src,ctx);
 const E=ctx.window.MBA_EVAL; const ev=E.EVALUATIONS[cid]; if(!ev) throw new Error('unknown candidate '+cid);
-ev.quarterly = ev.quarterly || {}; ev.quarterly[data.quarter] = { manager: data.manager || ev.lineManager, competencies: data.competencies };
+ev.quarterly = ev.quarterly || {}; ev.quarterly[data.quarter] = { manager: data.manager || ev.lineManager, competencies: data.competencies }; if (data.summary) ev.quarterly[data.quarter].summary = data.summary;
 for (const [c, v] of Object.entries(data.competencies)) { if (v.rating) { ev.ratings[c] = ev.ratings[c] || {}; ev.ratings[c][data.quarter] = v.rating; } }
 const start=src.indexOf('const EXTRA_CANDIDATES = ['), end=src.indexOf('/* Do not edit below this line. */');
 fs.writeFileSync(p, src.slice(0,start)+'const EXTRA_CANDIDATES = '+JSON.stringify(E.EXTRA_CANDIDATES,null,2)+';\\n\\nconst NAME_OVERRIDES = '+JSON.stringify(E.NAME_OVERRIDES,null,2)+';\\n\\nconst EVALUATIONS = '+JSON.stringify(E.EVALUATIONS,null,2)+';\\n\\n'+src.slice(end));
@@ -80,6 +92,7 @@ console.log('imported', cid, data.quarter, Object.keys(data.competencies).length
     for c in COMPETENCIES:
         v = rows.get(c, {})
         print(f"  {c}: {v.get('rating')} | {(v.get('comment') or '')[:90]}")
+    if summary: print(f"  Overall summary | {summary[:90]}")
 
 if __name__ == "__main__":
     args, opts = [], {}

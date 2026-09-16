@@ -119,7 +119,7 @@ const NAME_OVERRIDES = {
 
 const EVALUATIONS = {
   "surour-al-kaabi": {
-    "lineManager": "Shobit Pareek",
+    "lineManager": "Shobhit Pareek",
     "function": "Al-Emad",
     "corporateExchangeProject": "UAE National Intellectual Property Strategy and modernisation of the MoD education & training ecosystem",
     "previousFunction": "Staff Officer 2 J6 (IT & Communications), Presidential Guard Falcons Brigade (2024–2025)",
@@ -180,7 +180,34 @@ const EVALUATIONS = {
         "label": "CV",
         "url": "docs/surour-al-kaabi-cv.pdf"
       }
-    ]
+    ],
+    "quarterly": {
+      "2026 Q2": {
+        "manager": "Shobhit Pareek",
+        "competencies": {
+          "Effective Communication & Influence": {
+            "rating": "effective",
+            "comment": "Surour communicated ideas clearly and well. He facilitated meetings effectively and brought strong expert knowledge into discussions. He was able to storyline well and communicate in an eloquent way. He also contributed strong inputs in expert discussions and sparring sessions, helping move the discussion forward. To further strengthen, Surour should continue building executive communication skills by starting with the key message and the “so what” before drafting or storylining, and by making sure outputs are formatted in a client-ready way."
+          },
+          "Initiative": {
+            "rating": "strong",
+            "comment": "Surour showed very proactive ownership throughout the work. He contributed actively in expert discussions and sparring sessions, and he went beyond the core task by trying novel ways of showcasing information. He also used AI tools well and proactively supported the team."
+          },
+          "Decision-Making & Accountability": {
+            "rating": "strong",
+            "comment": "Surour took strong ownership of his work, including end-to-end ownership of asymmetry. He also supported cyber and EW in the domain scan. He was reliable, proactive, and supportive, and took responsibility for moving his areas forward."
+          },
+          "Capability Development": {
+            "rating": "strong",
+            "comment": "Surour showed strong capability development through his use of AI tools and his ability to bring expert knowledge into the work. He shared his understanding of the region well and used this knowledge to support the team. He also showed a willingness to try novel ways of showcasing information."
+          },
+          "Systemic Analysis & Planning": {
+            "rating": "effective",
+            "comment": "Surour demonstrated effective PS&I through his work on asymmetry, cyber and EW support, and domain scan contributions. He brought expert knowledge, shared strong regional understanding, and contributed useful inputs in expert discussions and sparring sessions. As a development need, Surour should continue strengthening how he turns analysis into a clear top-down plan. He can do this by first defining the key message and “so what,” then structuring the analysis, storyline, and materials around that answer. This will help make his work even more focused, executive-ready, and easy for stakeholders to act on."
+          }
+        }
+      }
+    }
   },
   "waood-alhammadi": {
     "lineManager": "Declan Noone",
@@ -310,7 +337,7 @@ const EVALUATIONS = {
     ]
   },
   "khaled-alteneiji": {
-    "lineManager": "Rania Roston",
+    "lineManager": "Rania Rostom",
     "function": "Strategic Communications",
     "corporateExchangeProject": "Central Bank of the UAE reverse-solicitation policy benchmark, stablecoin payment use cases for a global payments company, and a Saudi banking-licence application",
     "previousFunction": "Head of Monitor and Control, Signal Corps, Ministry of Defence (2024–2025)",
@@ -375,7 +402,34 @@ const EVALUATIONS = {
         "label": "CV",
         "url": "docs/khaled-alteneiji-cv.pdf"
       }
-    ]
+    ],
+    "quarterly": {
+      "2026 Q2": {
+        "manager": "Rania Rostom",
+        "competencies": {
+          "Effective Communication & Influence": {
+            "rating": "effective",
+            "comment": "Khaled has successfully built a strong relationship with the MOD Leadership Comms team. He listens with intent and is well able to respond in real time in framing his perspectives to help influence the progress and outcome of projects.  He balances being both amiable and a 'speak your mind' approach effectively. He understands the importance of investing time and navigating stakeholders' expectations."
+          },
+          "Initiative": {
+            "rating": "strong",
+            "comment": "Khaled demonstrates strong initiative  - his curiosity and interest in the space of Communications is clear and enables him to reflect along the way and find opportunities to show initiative and thoughtfulness - this has been particularly clear during the brand identity project on his work on the narrative and messaging in particular, but across the board as well. Moreover, he has built a strong rapport with the branches in terms of understanding needs and taking the lead on all the coordination and the logistics."
+          },
+          "Decision-Making & Accountability": {
+            "rating": "developing",
+            "comment": "Khaled shows confidence and thoughtfulness in the decisions within his scope of responsibility and as a result is able to keep the work moving along"
+          },
+          "Capability Development": {
+            "rating": "strong",
+            "comment": "I have been very impressed with the way that Khaled has embraced Communications.  Khaled comes from a strong IT background and has never previously worked in the field of Communications.  Having said that because he displays an incredible strong growth mindset and true learner qualities - his eagerness, curiosity and positive attitude - puts him at 'Strong' for me ... he is soaking it up all and fast. I would go on to say that should he want to pursue a career in the space of Strategic Communications, he comes at it with the right mindset and is building a strong foundation. I happily invest time coaching him on the space because of this."
+          },
+          "Systemic Analysis & Planning": {
+            "rating": "developing",
+            "comment": "with three months in the role. Khaled understands the planning and the focus now is to deepen that know how further. I have been impressed with Khaled's planning on our work with the branches in particular and his initiative and thoughtfulness in coordinating with them on their different needs."
+          }
+        }
+      }
+    }
   },
   "buti-al-suwaidi": {
     "lineManager": "Aleksandra Socevic",
@@ -533,7 +587,34 @@ const EVALUATIONS = {
         "label": "CV",
         "url": "docs/khalifa-al-mansoori-cv.pdf"
       }
-    ]
+    ],
+    "quarterly": {
+      "2026 Q2": {
+        "manager": "Karol Yearwood",
+        "competencies": {
+          "Effective Communication & Influence": {
+            "rating": "effective",
+            "comment": "Khalifa communicated well in client meetings, bringing thoughtful points and adding genuine value to the discussion. He engaged constructively with stakeholders and was able to represent his work clearly when presenting to the client. To build on this strength, Khalifa should keep extending the same clarity and structure into his day-to-day written updates, not just client-facing moments."
+          },
+          "Initiative": {
+            "rating": "effective",
+            "comment": "Khalifa showed proactivity at times, checking in on his work and progress, though this was not yet consistent. Development focus going forward should be on proactively flagging where he is in his tasks on a more regular basis, and on signalling early when he has capacity to take on more, rather than waiting to be asked."
+          },
+          "Decision-Making & Accountability": {
+            "rating": "developing",
+            "comment": "Khalifa completed the tasks assigned to him, but turnaround time was consistently slower than expected, which affected overall delivery pace. In addition, the quality of some outputs did not fully match the standard and expectations that had been explained to him upfront. Building stronger habits around pacing his work and checking outputs against the brief before submission will be an important next step."
+          },
+          "Capability Development": {
+            "rating": "developing",
+            "comment": "Khalifa engaged with his assigned tasks and showed willingness to take on the work given to him, meeting expectations for this stage of development. He stayed somewhat distanced from the wider team, and building closer personal relationships with colleagues would help him get more out of the consulting learning experience — including more informal mentoring, feedback, and knowledge-sharing. Continuing to seek feedback proactively and applying lessons from each task to the next will also help him build speed and consistency over time."
+          },
+          "Systemic Analysis & Planning": {
+            "rating": "developing",
+            "comment": "Khalifa generally approached his tasks in a reasonable way, but the gap between expected and delivered quality suggests his upfront planning of an assignment could be stronger. Taking a moment to map out what a complete, high-quality output looks like before starting would help him deliver faster and closer to the mark on the first pass."
+          }
+        }
+      }
+    }
   },
   "mohamed-al-hameli": {
     "lineManager": "Elvie Lahournere",
@@ -601,7 +682,35 @@ const EVALUATIONS = {
         "label": "CV",
         "url": "docs/mohamed-al-hameli-cv.pdf"
       }
-    ]
+    ],
+    "quarterly": {
+      "2026 Q2": {
+        "manager": "Elvie Lahournere",
+        "competencies": {
+          "Effective Communication & Influence": {
+            "rating": "effective",
+            "comment": "Since joining the Executive Office, Mohamed has demonstrated strong communication and stakeholder engagement skills. He actively participates in meetings, consistently takes detailed notes, and contributes thoughtful insights to discussions. Notably, his presentation skills have continued to improve, allowing him to communicate ideas with greater confidence, structure, and clarity to both peers and stakeholders."
+          },
+          "Initiative": {
+            "rating": "strong",
+            "comment": "Mohamed has shown a high level of initiative and ownership from the outset. He successfully led the development of the Procurement Playbook as his first major assignment, coordinating expert and stakeholder engagements to identify and close gaps while ensuring on-time delivery. Beyond his assigned responsibilities, he consistently demonstrates a proactive mindset by seeking opportunities to become involved in additional projects and initiatives, showing a strong willingness to learn, contribute, and add value across the organization. He is currently leading two weekly Procure-to-Pay (P2P) status meetings while effectively managing his assigned workstream activities within the broader P2P transformation plan."
+          },
+          "Decision-Making & Accountability": {
+            "rating": "effective",
+            "comment": "Mohamed has displayed sound judgment and accountability throughout his assignments. During the development of the Procurement Playbook,he takes ownership of his responsibilities, independently identifies next steps, and proactively drives actions forward while keeping stakeholders informed and aligned."
+          },
+          "Capability Development": {
+            "rating": "strong",
+            "comment": "Mohamed is strongly committed to his professional and personal development. He is currently preparing for the GMAT exam as part of his longer-term educational goals and university admission plans."
+          },
+          "Systemic Analysis & Planning": {
+            "rating": "developing",
+            "comment": ""
+          }
+        },
+        "summary": "Mohamed has made a positive impact during his first months in the Executive Office through his proactive approach, strong ownership, growing confidence in stakeholder engagement, and willingness to take on new challenges. His eagerness to participate in projects beyond his immediate responsibilities, combined with his improving presentation and communication skills, demonstrates strong potential for future growth and leadership opportunities."
+      }
+    }
   },
   "haneen-aljneibi": {
     "lineManager": "Rania Rostom",
@@ -1084,7 +1193,34 @@ const EVALUATIONS = {
     "masters": [
       "Completed ScorePlus and GuideME GMAT course",
       "Applying to HEC and NYU Abu Dhabi MBA, January 2027"
-    ]
+    ],
+    "quarterly": {
+      "2026 Q2": {
+        "manager": "Juhina Elmajdoub",
+        "competencies": {
+          "Effective Communication & Influence": {
+            "rating": "effective",
+            "comment": "Saif at times communicated clearly in structured settings such as during daily check ins. As a next step, building confidence in tailoring communication to different audiences will be an important. With increased exposure and confidence, there is clear potential for Saif to take a more proactive role within the team."
+          },
+          "Initiative": {
+            "rating": "developing",
+            "comment": "Saif is still developing the habit of working independently ahead of direction, and there is room to grow in anticipating needs before they are flagged. At times, coordination and alignment on timelines have required additional follow-up from the manager's side. A key development focus going forward will be spotting potential issues early, bringing forward practical suggestions, and acting within his authority without needing to be prompted. With increased exposure and confidence, there is clear potential for Saif to take a more proactive role within the team."
+          },
+          "Decision-Making & Accountability": {
+            "rating": "developing",
+            "comment": "Saif is developing his ability to take full ownership of tasks from start to finish, including quality assurance before submission. Some outputs have required managerial review and adjustment, highlighting an opportunity to strengthen his judgement around what constitutes a complete and accurate deliverable. Building consistent habits of self-checking , and considering the downstream impact of work before sharing it,  will be important milestones in his growth at this level."
+          },
+          "Capability Development": {
+            "rating": "developing",
+            "comment": "There is an opportunity for Saif to engage more deeply with the content areas he supports, as knowledge gaps were observed despite structured onboarding and regular check-ins throughout the day. Development will accelerate by actively following up on feedback, seeking stretch tasks, and integrating lessons from each assignment into subsequent work. The foundation is in place. The next step is for Saif to take greater ownership of his own growth trajectory and make more consistent use of the support available to him."
+          },
+          "Systemic Analysis & Planning": {
+            "rating": "developing",
+            "comment": "Saif would benefit from adopting a more structured approach to tracking his workstream tasks — including flagging dependencies and potential bottlenecks before they become blockers. Strengthening the habit of anticipating information needs and keeping stakeholders informed will be an important step forward. This is also an area where the team is actively building shared tools and frameworks to support consultants at different capability levels."
+          }
+        }
+      }
+    }
   },
   "saoud-alkaabi": {
     "lineManager": "Ansh Karha",
@@ -1152,7 +1288,34 @@ const EVALUATIONS = {
         "label": "CV",
         "url": "docs/saoud-alkaabi-cv.pdf"
       }
-    ]
+    ],
+    "quarterly": {
+      "2026 Q2": {
+        "manager": "Ansh Karha",
+        "competencies": {
+          "Effective Communication & Influence": {
+            "rating": "effective",
+            "comment": "Communicates clearly in structured settings and contributes to meetings and MOM documentation. Written outputs have at times required rework to meet quality standards, suggesting a need to invest more time in self-review before submission. Would benefit from seeking clarity on expectations upfront and from structuring written deliverables more independently. Building confidence in tailoring communication to different audiences will be an important next step.."
+          },
+          "Initiative": {
+            "rating": "developing",
+            "comment": "Executes assigned tasks reliably when directed, including coordination support and entity engagement logistics. Has not consistently demonstrated proactive identification of gaps or self-initiated process improvements within the workstream. The default mode has been to wait for direction rather than anticipate needs. Development focus should shift toward spotting issues early, raising them with suggested solutions, and acting within authority without requiring prompting."
+          },
+          "Decision-Making & Accountability": {
+            "rating": "developing",
+            "comment": "Takes responsibility for assigned tasks and follows through on coordination activities with reasonable reliability. Within defined scope, decisions are generally sound. However, output quality has at times required managerial review and correction before meeting workstream standards, indicating that judgement on what constitutes a complete and accurate deliverable needs further development. Building stronger habits around self-checking and considering downstream impact before submission will be key."
+          },
+          "Capability Development": {
+            "rating": "effective",
+            "comment": "Engaged meaningfully in the ecosystem workstream and gained valuable exposure to whole-of-nation defence concepts, stakeholder engagement processes, and coordination mechanisms. Growth opportunity lies in proactively seeking  assignments and integrating feedback more systematically into subsequent deliverables would accelerate development noticeably."
+          },
+          "Systemic Analysis & Planning": {
+            "rating": "effective",
+            "comment": "Provided support on note-taking and logistics across several entity engagements, contributing to the overall coordination effort of the workstream.  A more structured approach to tracking workstream tasks, flagging bottlenecks early, and anticipating information needs would strengthen contribution at this level."
+          }
+        }
+      }
+    }
   },
   "saeed-al-sereidi": {
     "lineManager": "Noura Al Ahbabi",
