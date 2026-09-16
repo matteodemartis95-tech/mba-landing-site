@@ -1,13 +1,18 @@
 #!/usr/bin/env python3
 """Import a 'Jahizoun - Quarterly Competence Evaluation' Excel file into v2/js/evaluation.js.
 
-Usage:  python3 tools/import-evaluation.py <file.xlsx> <candidate-id> <quarter e.g. "2026 Q2">
+Usage:  python3 tools/import-evaluation.py <file.xlsx> <candidate-id> <quarter e.g. "2026 Q2"> [options]
+  --sheet "<name>"     worksheet to read (default: 'Quarterly conversations', else the first sheet)
+  --cols F,G           rating and comment columns to read (default: the columns under the
+                       'Line Manager Evaluation' header, or J,K when no header is found)
+  --manager "<name>"   line manager name when the sheet leaves it blank (default: deck line manager)
 
-Reads the line-manager rating and comment per competency (columns J and K of the
-'Quarterly conversations' sheet), writes them under EVALUATIONS[<id>].quarterly[<quarter>]
-and updates the rating grid for that quarter. Requires: pip install openpyxl
+Reads the line-manager rating and comment per competency, writes them under
+EVALUATIONS[<id>].quarterly[<quarter>] and updates the rating grid for that quarter.
+Requires: pip install openpyxl
 """
 import sys, re, json, subprocess, openpyxl
+from openpyxl.utils import column_index_from_string
 
 COMPETENCIES = ["Effective Communication & Influence", "Initiative", "Decision-Making & Accountability", "Capability Development", "Systemic Analysis & Planning"]
 KEYS = [("communication", COMPETENCIES[0]), ("initiative", COMPETENCIES[1]), ("decision", COMPETENCIES[2]), ("capability", COMPETENCIES[3]), ("systemic", COMPETENCIES[4]), ("systematic", COMPETENCIES[4])]
@@ -19,9 +24,17 @@ def comp_of(label):
         if k in l: return c
     return None
 
-def main(path, cid, quarter):
+def main(path, cid, quarter, sheet=None, cols=None, manager_override=None):
     wb = openpyxl.load_workbook(path, data_only=True)
-    ws = wb["Quarterly conversations"] if "Quarterly conversations" in wb.sheetnames else wb.worksheets[0]
+    if sheet: ws = wb[sheet]
+    else: ws = wb["Quarterly conversations"] if "Quarterly conversations" in wb.sheetnames else wb.worksheets[0]
+    rcol, ccol = 10, 11
+    for r in range(8, 12):                       # find the 'Line Manager Evaluation' header
+        for c in range(1, ws.max_column + 1):
+            v = ws.cell(r, c).value
+            if isinstance(v, str) and "line manager evaluation" in v.strip().lower(): rcol, ccol = c, c + 1
+    if cols:
+        a, b = cols.split(","); rcol, ccol = column_index_from_string(a.strip().upper()), column_index_from_string(b.strip().upper())
     rows = {}
     for r in range(12, 40):
         label = ws.cell(r, 2).value
@@ -29,8 +42,8 @@ def main(path, cid, quarter):
         if not isinstance(label, str) or len(label) > 60: continue          # skip the definitions block
         c = comp_of(label)
         if not c: continue
-        rating = RATINGS.get(str(ws.cell(r, 10).value or "").strip().lower())
-        comment = str(ws.cell(r, 11).value or "").strip()
+        rating = RATINGS.get(str(ws.cell(r, rcol).value or "").strip().lower())
+        comment = str(ws.cell(r, ccol).value or "").strip()
         rows[c] = {"rating": rating, "comment": comment}
     # the manager often writes all five comments in the first cell: split it by competency headings
     first = next((rows[c]["comment"] for c in COMPETENCIES if c in rows and rows[c]["comment"]), "")
@@ -42,9 +55,14 @@ def main(path, cid, quarter):
             if c and c in rows:
                 body = p.split("-", 1)[1].strip() if "-" in p[:60] else p.strip()
                 rows[c]["comment"] = body
-    manager = None
+    if not any(v["rating"] or v["comment"] for v in rows.values()):
+        sys.exit(f"nothing to import: columns {rcol},{ccol} of sheet '{ws.title}' are empty")
+    manager = manager_override
     for r in range(1, 12):
-        if ws.cell(r, 2).value == "Line Manager": manager = ws.cell(r, 4).value
+        if ws.cell(r, 2).value == "Line Manager" and not manager:
+            for c in (3, 4):
+                v = ws.cell(r, c).value
+                if isinstance(v, str) and v.strip() and not v.startswith("<") and v.strip().lower() != "position": manager = v.strip()
     out = {"quarter": quarter, "manager": manager, "competencies": rows}
     # merge into evaluation.js via node
     js = """
@@ -64,5 +82,10 @@ console.log('imported', cid, data.quarter, Object.keys(data.competencies).length
         print(f"  {c}: {v.get('rating')} | {(v.get('comment') or '')[:90]}")
 
 if __name__ == "__main__":
-    if len(sys.argv) != 4: sys.exit(__doc__)
-    main(*sys.argv[1:])
+    args, opts = [], {}
+    it = iter(sys.argv[1:])
+    for a in it:
+        if a.startswith("--"): opts[a[2:]] = next(it, None)
+        else: args.append(a)
+    if len(args) != 3: sys.exit(__doc__)
+    main(*args, sheet=opts.get("sheet"), cols=opts.get("cols"), manager_override=opts.get("manager"))

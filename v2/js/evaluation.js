@@ -832,7 +832,34 @@ const EVALUATIONS = {
         "label": "CV",
         "url": "docs/abdulaziz-al-yafei-cv.pdf"
       }
-    ]
+    ],
+    "quarterly": {
+      "2026 Q2": {
+        "manager": "Saif Al Siksek",
+        "competencies": {
+          "Effective Communication & Influence": {
+            "rating": "strong",
+            "comment": "Clear and effective communication. Persuades team members with new ideas and adapts communication style to different audiences."
+          },
+          "Initiative": {
+            "rating": "effective",
+            "comment": "Proactively identifies problems and gaps, proposes solutions. Thoughtful about timing and approach based on stakeholder readiness."
+          },
+          "Decision-Making & Accountability": {
+            "rating": "effective",
+            "comment": "Makes decisions through experimentation (tries and adjusts), accepts responsibility for outcomes, learns from mistakes."
+          },
+          "Capability Development": {
+            "rating": "strong",
+            "comment": "Passionate about continuous learning. Successfully implemented AI techniques in work. Actively seeks challenging projects for professional growth."
+          },
+          "Systemic Analysis & Planning": {
+            "rating": "effective",
+            "comment": "Analyzes problems systematically and plans while considering risks and resource constraints. Adjusts plans proactively when circumstances change."
+          }
+        }
+      }
+    }
   },
   "mohammed-al-mahri": {
     "lineManager": "Elvie Lahournere",
