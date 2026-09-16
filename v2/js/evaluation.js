@@ -995,7 +995,34 @@ const EVALUATIONS = {
         "label": "CV",
         "url": "docs/fatima-balnoub-cv.pdf"
       }
-    ]
+    ],
+    "quarterly": {
+      "2026 Q2": {
+        "manager": "Cezar Gazdoiu",
+        "competencies": {
+          "Effective Communication & Influence": {
+            "rating": "developing",
+            "comment": "As a strength in this area, I appreciate your communication with me. Always open to consult anas ask for advice.  \n\nThere is also scope for development in this area. Although you are very much involved in your daily tasks, you may want to reflect on your current communication skills. This is linked with your observations in the same area.  A best practice could be to focus more on the preparation stage and use the follwing questions: \nWhat is the main messages that I want to trasnmit today?\nWhat is my objective?\nHow will I know that I achieved my objective at the end of this meeting?\nWhat are the potential objections I may face?"
+          },
+          "Initiative": {
+            "rating": "effective",
+            "comment": "Although there was a slow start to the EO secondment, I was impressed by your openess to accept a new challenge and take on new projects. You immediately took over of the LDP project and you are continuing to own this project. You initiate discussion with various stakeholders (e.g., vendor, Hamad, etc.) to ensure an effective delivery of the project. Another example in the same area is the benchmarking project set up by Rakan where you were the first one to take iniative. \nAdditionally, you embraced the chance to participate in the Enterprise Accelerator Program and your input was very much appreciated. You managed approximately 80% of the interviews.\n\nFor further development, try to be more courageous and share any ideas regarding to other projects. Be more vocal during meetings and  with the rest of the team. I believe you have a huge potential in this area that waits to be explored and shared with others."
+          },
+          "Decision-Making & Accountability": {
+            "rating": "developing",
+            "comment": "Although this is an area of future development, I recognize you already slowly start to exercise your decision-making, particularly related to the LDP project.  Furthermore, it is relevant to highlight your intentional decision to take Maha under your wing and provide her with guidence and direction and help her adjust to the project requirements. \n\nIn the future, we will consider taking on multiple projects and practice your decision-making using incomplete information or being under pressure.  Another suggestion is to analyse the posibility to \"front\" a project from inception to completion and run all the executive briefings."
+          },
+          "Capability Development": {
+            "rating": "effective",
+            "comment": "Your desire to embrace different challenges will have a postive impact on this competency and ensure the platform for further development.  You have a good level of emotionall intelligence to understand the group dynamics and requirements (e.g., during the EAP you placed the interviewee at ease and provide context to elicit informed responses).  Furthermore you demonstrated you are open to receiving feedback and incorporate it in your future work. Keep up with this approach !\n\n\nFor further development, we should focus on assigning you more challenging and complex projects."
+          },
+          "Systemic Analysis & Planning": {
+            "rating": "developing",
+            "comment": "One way to develop in this area is to leverage your potential for \"Initiative\". Be proactive and identify areas that needs improvement. Let's build a project around the same ideas. \nReflect on your proactivity levels."
+          }
+        }
+      }
+    }
   },
   "saif-al-hammadi": {
     "lineManager": "Juhina Elmajdoub",
