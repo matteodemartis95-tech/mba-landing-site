@@ -329,12 +329,12 @@ const CANDIDATES = [
     "applications": [
       {
         "school": "HEC",
-        "status": "interviewed",
+        "status": "admitted",
         "interview": {
           "date": "2026-09-10",
           "note": "HEC alumni interviews completed."
         },
-        "notes": ""
+        "notes": "Admitted to HEC Paris (offer received 18 Sep 2026)."
       },
       {
         "school": "IMD",
@@ -368,12 +368,12 @@ const CANDIDATES = [
     "applications": [
       {
         "school": "HEC",
-        "status": "interviewed",
+        "status": "admitted",
         "interview": {
           "date": "2026-09-07, 2026-09-11",
           "note": "HEC alumni interviews completed."
         },
-        "notes": ""
+        "notes": "Admitted to HEC Paris (offer received 18 Sep 2026)."
       },
       {
         "school": "IMD",
