@@ -386,12 +386,12 @@ const CANDIDATES = [
       },
       {
         "school": "CBS",
-        "status": "scheduled",
+        "status": "admitted",
         "interview": {
           "date": "2026-09-16",
           "note": "Tentative date, to be confirmed."
         },
-        "notes": ""
+        "notes": "Admitted to Columbia Business School (offer received 25 Sep 2026)."
       }
     ]
   },
@@ -544,8 +544,8 @@ const CANDIDATES = [
         "school": "CBS",
         "status": "scheduled",
         "interview": {
-          "date": "2026-09-18",
-          "note": ""
+          "date": "",
+          "note": "Interview invitation received 25 Sep 2026; date to be confirmed."
         },
         "notes": ""
       },
