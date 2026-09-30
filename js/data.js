@@ -191,28 +191,28 @@ const CANDIDATES = [
       },
       {
         "school": "IMD",
-        "status": "submitted",
+        "status": "interviewed",
         "interview": {
           "date": "",
-          "note": ""
+          "note": "Interview completed (Sep 2026)."
         },
-        "notes": "IMD submitted."
+        "notes": ""
       },
       {
         "school": "INSEAD",
-        "status": "scheduled",
+        "status": "interviewed",
         "interview": {
           "date": "",
-          "note": "Interview invite received; date to be confirmed."
+          "note": "Interview completed (Sep 2026)."
         },
         "notes": ""
       },
       {
         "school": "NYUAD",
-        "status": "scheduled",
+        "status": "interviewed",
         "interview": {
           "date": "",
-          "note": "Interview invite received; date to be confirmed."
+          "note": "Interview completed (Sep 2026)."
         },
         "notes": ""
       }
@@ -542,10 +542,10 @@ const CANDIDATES = [
     "applications": [
       {
         "school": "CBS",
-        "status": "scheduled",
+        "status": "interviewed",
         "interview": {
           "date": "",
-          "note": "Interview invitation received 25 Sep 2026; date to be confirmed."
+          "note": "Interview completed (Sep 2026)."
         },
         "notes": ""
       },
@@ -556,7 +556,7 @@ const CANDIDATES = [
           "date": "",
           "note": ""
         },
-        "notes": "HEC submitted."
+        "notes": "HEC submitted; awaiting update from the school."
       }
     ]
   }
