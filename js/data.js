@@ -148,25 +148,25 @@ const CANDIDATES = [
           "date": "",
           "note": ""
         },
-        "notes": "HEC submitted."
+        "notes": "HEC submitted; awaiting interview invitation."
       },
       {
         "school": "IMD",
         "status": "scheduled",
         "interview": {
-          "date": "2026-09-25",
-          "note": "IMD Assessment Day."
+          "date": "2026-10-01",
+          "note": "IMD interview."
         },
-        "notes": "IMD submitted."
+        "notes": ""
       },
       {
         "school": "CBS",
-        "status": "scheduled",
+        "status": "submitted",
         "interview": {
           "date": "",
-          "note": "Interview next week, date to be confirmed."
+          "note": ""
         },
-        "notes": ""
+        "notes": "Columbia update expected 1 Oct 2026."
       }
     ]
   },
@@ -269,10 +269,10 @@ const CANDIDATES = [
     "applications": [
       {
         "school": "INSEAD",
-        "status": "scheduled",
+        "status": "interviewed",
         "interview": {
           "date": "",
-          "note": "Interview invite received; date to be confirmed."
+          "note": "Interview completed; awaiting final decision."
         },
         "notes": ""
       },
@@ -470,10 +470,10 @@ const CANDIDATES = [
     "applications": [
       {
         "school": "INSEAD",
-        "status": "scheduled",
+        "status": "interviewed",
         "interview": {
           "date": "",
-          "note": "Interview invite received; date to be confirmed."
+          "note": "Interview completed; awaiting final decision."
         },
         "notes": ""
       }
@@ -491,19 +491,19 @@ const CANDIDATES = [
     "applications": [
       {
         "school": "CBS",
-        "status": "submitted",
+        "status": "rejected",
         "interview": {
           "date": "",
           "note": ""
         },
-        "notes": "Interview decision pending."
+        "notes": "Rejected by Columbia."
       },
       {
         "school": "NYUAD",
-        "status": "scheduled",
+        "status": "interviewed",
         "interview": {
           "date": "",
-          "note": "Interview invite received; date to be confirmed."
+          "note": "Interview completed; awaiting decision."
         },
         "notes": ""
       }
