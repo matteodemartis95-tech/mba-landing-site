@@ -88,16 +88,16 @@ const EXTRA_CANDIDATES = [
           "date": "",
           "note": ""
         },
-        "notes": "HEC submitted."
+        "notes": "HEC submitted; awaiting interview invitation."
       },
       {
         "school": "IMD",
-        "status": "submitted",
+        "status": "interviewed",
         "interview": {
           "date": "",
-          "note": ""
+          "note": "Interview completed; awaiting decision."
         },
-        "notes": "IMD submitted."
+        "notes": ""
       }
     ]
   }

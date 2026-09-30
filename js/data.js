@@ -235,23 +235,23 @@ const CANDIDATES = [
           "date": "",
           "note": ""
         },
-        "notes": "HEC submitted."
+        "notes": "HEC submitted; awaiting update."
       },
       {
         "school": "IMD",
         "status": "scheduled",
         "interview": {
-          "date": "2026-09-25",
-          "note": "IMD Assessment Day."
+          "date": "2026-10-02",
+          "note": "IMD interview."
         },
         "notes": ""
       },
       {
         "school": "NYUAD",
-        "status": "scheduled",
+        "status": "interviewed",
         "interview": {
           "date": "",
-          "note": "Interview invite received; date to be confirmed."
+          "note": "Interview completed; awaiting decision."
         },
         "notes": ""
       }
@@ -338,21 +338,21 @@ const CANDIDATES = [
       },
       {
         "school": "IMD",
-        "status": "scheduled",
+        "status": "rejected",
         "interview": {
           "date": "2026-09-25",
-          "note": "IMD Assessment Day."
+          "note": "IMD Assessment Day completed."
         },
-        "notes": ""
+        "notes": "Rejected by IMD."
       },
       {
         "school": "CBS",
-        "status": "scheduled",
+        "status": "interviewed",
         "interview": {
           "date": "2026-09-16",
-          "note": "Tentative date, to be confirmed."
+          "note": "Interview completed."
         },
-        "notes": ""
+        "notes": "Columbia decision expected this week (w/c 28 Sep 2026)."
       }
     ]
   },
@@ -377,12 +377,12 @@ const CANDIDATES = [
       },
       {
         "school": "IMD",
-        "status": "scheduled",
+        "status": "rejected",
         "interview": {
           "date": "2026-09-25",
-          "note": "IMD Assessment Day."
+          "note": "IMD Assessment Day completed."
         },
-        "notes": ""
+        "notes": "Rejected by IMD."
       },
       {
         "school": "CBS",
@@ -449,12 +449,12 @@ const CANDIDATES = [
     "applications": [
       {
         "school": "NYUAD",
-        "status": "submitted",
+        "status": "interviewed",
         "interview": {
           "date": "",
-          "note": ""
+          "note": "Interview completed; awaiting decision."
         },
-        "notes": "Interview decision pending."
+        "notes": ""
       }
     ]
   },
