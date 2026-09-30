@@ -182,12 +182,12 @@ const CANDIDATES = [
     "applications": [
       {
         "school": "HEC",
-        "status": "applying",
+        "status": "submitted",
         "interview": {
           "date": "",
           "note": ""
         },
-        "notes": "Awaiting HEC drafts."
+        "notes": "HEC submitted (30 Sep 2026)."
       },
       {
         "school": "IMD",
