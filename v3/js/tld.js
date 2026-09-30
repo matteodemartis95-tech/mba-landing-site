@@ -27,12 +27,12 @@ const COURSES = [
     "name": "Media Training",
     "fullName": "Media training programme for MOD leaders",
     "color": "#2a78d6",
-    "trained": 0,
+    "trained": 15,
     "target": 100,
     "unit": "people trained",
     "status": "",
-    "nextDate": "2026-09-21",
-    "nextLabel": "First cohort · 23 participants",
+    "nextDate": "",
+    "nextLabel": "Second cohort · December 2026 (date TBC)",
     "notes": "",
     "targetPeriod": "per year",
     "description": "Media training for MOD leaders, requested by H.E. the MDA to build a proactive approach to media awareness. Expert-led masterclasses with applied practice, delivered in Arabic with IMI Media Academy at the National Defence College.",
@@ -65,10 +65,18 @@ const COURSES = [
       {
         "label": "Cohort 1",
         "start": "2026-09-21",
+        "end": "2026-09-25",
+        "participants": 15,
+        "status": "completed",
+        "note": "Completed · 15 attended (23 registered: 18 MOD, 5 NDC) · Colonel level and above · National Defence College and IMI Media"
+      },
+      {
+        "label": "Cohort 2",
+        "start": "",
         "end": "",
-        "participants": 23,
-        "note": "18 from MOD and 5 from NDC · Colonel level and above · National Defence College and IMI Media",
-        "status": "planned"
+        "participants": null,
+        "status": "planned",
+        "note": "December 2026"
       }
     ],
     "cohortsDone": null,

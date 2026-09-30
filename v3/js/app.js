@@ -367,7 +367,7 @@
         <div class="meter"><div class="fill" style="width:${pct == null ? 0 : pct}%"></div></div>
         <div class="course-foot">
           ${pct != null ? `<span><strong>${pct}%</strong> of target</span>` : `<span class="muted">Progress shown once the target is set</span>`}
-          ${nd ? `<span class="next ${daysFrom(nd) <= 7 ? "soon" : ""}"><strong>${fmt(nd)}</strong> · ${esc(ndLabel)}</span>` : (k.status ? `<span>${esc(k.status)}</span>` : "")}
+          ${nd ? `<span class="next ${daysFrom(nd) <= 7 ? "soon" : ""}"><strong>${fmt(nd)}</strong> · ${esc(ndLabel)}</span>` : (k.nextLabel ? `<span class="next">${esc(k.nextLabel)}</span>` : (k.status ? `<span>${esc(k.status)}</span>` : ""))}
         </div>
       </a>`;
   }
@@ -446,7 +446,7 @@
         <div class="snapshot">
           <div class="snap"><div class="k">${esc(k.unit || "People trained")}</div><div class="v">${fmtNum(k.trained)}</div></div>
           ${(k.subProgrammes || []).length ? `<div class="snap"><div class="k">Programmes</div><div class="v">${k.subProgrammes.length}</div></div>` : `<div class="snap"><div class="k">Target${k.targetPeriod ? " " + esc(k.targetPeriod) : ""}</div><div class="v ${hasTarget ? "" : "muted"}">${hasTarget ? fmtNum(k.target) : "TBC"}</div></div>`}
-          ${(k.subProgrammes || []).length || (!nd && (k.steps || []).length) ? "" : `<div class="snap"><div class="k">${next && next.status === "running" ? "Current session" : "Next session"}</div><div class="v ${nd ? "" : "muted"}">${next ? `${fmt(nd, true)} · ${esc(next.label)}${next.participants ? " · " + fmtNum(next.participants) + " participants" : ""}` : (nd ? fmt(nd, true) + (k.nextLabel ? " · " + esc(k.nextLabel) : "") : "Not scheduled")}</div></div>`}
+          ${(k.subProgrammes || []).length || (!nd && (k.steps || []).length) ? "" : `<div class="snap"><div class="k">${next && next.status === "running" ? "Current session" : "Next session"}</div><div class="v ${nd ? "" : "muted"}">${next ? `${fmt(nd, true)} · ${esc(next.label)}${next.participants ? " · " + fmtNum(next.participants) + " participants" : ""}` : (nd ? fmt(nd, true) + (k.nextLabel ? " · " + esc(k.nextLabel) : "") : (k.nextLabel ? esc(k.nextLabel) : "Not scheduled"))}</div></div>`}
           ${k.status ? `<div class="snap"><div class="k">Status</div><div class="v">${esc(k.status)}</div></div>` : ""}
           ${k.cohortsTotal ? `<div class="snap"><div class="k">Cohorts delivered</div><div class="v">${fmtNum(k.cohortsDone || 0)} of ${fmtNum(k.cohortsTotal)}</div></div>` : ""}
           ${(k.kpis || []).map(x => `<div class="snap"><div class="k">${esc(x.label)}</div><div class="v">${esc(x.value)}</div></div>`).join("")}
@@ -477,7 +477,7 @@
         </div>
         <div class="side">
           ${!cohorts.length && (k.steps || []).length ? "" : `<div class="panel">
-            <div class="panel-head"><h2>Cohorts</h2><span class="small muted">${cohorts.length ? cohorts.length + " planned" : ""}</span></div>
+            <div class="panel-head"><h2>Cohorts</h2><span class="small muted">${cohorts.length ? (cohorts.filter(c => c.status === "completed").length ? cohorts.filter(c => c.status === "completed").length + " completed · " : "") + cohorts.filter(c => c.status !== "completed").length + " planned" : ""}</span></div>
             <div class="panel-body">${cohorts.length ? cohorts.map(cohortRow).join("") : `<div class="muted" style="padding:12px 16px">No cohorts scheduled yet.</div>`}</div>
           </div>`}
         </div>
