@@ -1318,7 +1318,7 @@ const EVALUATIONS = {
     }
   },
   "saeed-al-sereidi": {
-    "lineManager": "Noura Al Ahbabi",
+    "lineManager": "Ameera Al Ahbabi",
     "function": "Strategic Management",
     "corporateExchangeProject": "Department of Culture & Tourism (business cases and roadmaps for new public programmes, e.g. museums) and EV charging infrastructure roadmap",
     "previousFunction": "Trainee consultant, KHUTWA Programme (MoD transformation projects delivered with Kearney)",
