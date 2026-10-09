@@ -92,12 +92,12 @@ const EXTRA_CANDIDATES = [
       },
       {
         "school": "IMD",
-        "status": "interviewed",
+        "status": "rejected",
         "interview": {
           "date": "",
-          "note": "Interview completed; awaiting decision."
+          "note": "Interview completed."
         },
-        "notes": ""
+        "notes": "Rejected by IMD."
       }
     ]
   }

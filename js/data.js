@@ -113,12 +113,12 @@ const CANDIDATES = [
     "applications": [
       {
         "school": "HEC",
-        "status": "submitted",
+        "status": "withdrawn",
         "interview": {
           "date": "",
           "note": ""
         },
-        "notes": "HEC submitted."
+        "notes": "Withdrew from the HEC process (Oct 2026)."
       },
       {
         "school": "IMD",
@@ -143,12 +143,12 @@ const CANDIDATES = [
     "applications": [
       {
         "school": "HEC",
-        "status": "submitted",
+        "status": "withdrawn",
         "interview": {
           "date": "",
           "note": ""
         },
-        "notes": "HEC submitted; awaiting interview invitation."
+        "notes": "Withdrew from the HEC process (Oct 2026)."
       },
       {
         "school": "IMD",
@@ -230,12 +230,12 @@ const CANDIDATES = [
     "applications": [
       {
         "school": "HEC",
-        "status": "submitted",
+        "status": "withdrawn",
         "interview": {
           "date": "",
           "note": ""
         },
-        "notes": "HEC submitted; awaiting update."
+        "notes": "Withdrew from the HEC process (Oct 2026)."
       },
       {
         "school": "IMD",
