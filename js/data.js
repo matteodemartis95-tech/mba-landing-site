@@ -122,12 +122,12 @@ const CANDIDATES = [
       },
       {
         "school": "IMD",
-        "status": "scheduled",
+        "status": "admitted",
         "interview": {
           "date": "2026-09-25",
           "note": "IMD Assessment Day."
         },
-        "notes": "Awaiting IMD Outcome"
+        "notes": "Admitted to IMD (offer received 9 Oct 2026)."
       }
     ]
   },
@@ -152,12 +152,12 @@ const CANDIDATES = [
       },
       {
         "school": "IMD",
-        "status": "scheduled",
+        "status": "admitted",
         "interview": {
           "date": "2026-10-01",
           "note": "IMD interview."
         },
-        "notes": ""
+        "notes": "Admitted to IMD (offer received 9 Oct 2026)."
       },
       {
         "school": "CBS",
@@ -191,12 +191,12 @@ const CANDIDATES = [
       },
       {
         "school": "IMD",
-        "status": "interviewed",
+        "status": "admitted",
         "interview": {
           "date": "",
           "note": "Interview completed (Sep 2026)."
         },
-        "notes": ""
+        "notes": "Admitted to IMD (offer received 9 Oct 2026)."
       },
       {
         "school": "INSEAD",
@@ -209,12 +209,12 @@ const CANDIDATES = [
       },
       {
         "school": "NYUAD",
-        "status": "interviewed",
+        "status": "admitted",
         "interview": {
           "date": "",
           "note": "Interview completed (Sep 2026)."
         },
-        "notes": ""
+        "notes": "Admitted to NYU Abu Dhabi (offer received 9 Oct 2026)."
       }
     ]
   },
@@ -239,21 +239,21 @@ const CANDIDATES = [
       },
       {
         "school": "IMD",
-        "status": "scheduled",
+        "status": "admitted",
         "interview": {
           "date": "2026-10-02",
           "note": "IMD interview."
         },
-        "notes": ""
+        "notes": "Admitted to IMD (offer received 9 Oct 2026)."
       },
       {
         "school": "NYUAD",
-        "status": "interviewed",
+        "status": "admitted",
         "interview": {
           "date": "",
-          "note": "Interview completed; awaiting decision."
+          "note": "Interview completed."
         },
-        "notes": ""
+        "notes": "Admitted to NYU Abu Dhabi (offer received 9 Oct 2026)."
       }
     ]
   },
@@ -449,12 +449,12 @@ const CANDIDATES = [
     "applications": [
       {
         "school": "NYUAD",
-        "status": "interviewed",
+        "status": "admitted",
         "interview": {
           "date": "",
-          "note": "Interview completed; awaiting decision."
+          "note": "Interview completed."
         },
-        "notes": ""
+        "notes": "Admitted to NYU Abu Dhabi (offer received 9 Oct 2026)."
       }
     ]
   },
@@ -500,12 +500,12 @@ const CANDIDATES = [
       },
       {
         "school": "NYUAD",
-        "status": "interviewed",
+        "status": "admitted",
         "interview": {
           "date": "",
-          "note": "Interview completed; awaiting decision."
+          "note": "Interview completed."
         },
-        "notes": ""
+        "notes": "Admitted to NYU Abu Dhabi (offer received 9 Oct 2026)."
       }
     ]
   },
@@ -521,12 +521,12 @@ const CANDIDATES = [
     "applications": [
       {
         "school": "NYUAD",
-        "status": "scheduled",
+        "status": "admitted",
         "interview": {
           "date": "2026-09-15",
           "note": ""
         },
-        "notes": "Interview decision pending"
+        "notes": "Admitted to NYU Abu Dhabi (offer received 9 Oct 2026)."
       }
     ]
   },
