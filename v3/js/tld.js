@@ -95,7 +95,7 @@ const COURSES = [
     "name": "EAP",
     "fullName": "Enterprise Accelerator Programme",
     "color": "#eb6834",
-    "trained": 34,
+    "trained": 47,
     "target": 60,
     "unit": "participants",
     "status": "",
@@ -130,33 +130,33 @@ const COURSES = [
         "label": "Senior cohort 1 · Bootcamp 1",
         "start": "2026-09-07",
         "end": "2026-09-11",
-        "participants": 8,
+        "participants": 9,
         "status": "completed",
-        "note": "8 of 15 attended (53%)"
+        "note": "9 of 15 attended (60%)"
       },
       {
         "label": "Mid-level cohort 2 · Bootcamp 1",
         "start": "2026-09-14",
         "end": "2026-09-18",
         "participants": 12,
-        "status": "running",
-        "note": "12 of 15 (80%) · additional participants to be confirmed"
+        "status": "completed",
+        "note": "12 of 15 attended (80%)"
       },
       {
         "label": "Senior cohort 2 · Bootcamp 1",
         "start": "2026-09-21",
         "end": "2026-09-25",
-        "participants": null,
-        "status": "planned",
-        "note": "Participants to be confirmed"
+        "participants": 12,
+        "status": "completed",
+        "note": "12 of 15 attended (80%)"
       },
       {
         "label": "Mid-level cohort 1 · Bootcamp 2",
         "start": "2026-10-05",
         "end": "2026-10-09",
-        "participants": null,
-        "status": "planned",
-        "note": ""
+        "participants": 14,
+        "status": "running",
+        "note": "14 of 15 attending (93%)"
       },
       {
         "label": "Senior cohort 1 · Bootcamp 2",
@@ -196,11 +196,11 @@ const COURSES = [
     "kpis": [
       {
         "label": "Cohorts started",
-        "value": "3 of 4"
+        "value": "4 of 4"
       },
       {
         "label": "Mid-level cohort 1",
-        "value": "14 / 15 (93%)"
+        "value": "14 / 15 (93%) · week 2 ongoing"
       },
       {
         "label": "Mid-level cohort 2",
@@ -208,7 +208,11 @@ const COURSES = [
       },
       {
         "label": "Senior cohort 1",
-        "value": "8 / 15 (53%)"
+        "value": "9 / 15 (60%)"
+      },
+      {
+        "label": "Senior cohort 2",
+        "value": "12 / 15 (80%)"
       }
     ],
     "category": "Development programmes"
@@ -224,7 +228,7 @@ const COURSES = [
     "status": "",
     "nextDate": "",
     "nextLabel": "",
-    "notes": "Cohort size reduced from 50 to 30 participants; target adjusted to 840.",
+    "notes": "Cohort size reduced from 50 to 30 participants; target adjusted to 840. Locations confirmed at the National Defence College from October 2026.",
     "description": "Programme building incremental change management and institutional transformation.",
     "audience": "",
     "programmeFormat": "Two-day cohorts",
@@ -233,12 +237,20 @@ const COURSES = [
     "modules": [],
     "cohorts": [
       {
+        "label": "Ruwaad event with Comms",
+        "start": "2026-10-06",
+        "end": "",
+        "participants": null,
+        "status": "completed",
+        "note": "Ruwaad event held with Strategic Communications"
+      },
+      {
         "label": "Cohort 5 (April cohort)",
         "start": "2026-10-19",
         "end": "2026-10-20",
         "participants": null,
         "status": "planned",
-        "note": "Multi-purpose Rooms 1&2"
+        "note": "National Defence College (NDC)"
       },
       {
         "label": "Cohort 6 (April cohort)",
@@ -246,7 +258,7 @@ const COURSES = [
         "end": "2026-10-22",
         "participants": null,
         "status": "planned",
-        "note": "Multi-purpose Rooms 1&2"
+        "note": "National Defence College (NDC)"
       },
       {
         "label": "Cohort 15",
@@ -254,7 +266,7 @@ const COURSES = [
         "end": "2026-10-27",
         "participants": null,
         "status": "planned",
-        "note": "Multi-purpose Rooms 1&2"
+        "note": "National Defence College (NDC)"
       },
       {
         "label": "Cohort 16",
@@ -262,7 +274,7 @@ const COURSES = [
         "end": "2026-10-29",
         "participants": null,
         "status": "planned",
-        "note": "Multi-purpose Rooms 1&2"
+        "note": "National Defence College (NDC)"
       },
       {
         "label": "Cohort 17",
@@ -270,7 +282,7 @@ const COURSES = [
         "end": "2026-11-24",
         "participants": null,
         "status": "planned",
-        "note": "Multi-purpose Rooms 1&2"
+        "note": "National Defence College (NDC)"
       },
       {
         "label": "Cohort 18",
@@ -278,7 +290,7 @@ const COURSES = [
         "end": "2026-11-26",
         "participants": null,
         "status": "planned",
-        "note": "Multi-purpose Rooms 1&2"
+        "note": "National Defence College (NDC)"
       },
       {
         "label": "Cohort 19",
@@ -286,7 +298,7 @@ const COURSES = [
         "end": "2026-12-08",
         "participants": null,
         "status": "planned",
-        "note": "Multi-purpose Rooms 1&2"
+        "note": "National Defence College (NDC)"
       },
       {
         "label": "Cohort 20",
@@ -294,7 +306,7 @@ const COURSES = [
         "end": "2026-12-10",
         "participants": null,
         "status": "planned",
-        "note": "Multi-purpose Rooms 1&2"
+        "note": "National Defence College (NDC)"
       }
     ],
     "cohortsDone": 12,
@@ -316,7 +328,7 @@ const COURSES = [
     "name": "LDP",
     "fullName": "Leadership Development Programme · Leadership Bootcamp with HNI",
     "color": "#4a3aa7",
-    "trained": 450,
+    "trained": 502,
     "target": 1000,
     "unit": "people trained",
     "status": "",
@@ -348,15 +360,15 @@ const COURSES = [
         "start": "2026-09-14",
         "end": "2026-09-18",
         "participants": null,
-        "status": "planned",
-        "note": "National Defence College (NDC) · dates to be confirmed"
+        "status": "completed",
+        "note": "National Defence College (NDC)"
       },
       {
         "label": "Cohort 22",
         "start": "2026-09-21",
         "end": "2026-09-25",
         "participants": null,
-        "status": "planned",
+        "status": "completed",
         "note": "National Defence College (NDC)"
       },
       {
@@ -364,7 +376,7 @@ const COURSES = [
         "start": "2026-09-21",
         "end": "2026-09-25",
         "participants": null,
-        "status": "planned",
+        "status": "completed",
         "note": "MOD Dubai"
       },
       {
@@ -448,7 +460,7 @@ const COURSES = [
         "note": "National Defence College (NDC)"
       }
     ],
-    "cohortsDone": 20,
+    "cohortsDone": 22,
     "cohortsTotal": 33,
     "kpis": [
       {
