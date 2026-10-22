@@ -209,12 +209,12 @@ const CANDIDATES = [
       },
       {
         "school": "NYUAD",
-        "status": "admitted",
+        "status": "withdrawn",
         "interview": {
           "date": "",
           "note": "Interview completed (Sep 2026)."
         },
-        "notes": "Admitted to NYU Abu Dhabi (offer received 9 Oct 2026)."
+        "notes": "Admitted to NYU Abu Dhabi (9 Oct 2026); offer declined by the candidate, going to IMD."
       }
     ]
   },
@@ -248,12 +248,12 @@ const CANDIDATES = [
       },
       {
         "school": "NYUAD",
-        "status": "admitted",
+        "status": "withdrawn",
         "interview": {
           "date": "",
           "note": "Interview completed."
         },
-        "notes": "Admitted to NYU Abu Dhabi (offer received 9 Oct 2026)."
+        "notes": "Admitted to NYU Abu Dhabi (9 Oct 2026); offer declined by the candidate, going to IMD."
       }
     ]
   },
@@ -368,12 +368,12 @@ const CANDIDATES = [
     "applications": [
       {
         "school": "HEC",
-        "status": "admitted",
+        "status": "withdrawn",
         "interview": {
           "date": "2026-09-07, 2026-09-11",
           "note": "HEC alumni interviews completed."
         },
-        "notes": "Admitted to HEC Paris (offer received 18 Sep 2026)."
+        "notes": "Admitted to HEC Paris (18 Sep 2026); offer declined by the candidate, going to Columbia."
       },
       {
         "school": "IMD",

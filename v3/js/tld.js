@@ -585,7 +585,7 @@ const COURSES = [
     "target": 160,
     "targetPeriod": "",
     "unit": "HR personnel assessed or trained",
-    "status": "Pending sign-off of scope of work",
+    "status": "Scope of work approved · awaiting launch",
     "programmeFormat": "~6-month programme",
     "description": "Assess the technical HR capability of 130 HR personnel across 11 domains, from workforce planning to HR analytics, and close the gaps through a pilot training for 30 FTEs.",
     "audience": "130 HR personnel for the assessment; 30 FTEs for the pilot training.",
@@ -621,12 +621,13 @@ const COURSES = [
       },
       {
         "label": "Evaluate & select vendor",
-        "status": "current",
-        "note": "Selection pending approval"
+        "status": "done",
+        "note": "Scope of work approved"
       },
       {
         "label": "Mobilise and start",
-        "status": "pending"
+        "status": "current",
+        "note": "Awaiting launch"
       }
     ],
     "vendors": {
@@ -672,7 +673,7 @@ const COURSES = [
       }
     ],
     "nextDate": "",
-    "nextLabel": "",
+    "nextLabel": "Scope of work approved · launch date to be confirmed",
     "notes": ""
   },
   {
@@ -685,7 +686,7 @@ const COURSES = [
     "target": 30,
     "targetPeriod": "",
     "unit": "HR personnel certified",
-    "status": "Pending sign-off of scope of work",
+    "status": "Scope of work approved · awaiting launch",
     "programmeFormat": "~18-month programme",
     "description": "Certify 30 HR personnel through accredited CIPD qualifications matched to role and seniority: Level 3 for operational practice, Level 5 for people management and Level 7 for strategic leadership.",
     "audience": "Level 3: 17 FTEs · Level 5: 9 FTEs · Level 7: 4 FTEs",
@@ -718,7 +719,8 @@ const COURSES = [
       },
       {
         "label": "Mobilise and start",
-        "status": "pending"
+        "status": "current",
+        "note": "Awaiting launch"
       }
     ],
     "vendors": {
@@ -760,7 +762,7 @@ const COURSES = [
     ],
     "docs": [],
     "nextDate": "",
-    "nextLabel": "",
+    "nextLabel": "Scope of work approved · launch date to be confirmed",
     "notes": ""
   },
   {
@@ -773,7 +775,7 @@ const COURSES = [
     "target": 370,
     "targetPeriod": "",
     "unit": "procurement personnel assessed, trained or certified",
-    "status": "Pending sign-off of scope of work",
+    "status": "Scope of work approved · awaiting launch",
     "programmeFormat": "~24-month programme",
     "description": "Assess the procurement capability of 310 FTEs across 11 domains, from strategic sourcing to defence acquisition, train a pilot cohort of 30 FTEs, and certify 30 FTEs through an internationally recognised CIPS certification.",
     "audience": "310 FTEs for the assessment; 30 FTEs for the pilot training; 30 FTEs for the CIPS certification.",
@@ -813,12 +815,13 @@ const COURSES = [
       },
       {
         "label": "Evaluate & select vendor",
-        "status": "current",
-        "note": "Selection pending approval"
+        "status": "done",
+        "note": "Scope of work approved"
       },
       {
         "label": "Mobilise and start",
-        "status": "pending"
+        "status": "current",
+        "note": "Awaiting launch"
       }
     ],
     "vendors": {
@@ -863,7 +866,7 @@ const COURSES = [
     ],
     "docs": [],
     "nextDate": "",
-    "nextLabel": "",
+    "nextLabel": "Scope of work approved · launch date to be confirmed",
     "notes": ""
   }
 ];
