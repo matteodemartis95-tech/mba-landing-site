@@ -101,19 +101,27 @@ const COURSES = [
     "status": "",
     "nextDate": "",
     "nextLabel": "",
-    "notes": "",
-    "description": "Capability-building programme strengthening core enterprise skills across MoD teams, from problem solving to stakeholder management and executive communication. Two streams, mid-level and senior leader, each delivered through two one-week bootcamps with on-the-job application in between, closing with a graduation in mid-November.",
-    "audience": "Mid-level and senior leaders across MoD teams; 15 participants per cohort, two cohorts per stream.",
-    "programmeFormat": "Two 1-week bootcamps per stream, on-the-job application in between",
+    "notes": "Participant numbers reflect attendance registers as of 18 October; office pending confirmation for ten participants.",
+    "description": "Capability-building programme strengthening core enterprise skills across MoD teams, from problem solving to stakeholder management and executive communication. Four cohorts in two streams, mid-level and senior, ran from August to October 2026: two in-person weeks per cohort, each followed by a four-week field phase of on-the-job application, closing with a graduation in mid-November.",
+    "audience": "Mid-level and senior leaders across MoD teams; 15 participants per cohort, two cohorts per stream. 47 participants from 8 offices (28 mid-level, 19 senior).",
+    "programmeFormat": "Two in-person weeks per cohort, each followed by a 4-week field phase",
     "targetPeriod": "",
     "objectives": [],
     "modules": [
       {
-        "title": "Mid-level stream",
-        "summary": "Foundational enterprise skills applied directly to participants' day-to-day work"
+        "title": "Week 1 · Solving the problem",
+        "summary": "Structured problem solving, analysis and stakeholder management applied to a live MoD issue"
       },
       {
-        "title": "Senior leader stream",
+        "title": "Field phase (4 weeks)",
+        "summary": "On-the-job application of week 1 tools with coaching support"
+      },
+      {
+        "title": "Week 2 · Communicating with Impact",
+        "summary": "Executive communication and influence, closing with the Enterprise Challenge simulation"
+      },
+      {
+        "title": "Senior leader track",
         "summary": "Same approaches and frameworks along a more advanced track: role-modelling consistency, guiding team members, decision-making and leadership application"
       }
     ],
@@ -155,32 +163,32 @@ const COURSES = [
         "start": "2026-10-05",
         "end": "2026-10-09",
         "participants": 14,
-        "status": "running",
-        "note": "14 of 15 attending (93%)"
+        "status": "completed",
+        "note": "14 of 15 attended (93%)"
       },
       {
         "label": "Senior cohort 1 · Bootcamp 2",
         "start": "2026-10-12",
         "end": "2026-10-16",
         "participants": null,
-        "status": "planned",
+        "status": "completed",
         "note": ""
       },
       {
         "label": "Mid-level cohort 2 · Bootcamp 2",
-        "start": "2026-10-26",
-        "end": "2026-10-30",
+        "start": "2026-10-19",
+        "end": "2026-10-23",
         "participants": null,
-        "status": "planned",
+        "status": "running",
         "note": ""
       },
       {
         "label": "Senior cohort 2 · Bootcamp 2",
-        "start": "2026-11-02",
-        "end": "2026-11-06",
+        "start": "2026-10-26",
+        "end": "2026-10-30",
         "participants": null,
         "status": "planned",
-        "note": ""
+        "note": "Last senior week, concludes 30 October"
       },
       {
         "label": "Celebration and graduation",
@@ -191,16 +199,20 @@ const COURSES = [
         "note": "Mid-November, exact date to be confirmed"
       }
     ],
-    "cohortsDone": 0,
+    "cohortsDone": 2,
     "cohortsTotal": 4,
     "kpis": [
       {
-        "label": "Cohorts started",
-        "value": "4 of 4"
+        "label": "Participants",
+        "value": "47 · 28 mid-level | 19 senior"
+      },
+      {
+        "label": "Offices represented",
+        "value": "8"
       },
       {
         "label": "Mid-level cohort 1",
-        "value": "14 / 15 (93%) · week 2 ongoing"
+        "value": "14 / 15 (93%)"
       },
       {
         "label": "Mid-level cohort 2",
@@ -328,7 +340,7 @@ const COURSES = [
     "name": "LDP",
     "fullName": "Leadership Development Programme · Leadership Bootcamp with HNI",
     "color": "#4a3aa7",
-    "trained": 502,
+    "trained": 574,
     "target": 1000,
     "unit": "people trained",
     "status": "",
@@ -384,7 +396,7 @@ const COURSES = [
         "start": "2026-10-05",
         "end": "2026-10-09",
         "participants": null,
-        "status": "planned",
+        "status": "completed",
         "note": "National Defence College (NDC)"
       },
       {
@@ -392,15 +404,15 @@ const COURSES = [
         "start": "2026-10-12",
         "end": "2026-10-16",
         "participants": null,
-        "status": "planned",
-        "note": "National Defence College (NDC) · dates to be confirmed"
+        "status": "completed",
+        "note": "National Defence College (NDC)"
       },
       {
         "label": "Cohort 27",
         "start": "2026-10-19",
         "end": "2026-10-23",
         "participants": null,
-        "status": "planned",
+        "status": "running",
         "note": "National Defence College (NDC)"
       },
       {
@@ -425,7 +437,7 @@ const COURSES = [
         "end": "2026-11-13",
         "participants": null,
         "status": "planned",
-        "note": "MOD Dubai"
+        "note": "MOD Dubai · to be confirmed"
       },
       {
         "label": "Cohort 30",
@@ -433,18 +445,26 @@ const COURSES = [
         "end": "2026-11-20",
         "participants": null,
         "status": "planned",
-        "note": "National Defence College (NDC) · dates to be confirmed"
+        "note": "National Defence College (NDC)"
       },
       {
         "label": "Cohort 31",
+        "start": "2026-12-07",
+        "end": "2026-12-11",
+        "participants": null,
+        "status": "planned",
+        "note": "National Defence College (NDC)"
+      },
+      {
+        "label": "Cohort 32",
         "start": "2026-12-14",
         "end": "2026-12-18",
         "participants": null,
         "status": "planned",
-        "note": "National Defence College (NDC) · dates to be confirmed"
+        "note": "National Defence College (NDC)"
       },
       {
-        "label": "Cohort 32",
+        "label": "Cohort 33",
         "start": "2026-12-21",
         "end": "2026-12-25",
         "participants": null,
@@ -452,7 +472,7 @@ const COURSES = [
         "note": "National Defence College (NDC)"
       },
       {
-        "label": "Cohort 33",
+        "label": "Cohort 34",
         "start": "2027-01-18",
         "end": "2027-01-22",
         "participants": null,
@@ -460,12 +480,16 @@ const COURSES = [
         "note": "National Defence College (NDC)"
       }
     ],
-    "cohortsDone": 22,
+    "cohortsDone": 24,
     "cohortsTotal": 33,
     "kpis": [
       {
-        "label": "Attendance rate",
-        "value": "75%"
+        "label": "Average attendance rate",
+        "value": "73%"
+      },
+      {
+        "label": "Satisfaction score",
+        "value": "96%"
       }
     ],
     "category": "Development programmes"
