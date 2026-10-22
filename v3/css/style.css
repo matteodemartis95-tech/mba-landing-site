@@ -197,7 +197,10 @@ h1 { font-size: 22px; } h2 { font-size: 17px; } h3 { font-size: 15px; }
 .badge.jahizoun { background: var(--accent-soft); color: var(--accent-ink); }
 .badge.edge { background: var(--violet-soft); color: var(--violet); }
 .badge.team { background: var(--muted-soft); color: var(--muted-ink); font-weight: 500; }
-.badge.firm { background: var(--surface-2); color: var(--text); border: 1px solid var(--border-strong); font-weight: 600; }
+.badge.firm { background: color-mix(in srgb, var(--firm, var(--muted-ink)) 12%, var(--surface)); color: var(--text); border: 1px solid var(--firm, var(--border-strong)); font-weight: 600; }
+.card.j2 .avatar, .profile-head.j2 .avatar { box-shadow: 0 0 0 3px var(--firm, var(--accent)); }
+.firm-count { white-space: nowrap; margin-right: 8px; }
+.fdot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 4px; vertical-align: 1px; }
 .badge.test { background: var(--good-soft); color: var(--good-ink); font-weight: 600; }
 .badge.intake { background: var(--surface-2); color: var(--text-2); border: 1px solid var(--border); font-weight: 500; }
 .card-schools { display: flex; flex-wrap: wrap; gap: 6px; }

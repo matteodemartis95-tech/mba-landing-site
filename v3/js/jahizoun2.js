@@ -5,6 +5,18 @@
 
 const J2_FIRMS = ["Oliver Wyman", "BCG", "Deloitte", "EY", "Kearney", "PwC", "Roland Berger", "Alvarez & Marsal"];
 
+/* Outline colour of the photo and badge per firm. Firms not listed here get a colour from the dashboard palette. */
+const J2_FIRM_COLORS = {
+  "Oliver Wyman": "#2a78d6",
+  "BCG": "#1baf7a",
+  "Deloitte": "#4a3aa7",
+  "EY": "#eda100",
+  "Kearney": "#e34948",
+  "PwC": "#eb6834",
+  "Roland Berger": "#0f6f72",
+  "Alvarez & Marsal": "#e87ba4"
+};
+
 const J2_CANDIDATES = [
   {
     "id": "abdulla-al-nuaimi",
@@ -484,4 +496,4 @@ const J2_CANDIDATES = [
 ];
 
 /* Do not edit below this line. */
-window.J2_DATA = { J2_FIRMS, J2_CANDIDATES };
+window.J2_DATA = { J2_FIRMS, J2_FIRM_COLORS, J2_CANDIDATES };

@@ -842,7 +842,14 @@
 
   /* ---------- rendering: Jahizoun 2 ---------- */
   function j2Firms() { return [...new Set(J2.J2_FIRMS.concat(j2.map(c => c.firm).filter(Boolean)))]; }
-  function firmBadge(c) { return c.firm ? `<span class="badge firm">${esc(c.firm)}</span>` : ""; }
+  function firmColor(firm) {
+    if (!firm) return "var(--muted-ink)";
+    const map = J2.J2_FIRM_COLORS || {};
+    if (map[firm]) return map[firm];
+    const i = j2Firms().indexOf(firm); return PALETTE[(i < 0 ? 0 : i) % PALETTE.length];
+  }
+  function firmStyle(c) { return `--firm: ${firmColor(c.firm)}`; }
+  function firmBadge(c) { return c.firm ? `<span class="badge firm" style="${firmStyle(c)}">${esc(c.firm)}</span>` : ""; }
   function j2Filtered() {
     return j2.filter(c => {
       if (j2Filters.q && !c.name.toLowerCase().includes(j2Filters.q.toLowerCase())) return false;
@@ -852,7 +859,7 @@
   }
   function j2Card(c) {
     return `
-      <a class="card jahizoun j2" href="#/j2/${esc(c.id)}">
+      <a class="card jahizoun j2" href="#/j2/${esc(c.id)}" style="${firmStyle(c)}">
         <div class="card-top">
           ${avatar(c)}
           <div>
@@ -866,7 +873,7 @@
   function renderJ2() {
     const list = j2Filtered();
     const firms = j2Firms();
-    const byFirm = firms.map(f => `${j2.filter(c => c.firm === f).length} ${f}`).filter(t => !t.startsWith("0 ")).join(" · ");
+    const byFirm = firms.filter(f => j2.some(c => c.firm === f)).map(f => `<span class="firm-count"><i class="fdot" style="background:${firmColor(f)}"></i>${j2.filter(c => c.firm === f).length} ${esc(f)}</span>`).join(" ");
     return `
       <div class="page-head">
         <div><h1>Jahizoun 2</h1><p>Second Jahizoun cohort, currently on Corporate Exchange with the consulting firms. Click a card to open a profile.</p></div>
@@ -888,7 +895,7 @@
     const snap = [["Academic qualifications", c.academicQualifications], ["Previous MOD function", c.previousFunction], ["Corporate Exchange company", c.firm]];
     return `
       <a class="back" href="#/jahizoun2">← Jahizoun 2</a>
-      <div class="panel profile-head">
+      <div class="panel profile-head j2" style="${firmStyle(c)}">
         ${avatar(c, true)}
         <div>
           <h1>${esc(c.name)}</h1>
