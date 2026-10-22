@@ -877,9 +877,7 @@
       </div>
       <div class="filters">
         <input class="search" id="j2q" type="search" placeholder="Search by name…" value="${esc(j2Filters.q)}">
-        <div class="seg" id="firmSeg">
-          ${["all"].concat(firms).map(f => `<button data-f="${esc(f)}" class="${j2Filters.firm === f ? "on" : ""}">${f === "all" ? "All firms" : esc(f)}</button>`).join("")}
-        </div>
+        <select id="firmSel"><option value="all">All firms</option>${firms.map(f => `<option value="${esc(f)}" ${j2Filters.firm === f ? "selected" : ""}>${esc(f)}</option>`).join("")}</select>
         <span class="count">${list.length} of ${j2.length}</span>
       </div>
       ${list.length ? `<div class="grid">${list.map(j2Card).join("")}</div>` : `<div class="empty">${j2.length ? "No candidates match these filters." : "No Jahizoun 2 candidates yet."}</div>`}`;
@@ -1240,7 +1238,7 @@
   function bindJ2() {
     const q = document.getElementById("j2q");
     q.addEventListener("input", () => { j2Filters.q = q.value; const list = j2Filtered(); const grid = document.querySelector(".grid, .empty"); if (grid) grid.outerHTML = list.length ? `<div class="grid">${list.map(j2Card).join("")}</div>` : `<div class="empty">No candidates match these filters.</div>`; const count = document.querySelector(".filters .count"); if (count) count.textContent = `${list.length} of ${j2.length}`; });
-    document.getElementById("firmSeg").addEventListener("click", e => { const b = e.target.closest("button"); if (b) { j2Filters.firm = b.dataset.f; route(); } });
+    document.getElementById("firmSel").addEventListener("change", e => { j2Filters.firm = e.target.value; route(); });
   }
   function bindHome() {
     const q = document.getElementById("q");

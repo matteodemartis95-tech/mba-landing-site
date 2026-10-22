@@ -407,7 +407,7 @@ td .approx { color: var(--text-3); font-size: 11px; margin-left: 4px; }
 
 /* ---------- V3: banner navigation, T&LD ---------- */
 .nav.banners { gap: 8px; margin-left: 12px; }
-.nav.banners a { display: flex; flex-direction: column; padding: 6px 14px; border-radius: 10px; border: 1px solid var(--border); background: var(--surface-2); min-width: 128px; line-height: 1.2; white-space: nowrap; }
+.nav.banners a { display: flex; flex-direction: column; justify-content: center; padding: 6px 14px; border-radius: 10px; border: 1px solid var(--border); background: var(--surface-2); min-width: 128px; line-height: 1.2; white-space: nowrap; }
 .brand-text span { white-space: nowrap; }
 @media (max-width: 1180px) { .brand-text span { display: none; } .brand-text .v2-tag { display: none; } }
 .nav.banners a b { font-size: 13px; font-weight: 700; color: var(--text); }
