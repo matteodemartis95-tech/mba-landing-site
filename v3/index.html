@@ -22,7 +22,8 @@
       </a>
       <nav class="nav banners" id="nav">
         <a href="#/" data-route="tld"><b>T&amp;LD</b><span>Courses &amp; programmes</span></a>
-        <a href="#/jahizoun" data-route="home"><b>Jahizoun</b><span>Candidates &amp; evaluations</span></a>
+        <a href="#/jahizoun" data-route="home"><b>Jahizoun 1</b><span>Candidates &amp; evaluations</span></a>
+        <a href="#/jahizoun2" data-route="j2"><b>Jahizoun 2</b><span>Corporate Exchange</span></a>
         <a href="#/deadlines" data-route="deadlines"><b>Deadlines MBAs</b><span>Schools &amp; rounds</span></a>
       </nav>
       <div class="topbar-actions">
@@ -34,13 +35,15 @@
   </header>
   <div class="edit-banner hidden" id="editBanner">
     <div class="topbar-inner">
-      <span><b>Edit mode is on.</b> Changes are saved in this browser only. To publish: <b>Copy data.js</b> → <code>js/data.js</code> (MBA data); <b>Copy evaluation.js</b> → <code>v2/js/evaluation.js</code> (evaluations); <b>Copy tld.js</b> → <code>v3/js/tld.js</code> (courses).</span>
+      <span><b>Edit mode is on.</b> Changes are saved in this browser only. To publish: <b>Copy data.js</b> → <code>js/data.js</code> (MBA data); <b>Copy evaluation.js</b> → <code>v2/js/evaluation.js</code> (evaluations); <b>Copy tld.js</b> → <code>v3/js/tld.js</code> (courses); <b>Copy jahizoun2.js</b> → <code>v3/js/jahizoun2.js</code> (Jahizoun 2).</span>
       <span class="topbar-actions">
         <button class="btn small" id="addBtn">+ Add candidate</button>
         <button class="btn small" id="addCourseBtn">+ Add course</button>
+        <button class="btn small" id="addJ2Btn">+ Add Jahizoun 2 candidate</button>
         <button class="btn small primary" id="copyBtn">Copy data.js</button>
         <button class="btn small primary" id="copyEvalBtn">Copy evaluation.js</button>
         <button class="btn small primary" id="copyTldBtn">Copy tld.js</button>
+        <button class="btn small primary" id="copyJ2Btn">Copy jahizoun2.js</button>
         <button class="btn small" id="exportBtn">Export data.js</button>
         <button class="btn small danger" id="resetBtn">Discard local changes</button>
       </span>
@@ -58,7 +61,7 @@
         var s = document.createElement("script");
         s.src = src + "?v=" + v; s.onload = next; document.body.appendChild(s);
       }
-      add("../js/data.js", function () { add("../v2/js/evaluation.js", function () { add("js/tld.js", function () { add("js/app.js"); }); }); });
+      add("../js/data.js", function () { add("../v2/js/evaluation.js", function () { add("js/tld.js", function () { add("js/jahizoun2.js", function () { add("js/app.js"); }); }); }); });
     })();
   </script>
 </body>

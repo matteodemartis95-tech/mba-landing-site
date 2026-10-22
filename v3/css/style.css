@@ -197,6 +197,7 @@ h1 { font-size: 22px; } h2 { font-size: 17px; } h3 { font-size: 15px; }
 .badge.jahizoun { background: var(--accent-soft); color: var(--accent-ink); }
 .badge.edge { background: var(--violet-soft); color: var(--violet); }
 .badge.team { background: var(--muted-soft); color: var(--muted-ink); font-weight: 500; }
+.badge.firm { background: var(--surface-2); color: var(--text); border: 1px solid var(--border-strong); font-weight: 600; }
 .badge.test { background: var(--good-soft); color: var(--good-ink); font-weight: 600; }
 .badge.intake { background: var(--surface-2); color: var(--text-2); border: 1px solid var(--border); font-weight: 500; }
 .card-schools { display: flex; flex-wrap: wrap; gap: 6px; }
@@ -406,7 +407,9 @@ td .approx { color: var(--text-3); font-size: 11px; margin-left: 4px; }
 
 /* ---------- V3: banner navigation, T&LD ---------- */
 .nav.banners { gap: 8px; margin-left: 12px; }
-.nav.banners a { display: flex; flex-direction: column; padding: 6px 16px; border-radius: 10px; border: 1px solid var(--border); background: var(--surface-2); min-width: 150px; line-height: 1.2; }
+.nav.banners a { display: flex; flex-direction: column; padding: 6px 14px; border-radius: 10px; border: 1px solid var(--border); background: var(--surface-2); min-width: 128px; line-height: 1.2; white-space: nowrap; }
+.brand-text span { white-space: nowrap; }
+@media (max-width: 1180px) { .brand-text span { display: none; } .brand-text .v2-tag { display: none; } }
 .nav.banners a b { font-size: 13px; font-weight: 700; color: var(--text); }
 .nav.banners a span { font-size: 11px; color: var(--text-3); }
 .nav.banners a.active { background: var(--accent); border-color: var(--accent); }
@@ -414,6 +417,7 @@ td .approx { color: var(--text-3); font-size: 11px; margin-left: 4px; }
 .nav.banners a:hover:not(.active) { border-color: var(--accent); }
 @media (max-width: 900px) { .nav.banners a { min-width: 0; padding: 6px 10px; } .nav.banners a span { display: none; } }
 .tile[href] { color: inherit; }
+.tiles.one { grid-template-columns: minmax(150px, 300px); }
 .grid.courses { grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); }
 .card.course { gap: 8px; }
 .course-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; }

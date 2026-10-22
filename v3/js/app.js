@@ -25,6 +25,25 @@
     try { localStorage.setItem(TLD_KEY, JSON.stringify(courses)); localStorage.setItem(TLD_KEY + ":base", TLD_HASH); } catch (e) { toast("Could not save locally: " + e.message); }
   }
   function hasLocalCourses() { try { return !!localStorage.getItem(TLD_KEY); } catch (e) { return false; } }
+  const J2 = window.J2_DATA || { J2_FIRMS: [], J2_CANDIDATES: [] };
+  const J2_KEY = "jahizoun-mba-tracker:v3-j2";
+  const J2_HASH = hashString(JSON.stringify(J2.J2_CANDIDATES));
+  let j2 = loadJ2();
+  let j2Filters = { q: "", firm: "all" };
+  function loadJ2() {
+    try {
+      const raw = localStorage.getItem(J2_KEY);
+      if (raw) {
+        if (localStorage.getItem(J2_KEY + ":base") === J2_HASH) return JSON.parse(raw);
+        localStorage.removeItem(J2_KEY); localStorage.removeItem(J2_KEY + ":base");
+      }
+    } catch (e) { /* ignore */ }
+    return deepClone(J2.J2_CANDIDATES);
+  }
+  function persistJ2() {
+    try { localStorage.setItem(J2_KEY, JSON.stringify(j2)); localStorage.setItem(J2_KEY + ":base", J2_HASH); } catch (e) { toast("Could not save locally: " + e.message); }
+  }
+  function hasLocalJ2() { try { return !!localStorage.getItem(J2_KEY); } catch (e) { return false; } }
   const evalOf = c => evalState.evaluations[c.id] || null;
   const ASSET_BASE = window.ASSET_BASE || "";   // "" for the main page, "../" for the V2 preview in /v2
   const asset = p => (p && !/^(data:|https?:)/.test(p) ? ASSET_BASE + p : p);
@@ -81,6 +100,7 @@
         if (localStorage.getItem(EVAL_KEY + ":base") === EVAL_HASH) return JSON.parse(raw);
         localStorage.removeItem(EVAL_KEY); localStorage.removeItem(EVAL_KEY + ":base");
       localStorage.removeItem(TLD_KEY); localStorage.removeItem(TLD_KEY + ":base"); courses = deepClone(TLD.COURSES);
+      localStorage.removeItem(J2_KEY); localStorage.removeItem(J2_KEY + ":base"); j2 = deepClone(J2.J2_CANDIDATES);
       }
     } catch (e) { /* ignore */ }
     return { extras: deepClone(EV.EXTRA_CANDIDATES), evaluations: deepClone(EV.EVALUATIONS) };
@@ -820,6 +840,133 @@
       </div>`).join("");
   }
 
+  /* ---------- rendering: Jahizoun 2 ---------- */
+  function j2Firms() { return [...new Set(J2.J2_FIRMS.concat(j2.map(c => c.firm).filter(Boolean)))]; }
+  function firmBadge(c) { return c.firm ? `<span class="badge firm">${esc(c.firm)}</span>` : ""; }
+  function j2Filtered() {
+    return j2.filter(c => {
+      if (j2Filters.q && !c.name.toLowerCase().includes(j2Filters.q.toLowerCase())) return false;
+      if (j2Filters.firm !== "all" && c.firm !== j2Filters.firm) return false;
+      return true;
+    }).sort((a, b) => a.name.localeCompare(b.name));
+  }
+  function j2Card(c) {
+    return `
+      <a class="card jahizoun j2" href="#/j2/${esc(c.id)}">
+        <div class="card-top">
+          ${avatar(c)}
+          <div>
+            <div class="card-name">${esc(c.name)}</div>
+            <div class="card-meta"><span class="badge jahizoun">Jahizoun 2</span>${firmBadge(c)}</div>
+          </div>
+        </div>
+        <div class="card-foot"><div><div class="foot-k">Corporate Exchange</div><div class="foot-v">${c.firm ? esc(c.firm) : `<span class="muted">Firm to be confirmed</span>`}</div></div></div>
+      </a>`;
+  }
+  function renderJ2() {
+    const list = j2Filtered();
+    const firms = j2Firms();
+    const byFirm = firms.map(f => `${j2.filter(c => c.firm === f).length} ${f}`).filter(t => !t.startsWith("0 ")).join(" · ");
+    return `
+      <div class="page-head">
+        <div><h1>Jahizoun 2</h1><p>Second Jahizoun cohort, currently on Corporate Exchange with the consulting firms. Click a card to open a profile.</p></div>
+        <div class="muted small">Updated ${fmt(today, true)}</div>
+      </div>
+      <div class="tiles one">
+        <div class="tile static"><div class="label"><span class="dot accent"></span>Candidates</div><div class="value">${j2.length}</div><div class="sub">${byFirm || "on Corporate Exchange"}</div></div>
+      </div>
+      <div class="filters">
+        <input class="search" id="j2q" type="search" placeholder="Search by name…" value="${esc(j2Filters.q)}">
+        <div class="seg" id="firmSeg">
+          ${["all"].concat(firms).map(f => `<button data-f="${esc(f)}" class="${j2Filters.firm === f ? "on" : ""}">${f === "all" ? "All firms" : esc(f)}</button>`).join("")}
+        </div>
+        <span class="count">${list.length} of ${j2.length}</span>
+      </div>
+      ${list.length ? `<div class="grid">${list.map(j2Card).join("")}</div>` : `<div class="empty">${j2.length ? "No candidates match these filters." : "No Jahizoun 2 candidates yet."}</div>`}`;
+  }
+  function renderJ2Profile(id) {
+    const c = j2.find(x => x.id === id);
+    if (!c) return `<a class="back" href="#/jahizoun2">← Jahizoun 2</a><div class="empty">Candidate not found.</div>`;
+    const snap = [["Academic qualifications", c.academicQualifications], ["Previous MOD function", c.previousFunction], ["Corporate Exchange company", c.firm]];
+    return `
+      <a class="back" href="#/jahizoun2">← Jahizoun 2</a>
+      <div class="panel profile-head">
+        ${avatar(c, true)}
+        <div>
+          <h1>${esc(c.name)}</h1>
+          <div class="meta"><span class="badge jahizoun">Jahizoun 2</span>${firmBadge(c)}</div>
+          ${c.notes ? `<div class="notes">${esc(c.notes)}</div>` : ""}
+        </div>
+        <div class="actions">
+          ${(c.docs || []).filter(d => d.url).map(d => `<a class="btn doc-link" href="${esc(asset(d.url))}" target="_blank" rel="noopener">📄 ${esc(d.label || "Document")}</a>`).join("")}
+          ${editMode ? `<button class="btn" data-edit-j2="${esc(c.id)}">Edit</button><button class="btn danger" data-del-j2="${esc(c.id)}">Delete</button>` : ""}
+        </div>
+        <div class="snapshot">${snap.map(([k, v]) => `<div class="snap"><div class="k">${esc(k)}</div><div class="v ${v ? "" : "muted"}">${esc(v || "—")}</div></div>`).join("")}</div>
+      </div>`;
+  }
+  function openJ2Editor(id) {
+    const isNew = !id;
+    const c = isNew ? { id: "", name: "", firm: "", photo: "", academicQualifications: "", previousFunction: "", docs: [], notes: "" } : deepClone(j2.find(x => x.id === id));
+    const bg = document.createElement("div"); bg.className = "modal-bg";
+    const field = (label, name, val, ph) => `<div class="field"><label>${esc(label)}</label><input name="${name}" type="text" value="${esc(val == null ? "" : val)}" placeholder="${esc(ph || "")}"></div>`;
+    bg.innerHTML = `
+      <form class="modal" id="j2Form">
+        <div class="modal-head"><h2>${isNew ? "Add Jahizoun 2 candidate" : "Edit " + esc(c.name)}</h2><button type="button" class="btn ghost" data-close>✕</button></div>
+        <div class="modal-body">
+          <div class="form-grid">
+            ${field("Full name", "name", c.name)}
+            <div class="field"><label>Consulting firm</label><input name="firm" value="${esc(c.firm || "")}" list="firmList"><datalist id="firmList">${j2Firms().map(f => `<option value="${esc(f)}">`).join("")}</datalist></div>
+            <div class="field wide"><label>Academic qualifications</label><input name="academicQualifications" value="${esc(c.academicQualifications || "")}" placeholder="e.g. BSc Mechanical Engineering, Higher Colleges of Technology (2018)"></div>
+            <div class="field wide"><label>Previous MOD function</label><input name="previousFunction" value="${esc(c.previousFunction || "")}"></div>
+            <div class="field wide"><label>Photo</label><input name="photoFile" type="file" accept="image/*"><div class="hint">${c.photo ? "A photo is set; choose a file to replace it." : "Optional. Resized to a 320px square in the browser."}</div></div>
+            <div class="field wide"><label>Documents (one per line: Label | link, e.g. CV | docs/name-cv.pdf)</label><textarea name="docs" rows="2">${esc((c.docs || []).map(d => (d.label || "") + " | " + (d.url || "")).join("\n"))}</textarea></div>
+            <div class="field wide"><label>Notes</label><textarea name="notes" rows="2">${esc(c.notes || "")}</textarea></div>
+          </div>
+        </div>
+        <div class="modal-foot"><span class="hint" style="margin-right:auto">Saved in this browser. Use “Copy jahizoun2.js” to publish.</span><button type="button" class="btn" data-close>Cancel</button><button class="btn primary" type="submit">Save</button></div>
+      </form>`;
+    document.body.appendChild(bg);
+    bg.addEventListener("click", e => { if (e.target === bg || e.target.closest("[data-close]")) bg.remove(); });
+    bg.addEventListener("submit", async e => {
+      e.preventDefault();
+      const f = bg.querySelector("#j2Form");
+      ["name", "firm", "academicQualifications", "previousFunction", "notes"].forEach(x => c[x] = f[x].value.trim());
+      c.docs = f.docs.value.split("\n").map(t => t.trim()).filter(Boolean).map(t => { const p = t.split("|").map(x => x.trim()); return { label: p[0] || "Document", url: p[1] || "" }; });
+      if (f.photoFile.files[0]) c.photo = await squarePhoto(f.photoFile.files[0]);
+      if (!c.name) return;
+      if (isNew) { let base = slug(c.name) || "candidate", id2 = base, n = 2; while (j2.some(x => x.id === id2)) id2 = base + "-" + n++; c.id = id2; j2.push(c); }
+      else { const i = j2.findIndex(x => x.id === c.id); j2[i] = c; }
+      persistJ2(); bg.remove(); toast("Saved locally"); route();
+      if (isNew) location.hash = "#/j2/" + c.id;
+    });
+  }
+  function squarePhoto(file) {
+    return new Promise(resolve => {
+      const img = new Image();
+      img.onload = () => {
+        const side = Math.min(img.width, img.height), sx = (img.width - side) / 2, sy = Math.max(0, Math.min(img.height - side, img.height * 0.08));
+        const cv = document.createElement("canvas"); cv.width = cv.height = 320;
+        cv.getContext("2d").drawImage(img, sx, sy, side, side, 0, 0, 320, 320);
+        URL.revokeObjectURL(img.src); resolve(cv.toDataURL("image/jpeg", 0.85));
+      };
+      img.src = URL.createObjectURL(file);
+    });
+  }
+  function buildJ2Js() {
+    const src = J2_SOURCE || "";
+    const start = src.indexOf("const J2_CANDIDATES = "), end = src.indexOf("/* Do not edit below this line. */");
+    const body = "const J2_CANDIDATES = " + JSON.stringify(j2, null, 2) + ";\n\n";
+    return start >= 0 && end > start ? src.slice(0, start) + body + src.slice(end) : "const J2_FIRMS = " + JSON.stringify(J2.J2_FIRMS) + ";\n\n" + body + "/* Do not edit below this line. */\nwindow.J2_DATA = { J2_FIRMS, J2_CANDIDATES };\n";
+  }
+  let J2_SOURCE = "";
+  fetch("js/jahizoun2.js?v=" + Date.now()).then(r => r.text()).then(t => { J2_SOURCE = t; }).catch(() => {});
+  function copyJ2() {
+    const text = buildJ2Js();
+    (navigator.clipboard ? navigator.clipboard.writeText(text) : Promise.reject()).then(() => toast("jahizoun2.js copied. On GitHub open v3/js/jahizoun2.js → ✏️ → select all → paste → Commit changes."), () => {
+      const ta = document.createElement("textarea"); ta.value = text; document.body.appendChild(ta); ta.select(); document.execCommand("copy"); ta.remove(); toast("jahizoun2.js copied to the clipboard.");
+    });
+  }
+
   /* ---------- rendering: deadlines ---------- */
   function renderDeadlines() {
     const usedSchools = new Set(candidates.flatMap(c => c.applications.map(a => a.school)));
@@ -1076,15 +1223,24 @@
     let view = "tld", html;
     const m = h.match(/^#\/candidate\/([^/]+)(?:\/(mba|evaluation))?/);
     const mc = h.match(/^#\/course\/([^/]+)/);
+    const mj = h.match(/^#\/j2\/([^/]+)/);
     if (m) { view = "profile"; html = renderProfile(decodeURIComponent(m[1]), m[2]); }
+    else if (mj) { view = "j2profile"; html = renderJ2Profile(decodeURIComponent(mj[1])); }
+    else if (h.startsWith("#/jahizoun2")) { view = "j2"; html = renderJ2(); }
     else if (mc) { view = "course"; html = renderCourse(decodeURIComponent(mc[1])); }
     else if (h.startsWith("#/deadlines")) { view = "deadlines"; html = renderDeadlines(); }
     else if (h.startsWith("#/jahizoun")) { view = "home"; html = renderHome(); }
     else html = renderTld();
     app.innerHTML = html;
-    document.querySelectorAll("#nav a").forEach(a => a.classList.toggle("active", a.dataset.route === (view === "profile" ? "home" : view === "course" ? "tld" : view)));
+    document.querySelectorAll("#nav a").forEach(a => a.classList.toggle("active", a.dataset.route === (view === "profile" ? "home" : view === "course" ? "tld" : view === "j2profile" ? "j2" : view)));
     if (view !== "profile") window.scrollTo(0, 0);
     if (view === "home") bindHome();
+    if (view === "j2") bindJ2();
+  }
+  function bindJ2() {
+    const q = document.getElementById("j2q");
+    q.addEventListener("input", () => { j2Filters.q = q.value; const list = j2Filtered(); const grid = document.querySelector(".grid, .empty"); if (grid) grid.outerHTML = list.length ? `<div class="grid">${list.map(j2Card).join("")}</div>` : `<div class="empty">No candidates match these filters.</div>`; const count = document.querySelector(".filters .count"); if (count) count.textContent = `${list.length} of ${j2.length}`; });
+    document.getElementById("firmSeg").addEventListener("click", e => { const b = e.target.closest("button"); if (b) { j2Filters.firm = b.dataset.f; route(); } });
   }
   function bindHome() {
     const q = document.getElementById("q");
@@ -1115,17 +1271,23 @@
   document.getElementById("copyEvalBtn").addEventListener("click", copyEval);
   document.getElementById("copyTldBtn").addEventListener("click", copyTld);
   document.getElementById("addCourseBtn").addEventListener("click", () => openCourseEditor(null));
+  document.getElementById("addJ2Btn").addEventListener("click", () => openJ2Editor(null));
+  document.getElementById("copyJ2Btn").addEventListener("click", copyJ2);
   document.getElementById("resetBtn").addEventListener("click", () => {
-    if (!hasLocalChanges() && !hasLocalEval() && !hasLocalCourses()) { toast("No local changes to discard."); return; }
+    if (!hasLocalChanges() && !hasLocalEval() && !hasLocalCourses() && !hasLocalJ2()) { toast("No local changes to discard."); return; }
     if (confirm("Discard all changes saved in this browser and reload the published data?")) {
       localStorage.removeItem(STORAGE_KEY); localStorage.removeItem(STORAGE_KEY + ":base");
       localStorage.removeItem(EVAL_KEY); localStorage.removeItem(EVAL_KEY + ":base");
       localStorage.removeItem(TLD_KEY); localStorage.removeItem(TLD_KEY + ":base"); courses = deepClone(TLD.COURSES);
+      localStorage.removeItem(J2_KEY); localStorage.removeItem(J2_KEY + ":base"); j2 = deepClone(J2.J2_CANDIDATES);
       shared = deepClone(BASE.CANDIDATES); evalState = { extras: deepClone(EV.EXTRA_CANDIDATES), evaluations: deepClone(EV.EVALUATIONS) }; candidates = merge(); route(); toast("Local changes discarded.");
     }
   });
   app.addEventListener("click", e => {
     const ec = e.target.closest("[data-edit-course]"); if (ec) { openCourseEditor(ec.dataset.editCourse); return; }
+    const ej = e.target.closest("[data-edit-j2]"); if (ej) { openJ2Editor(ej.dataset.editJ2); return; }
+    const dj = e.target.closest("[data-del-j2]");
+    if (dj) { const c = j2.find(x => x.id === dj.dataset.delJ2); if (c && confirm(`Delete ${c.name} from Jahizoun 2?`)) { j2 = j2.filter(x => x.id !== c.id); persistJ2(); location.hash = "#/jahizoun2"; } return; }
     const dc = e.target.closest("[data-del-course]");
     if (dc) { const k = courses.find(x => x.id === dc.dataset.delCourse); if (k && confirm(`Delete ${k.name}?`)) { courses = courses.filter(x => x.id !== k.id); persistCourses(); location.hash = "#/"; } return; }
     const ee = e.target.closest("[data-edit-eval]"); if (ee) { openEvalEditor(ee.dataset.editEval); return; }
@@ -1176,5 +1338,5 @@
   window.addEventListener("hashchange", route);
   route();
   if (staleLocalDiscarded) toast("The published dashboard was updated on GitHub, so it replaced the copy saved in this browser.");
-  else if (hasLocalChanges() || hasLocalEval() || hasLocalCourses()) toast("Showing unpublished changes saved in this browser. Use the Copy buttons to publish them.");
+  else if (hasLocalChanges() || hasLocalEval() || hasLocalCourses() || hasLocalJ2()) toast("Showing unpublished changes saved in this browser. Use the Copy buttons to publish them.");
 })();

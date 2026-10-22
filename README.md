@@ -84,3 +84,7 @@ Open `index.html` in a browser, or serve the folder (for example `python3 -m htt
 ## Importing a quarterly evaluation (Excel)
 
 `tools/import-evaluation.py <file.xlsx> <candidate-id> "<quarter>"` reads a "Jahizoun – Quarterly Competence Evaluation" workbook, takes the line manager's rating and comment per competency, writes them into `v2/js/evaluation.js` under `quarterly` for that quarter and updates the rating grid. The comments then appear as a bubble when hovering or tapping the quarter's cells on the evaluation grid (V2 and V3). Needs Python with `openpyxl`. Options: `--sheet "<name>"` for a workbook with one sheet per person, `--cols D,E` when the manager typed in other columns (by default it reads the columns under the "Line Manager Evaluation" header), `--manager "<name>"` when the sheet leaves the line manager blank (otherwise the deck line manager is used).
+
+## Jahizoun 2 (V3 only)
+
+The **Jahizoun 2** banner lists the second cohort, currently on Corporate Exchange. Data lives in `v3/js/jahizoun2.js` (`J2_FIRMS` for the filter buttons, `J2_CANDIDATES` with id, name, firm, photo, academicQualifications, previousFunction, docs, notes). Edit on the dashboard (Edit mode → "+ Add Jahizoun 2 candidate" / "Edit" on a profile, photo files are resized to a 320px square in the browser) and publish with "Copy jahizoun2.js" → `v3/js/jahizoun2.js`. CVs go in `docs/` as `<id>-cv.pdf`.
