@@ -9,11 +9,11 @@ const J2_FIRMS = ["Oliver Wyman", "BCG", "Deloitte", "EY", "Kearney", "PwC", "Ro
 const J2_FIRM_COLORS = {
   "Oliver Wyman": "#2a78d6",
   "BCG": "#1baf7a",
-  "Deloitte": "#4a3aa7",
+  "Deloitte": "#0b5e2b",
   "EY": "#eda100",
-  "Kearney": "#e34948",
+  "Kearney": "#111111",
   "PwC": "#eb6834",
-  "Roland Berger": "#0f6f72",
+  "Roland Berger": "#3e2412",
   "Alvarez & Marsal": "#e87ba4"
 };
 
