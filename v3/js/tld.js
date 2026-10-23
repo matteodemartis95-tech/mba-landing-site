@@ -234,13 +234,13 @@ const COURSES = [
     "name": "Ruwaad",
     "fullName": "Change management and institutional transformation programme",
     "color": "#1baf7a",
-    "trained": 325,
+    "trained": 371,
     "target": 840,
     "unit": "people trained",
     "status": "",
     "nextDate": "",
     "nextLabel": "",
-    "notes": "Cohort size reduced from 50 to 30 participants; target adjusted to 840. Locations confirmed at the National Defence College from October 2026.",
+    "notes": "Cohort size reduced from 50 to 30 participants for the remaining cohorts (HNI contract renegotiated); target adjusted to 840. Locations confirmed at the National Defence College from October 2026.",
     "description": "Programme building incremental change management and institutional transformation.",
     "audience": "",
     "programmeFormat": "Two-day cohorts",
@@ -260,17 +260,17 @@ const COURSES = [
         "label": "Cohort 5 (April cohort)",
         "start": "2026-10-19",
         "end": "2026-10-20",
-        "participants": null,
-        "status": "planned",
-        "note": "National Defence College (NDC)"
+        "participants": 28,
+        "status": "completed",
+        "note": "28 of 30 attended (93%) · National Defence College (NDC) · postponed from April"
       },
       {
         "label": "Cohort 6 (April cohort)",
         "start": "2026-10-21",
         "end": "2026-10-22",
-        "participants": null,
-        "status": "planned",
-        "note": "National Defence College (NDC)"
+        "participants": 18,
+        "status": "completed",
+        "note": "18 of 30 attended (60%) · National Defence College (NDC) · postponed from April"
       },
       {
         "label": "Cohort 15",
@@ -321,12 +321,12 @@ const COURSES = [
         "note": "National Defence College (NDC)"
       }
     ],
-    "cohortsDone": 12,
+    "cohortsDone": 14,
     "cohortsTotal": 20,
     "kpis": [
       {
-        "label": "Attendance rate",
-        "value": "39%"
+        "label": "Attendance, October cohorts",
+        "value": "77% · 46 of 60"
       },
       {
         "label": "Satisfaction",
