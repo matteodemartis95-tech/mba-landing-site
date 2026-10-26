@@ -148,25 +148,25 @@ const CANDIDATES = [
           "date": "",
           "note": ""
         },
-        "notes": "Admitted to HEC Paris (offer received 26 Oct 2026)."
+        "notes": "Admitted to HEC Paris (26 Oct 2026); offer accepted."
       },
       {
         "school": "IMD",
-        "status": "admitted",
+        "status": "withdrawn",
         "interview": {
           "date": "2026-10-01",
           "note": "IMD interview."
         },
-        "notes": "Admitted to IMD (offer received 9 Oct 2026)."
+        "notes": "Admitted to IMD (9 Oct 2026); offer declined by the candidate, going to HEC."
       },
       {
         "school": "CBS",
-        "status": "submitted",
+        "status": "withdrawn",
         "interview": {
           "date": "",
           "note": ""
         },
-        "notes": "Columbia update expected 1 Oct 2026."
+        "notes": "Application withdrawn; going to HEC."
       }
     ]
   },
@@ -182,21 +182,21 @@ const CANDIDATES = [
     "applications": [
       {
         "school": "HEC",
-        "status": "submitted",
+        "status": "withdrawn",
         "interview": {
           "date": "",
           "note": ""
         },
-        "notes": "HEC submitted (30 Sep 2026)."
+        "notes": "Application withdrawn; going to INSEAD."
       },
       {
         "school": "IMD",
-        "status": "admitted",
+        "status": "withdrawn",
         "interview": {
           "date": "",
           "note": "Interview completed (Sep 2026)."
         },
-        "notes": "Admitted to IMD (offer received 9 Oct 2026)."
+        "notes": "Admitted to IMD (9 Oct 2026); offer declined by the candidate, going to INSEAD."
       },
       {
         "school": "INSEAD",
@@ -205,7 +205,7 @@ const CANDIDATES = [
           "date": "",
           "note": "Interview completed (Sep 2026)."
         },
-        "notes": "Admitted to INSEAD (offer received 26 Oct 2026)."
+        "notes": "Admitted to INSEAD (26 Oct 2026); offer accepted."
       },
       {
         "school": "NYUAD",
