@@ -143,12 +143,12 @@ const CANDIDATES = [
     "applications": [
       {
         "school": "HEC",
-        "status": "withdrawn",
+        "status": "admitted",
         "interview": {
           "date": "",
           "note": ""
         },
-        "notes": "Withdrew from the HEC process (Oct 2026)."
+        "notes": "Admitted to HEC Paris (offer received 26 Oct 2026)."
       },
       {
         "school": "IMD",
@@ -200,12 +200,12 @@ const CANDIDATES = [
       },
       {
         "school": "INSEAD",
-        "status": "interviewed",
+        "status": "admitted",
         "interview": {
           "date": "",
           "note": "Interview completed (Sep 2026)."
         },
-        "notes": ""
+        "notes": "Admitted to INSEAD (offer received 26 Oct 2026)."
       },
       {
         "school": "NYUAD",
@@ -269,12 +269,12 @@ const CANDIDATES = [
     "applications": [
       {
         "school": "INSEAD",
-        "status": "interviewed",
+        "status": "admitted",
         "interview": {
           "date": "",
-          "note": "Interview completed; awaiting final decision."
+          "note": "Interview completed."
         },
-        "notes": ""
+        "notes": "Admitted to INSEAD (offer received 26 Oct 2026)."
       },
       {
         "school": "HEC",
@@ -308,12 +308,12 @@ const CANDIDATES = [
     "applications": [
       {
         "school": "INSEAD",
-        "status": "scheduled",
+        "status": "admitted",
         "interview": {
           "date": "2026-09-10",
-          "note": "First interview completed on 10 Sep; second interview next week, date to be confirmed."
+          "note": "Interview completed."
         },
-        "notes": ""
+        "notes": "Admitted to INSEAD (offer received 26 Oct 2026)."
       }
     ]
   },
@@ -407,12 +407,12 @@ const CANDIDATES = [
     "applications": [
       {
         "school": "INSEAD",
-        "status": "scheduled",
+        "status": "rejected",
         "interview": {
           "date": "2026-09-15, 2026-09-16",
           "note": "Two alumni interviews."
         },
-        "notes": ""
+        "notes": "Rejected by INSEAD."
       }
     ]
   },
