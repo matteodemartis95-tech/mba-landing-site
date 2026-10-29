@@ -119,7 +119,7 @@ const NAME_OVERRIDES = {
 
 const EVALUATIONS = {
   "surour-al-kaabi": {
-    "lineManager": "Shobhit Pareek",
+    "lineManager": "Al-Emad project lead",
     "function": "Al-Emad",
     "corporateExchangeProject": "UAE National Intellectual Property Strategy and modernisation of the MoD education & training ecosystem",
     "previousFunction": "Staff Officer 2 J6 (IT & Communications), Presidential Guard Falcons Brigade (2024–2025)",
@@ -139,41 +139,56 @@ const EVALUATIONS = {
       "Effective Communication & Influence": {
         "2025 Q4": "effective",
         "2026 Q1": "effective",
-        "2026 Q2": "effective"
+        "2026 Q2": "effective",
+        "2026 Q3": "strong"
       },
       "Initiative": {
         "2025 Q4": "strong",
         "2026 Q1": "strong",
-        "2026 Q2": "strong"
+        "2026 Q2": "strong",
+        "2026 Q3": "strong"
       },
       "Decision-Making & Accountability": {
         "2025 Q4": "effective",
         "2026 Q1": "effective",
-        "2026 Q2": "strong"
+        "2026 Q2": "strong",
+        "2026 Q3": "strong"
       },
       "Capability Development": {
         "2025 Q4": "effective",
         "2026 Q1": "effective",
-        "2026 Q2": "strong"
+        "2026 Q2": "strong",
+        "2026 Q3": "strong"
       },
       "Systemic Analysis & Planning": {
         "2025 Q4": "effective",
         "2026 Q1": "effective",
-        "2026 Q2": "effective"
+        "2026 Q2": "effective",
+        "2026 Q3": "effective"
+      },
+      "Inspirational Leadership": {
+        "2026 Q3": "effective"
+      },
+      "Strategic Thinking": {
+        "2026 Q3": "effective"
+      },
+      "Adaptability": {
+        "2026 Q3": "strong"
       }
     },
     "strengths": [
-      "Takes proactive end-to-end ownership across workstreams",
-      "Applies Domain expertise effectively, drawing usage of AI tools and expert network",
-      "Communicates with clarity and credibility, building strong stakeholder relationships"
+      "End-to-end ownership of technical workstreams, from FFC Ecosystem to EW and Cyber",
+      "Clear, confident communication with technical and senior audiences",
+      "Fast adopter of AI tools and emerging technology, applied to real deliverables"
     ],
     "improvements": [
-      "Improves the structure with clear key messages and “so-what”, then build the storyline top-down",
-      "Sharpens written deliverables and slide visuals"
+      "Strategic leadership and influencing: more exposure to organisation-wide transformation initiatives",
+      "Executive-level stakeholder management and communication",
+      "Lead workstreams and mentor others, for example coaching the next Jahizoun batch"
     ],
     "masters": [
-      "Weights a Masters in AI/ Technology against an MBA",
-      "Applying to INSEAD and SDA Bocconi MBA, September 2027"
+      "Weighing a Masters in AI / technology against an MBA",
+      "Planning INSEAD and SDA Bocconi MBA applications, September 2027"
     ],
     "docs": [
       {
@@ -187,27 +202,82 @@ const EVALUATIONS = {
         "competencies": {
           "Effective Communication & Influence": {
             "rating": "effective",
-            "comment": "Surour communicated ideas clearly and well. He facilitated meetings effectively and brought strong expert knowledge into discussions. He was able to storyline well and communicate in an eloquent way. He also contributed strong inputs in expert discussions and sparring sessions, helping move the discussion forward. To further strengthen, Surour should continue building executive communication skills by starting with the key message and the “so what” before drafting or storylining, and by making sure outputs are formatted in a client-ready way."
+            "comment": "Clear, eloquent communicator who storylines well and brings expert knowledge into discussions. Next: executive communication.",
+            "full": "Surour communicated ideas clearly and well. He facilitated meetings effectively and brought strong expert knowledge into discussions. He was able to storyline well and communicate in an eloquent way. He also contributed strong inputs in expert discussions and sparring sessions, helping move the discussion forward. To further strengthen, Surour should continue building executive communication skills by starting with the key message and the “so what” before drafting or storylining, and by making sure outputs are formatted in a client-ready way."
           },
           "Initiative": {
             "rating": "strong",
-            "comment": "Surour showed very proactive ownership throughout the work. He contributed actively in expert discussions and sparring sessions, and he went beyond the core task by trying novel ways of showcasing information. He also used AI tools well and proactively supported the team."
+            "comment": "Very proactive ownership: active in expert sessions, tried novel ways of showing information, used AI tools well.",
+            "full": "Surour showed very proactive ownership throughout the work. He contributed actively in expert discussions and sparring sessions, and he went beyond the core task by trying novel ways of showcasing information. He also used AI tools well and proactively supported the team."
           },
           "Decision-Making & Accountability": {
             "rating": "strong",
-            "comment": "Surour took strong ownership of his work, including end-to-end ownership of asymmetry. He also supported cyber and EW in the domain scan. He was reliable, proactive, and supportive, and took responsibility for moving his areas forward."
+            "comment": "Strong end-to-end ownership of asymmetry, plus cyber and EW support in the domain scan. Reliable and proactive.",
+            "full": "Surour took strong ownership of his work, including end-to-end ownership of asymmetry. He also supported cyber and EW in the domain scan. He was reliable, proactive, and supportive, and took responsibility for moving his areas forward."
           },
           "Capability Development": {
             "rating": "strong",
-            "comment": "Surour showed strong capability development through his use of AI tools and his ability to bring expert knowledge into the work. He shared his understanding of the region well and used this knowledge to support the team. He also showed a willingness to try novel ways of showcasing information."
+            "comment": "Strong growth through AI tools and regional expert knowledge shared with the team.",
+            "full": "Surour showed strong capability development through his use of AI tools and his ability to bring expert knowledge into the work. He shared his understanding of the region well and used this knowledge to support the team. He also showed a willingness to try novel ways of showcasing information."
           },
           "Systemic Analysis & Planning": {
             "rating": "effective",
-            "comment": "Surour demonstrated effective PS&I through his work on asymmetry, cyber and EW support, and domain scan contributions. He brought expert knowledge, shared strong regional understanding, and contributed useful inputs in expert discussions and sparring sessions. As a development need, Surour should continue strengthening how he turns analysis into a clear top-down plan. He can do this by first defining the key message and “so what,” then structuring the analysis, storyline, and materials around that answer. This will help make his work even more focused, executive-ready, and easy for stakeholders to act on."
+            "comment": "Effective analysis on asymmetry, cyber and EW. Next: turn analysis into a clear top-down plan.",
+            "full": "Surour demonstrated effective PS&I through his work on asymmetry, cyber and EW support, and domain scan contributions. He brought expert knowledge, shared strong regional understanding, and contributed useful inputs in expert discussions and sparring sessions. As a development need, Surour should continue strengthening how he turns analysis into a clear top-down plan. He can do this by first defining the key message and “so what,” then structuring the analysis, storyline, and materials around that answer. This will help make his work even more focused, executive-ready, and easy for stakeholders to act on."
           }
         }
+      },
+      "2026 Q3": {
+        "manager": "Al-Emad project lead",
+        "competencies": {
+          "Effective Communication & Influence": {
+            "rating": "strong",
+            "comment": "Clear, structured and confident with technical and senior audiences. Uses facts and logic to drive decisions. Written and verbal quality noticeably improved.",
+            "full": "Consistently communicates in a clear, structured, and professional manner, adapting messages effectively for both technical and senior stakeholder audiences. Demonstrates confidence in meetings and is comfortable presenting viewpoints and recommendations in front of senior stakeholders. Uses facts, practical examples, and logical reasoning to influence discussions and drive decisions. Has shown noticeable improvement in the quality, clarity, and precision of written and verbal communication over the past few months, resulting in stronger stakeholder engagement and more effective outcomes."
+          },
+          "Initiative": {
+            "rating": "strong",
+            "comment": "Looks for better approaches rather than following process. Owned the FFC Ecosystem work with minimal direction and uses AI tools to speed delivery.",
+            "full": "Regularly identifies opportunities to improve approaches, outputs, and ways of working rather than simply following established processes. Demonstrated strong ownership while working on the FFC Ecosystem version, operating with a high degree of independence and requiring minimal day-to-day direction. Proactively leverages AI and technology tools to improve efficiency, quality, and speed of delivery. Consistently raises practical suggestions and constructive challenges when opportunities for improvement are identified."
+          },
+          "Decision-Making & Accountability": {
+            "rating": "strong",
+            "comment": "Full accountability for deliverables, from FFC Ecosystem to the EW and Cyber operating concepts. Weighs risks and dependencies before acting.",
+            "full": "Takes full accountability for assigned deliverables and follows through on commitments. During the FFC Ecosystem work, demonstrated the ability to independently assess options, make informed decisions, and own outcomes from end to end. Seeing the same for EW and Cyber operating concept work. Considers risks, dependencies, and stakeholder requirements before taking action. Accepts responsibility for results and actively incorporates lessons learned to improve future decisions and delivery quality."
+          },
+          "Capability Development": {
+            "rating": "strong",
+            "comment": "Strong commitment to learning. Adopted AI-enabled approaches and seeks exposure across technology, cyber, EW and transformation.",
+            "full": "Shows a strong commitment to continuous learning and professional growth. Has effectively adopted emerging technologies, including AI-enabled approaches, and translated new knowledge into tangible improvements in work quality and productivity. Actively seeks exposure across technology, cyber, EW, and transformation topics, demonstrating a willingness to broaden expertise and take on increasingly complex responsibilities."
+          },
+          "Inspirational Leadership": {
+            "rating": "effective",
+            "comment": "Leads by example: professional, reliable, approachable and composed under pressure.",
+            "full": "Leads primarily through example, demonstrating professionalism, reliability, and a positive attitude. Maintains respectful and constructive relationships with colleagues and stakeholders. Has a pleasant and approachable working style that encourages collaboration and open discussion. Remains composed under pressure and contributes positively to team morale through consistent delivery, transparency, and willingness to support others when required."
+          },
+          "Strategic Thinking": {
+            "rating": "effective",
+            "comment": "Sees broader objectives and challenges assumptions with evidence. Growing ability to link technical work to transformation goals.",
+            "full": "Looks beyond immediate tasks to understand broader objectives and stakeholder needs. Demonstrates the confidence to challenge existing approaches, outputs, and assumptions when evidence suggests a better alternative. Shows a growing ability to connect technical work with wider transformation and business objectives, helping ensure that recommendations are practical, relevant, and aligned to desired outcomes."
+          },
+          "Adaptability": {
+            "rating": "strong",
+            "comment": "Adapts quickly across technical, operational and strategic topics while holding quality and timelines. Speed to output keeps improving.",
+            "full": "Adapts quickly to changing priorities, requirements, and stakeholder expectations. Comfortable working across technical, operational, and strategic topics and adjusting approaches as circumstances evolve. Has demonstrated strong resilience and flexibility while maintaining delivery quality and meeting timelines. Continues to learn rapidly from new situations and applies those lessons effectively. Speed to output consistently improving in an environment of ever-changing priorities"
+          },
+          "Systemic Analysis & Planning": {
+            "rating": "effective",
+            "comment": "Breaks complex problems down to root causes and plans around risks and constraints. Quality and speed of outputs improved significantly.",
+            "full": "Demonstrates strong analytical thinking by breaking complex problems into manageable components and focusing on root causes rather than symptoms. Effectively considers dependencies, risks, resource constraints, and stakeholder impacts when developing plans and recommendations. The quality and speed of outputs have improved significantly over the review period, reflecting stronger planning discipline, greater attention to detail, and continuous refinement of working methods."
+          }
+        },
+        "summary": "Surour: Strengthen strategic leadership, delegation, and influencing skills while continuing to build expertise across technology, cybersecurity, and transformation.\n\nLine manager: Continue building strategic leadership and influencing capabilities by increasing exposure to broader organizational and transformation initiatives. Focus on strengthening stakeholder management, and executive-level communication to maximize impact across the program. Continue to engage wiht experts and enhance subject matter expertise in emerging technology, cyber, and transformation topics to drive innovation and efficiency. Expand opportunities to lead workstreams and mentor others to prepare for greater responsibility (for e.g. can have coaching role for new batch of Jahizoun)",
+        "summaryLabel": "Areas of focus"
       }
-    }
+    },
+    "commentaryTitle": "Commentary as of 2nd Quarterly Evaluation",
+    "commentaryDate": "October 2026",
+    "overall": "Consistently strong from Q2 to Q3: Strong on five of eight competencies, with Communication moving up from Effective to Strong. The Q2 note on top-down structure is now largely addressed. Next step is from expert contributor to leading and influencing."
   },
   "waood-alhammadi": {
     "lineManager": "Declan Noone",
@@ -293,48 +363,115 @@ const EVALUATIONS = {
       "Effective Communication & Influence": {
         "2025 Q4": "strong",
         "2026 Q1": "strong",
-        "2026 Q2": "effective"
+        "2026 Q2": "effective",
+        "2026 Q3": "strong"
       },
       "Initiative": {
         "2025 Q4": "effective",
         "2026 Q1": "effective",
-        "2026 Q2": "strong"
+        "2026 Q2": "strong",
+        "2026 Q3": "strong"
       },
       "Decision-Making & Accountability": {
         "2025 Q4": "effective",
         "2026 Q1": "effective",
-        "2026 Q2": "effective"
+        "2026 Q2": "effective",
+        "2026 Q3": "effective"
       },
       "Capability Development": {
         "2025 Q4": "effective",
         "2026 Q1": "effective",
-        "2026 Q2": "strong"
+        "2026 Q2": "strong",
+        "2026 Q3": "strong"
       },
       "Systemic Analysis & Planning": {
         "2025 Q4": "effective",
         "2026 Q1": "effective",
-        "2026 Q2": "effective"
+        "2026 Q2": "effective",
+        "2026 Q3": "strong"
+      },
+      "Inspirational Leadership": {
+        "2026 Q3": "effective"
+      },
+      "Strategic Thinking": {
+        "2026 Q3": "strong"
+      },
+      "Adaptability": {
+        "2026 Q3": "strong"
       }
     },
     "strengths": [
-      "Communicates with confidence and clarity and valued as empathetic by client and team",
-      "Spots gaps and acts on them without prompting, using his MOD knowledge to navigate internal processes",
-      "Pursues qualification on his own initiative"
+      "MOD and defence-ecosystem knowledge that strengthens coordination with EDGE and Tawazun",
+      "Growing initiative and ownership in delivery",
+      "Learns with enthusiasm, balancing MBA preparation with core work"
     ],
     "improvements": [
-      "Plans work, identify dependencies, and deliver reliably against agreed deadlines",
-      "Formulates and defends his own hypotheses, rather than stopping at research and summary"
+      "Consistency in end-to-end ownership and closure of actions as responsibilities expand",
+      "Formulate and defend his own hypotheses rather than stopping at research",
+      "Keep the balance between development and team priorities"
     ],
     "masters": [
       "Completed ScorePlus GMAT course",
-      "Applying to INSEAD and IMD MBA, January 2027"
+      "Admitted to INSEAD MBA, January 2027 intake"
     ],
     "docs": [
       {
         "label": "CV",
         "url": "docs/theyab-almeqbaali-cv.pdf"
       }
-    ]
+    ],
+    "quarterly": {
+      "2026 Q3": {
+        "manager": "Naguib Bebawi",
+        "competencies": {
+          "Effective Communication & Influence": {
+            "rating": "strong",
+            "comment": "Integral to the team; uses his MOD knowledge to strengthen coordination with MOD, EDGE and Tawazun.",
+            "full": "Theyab has become an integral part of the team, using his MOD knowledge to strengthen communication and coordination with MOD, EDGE and Tawazun counterparts."
+          },
+          "Initiative": {
+            "rating": "strong",
+            "comment": "Increasingly active in delivery, moving team activities and stakeholder actions forward.",
+            "full": "He has taken an increasingly active role in delivery, showing initiative and ownership in moving team activities and stakeholder actions forward."
+          },
+          "Decision-Making & Accountability": {
+            "rating": "effective",
+            "comment": "Sound judgement and accountability. Next: consistency in end-to-end delivery and closing actions.",
+            "full": "Theyab demonstrates sound judgement and accountability. As his responsibilities grow, he should continue strengthening consistency in end-to-end delivery and closure of actions."
+          },
+          "Capability Development": {
+            "rating": "strong",
+            "comment": "Clear enthusiasm for learning. Balanced GMAT and MBA preparation with core priorities, with an impressive GMAT result.",
+            "full": "His enthusiasm for learning remains a clear strength. He balanced GMAT/MBA preparation well with core priorities, and his GMAT performance was particularly impressive."
+          },
+          "Inspirational Leadership": {
+            "rating": "effective",
+            "comment": "Enthusiastic, reliable and supportive of colleagues, sustaining a collaborative environment.",
+            "full": "Theyab contributes positively to the team through his enthusiasm, reliability and willingness to support colleagues, helping maintain a collaborative working environment."
+          },
+          "Strategic Thinking": {
+            "rating": "strong",
+            "comment": "Institutional knowledge lets him read stakeholder priorities and link daily work to the team's bilateral objectives.",
+            "full": "His institutional knowledge helps him understand stakeholder priorities and connect day-to-day activities to the team's broader bilateral objectives."
+          },
+          "Adaptability": {
+            "rating": "strong",
+            "comment": "Adapts well to changing priorities and stakeholder demands while staying positive.",
+            "full": "Theyab has adapted well to changing priorities and stakeholder demands, while maintaining a positive approach and continuing to contribute across the team's work."
+          },
+          "Systemic Analysis & Planning": {
+            "rating": "strong",
+            "comment": "Increasingly considers the wider stakeholder landscape, dependencies and risks across MOD and the defence ecosystem.",
+            "full": "He increasingly considers the wider stakeholder landscape, dependencies and risks, supporting effective coordination across MOD and the defence ecosystem."
+          }
+        },
+        "summary": "Continue building consistency in end-to-end ownership and delivery as responsibilities expand, while maintaining the strong balance between professional development and core team priorities.",
+        "summaryLabel": "Areas of focus"
+      }
+    },
+    "commentaryTitle": "Commentary as of 2nd Quarterly Evaluation",
+    "commentaryDate": "October 2026",
+    "overall": "First quarterly rating under Naguib Bebawi: Strong on six of eight competencies, Effective on Decision-Making and Inspirational Leadership. Admitted to INSEAD for January 2027."
   },
   "khaled-alteneiji": {
     "lineManager": "Rania Rostom",
@@ -711,41 +848,57 @@ const EVALUATIONS = {
       "Effective Communication & Influence": {
         "2025 Q4": "strong",
         "2026 Q1": "strong",
-        "2026 Q2": "effective"
+        "2026 Q2": "effective",
+        "2026 Q3": "strong"
       },
       "Initiative": {
         "2025 Q4": "effective",
         "2026 Q1": "effective",
-        "2026 Q2": "strong"
+        "2026 Q2": "strong",
+        "2026 Q3": "strong"
       },
       "Decision-Making & Accountability": {
         "2025 Q4": "effective",
         "2026 Q1": "effective",
-        "2026 Q2": "effective"
+        "2026 Q2": "effective",
+        "2026 Q3": "strong"
       },
       "Capability Development": {
         "2025 Q4": "effective",
         "2026 Q1": "effective",
-        "2026 Q2": "strong"
+        "2026 Q2": "strong",
+        "2026 Q3": "strong"
       },
       "Systemic Analysis & Planning": {
         "2025 Q4": "effective",
         "2026 Q1": "effective",
-        "2026 Q2": "developing"
+        "2026 Q2": "developing",
+        "2026 Q3": "strong"
+      },
+      "Inspirational Leadership": {
+        "2026 Q3": "strong"
+      },
+      "Strategic Thinking": {
+        "2026 Q3": "effective"
+      },
+      "Adaptability": {
+        "2026 Q3": "strong"
       }
     },
     "strengths": [
-      "Leads initiative end-to-end such as the Procurement Playbook",
-      "Seeks involvement beyond his assigned brief, attending expert session and pursuing further qualifications on his own initiative",
-      "Contributes substantively on meetings and presents with confidence"
+      "End-to-end ownership, from the Procurement Playbook to running P2P operations solo",
+      "Executive presence: Jahizoun 2 panel address and P2P governance leadership",
+      "Proactive beyond his brief, including FCB mentoring"
     ],
     "improvements": [
-      "Maps the full picture and improve second-order effects before acting",
-      "Improves attention to detail on deliverable"
+      "Strategic thinking: turn operational insight into long-term recommendations for senior leadership",
+      "Deeper root-cause analysis and risk modelling at programme level",
+      "Structured decision frameworks for complex, ambiguous situations"
     ],
     "masters": [
       "Completed ScorePlus GMAT course",
-      "Applying to INSEAD MBA, January 2027"
+      "Admitted to INSEAD MBA, January 2027 intake",
+      "HEC Paris: submitted; Columbia: not admitted"
     ],
     "docs": [
       {
@@ -779,8 +932,53 @@ const EVALUATIONS = {
           }
         },
         "summary": "Mohamed has made a positive impact during his first months in the Executive Office through his proactive approach, strong ownership, growing confidence in stakeholder engagement, and willingness to take on new challenges. His eagerness to participate in projects beyond his immediate responsibilities, combined with his improving presentation and communication skills, demonstrates strong potential for future growth and leadership opportunities."
+      },
+      "2026 Q3": {
+        "manager": "Elvie Lahournere",
+        "competencies": {
+          "Effective Communication & Influence": {
+            "rating": "strong",
+            "comment": "Quickly established influence across the EO through the P2P weekly reviews and the PM & Vendor Playbook. Delivered a high-impact address at the Jahizoun 2 panel. Next: executive-level communication in high-stakes forums."
+          },
+          "Initiative": {
+            "rating": "strong",
+            "comment": "Proactive delivery across P2P. Next: identify systemic improvements beyond current workstreams and drive them independently."
+          },
+          "Decision-Making & Accountability": {
+            "rating": "strong",
+            "comment": "Exceptional ownership: ran P2P operations as sole point of contact during the Finance Lead's absence without disruption. Next: structured decision frameworks for ambiguous situations."
+          },
+          "Capability Development": {
+            "rating": "strong",
+            "comment": "Progressing the MBA journey and using mentorship and cross-functional exposure. Next: keep leveraging both to accelerate growth."
+          },
+          "Inspirational Leadership": {
+            "rating": "strong",
+            "comment": "FCB mentor and visible leader at the Jahizoun 2 panel. Next: expand leadership impact to broader peer and team influence within the EO."
+          },
+          "Strategic Thinking": {
+            "rating": "effective",
+            "comment": "Developed the end-to-end P2P roadmap with executive visibility on priorities, risks and milestones. Next: translate operational insight into long-term strategic recommendations.",
+            "full": "Transformed complex operational activities into actionable strategic frameworks, including the P2P roadmap and PM & Vendor Playbook. Anticipated risks, identified root causes, challenged assumptions, and implemented proactive mitigation measures to drive sustainable outcomes and operational excellence."
+          },
+          "Adaptability": {
+            "rating": "strong",
+            "comment": "Seamlessly absorbed the Finance Lead's responsibilities while holding performance. Next: resilience in more complex multi-workstream environments.",
+            "full": "Consistently delivered high-quality outcomes while managing competing priorities, expanded responsibilities, and complex stakeholder dynamics. Successfully balanced strategic initiatives, operational leadership, mentorship commitments, and personal development goals while maintaining strong performance and execution standards."
+          },
+          "Systemic Analysis & Planning": {
+            "rating": "strong",
+            "comment": "The P2P roadmap set out dependencies, mitigation plans and delivery milestones. Next: deeper root-cause analysis and risk modelling at programme level."
+          }
+        },
+        "summary": "I have demonstrated consistent delivery across all competencies this quarter and is committed to deepening his proficiency in each area to prepare for broader responsibilities. Key focus areas going forward:\n\n• Effective Communication & Influence: Continue developing executive-level communication and stakeholder influence skills, particularly in high-stakes presentations and cross-functional forums.\n• Initiative: Build on proactive delivery by identifying systemic improvements beyond current workstreams and driving them independently.\n• Decision-Making & Accountability: Deepen structured decision-making frameworks to handle increasingly complex and ambiguous situations with greater confidence.\n• Capability Development: Progress MBA journey (INSEAD/HEC/CBS) and continue leveraging mentorship and cross-functional exposure to accelerate growth.\n• Inspirational Leadership: Expand leadership impact beyond FCB mentorship to broader peer and team influence within the EO.\n• Strategic Thinking: Strengthen ability to translate operational insights into long-term strategic recommendations for senior leadership.\n• Adaptability: Maintain high performance under shifting priorities while building resilience for more complex, multi-workstream environments.\n• Systemic Analysis & Planning: Develop deeper root-cause analysis and risk modelling capabilities to support more sophisticated planning at programme level.",
+        "summaryLabel": "Areas of focus",
+        "full": "Strategic Leadership & Execution\n Quickly established influence across the EO, driving stakeholder alignment and governance through leadership of P2P weekly reviews and delivery of the PM & Vendor Playbook. Developed the end-to-end P2P roadmap, providing executive visibility on priorities, risks, dependencies, mitigation plans, and delivery milestones, enabling informed decision-making and stronger execution discipline.\n\nOwnership & Accountability\n Demonstrated exceptional ownership by assuming full responsibility for P2P operations during the Finance Lead’s absence, acting as the sole point of contact across EO and MoD stakeholders. Ensured continuity of delivery, accelerated decision-making, and maintained momentum across critical initiatives without disruption.\n\nExecutive Presence & Influence\n Built strong cross-functional partnerships and established credibility rapidly through proactive stakeholder engagement. Represented key programmes at the Jahizoun 2 panel discussion, delivering a high-impact address to a large audience and reinforcing the programme’s value proposition through visible leadership.\n\nStrategic Thinking & Problem Solving\n Transformed complex operational activities into actionable strategic frameworks, including the P2P roadmap and PM & Vendor Playbook. Anticipated risks, identified root causes, challenged assumptions, and implemented proactive mitigation measures to drive sustainable outcomes and operational excellence.\n\nTalent Development & Growth Mindset\n Demonstrated a strong commitment to continuous development through MBA applications to leading global institutions and progression to the interview stage. Extended impact beyond core responsibilities by serving as an FCB mentor, fostering talent development and supporting the growth of future leaders.\n\nResilience & Adaptability\n Consistently delivered high-quality outcomes while managing competing priorities, expanded responsibilities, and complex stakeholder dynamics. Successfully balanced strategic initiatives, operational leadership, mentorship commitments, and personal development goals while maintaining strong performance and execution standards."
       }
-    }
+    },
+    "commentaryTitle": "Commentary as of 2nd Quarterly Evaluation",
+    "commentaryDate": "October 2026",
+    "overall": "Step up from Q2 to Q3: Strong on seven of eight competencies, with Systemic Analysis & Planning moving from Developing to Strong and Communication from Effective to Strong. Strategic Thinking is the one Effective rating and the main focus ahead of his MBA."
   },
   "haneen-aljneibi": {
     "lineManager": "Rania Rostom",
@@ -1471,7 +1669,7 @@ const EVALUATIONS = {
     "overall": "The biggest progression in the cohort: from Developing on three competencies in Q2 to Strong on seven of eight in Q3 under a new line manager. Systemic Analysis & Planning, the Q2 growth area, is now a strength."
   },
   "saif-al-hammadi": {
-    "lineManager": "Juhina Elmajdoub",
+    "lineManager": "Mark Withington",
     "function": "Al-Emad",
     "corporateExchangeProject": "Khutwa Program",
     "previousFunction": "Trainee",
@@ -1495,41 +1693,57 @@ const EVALUATIONS = {
       "Effective Communication & Influence": {
         "2025 Q4": "strong",
         "2026 Q1": "strong",
-        "2026 Q2": "effective"
+        "2026 Q2": "effective",
+        "2026 Q3": "strong"
       },
       "Initiative": {
         "2025 Q4": "effective",
         "2026 Q1": "effective",
-        "2026 Q2": "developing"
+        "2026 Q2": "developing",
+        "2026 Q3": "strong"
       },
       "Decision-Making & Accountability": {
         "2025 Q4": "effective",
         "2026 Q1": "effective",
-        "2026 Q2": "developing"
+        "2026 Q2": "developing",
+        "2026 Q3": "strong"
       },
       "Capability Development": {
         "2025 Q4": "strong",
         "2026 Q1": "strong",
-        "2026 Q2": "developing"
+        "2026 Q2": "developing",
+        "2026 Q3": "strong"
       },
       "Systemic Analysis & Planning": {
         "2025 Q4": "developing",
         "2026 Q1": "developing",
-        "2026 Q2": "developing"
+        "2026 Q2": "developing",
+        "2026 Q3": "strong"
+      },
+      "Inspirational Leadership": {
+        "2026 Q3": "strong"
+      },
+      "Strategic Thinking": {
+        "2026 Q3": "strong"
+      },
+      "Adaptability": {
+        "2026 Q3": "strong"
       }
     },
     "strengths": [
-      "Well structured written communication",
-      "Integrates seamlessly into the team, establishing himself as dependable",
-      "Learns with agility and receives feedback openly"
+      "Initiative: built the team's risk registers and AI-based project tracker unprompted",
+      "Full ownership of his work and the team's outcomes, with early escalation",
+      "Brings structure that makes everyone's work easier"
     ],
     "improvements": [
-      "Builds proactive communication, share updates and raise blockers without waiting to be asked",
-      "Takes full end to end ownership of deliverables, including self review before submission"
+      "Take a more visible role presenting recommendations to senior leadership and clients",
+      "Lead a defined workstream end to end, including analysis and recommendations",
+      "Turn his tracker and registers into team standards and mentor newer colleagues"
     ],
     "masters": [
-      "Completed ScorePlus and GuideME GMAT course",
-      "Applying to HEC and NYU Abu Dhabi MBA, January 2027"
+      "Completed ScorePlus and GuideMe GMAT course",
+      "Columbia: interviewed, awaiting decision",
+      "HEC Paris: submitted, awaiting update"
     ],
     "quarterly": {
       "2026 Q2": {
@@ -1537,27 +1751,82 @@ const EVALUATIONS = {
         "competencies": {
           "Effective Communication & Influence": {
             "rating": "effective",
-            "comment": "Saif at times communicated clearly in structured settings such as during daily check ins. As a next step, building confidence in tailoring communication to different audiences will be an important. With increased exposure and confidence, there is clear potential for Saif to take a more proactive role within the team."
+            "comment": "Communicates clearly in structured settings such as daily check-ins. Next: tailor communication to different audiences and take a more proactive role.",
+            "full": "Saif at times communicated clearly in structured settings such as during daily check ins. As a next step, building confidence in tailoring communication to different audiences will be an important. With increased exposure and confidence, there is clear potential for Saif to take a more proactive role within the team."
           },
           "Initiative": {
             "rating": "developing",
-            "comment": "Saif is still developing the habit of working independently ahead of direction, and there is room to grow in anticipating needs before they are flagged. At times, coordination and alignment on timelines have required additional follow-up from the manager's side. A key development focus going forward will be spotting potential issues early, bringing forward practical suggestions, and acting within his authority without needing to be prompted. With increased exposure and confidence, there is clear potential for Saif to take a more proactive role within the team."
+            "comment": "Still developing the habit of working ahead of direction. Focus: spot issues early and bring practical suggestions.",
+            "full": "Saif is still developing the habit of working independently ahead of direction, and there is room to grow in anticipating needs before they are flagged. At times, coordination and alignment on timelines have required additional follow-up from the manager's side. A key development focus going forward will be spotting potential issues early, bringing forward practical suggestions, and acting within his authority without needing to be prompted. With increased exposure and confidence, there is clear potential for Saif to take a more proactive role within the team."
           },
           "Decision-Making & Accountability": {
             "rating": "developing",
-            "comment": "Saif is developing his ability to take full ownership of tasks from start to finish, including quality assurance before submission. Some outputs have required managerial review and adjustment, highlighting an opportunity to strengthen his judgement around what constitutes a complete and accurate deliverable. Building consistent habits of self-checking , and considering the downstream impact of work before sharing it,  will be important milestones in his growth at this level."
+            "comment": "Developing full ownership from start to finish, including self-review before submission.",
+            "full": "Saif is developing his ability to take full ownership of tasks from start to finish, including quality assurance before submission. Some outputs have required managerial review and adjustment, highlighting an opportunity to strengthen his judgement around what constitutes a complete and accurate deliverable. Building consistent habits of self-checking , and considering the downstream impact of work before sharing it,  will be important milestones in his growth at this level."
           },
           "Capability Development": {
             "rating": "developing",
-            "comment": "There is an opportunity for Saif to engage more deeply with the content areas he supports, as knowledge gaps were observed despite structured onboarding and regular check-ins throughout the day. Development will accelerate by actively following up on feedback, seeking stretch tasks, and integrating lessons from each assignment into subsequent work. The foundation is in place. The next step is for Saif to take greater ownership of his own growth trajectory and make more consistent use of the support available to him."
+            "comment": "Engage more deeply with the content areas supported; follow up on feedback and seek stretch tasks.",
+            "full": "There is an opportunity for Saif to engage more deeply with the content areas he supports, as knowledge gaps were observed despite structured onboarding and regular check-ins throughout the day. Development will accelerate by actively following up on feedback, seeking stretch tasks, and integrating lessons from each assignment into subsequent work. The foundation is in place. The next step is for Saif to take greater ownership of his own growth trajectory and make more consistent use of the support available to him."
           },
           "Systemic Analysis & Planning": {
             "rating": "developing",
-            "comment": "Saif would benefit from adopting a more structured approach to tracking his workstream tasks — including flagging dependencies and potential bottlenecks before they become blockers. Strengthening the habit of anticipating information needs and keeping stakeholders informed will be an important step forward. This is also an area where the team is actively building shared tools and frameworks to support consultants at different capability levels."
+            "comment": "Adopt a more structured way of tracking tasks, dependencies and bottlenecks, and keep stakeholders informed.",
+            "full": "Saif would benefit from adopting a more structured approach to tracking his workstream tasks — including flagging dependencies and potential bottlenecks before they become blockers. Strengthening the habit of anticipating information needs and keeping stakeholders informed will be an important step forward. This is also an area where the team is actively building shared tools and frameworks to support consultants at different capability levels."
           }
         }
+      },
+      "2026 Q3": {
+        "manager": "Mark Withington",
+        "competencies": {
+          "Effective Communication & Influence": {
+            "rating": "strong",
+            "comment": "Clear, structured communicator who adapts to senior stakeholders, peers and client counterparts. Concise, action-oriented recaps that move discussions to decisions.",
+            "full": "Saif is a clear, structured communicator who adapts naturally to his audience, whether working with senior stakeholders, peers or client counterparts. His meeting recaps are consistently concise, accurate and action-oriented, so everyone leaves with a shared view of decisions, owners and next steps. He reads what the client actually needs and frames his input accordingly, and his contributions in meetings move discussions toward decisions."
+          },
+          "Initiative": {
+            "rating": "strong",
+            "comment": "A standout strength: set up risk registers unprompted and built an AI-based project tracker giving the team visibility of actions, owners and deadlines.",
+            "full": "Initiative is one of Saif's standout strengths. He does not wait to be asked: he saw the need for structured risk management and took it upon himself to set up risk registers, and he independently built a project tracker using AI tools that gives the team clear visibility of actions, owners and deadlines. He consistently gets ahead of issues before they escalate and brings solutions, not just problems."
+          },
+          "Decision-Making & Accountability": {
+            "rating": "strong",
+            "comment": "Full ownership of his work and the team's outcomes. Escalates early with the facts, thinks through risks before acting, and closes what he owns.",
+            "full": "Saif takes full ownership of his work and of the team's outcomes, not only his own tasks. He judges well what he can resolve himself and what needs escalating, and he escalates early with the facts in hand. His work on the risk registers shows he thinks deliberately about risks, impacts and dependencies before acting. His follow-through is reliable: when Saif owns an action, it gets closed."
+          },
+          "Capability Development": {
+            "rating": "strong",
+            "comment": "Invests seriously in leadership, strategy and management knowledge and applies it, as the tracker shows. Seeks stretch responsibilities.",
+            "full": "Saif invests seriously in his own development, well beyond mandatory requirements, building his knowledge of leadership, strategy, communication and general management. Crucially, he applies what he learns: his early use of  tools to build the team's project tracker is a clear example of picking up a new capability and turning it into practical value for the team. He actively seeks stretch responsibilities."
+          },
+          "Inspirational Leadership": {
+            "rating": "strong",
+            "comment": "Not in a formal leadership role, but sets the tone through professionalism, reliability and the structure he brings. A role model for the wider team.",
+            "full": "Although not in a formal leadership role, Saif sets the tone through his professionalism, reliability and work ethic. Colleagues trust him because he does what he says he will do, and the structure he brings through meeting organization, recaps and trackers makes everyone's work easier. He stays composed and constructive when priorities shift or deadlines tighten, and he is a positive role model for the wider team."
+          },
+          "Strategic Thinking": {
+            "rating": "strong",
+            "comment": "Looks beyond the task to what the client is trying to achieve and prepares for what comes next, keeping the team ahead of requests.",
+            "full": "Saif consistently looks beyond the immediate task to understand what the client is trying to achieve and how the team's work supports it. He anticipates what will be needed next and prepares for it in advance, which keeps the team ahead of client requests rather than reacting to them. He draws well on his consulting and Executive Office experience to weigh the wider implications of decisions for stakeholders, workload and timelines."
+          },
+          "Adaptability": {
+            "rating": "strong",
+            "comment": "Handles ambiguity and shifting priorities well, adjusts plans without detailed direction and keeps colleagues and trackers aligned.",
+            "full": "Saif responds very well to ambiguity and shifting priorities. He adjusts plans quickly without needing detailed direction, and he picks up new ways of working fast, as his adoption of AI tools shows. When plans change, he keeps colleagues informed and updates trackers and actions so the team stays aligned. He stays focused on the outcome and finds alternative routes when the original plan is disrupted."
+          },
+          "Systemic Analysis & Planning": {
+            "rating": "strong",
+            "comment": "Brings real structure: tracker and risk registers give one clear view of actions, dependencies and risks. Methodical, root-cause focused.",
+            "full": "Saif brings real structure to how the team plans and tracks its work. The project tracker and risk registers he set up give a single, clear view of actions, owners, dependencies and risks, and he keeps them current as new information emerges. He approaches problems methodically, separating symptoms from root causes, and keeps stakeholders informed when schedules or plans need to change."
+          }
+        },
+        "summary": "Secondee: I would like to continue improving my communication and influencing skills, especially when presenting ideas or recommendations to senior stakeholders. I also want to take on more opportunities where I can lead, support others, and contribute beyond my direct responsibilities. Another area I want to continue developing is my strategic and general management knowledge so I can apply it more effectively in my current and future roles.\n\nLine Manager: Saif has had an excellent period and is performing above expectations across all competencies. To build on this, his development priorities are: (1) Senior stakeholder influence: take a more visible role presenting recommendations to senior leadership and client stakeholders, building on his already strong communication. (2) End-to-end ownership: lead a defined workstream or deliverable from start to finish, including its analysis and recommendations. (3) Scaling his innovations: turn the AI-enabled tracker and risk registers he built into team-wide standards and help colleagues adopt them. (4) Developing others: mentor newer team members and share his organizational and AI skills.",
+        "summaryLabel": "Areas of focus"
       }
-    }
+    },
+    "commentaryTitle": "Commentary as of 2nd Quarterly Evaluation",
+    "commentaryDate": "October 2026",
+    "overall": "The sharpest turnaround in the cohort: Developing on four of five competencies in Q2 under his Corporate Exchange manager, Strong on all eight in Q3 at the EO under Mark Withington, who rates him above expectations across the board."
   },
   "saoud-alkaabi": {
     "lineManager": "Ansh Karha",
@@ -1679,47 +1948,105 @@ const EVALUATIONS = {
       "Effective Communication & Influence": {
         "2025 Q4": "effective",
         "2026 Q1": "effective",
-        "2026 Q2": "developing"
+        "2026 Q2": "developing",
+        "2026 Q3": "effective"
       },
       "Initiative": {
         "2025 Q4": "strong",
         "2026 Q1": "strong",
-        "2026 Q2": "effective"
+        "2026 Q2": "effective",
+        "2026 Q3": "effective"
       },
       "Decision-Making & Accountability": {
         "2025 Q4": "developing",
         "2026 Q1": "developing",
-        "2026 Q2": "developing"
+        "2026 Q2": "developing",
+        "2026 Q3": "na"
       },
       "Capability Development": {
         "2025 Q4": "strong",
         "2026 Q1": "strong",
-        "2026 Q2": "effective"
+        "2026 Q2": "effective",
+        "2026 Q3": "effective"
       },
       "Systemic Analysis & Planning": {
         "2025 Q4": "developing",
         "2026 Q1": "developing",
-        "2026 Q2": "effective"
+        "2026 Q2": "effective",
+        "2026 Q3": "strong"
+      },
+      "Inspirational Leadership": {
+        "2026 Q3": "na"
+      },
+      "Strategic Thinking": {
+        "2026 Q3": "strong"
+      },
+      "Adaptability": {
+        "2026 Q3": "strong"
       }
     },
     "strengths": [
-      "Demonstrates strong ability to create strategic frameworks",
-      "Builds high stakeholder trust and transfers his expertise to the team"
+      "Strategic thinking: connects daily work to the wider objectives",
+      "Adaptable and constructive when priorities change",
+      "Structured analysis and planning"
     ],
     "improvements": [
-      "Builds confidence presenting to senior/varied audiences",
-      "Strengthens analytical rigor, weakest area in both review periods"
+      "Build confidence presenting to senior and varied audiences",
+      "Take on more decision-making and leadership opportunities, not yet assessed this quarter",
+      "Keep raising analytical rigour on deliverables"
     ],
     "masters": [
-      "Completed ScorePlus and GuideME GMAT course",
-      "Applying to NYU Abu Dhabi MBA January 2027"
+      "Completed ScorePlus and GuideMe GMAT course",
+      "Admitted to NYU Abu Dhabi MBA, January 2027 intake"
     ],
     "docs": [
       {
         "label": "CV",
         "url": "docs/saeed-al-sereidi-cv.pdf"
       }
-    ]
+    ],
+    "quarterly": {
+      "2026 Q3": {
+        "manager": "Ameera Al Ahbabi",
+        "competencies": {
+          "Effective Communication & Influence": {
+            "rating": "effective",
+            "comment": ""
+          },
+          "Initiative": {
+            "rating": "effective",
+            "comment": ""
+          },
+          "Decision-Making & Accountability": {
+            "rating": "na",
+            "comment": ""
+          },
+          "Capability Development": {
+            "rating": "effective",
+            "comment": ""
+          },
+          "Inspirational Leadership": {
+            "rating": "na",
+            "comment": ""
+          },
+          "Strategic Thinking": {
+            "rating": "strong",
+            "comment": ""
+          },
+          "Adaptability": {
+            "rating": "strong",
+            "comment": ""
+          },
+          "Systemic Analysis & Planning": {
+            "rating": "strong",
+            "comment": ""
+          }
+        }
+      }
+    },
+    "commentaryTitle": "Commentary as of 2nd Quarterly Evaluation",
+    "commentaryDate": "October 2026",
+    "overall": "First quarterly rating at the EO: Strong on Strategic Thinking, Adaptability and Systemic Analysis & Planning, Effective on Communication, Initiative and Capability Development. Decision-Making and Inspirational Leadership were not assessed yet. His line manager gave ratings only, no written comments."
   },
   "abdulrahman-almarzooqi": {
     "lineManager": "",
