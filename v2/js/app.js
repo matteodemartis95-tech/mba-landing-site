@@ -413,12 +413,12 @@
         </div>
         <div class="side">
           <div class="panel">
-            <div class="panel-head"><div><h2>${esc(META.commentaryTitle || "Commentary")}</h2>${META.commentaryDate ? `<div class="small muted">${esc(META.commentaryDate)}</div>` : ""}</div></div>
+            <div class="panel-head"><div><h2>${esc(ev.commentaryTitle || META.commentaryTitle || "Commentary")}</h2>${(ev.commentaryDate || META.commentaryDate) ? `<div class="small muted">${esc(ev.commentaryDate || META.commentaryDate)}</div>` : ""}</div></div>
             <div class="comm">
               ${commBlock("Strengths", ev.strengths, "ic-plus")}
               ${commBlock("Areas of improvement", ev.improvements, "ic-arrow")}
               ${commBlock("Masters situation", ev.masters, "ic-dot")}
-              ${summaryBlock(ev)}
+              ${ev.overall ? `<div class="comm-block"><h3 class="comm-title ic-dot">Overall</h3><p class="comm-text">${esc(ev.overall)}</p></div>` : summaryBlock(ev)}
             </div>
           </div>
         </div>
@@ -699,6 +699,9 @@
             <div class="field"><label>Strengths (one per line)</label><textarea name="strengths" rows="5">${esc((ev.strengths || []).join("\n"))}</textarea></div>
             <div class="field"><label>Areas of improvement (one per line)</label><textarea name="improvements" rows="5">${esc((ev.improvements || []).join("\n"))}</textarea></div>
             <div class="field"><label>Masters situation (one per line)</label><textarea name="masters" rows="5">${esc((ev.masters || []).join("\n"))}</textarea></div>
+            <div class="field wide"><label>Overall comment</label><textarea name="overall" rows="3">${esc(ev.overall || "")}</textarea></div>
+            <div class="field"><label>Commentary title (blank = default)</label><input name="commentaryTitle" value="${esc(ev.commentaryTitle || "")}" placeholder="Commentary as of 2nd Quarterly Evaluation"></div>
+            <div class="field"><label>Commentary date (blank = default)</label><input name="commentaryDate" value="${esc(ev.commentaryDate || "")}" placeholder="October 2026"></div>
           </div>
         </div>
         <div class="modal-foot"><span class="hint" style="margin-right:auto">Saved in this browser. Use “Copy evaluation.js” to publish.</span><button type="button" class="btn" data-close>Cancel</button><button class="btn primary" type="submit">Save</button></div>
@@ -713,6 +716,7 @@
       ev.docs = f.docs.value.split(";").map(t => t.trim()).filter(Boolean).map(t => { const p = t.split("|").map(x => x.trim()); return { label: p[0] || "Document", url: p[1] || "" }; });
       const lines = k => f[k].value.split("\n").map(x => x.trim()).filter(Boolean);
       ev.strengths = lines("strengths"); ev.improvements = lines("improvements"); ev.masters = lines("masters");
+      ev.overall = f.overall.value.trim(); ev.commentaryTitle = f.commentaryTitle.value.trim(); ev.commentaryDate = f.commentaryDate.value.trim();
       ev.phases = {}; bg.querySelectorAll(".ph-sel").forEach(sel => { if (sel.value) ev.phases[sel.dataset.phase] = sel.value; });
       ev.ratings = {}; comps.forEach(cp => ev.ratings[cp] = {});
       bg.querySelectorAll(".r-sel").forEach(sel => { if (sel.value) ev.ratings[sel.dataset.cp][sel.dataset.q] = sel.value; });

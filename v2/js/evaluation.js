@@ -490,16 +490,17 @@ const EVALUATIONS = {
       }
     },
     "strengths": [
-      "Builds trusted relationships across MOD stakeholders",
-      "Sustains positive attitude and energy even through tight timelines"
+      "Builds trusted relationships across MOD stakeholders and keeps them engaged",
+      "Great initiative in events, socialisation and coordination",
+      "Positive, adaptable and committed, stepping in for the team"
     ],
     "improvements": [
-      "Carries initiatives through from proposal to execution and delivery",
-      "Breaks work into clear steps",
-      "Improves key messages for senior stakeholders and check before deliver outputs"
+      "Structured analysis, written studies and decks to match the quality of his liaison work",
+      "Be upfront about delivery dates for written outputs and flag risks early",
+      "Translate insights into written recommendations"
     ],
     "masters": [
-      "Not planning to attend any Masters / MBA. Programme ends after the 18-month EO Secondment (Q3 2027)."
+      "Not planning a Masters or MBA. Programme ends after the 18-month EO Secondment (Q3 2027)."
     ],
     "quarterly": {
       "2026 Q2": {
@@ -507,23 +508,28 @@ const EVALUATIONS = {
         "competencies": {
           "Effective Communication & Influence": {
             "rating": "developing",
-            "comment": "Strong interpersonal drive; engages readily and builds rapport across audiences\n\nAudience calibration — Adjust register and level of detail to the audience. When presenting to senior stakeholders, adopt a more executive style: lead with the key message, keep it concise, and be deliberate about how the point is framed.\n\nClarifying requirements — Where a request or brief is unclear, seek clarification in the moment rather than proceeding on assumptions, ensuring the task is correctly scoped and delivered effectively first time."
+            "comment": "Strong interpersonal drive and rapport. Next: lead with the key message for senior audiences and clarify unclear briefs before starting.",
+            "full": "Strong interpersonal drive; engages readily and builds rapport across audiences\n\nAudience calibration — Adjust register and level of detail to the audience. When presenting to senior stakeholders, adopt a more executive style: lead with the key message, keep it concise, and be deliberate about how the point is framed.\n\nClarifying requirements — Where a request or brief is unclear, seek clarification in the moment rather than proceeding on assumptions, ensuring the task is correctly scoped and delivered effectively first time."
           },
           "Initiative": {
             "rating": "developing",
-            "comment": "Follow-through to delivery — Ideas are readily proposed but not consistently carried through to implementation. Development focus: taking ownership of initiatives end-to-end — from proposal through to execution and delivery — rather than stopping at the pitch stage."
+            "comment": "Ideas are readily proposed but not consistently carried through. Focus: own initiatives end to end, from pitch to delivery.",
+            "full": "Follow-through to delivery — Ideas are readily proposed but not consistently carried through to implementation. Development focus: taking ownership of initiatives end-to-end — from proposal through to execution and delivery — rather than stopping at the pitch stage."
           },
           "Decision-Making & Accountability": {
             "rating": "developing",
-            "comment": "Limited opportunity to observe decision-making in role to date; insufficient evidence to assess against this element.\n\nOwnership of assigned work — Development focus on taking full ownership of delegated tasks through to completion and standing behind the outcomes, rather than letting follow-through lapse once the task is handed over"
+            "comment": "Too little evidence yet. Focus: full ownership of delegated tasks through to completion.",
+            "full": "Limited opportunity to observe decision-making in role to date; insufficient evidence to assess against this element.\n\nOwnership of assigned work — Development focus on taking full ownership of delegated tasks through to completion and standing behind the outcomes, rather than letting follow-through lapse once the task is handed over"
           },
           "Capability Development": {
             "rating": "developing",
-            "comment": "Seeking stretch assignments — Development focus on proactively pursuing more challenging and unfamiliar assignments that build toward future roles, rather than concentrating on areas of more established strength such as liaison."
+            "comment": "Focus: seek stretch assignments outside his established strength in liaison.",
+            "full": "Seeking stretch assignments — Development focus on proactively pursuing more challenging and unfamiliar assignments that build toward future roles, rather than concentrating on areas of more established strength such as liaison."
           },
           "Systemic Analysis & Planning": {
             "rating": "developing",
-            "comment": "Structured planning and scheduling — Development focus on planning tasks more thoroughly at the outset: breaking work into clear steps, sequencing activities, and anticipating dependencies and resource needs, so timelines are set realistically and held to. Currently some tasks are progressed without sufficient upfront planning, which contributes to deadlines being pushed."
+            "comment": "Focus: plan tasks more thoroughly upfront, with clear steps, sequencing and dependencies, so deadlines hold.",
+            "full": "Structured planning and scheduling — Development focus on planning tasks more thoroughly at the outset: breaking work into clear steps, sequencing activities, and anticipating dependencies and resource needs, so timelines are set realistically and held to. Currently some tasks are progressed without sufficient upfront planning, which contributes to deadlines being pushed."
           }
         }
       },
@@ -532,35 +538,43 @@ const EVALUATIONS = {
         "competencies": {
           "Effective Communication & Influence": {
             "rating": "effective",
-            "comment": "Buti is a strong communicator in liaison settings. He builds relationships with line managers, Ministry offices and participants with ease, and his outreach for the Enterprise Accelerated Program and the Jahizoun helped keep stakeholders engaged and attendance high. To move to the next level, he should bring the same strength to written communication, ensuring that decks, studies and analysis are clear, well-structured and delivered with the same quality as his verbal engagement.\n\nCezar/Declan: Buti is a very effective communicator. He has been a critical driver of the success of the Enterprise Accelerator Program through the excellent execution of the Stakeholder engagement and Management within the Ministry throughout all stages of the program. \nHe was an important contributor in the discovery phase, design phase and delivery phase. Providing contextualised insights and guidance as to content, relevancy, stretch opportunities for learners, while also assisting in the learner outreach.\nHis strong communication and influencing skills played a critical role in the successful organization of the Jahizoun 2 Bootcamp. He maintained constant communication with the participants, promptly addressed their questions, and provided ongoing support throughout the program, contributing significantly to a positive participant experience."
+            "comment": "Strong in liaison: builds relationships easily and kept EAP and Jahizoun stakeholders engaged. Next: bring the same quality to written decks and analysis.\n\nCezar/Declan: a critical driver of EAP's success through excellent stakeholder engagement across discovery, design and delivery.",
+            "full": "Buti is a strong communicator in liaison settings. He builds relationships with line managers, Ministry offices and participants with ease, and his outreach for the Enterprise Accelerated Program and the Jahizoun helped keep stakeholders engaged and attendance high. To move to the next level, he should bring the same strength to written communication, ensuring that decks, studies and analysis are clear, well-structured and delivered with the same quality as his verbal engagement.\n\nCezar/Declan: Buti is a very effective communicator. He has been a critical driver of the success of the Enterprise Accelerator Program through the excellent execution of the Stakeholder engagement and Management within the Ministry throughout all stages of the program. \nHe was an important contributor in the discovery phase, design phase and delivery phase. Providing contextualised insights and guidance as to content, relevancy, stretch opportunities for learners, while also assisting in the learner outreach.\nHis strong communication and influencing skills played a critical role in the successful organization of the Jahizoun 2 Bootcamp. He maintained constant communication with the participants, promptly addressed their questions, and provided ongoing support throughout the program, contributing significantly to a positive participant experience."
           },
           "Initiative": {
             "rating": "effective",
-            "comment": "Buti shows great initiative when it comes to socialization, event planning and event coordination. He goes out of his way on deliverables that require engaging MOD officials and on similar liaison activities\n\nCezar/Declan: As an experienced professional military officer Buti is very happy to take the initiative at all stages of my work with him whether that is with the EAP or my indirect support of his Wargaming project. He readily identifies potential areas that may have a negative impact or lag on project delivery and immediately seeks to identify and action solutions/work arounds to avoid or indeed mitigate their impact. \nHis initiative was clearly demonstrated throughout the Jahizoun 2 Bootcamp. He proactively led the collection of participant documentation and consistently maintained and updated the folder with all relevant information for each participant, ensuring accurate records and smooth coordination across the program."
+            "comment": "Great initiative in socialisation, event planning and coordination with MOD officials.\n\nCezar/Declan: readily takes the initiative, spots delivery risks early and actions workarounds; led participant documentation for the Jahizoun 2 bootcamp.",
+            "full": "Buti shows great initiative when it comes to socialization, event planning and event coordination. He goes out of his way on deliverables that require engaging MOD officials and on similar liaison activities\n\nCezar/Declan: As an experienced professional military officer Buti is very happy to take the initiative at all stages of my work with him whether that is with the EAP or my indirect support of his Wargaming project. He readily identifies potential areas that may have a negative impact or lag on project delivery and immediately seeks to identify and action solutions/work arounds to avoid or indeed mitigate their impact. \nHis initiative was clearly demonstrated throughout the Jahizoun 2 Bootcamp. He proactively led the collection of participant documentation and consistently maintained and updated the folder with all relevant information for each participant, ensuring accurate records and smooth coordination across the program."
           },
           "Decision-Making & Accountability": {
             "rating": "effective",
-            "comment": "Buti makes sound decisions in delivery settings, such as securing backup participants ahead of expected drop-outs and prioritising his time across multiple venues on busy delivery days. A key area for improvement is accountability on written deliverables: being more open and upfront about when he plans to deliver decks, studies and analysis, and flagging early if timelines are at risk.\n\nCezar/Declan: On the areas I have worked with Buti he has demonstrated a strong competency in decision making & accountability. We would regularly discuss areas of responsibility, clarify areas where he could use his experience and knowledge to make decisions as they arose and he regularly kept me updated on what were the factors he considered, his analysis and the decision he made. I was very comfortable to empower him to do so and we regularly refined our process to ensure clarity and freedom of action.\nHe readily took ownership of the Wargaming project, mapped his intended plan of action, connected with key stakeholders and conducted his analysis and reached back to me as he desired to sense check his approach, research, and recommendations."
+            "comment": "Sound decisions in delivery settings, such as backup participants and prioritising across venues. Next: be upfront on when written deliverables will land and flag risks early.\n\nCezar/Declan: strong decision-making and accountability; kept me updated on factors, analysis and decisions.",
+            "full": "Buti makes sound decisions in delivery settings, such as securing backup participants ahead of expected drop-outs and prioritising his time across multiple venues on busy delivery days. A key area for improvement is accountability on written deliverables: being more open and upfront about when he plans to deliver decks, studies and analysis, and flagging early if timelines are at risk.\n\nCezar/Declan: On the areas I have worked with Buti he has demonstrated a strong competency in decision making & accountability. We would regularly discuss areas of responsibility, clarify areas where he could use his experience and knowledge to make decisions as they arose and he regularly kept me updated on what were the factors he considered, his analysis and the decision he made. I was very comfortable to empower him to do so and we regularly refined our process to ensure clarity and freedom of action.\nHe readily took ownership of the Wargaming project, mapped his intended plan of action, connected with key stakeholders and conducted his analysis and reached back to me as he desired to sense check his approach, research, and recommendations."
           },
           "Capability Development": {
             "rating": "effective",
-            "comment": "Buti has made good use of the expert knowledge sessions and has sought guidance from senior colleagues, which shows a willingness to learn. Going forward, his development should focus on building skills outside of liaison, particularly structuring written material, analysis and presentations, so that he can take on a broader range of responsibilities\n\nCezar/Declan: Highly intelligent and naturally inquisitive, Buti regularly sits with me to explore examine work done on EAP, identifying what has worked well and areas where the project can improve. Furthermore, he is always seeking to enhance his knowledge of talent development, talent management and learning design so as to develop his understanding of how these facets interact and appreciate the consequential impact of one area on the others.\nWargaming is an example of where he brought his military knowledge and experience to the fore but recognised the need to take a phased approach to the project. We mapped the key areas for analysis, research requirements, key stakeholders, design constraints, etc which enabled him to readily identify what was inside/outside the parameters of the request."
+            "comment": "Uses the expert sessions and seeks senior guidance. Next: build skills outside liaison, especially structuring written material and analysis.\n\nCezar/Declan: highly intelligent and inquisitive; brought his military experience to Wargaming and keeps deepening his talent-development knowledge.",
+            "full": "Buti has made good use of the expert knowledge sessions and has sought guidance from senior colleagues, which shows a willingness to learn. Going forward, his development should focus on building skills outside of liaison, particularly structuring written material, analysis and presentations, so that he can take on a broader range of responsibilities\n\nCezar/Declan: Highly intelligent and naturally inquisitive, Buti regularly sits with me to explore examine work done on EAP, identifying what has worked well and areas where the project can improve. Furthermore, he is always seeking to enhance his knowledge of talent development, talent management and learning design so as to develop his understanding of how these facets interact and appreciate the consequential impact of one area on the others.\nWargaming is an example of where he brought his military knowledge and experience to the fore but recognised the need to take a phased approach to the project. We mapped the key areas for analysis, research requirements, key stakeholders, design constraints, etc which enabled him to readily identify what was inside/outside the parameters of the request."
           },
           "Inspirational Leadership": {
             "rating": "effective",
-            "comment": "Buti brings a positive attitude and strong commitment to the team, going beyond his role for events such as the Jahizoun launch event, and stepping in to support colleagues when needed. He is approachable and well regarded by colleagues and participants\n\nCezar/Declan: Buti has a very positive attitude to his work. He takes pride in the impact he has on the team, colleagues and projects. \nHe is a trusted colleague, always supportive and regularly give of his time, knowledge, and expertise. He works exceptionally well in a collaborative setting. He recognises what he doesn’t know and seeks input from SMEs as needed, which helps guide his next steps and enhances his knowledge of the topic and key deliverables.\nButi has a natural ability to build strong, trusting relationships with a wide range of stakeholders. This was particularly evident during the Jahizoun 2 onboarding process, where he provided continuous support to new participants, guided them through each stage of the journey, and responded thoughtfully to even the most unconventional questions. Through his approachable and encouraging manner, he helped participants navigate the process with confidence and inspired them to fully embrace the opportunities offered by the Jahizoun program."
+            "comment": "Positive attitude and strong commitment, going beyond his role at events and supporting colleagues.\n\nCezar/Declan: a trusted, supportive colleague who builds strong relationships and seeks expert input where needed.",
+            "full": "Buti brings a positive attitude and strong commitment to the team, going beyond his role for events such as the Jahizoun launch event, and stepping in to support colleagues when needed. He is approachable and well regarded by colleagues and participants\n\nCezar/Declan: Buti has a very positive attitude to his work. He takes pride in the impact he has on the team, colleagues and projects. \nHe is a trusted colleague, always supportive and regularly give of his time, knowledge, and expertise. He works exceptionally well in a collaborative setting. He recognises what he doesn’t know and seeks input from SMEs as needed, which helps guide his next steps and enhances his knowledge of the topic and key deliverables.\nButi has a natural ability to build strong, trusting relationships with a wide range of stakeholders. This was particularly evident during the Jahizoun 2 onboarding process, where he provided continuous support to new participants, guided them through each stage of the journey, and responded thoughtfully to even the most unconventional questions. Through his approachable and encouraging manner, he helped participants navigate the process with confidence and inspired them to fully embrace the opportunities offered by the Jahizoun program."
           },
           "Strategic Thinking": {
             "rating": "effective",
-            "comment": "I encourage him to develop this further by translating insights into written recommendations and proposals that can inform how we plan and position our programmes.\n\nCezar/Declan: As per previous comments."
+            "comment": "Next: translate insights into written recommendations that shape how programmes are planned and positioned.",
+            "full": "I encourage him to develop this further by translating insights into written recommendations and proposals that can inform how we plan and position our programmes.\n\nCezar/Declan: As per previous comments."
           },
           "Adaptability": {
             "rating": "effective",
-            "comment": "Buti responds well to last-minute changes,(eg. Jahizoun launch event), and makes sure everyone affected is informed quickly.\n\nCezar/Declan: Quick, adaptive, takes change and ambiguity in his stride. Remains positive and focused on solutions."
+            "comment": "Responds well to last-minute changes and keeps everyone informed.\n\nCezar/Declan: quick, adaptive, takes ambiguity in his stride.",
+            "full": "Buti responds well to last-minute changes,(eg. Jahizoun launch event), and makes sure everyone affected is informed quickly.\n\nCezar/Declan: Quick, adaptive, takes change and ambiguity in his stride. Remains positive and focused on solutions."
           },
           "Systemic Analysis & Planning": {
             "rating": "developing",
-            "comment": "Buti plans well around logistics and stakeholder availability during delivery. However, this is his main development area: structured analysis, written studies and planning of his own deliverables need further strengthening. He should work on setting clear timelines for his written outputs, sharing them upfront, and building his analytical and structuring skills so that his work outside of liaison matches the strength of his coordination wo\n\nCezar/Declan: Witnessed him work on this over the duration of the Wargaming Project. Testing, refining his process. Aware of his developmental areas and with continued mentorship and guidance will further enhance his skills with this competency."
+            "comment": "Plans delivery logistics well. Main development area: structured analysis, written studies and planning of his own deliverables, with clear timelines shared upfront.\n\nCezar/Declan: tested and refined his process on Wargaming; aware of the gap and improving with mentorship.",
+            "full": "Buti plans well around logistics and stakeholder availability during delivery. However, this is his main development area: structured analysis, written studies and planning of his own deliverables need further strengthening. He should work on setting clear timelines for his written outputs, sharing them upfront, and building his analytical and structuring skills so that his work outside of liaison matches the strength of his coordination wo\n\nCezar/Declan: Witnessed him work on this over the duration of the Wargaming Project. Testing, refining his process. Aware of his developmental areas and with continued mentorship and guidance will further enhance his skills with this competency."
           }
         },
         "summary": "Buti has great initiative in socialization, event planning and coordination, and goes out of his way on liaison activities with MOD officials and other stakeholders. His key development areas for the next quarter are building his skills outside of liaison, particularly written decks, studies and analysis, and being more open about when he plans to deliver these, so that expectations and timelines are clear.",
@@ -572,7 +586,10 @@ const EVALUATIONS = {
         "label": "CV",
         "url": "docs/buti-al-suwaidi-cv.pdf"
       }
-    ]
+    ],
+    "commentaryTitle": "Commentary as of 2nd Quarterly Evaluation",
+    "commentaryDate": "October 2026",
+    "overall": "Clear progress from Q2 to Q3: from Developing on all five competencies to Effective on seven of eight. Systemic Analysis & Planning remains the one development area and is the focus for the next quarter."
   },
   "khalifa-al-mansoori": {
     "lineManager": "Gregor Lisjak",
@@ -923,17 +940,17 @@ const EVALUATIONS = {
       }
     },
     "strengths": [
-      "Upskills proactively and applies new knowledge directly to his work",
-      "Delivers steady, dependable performance across communication, decision-making, and analysis",
-      "Speaks openly about his capacity constraints and takes ownership of outcomes without deflecting"
+      "Strong, structured communicator who adapts to any audience",
+      "Analyses root causes and plans with risks and dependencies in mind",
+      "Upskills continuously, especially in AI and digital tools, and applies it at work"
     ],
     "improvements": [
-      "Rebuilds proactive, unprompted ownership once bandwidth frees up",
-      "Improves slide materials with stronger formatting"
+      "Keep building unprompted initiative now that bandwidth has freed up",
+      "Move Decision-Making from Effective to Strong by taking on bigger calls",
+      "Grow visible leadership of peers beyond his own deliverables"
     ],
     "masters": [
-      "Completed ScorePlus and GuideMe GMAT course",
-      "Applying to HEC Paris and IMD MBA, January 2027"
+      "Admitted to HEC Paris, January 2027 intake; offer accepted"
     ],
     "docs": [
       {
@@ -947,41 +964,52 @@ const EVALUATIONS = {
         "competencies": {
           "Effective Communication & Influence": {
             "rating": "strong",
-            "comment": "I agree with the self-evaluation. Mohamed communicates clearly and persuasively and adapts his style to different audiences with ease. He consistently contributes structured, constructive input that moves discussions forward and sets a good example for others."
+            "comment": "Clear, persuasive and adapts easily to the audience. Structured input that moves discussions forward.",
+            "full": "I agree with the self-evaluation. Mohamed communicates clearly and persuasively and adapts his style to different audiences with ease. He consistently contributes structured, constructive input that moves discussions forward and sets a good example for others."
           },
           "Initiative": {
             "rating": "effective",
-            "comment": "Mohamed has shown clear improvement in initiative compared to the previous quarter. He identifies gaps and acts on them within his scope, and proposes practical ideas that improve the team's work."
+            "comment": "Clear improvement on last quarter: spots gaps within his scope and acts on them with practical ideas.",
+            "full": "Mohamed has shown clear improvement in initiative compared to the previous quarter. He identifies gaps and acts on them within his scope, and proposes practical ideas that improve the team's work."
           },
           "Decision-Making & Accountability": {
             "rating": "effective",
-            "comment": "The self-assessment is a fair reflection of his performance. Mohamed makes timely, well-considered decisions within his responsibilities and takes full ownership of the outcomes."
+            "comment": "Timely, well-considered decisions within his remit and full ownership of the outcomes.",
+            "full": "The self-assessment is a fair reflection of his performance. Mohamed makes timely, well-considered decisions within his responsibilities and takes full ownership of the outcomes."
           },
           "Capability Development": {
             "rating": "strong",
-            "comment": "Mohamed fully deserves this rating. He actively pursues development beyond what is required and applies new skills in his work, particularly in AI and digital tools."
+            "comment": "Pursues development beyond what is required and applies it, notably AI and digital tools.",
+            "full": "Mohamed fully deserves this rating. He actively pursues development beyond what is required and applies new skills in his work, particularly in AI and digital tools."
           },
           "Inspirational Leadership": {
             "rating": "effective",
-            "comment": "I concur with this rating. Mohamed maintains a professional and positive attitude, stays composed under pressure, and is a reliable and trusted member of the team."
+            "comment": "Professional, positive and composed under pressure. A reliable, trusted team member.",
+            "full": "I concur with this rating. Mohamed maintains a professional and positive attitude, stays composed under pressure, and is a reliable and trusted member of the team."
           },
           "Strategic Thinking": {
             "rating": "strong",
-            "comment": "This rating is well supported. Mohamed thinks beyond his immediate tasks, anticipates the wider impact of decisions, and consistently links his work to broader objectives. He constructively challenges existing approaches and brings forward better alternatives."
+            "comment": "Thinks beyond the immediate task, links work to wider objectives and challenges approaches constructively.",
+            "full": "This rating is well supported. Mohamed thinks beyond his immediate tasks, anticipates the wider impact of decisions, and consistently links his work to broader objectives. He constructively challenges existing approaches and brings forward better alternatives."
           },
           "Adaptability": {
             "rating": "strong",
-            "comment": "Mohamed has demonstrated strong flexibility this quarter. He adapts quickly to changing priorities, manages several demanding commitments in parallel without compromising the quality of his work, and finds alternative ways to achieve results."
+            "comment": "Adapts quickly to shifting priorities and handles several demanding commitments in parallel without loss of quality.",
+            "full": "Mohamed has demonstrated strong flexibility this quarter. He adapts quickly to changing priorities, manages several demanding commitments in parallel without compromising the quality of his work, and finds alternative ways to achieve results."
           },
           "Systemic Analysis & Planning": {
             "rating": "strong",
-            "comment": "I endorse this assessment. Mohamed analyses problems thoroughly to identify their root causes and evaluates options before recommending a solution. His planning is well structured, accounts for risks and dependencies, and adapts quickly to change."
+            "comment": "Thorough root-cause analysis and structured plans that account for risks and dependencies.",
+            "full": "I endorse this assessment. Mohamed analyses problems thoroughly to identify their root causes and evaluates options before recommending a solution. His planning is well structured, accounts for risks and dependencies, and adapts quickly to change."
           }
         },
         "summary": "Successfully complete the MBA program as the next stage of the Jahizoun program.",
         "summaryLabel": "Areas of focus"
       }
-    }
+    },
+    "commentaryTitle": "Commentary as of 2nd Quarterly Evaluation",
+    "commentaryDate": "October 2026",
+    "overall": "Q2 to Q3 shows a clear step up: from Effective across the board to Strong on five of eight competencies, with initiative the most improved area. Focus for the coming period is to complete the MBA as the next stage of Jahizoun."
   },
   "abdulaziz-al-yafei": {
     "lineManager": "Saif Al Siksek",
@@ -1046,17 +1074,19 @@ const EVALUATIONS = {
       }
     },
     "strengths": [
-      "Adapts his style to different audiences, and builds strong stakeholder relations",
-      "Upskills proactively and applies new tools, such as AI, to improve the quality of his output",
-      "Maintains a positive attitude and works easily across teams and clients"
+      "Clear, persuasive communicator with strong stakeholder relations",
+      "Drives improvements from idea to implementation, with good timing",
+      "Continuous learner who brought AI techniques into the team's work"
     ],
     "improvements": [
-      "Structures problems and initiatives more clearly",
-      "Tends to be not very proactive and wait for directions"
+      "Decision-making: document risks and trade-offs explicitly before deciding, and review outcomes",
+      "Take a more visible role in motivating and mentoring peers, for example on AI tools",
+      "Share root-cause analyses and risk plans with the wider team"
     ],
     "masters": [
       "Completed ScorePlus and GuideMe GMAT course",
-      "Applying to HEC and IMD MBA, January 2027"
+      "HEC Paris: submitted, awaiting interview invitation",
+      "IMD: not admitted"
     ],
     "docs": [
       {
@@ -1095,41 +1125,52 @@ const EVALUATIONS = {
         "competencies": {
           "Effective Communication & Influence": {
             "rating": "strong",
-            "comment": "I fully agree with this strong rating. Abdulaziz consistently communicates clearly and persuasively, adjusting his tone and level of detail to different audiences. His structured contributions in meetings help move decisions forward and directly support the success of our projects."
+            "comment": "Clear and persuasive, adjusting tone and detail to the audience. Structured input in meetings moves decisions forward.",
+            "full": "I fully agree with this strong rating. Abdulaziz consistently communicates clearly and persuasively, adjusting his tone and level of detail to different audiences. His structured contributions in meetings help move decisions forward and directly support the success of our projects."
           },
           "Initiative": {
             "rating": "strong",
-            "comment": "I agree with this strong rating. Abdulaziz goes beyond identifying gaps and inefficiencies; he proposes practical improvements and helps implement them. His sound judgement on timing and approach, based on stakeholder readiness, ensures better buy-in and smooth implementation."
+            "comment": "Goes beyond spotting gaps: proposes practical improvements and helps implement them, with good judgement on timing and stakeholder readiness.",
+            "full": "I agree with this strong rating. Abdulaziz goes beyond identifying gaps and inefficiencies; he proposes practical improvements and helps implement them. His sound judgement on timing and approach, based on stakeholder readiness, ensures better buy-in and smooth implementation."
           },
           "Decision-Making & Accountability": {
             "rating": "effective",
-            "comment": "I agree with this evaluation. Abdulaziz makes timely decisions by testing, learning and adjusting, with attention to risks and trade-offs. I value his accountability for outcomes and his commitment to learning from mistakes."
+            "comment": "Timely decisions by testing, learning and adjusting, with attention to risks. Accountable for outcomes and learns from mistakes.",
+            "full": "I agree with this evaluation. Abdulaziz makes timely decisions by testing, learning and adjusting, with attention to risks and trade-offs. I value his accountability for outcomes and his commitment to learning from mistakes."
           },
           "Capability Development": {
             "rating": "strong",
-            "comment": "This is a well-deserved strong rating. Abdulaziz shows a real passion for learning and applies new skills directly at work, including AI techniques that have improved our efficiency. His pursuit of challenging assignments for professional growth makes him a good example for the team."
+            "comment": "Real passion for learning, applied directly at work, including AI techniques that improved team efficiency. A good example for others.",
+            "full": "This is a well-deserved strong rating. Abdulaziz shows a real passion for learning and applies new skills directly at work, including AI techniques that have improved our efficiency. His pursuit of challenging assignments for professional growth makes him a good example for the team."
           },
           "Inspirational Leadership": {
             "rating": "effective",
-            "comment": "I agree with this rating. Abdulaziz maintains consistent, professional behaviour and a strong work ethic. He stays composed under pressure, is reliable and transparent, and supports collaboration within the team."
+            "comment": "Consistent, professional and composed under pressure. Reliable, transparent and collaborative.",
+            "full": "I agree with this rating. Abdulaziz maintains consistent, professional behaviour and a strong work ethic. He stays composed under pressure, is reliable and transparent, and supports collaboration within the team."
           },
           "Strategic Thinking": {
             "rating": "strong",
-            "comment": "I agree with this strong rating. Abdulaziz recognises recurring patterns in his area and uses them to improve planning. He anticipates the short-term impact of decisions on workload and stakeholders, connects daily work to our objectives, and challenges existing approaches constructively and with evidence."
+            "comment": "Recognises recurring patterns, anticipates impact on workload and stakeholders, and challenges approaches with evidence.",
+            "full": "I agree with this strong rating. Abdulaziz recognises recurring patterns in his area and uses them to improve planning. He anticipates the short-term impact of decisions on workload and stakeholders, connects daily work to our objectives, and challenges existing approaches constructively and with evidence."
           },
           "Adaptability": {
             "rating": "strong",
-            "comment": "I fully agree with this strong rating. Abdulaziz adapts quickly to changing priorities and ambiguity without waiting for detailed guidance. He learns fast from new situations, helps colleagues adjust to change, and finds alternative ways to reach the desired outcome."
+            "comment": "Adapts quickly to changing priorities and ambiguity without waiting for guidance, and helps colleagues adjust.",
+            "full": "I fully agree with this strong rating. Abdulaziz adapts quickly to changing priorities and ambiguity without waiting for detailed guidance. He learns fast from new situations, helps colleagues adjust to change, and finds alternative ways to reach the desired outcome."
           },
           "Systemic Analysis & Planning": {
             "rating": "effective",
-            "comment": "I completely agree with this assessment. Abdulaziz analyses problems systematically, distinguishing symptoms from root causes, and plans with risks and resource constraints in mind. He adjusts plans proactively and keeps stakeholders informed."
+            "comment": "Systematic analysis that separates symptoms from root causes; plans around risks and resources and keeps stakeholders informed.",
+            "full": "I completely agree with this assessment. Abdulaziz analyses problems systematically, distinguishing symptoms from root causes, and plans with risks and resource constraints in mind. He adjusts plans proactively and keeps stakeholders informed."
           }
         },
         "summary": "Priorities for the coming period: (1) Decision-making and Accountability – move from Effective to Strong by documenting risks and trade-offs more explicitly before decisions and reviewing outcomes systematically. (2) Inspirational Leadership – take a more visible role in motivating and supporting peers, e.g. by mentoring colleagues on the AI techniques already adopted. (3) Systemic Analysis and Planning – document root-cause analyses and share risk/dependency plans with the wider team.",
         "summaryLabel": "Areas of focus"
       }
-    }
+    },
+    "commentaryTitle": "Commentary as of 2nd Quarterly Evaluation",
+    "commentaryDate": "October 2026",
+    "overall": "Steady and rising: Initiative moved from Effective to Strong between Q2 and Q3, giving six Strong ratings out of eight. The Q2 note about waiting for direction no longer applies. Priorities agreed for the coming period are the three areas above."
   },
   "mohammed-al-mahri": {
     "lineManager": "Elvie Lahournere",
@@ -1194,17 +1235,18 @@ const EVALUATIONS = {
       }
     },
     "strengths": [
-      "Considers risks before taking decisions and takes accountability for outcomes",
-      "Seeks feedback proactively and applies it well",
-      "Delivers assigned tasks reliably, with steady and consistent execution"
+      "Reliable follow-through across three projects, including leading National Service",
+      "Highly adaptable across stakeholders, from vendors to Legal",
+      "Fast adopter of new tools: eight EOAI agents built, third in the Office for usage"
     ],
     "improvements": [
-      "Drives work proactively rather than waiting on direction",
-      "Improves end-to-end of deliverables"
+      "Set out options, risks and recommended next steps clearly for the team",
+      "Strengthen presentation and communication skills",
+      "Take ownership of broader optimisation and engineering topics end to end"
     ],
     "masters": [
       "Completed ScorePlus and GuideMe GMAT course",
-      "Applying to NYU Abu Dhabi January 2027"
+      "Admitted to NYU Abu Dhabi (NYU Stern), January 2027 intake"
     ],
     "docs": [
       {
@@ -1218,41 +1260,52 @@ const EVALUATIONS = {
         "competencies": {
           "Effective Communication & Influence": {
             "rating": "effective",
-            "comment": "Mohammed communicates with end users, vendors, and colleagues across three projects. He has prepared presentations for each project and participates in meetings to clarify matters, support progress, and help address issues. He is currently developing a presentation to give stakeholders a clear overview of the National Service project, which he leads. Mohammed was also selected to participate in a live discussion at Jahizoun 2 in the presence of the Minister of State for Defence Affairs and senior military officers. He is continuing to develop his presentation and communication skills through reading, practice, and regular stakeholder engagement."
+            "comment": "Communicates with end users, vendors and colleagues across three projects and presents on each. Selected for the live Jahizoun 2 discussion before the Minister of State. Still building presentation skills.",
+            "full": "Mohammed communicates with end users, vendors, and colleagues across three projects. He has prepared presentations for each project and participates in meetings to clarify matters, support progress, and help address issues. He is currently developing a presentation to give stakeholders a clear overview of the National Service project, which he leads. Mohammed was also selected to participate in a live discussion at Jahizoun 2 in the presence of the Minister of State for Defence Affairs and senior military officers. He is continuing to develop his presentation and communication skills through reading, practice, and regular stakeholder engagement."
           },
           "Initiative": {
             "rating": "effective",
-            "comment": "Mohammed follows up on project matters and takes practical steps to move them forward. When an FWA issue arose involving two vendors, he contacted Procurement and followed up to ensure the FWAs were requested. Once the documents were received, he referred them to Legal, followed up on the review and revisions, and shared the revised material with the end user. He also follows up with vendors and end users when issues require attention, has contributed to drafting letters to the Ministry of Defence, and shares useful software tips with colleagues. His work creating EOAI agents shows a willingness to explore tools beyond his routine tasks."
+            "comment": "Follows up and moves matters forward, as on the FWA issue through Procurement and Legal. Explores tools beyond routine tasks, such as building EOAI agents.",
+            "full": "Mohammed follows up on project matters and takes practical steps to move them forward. When an FWA issue arose involving two vendors, he contacted Procurement and followed up to ensure the FWAs were requested. Once the documents were received, he referred them to Legal, followed up on the review and revisions, and shared the revised material with the end user. He also follows up with vendors and end users when issues require attention, has contributed to drafting letters to the Ministry of Defence, and shares useful software tips with colleagues. His work creating EOAI agents shows a willingness to explore tools beyond his routine tasks."
           },
           "Decision-Making & Accountability": {
             "rating": "effective",
-            "comment": "Mohammed has taken ownership of the National Service project while supporting two other projects, and he follows through on his assigned responsibilities. His handling of the FWA matter showed an understanding of when specialist review was needed before documents could be shared with the end user. When the number of locations provided fell short of the request, he worked with the team to escalate the discrepancy through the appropriate channels. As he develops in his project leadership role, he should continue to make his assessment of options, risks, and recommended next steps clear to the team."
+            "comment": "Owns the National Service project while supporting two others and follows through. Next: set out options, risks and recommended next steps clearly for the team.",
+            "full": "Mohammed has taken ownership of the National Service project while supporting two other projects, and he follows through on his assigned responsibilities. His handling of the FWA matter showed an understanding of when specialist review was needed before documents could be shared with the end user. When the number of locations provided fell short of the request, he worked with the team to escalate the discrepancy through the appropriate channels. As he develops in his project leadership role, he should continue to make his assessment of options, risks, and recommended next steps clear to the team."
           },
           "Capability Development": {
             "rating": "effective",
-            "comment": "Mohammed attended all expert knowledge sessions and completed the mandatory courses. He has also put new skills into practice by creating eight EOAI agents, including a Military Translation Specialist, and reports ranking third in the Office for EOAI usage and AI agent creation. His acceptance to the NYU Stern MBA programme, due to begin in January 2027, demonstrates a commitment to further development. Working across three projects and leading the National Service project is providing opportunities to build his coordination, presentation, and stakeholder communication skills. He is also working on his knowledge and soft skills through reading, practice, and learning from colleagues. The next step is to show how this development improves project delivery and benefits the wider team."
+            "comment": "Attended all expert sessions and mandatory courses, built eight EOAI agents and ranks third in the Office for EOAI usage. Admitted to NYU Stern. Next: show how this improves delivery.",
+            "full": "Mohammed attended all expert knowledge sessions and completed the mandatory courses. He has also put new skills into practice by creating eight EOAI agents, including a Military Translation Specialist, and reports ranking third in the Office for EOAI usage and AI agent creation. His acceptance to the NYU Stern MBA programme, due to begin in January 2027, demonstrates a commitment to further development. Working across three projects and leading the National Service project is providing opportunities to build his coordination, presentation, and stakeholder communication skills. He is also working on his knowledge and soft skills through reading, practice, and learning from colleagues. The next step is to show how this development improves project delivery and benefits the wider team."
           },
           "Inspirational Leadership": {
             "rating": "effective",
-            "comment": "Mohammed makes himself available to support colleagues and shares his experience of the military working environment when it is useful to the team. He also passes on practical software tips and contributes to a cooperative, positive working environment. He takes responsibility for his work and seeks to follow through on commitments rather than shift responsibility when issues arise. Leading the National Service project is an opportunity for him to develop his ability to guide discussions, keep colleagues informed, and support them through challenges. He is actively working on his listening, communication, and leadership skills."
+            "comment": "Supports colleagues, shares military experience and software tips, and follows through on commitments. Leading National Service is his chance to guide discussions and keep colleagues informed.",
+            "full": "Mohammed makes himself available to support colleagues and shares his experience of the military working environment when it is useful to the team. He also passes on practical software tips and contributes to a cooperative, positive working environment. He takes responsibility for his work and seeks to follow through on commitments rather than shift responsibility when issues arise. Leading the National Service project is an opportunity for him to develop his ability to guide discussions, keep colleagues informed, and support them through challenges. He is actively working on his listening, communication, and leadership skills."
           },
           "Strategic Thinking": {
             "rating": "effective",
-            "comment": "Mohammed considers how project tasks and stakeholder discussions affect progress across the three projects he supports. He recognised that the number of locations provided did not meet the request and worked with the team to escalate the matter; a number closer to the request was subsequently provided. In the National Service project, he is developing a presentation that brings together key matters for stakeholders. He is working to look beyond immediate tasks and consider their implications for project progress and stakeholder needs. To strengthen this competency further, he should continue to set out those implications and recommend clear courses of action."
+            "comment": "Considers how tasks affect progress across his projects and escalated the locations discrepancy. Next: set out implications and recommend clear courses of action.",
+            "full": "Mohammed considers how project tasks and stakeholder discussions affect progress across the three projects he supports. He recognised that the number of locations provided did not meet the request and worked with the team to escalate the matter; a number closer to the request was subsequently provided. In the National Service project, he is developing a presentation that brings together key matters for stakeholders. He is working to look beyond immediate tasks and consider their implications for project progress and stakeholder needs. To strengthen this competency further, he should continue to set out those implications and recommend clear courses of action."
           },
           "Adaptability": {
             "rating": "strong",
-            "comment": "Mohammed supports three projects while responding to additional requests and changing project needs. He works with different stakeholders—including end users, vendors, Procurement, and Legal—and adjusts his communication and follow-up accordingly. The FWA matter required him to coordinate across several groups as the documents moved through procurement and legal review. He also worked with the team to address the locations discrepancy when the initial response did not meet the request. Mohammed is developing his knowledge and communication skills so that he can respond with greater confidence to unfamiliar issues and changing priorities."
+            "comment": "Runs three projects while absorbing new requests and changing needs, coordinating across end users, vendors, Procurement and Legal.",
+            "full": "Mohammed supports three projects while responding to additional requests and changing project needs. He works with different stakeholders—including end users, vendors, Procurement, and Legal—and adjusts his communication and follow-up accordingly. The FWA matter required him to coordinate across several groups as the documents moved through procurement and legal review. He also worked with the team to address the locations discrepancy when the initial response did not meet the request. Mohammed is developing his knowledge and communication skills so that he can respond with greater confidence to unfamiliar issues and changing priorities."
           },
           "Systemic Analysis & Planning": {
             "rating": "effective",
-            "comment": "Mohammed works with vendors and end users to understand issues and identify practical next steps. In the FWA matter, he recognised the dependencies between Procurement, the vendors, Legal, and the end user, and followed up through each stage before sharing the revised material. His work on the locations discrepancy also shows that he checks information received against what was requested and raises gaps for resolution. He is working to improve how he organises information and tracks follow-ups across his projects. In addition, Demonstrated outstanding ownership in planning and issue resolution by clearly documenting options, assigning responsibilities, and setting timelines that kept work coordinated and moving forward."
+            "comment": "Understands dependencies between parties and follows each stage through. Checks what was received against what was requested. Strong ownership in documenting options, owners and timelines.",
+            "full": "Mohammed works with vendors and end users to understand issues and identify practical next steps. In the FWA matter, he recognised the dependencies between Procurement, the vendors, Legal, and the end user, and followed up through each stage before sharing the revised material. His work on the locations discrepancy also shows that he checks information received against what was requested and raises gaps for resolution. He is working to improve how he organises information and tracks follow-ups across his projects. In addition, Demonstrated outstanding ownership in planning and issue resolution by clearly documenting options, assigning responsibilities, and setting timelines that kept work coordinated and moving forward."
           }
         },
         "summary": "Mohammed demonstrates strong leadership skills and has the potential to take on a broader role in optimisation and engineering-related initiatives. Giving him ownership of more of these topics would help him gain practical experience in assessing challenges, coordinating stakeholders and guiding work through to completion. It would also give him opportunities to strengthen his decision-making and develop confidence in leading more complex assignments. Targeted training and higher education would complement this hands-on experience, deepen his technical expertise and prepare him for greater responsibilities.",
         "summaryLabel": "Areas of focus"
       }
-    }
+    },
+    "commentaryTitle": "Commentary as of 2nd Quarterly Evaluation",
+    "commentaryDate": "October 2026",
+    "overall": "Effective on seven of eight competencies and Strong on Adaptability in his first quarterly rating. His manager sees strong leadership potential and recommends giving him ownership of more complex assignments, backed by targeted training and his MBA."
   },
   "fatima-balnoub": {
     "lineManager": "Aleksandra Socevic",
@@ -1317,17 +1370,18 @@ const EVALUATIONS = {
       }
     },
     "strengths": [
-      "Takes full ownership of the LDP project and proactively engaged stakeholders to drive delivery",
-      "Demonstrates strong emotional intelligence and openness to feedback",
-      "Builds genuine client trust across projects"
+      "Full ownership of her deliverables, from LDP to media training, always on time",
+      "Very effective stakeholder communication, written and spoken",
+      "Calm, reliable and solution-oriented under pressure"
     ],
     "improvements": [
-      "Develops Systemic Analysis & Planning as the key growth area for seeing the full picture",
-      "Strengthens attention to detail on deliverable"
+      "Strategic thinking: look further ahead and bring her own views on how programmes should evolve",
+      "Challenge existing approaches where she sees a better way",
+      "Keep stretching into more complex, multi-project assignments"
     ],
     "masters": [
-      "Completed ScorePlus GMAT course",
-      "Applying to IMD and HEC MBA, January 2027"
+      "Admitted to IMD MBA, January 2027 intake",
+      "Withdrew from the HEC process"
     ],
     "docs": [
       {
@@ -1341,23 +1395,28 @@ const EVALUATIONS = {
         "competencies": {
           "Effective Communication & Influence": {
             "rating": "developing",
-            "comment": "As a strength in this area, I appreciate your communication with me. Always open to consult anas ask for advice.  \n\nThere is also scope for development in this area. Although you are very much involved in your daily tasks, you may want to reflect on your current communication skills. This is linked with your observations in the same area.  A best practice could be to focus more on the preparation stage and use the follwing questions: \nWhat is the main messages that I want to trasnmit today?\nWhat is my objective?\nHow will I know that I achieved my objective at the end of this meeting?\nWhat are the potential objections I may face?"
+            "comment": "Open and consultative with her manager. Development focus: prepare each message, its objective and likely objections before meetings.",
+            "full": "As a strength in this area, I appreciate your communication with me. Always open to consult anas ask for advice.  \n\nThere is also scope for development in this area. Although you are very much involved in your daily tasks, you may want to reflect on your current communication skills. This is linked with your observations in the same area.  A best practice could be to focus more on the preparation stage and use the follwing questions: \nWhat is the main messages that I want to trasnmit today?\nWhat is my objective?\nHow will I know that I achieved my objective at the end of this meeting?\nWhat are the potential objections I may face?"
           },
           "Initiative": {
             "rating": "effective",
-            "comment": "Although there was a slow start to the EO secondment, I was impressed by your openess to accept a new challenge and take on new projects. You immediately took over of the LDP project and you are continuing to own this project. You initiate discussion with various stakeholders (e.g., vendor, Hamad, etc.) to ensure an effective delivery of the project. Another example in the same area is the benchmarking project set up by Rakan where you were the first one to take iniative. \nAdditionally, you embraced the chance to participate in the Enterprise Accelerator Program and your input was very much appreciated. You managed approximately 80% of the interviews.\n\nFor further development, try to be more courageous and share any ideas regarding to other projects. Be more vocal during meetings and  with the rest of the team. I believe you have a huge potential in this area that waits to be explored and shared with others."
+            "comment": "Slow start, then took full ownership of the LDP project and the benchmarking work, and ran about 80% of the EAP interviews. Next: be more vocal and share ideas on other projects.",
+            "full": "Although there was a slow start to the EO secondment, I was impressed by your openess to accept a new challenge and take on new projects. You immediately took over of the LDP project and you are continuing to own this project. You initiate discussion with various stakeholders (e.g., vendor, Hamad, etc.) to ensure an effective delivery of the project. Another example in the same area is the benchmarking project set up by Rakan where you were the first one to take iniative. \nAdditionally, you embraced the chance to participate in the Enterprise Accelerator Program and your input was very much appreciated. You managed approximately 80% of the interviews.\n\nFor further development, try to be more courageous and share any ideas regarding to other projects. Be more vocal during meetings and  with the rest of the team. I believe you have a huge potential in this area that waits to be explored and shared with others."
           },
           "Decision-Making & Accountability": {
             "rating": "developing",
-            "comment": "Although this is an area of future development, I recognize you already slowly start to exercise your decision-making, particularly related to the LDP project.  Furthermore, it is relevant to highlight your intentional decision to take Maha under your wing and provide her with guidence and direction and help her adjust to the project requirements. \n\nIn the future, we will consider taking on multiple projects and practice your decision-making using incomplete information or being under pressure.  Another suggestion is to analyse the posibility to \"front\" a project from inception to completion and run all the executive briefings."
+            "comment": "Starting to exercise decision-making on LDP, and chose to coach Maha. Next: practise decisions under pressure and front a project end to end.",
+            "full": "Although this is an area of future development, I recognize you already slowly start to exercise your decision-making, particularly related to the LDP project.  Furthermore, it is relevant to highlight your intentional decision to take Maha under your wing and provide her with guidence and direction and help her adjust to the project requirements. \n\nIn the future, we will consider taking on multiple projects and practice your decision-making using incomplete information or being under pressure.  Another suggestion is to analyse the posibility to \"front\" a project from inception to completion and run all the executive briefings."
           },
           "Capability Development": {
             "rating": "effective",
-            "comment": "Your desire to embrace different challenges will have a postive impact on this competency and ensure the platform for further development.  You have a good level of emotionall intelligence to understand the group dynamics and requirements (e.g., during the EAP you placed the interviewee at ease and provide context to elicit informed responses).  Furthermore you demonstrated you are open to receiving feedback and incorporate it in your future work. Keep up with this approach !\n\n\nFor further development, we should focus on assigning you more challenging and complex projects."
+            "comment": "Embraces new challenges, reads group dynamics well and acts on feedback. Next: more complex projects.",
+            "full": "Your desire to embrace different challenges will have a postive impact on this competency and ensure the platform for further development.  You have a good level of emotionall intelligence to understand the group dynamics and requirements (e.g., during the EAP you placed the interviewee at ease and provide context to elicit informed responses).  Furthermore you demonstrated you are open to receiving feedback and incorporate it in your future work. Keep up with this approach !\n\n\nFor further development, we should focus on assigning you more challenging and complex projects."
           },
           "Systemic Analysis & Planning": {
             "rating": "developing",
-            "comment": "One way to develop in this area is to leverage your potential for \"Initiative\". Be proactive and identify areas that needs improvement. Let's build a project around the same ideas. \nReflect on your proactivity levels."
+            "comment": "Development area: use her initiative to identify what needs improving and build a project around it.",
+            "full": "One way to develop in this area is to leverage your potential for \"Initiative\". Be proactive and identify areas that needs improvement. Let's build a project around the same ideas. \nReflect on your proactivity levels."
           }
         }
       },
@@ -1366,39 +1425,50 @@ const EVALUATIONS = {
         "competencies": {
           "Effective Communication & Influence": {
             "rating": "strong",
-            "comment": "Fatima manages communication with a wide range of stakeholders very effectively, both internally and externally, adapting her tone and level of detail to each audience. She communicates clearly and proactively where she stands on each deliverable, so there are no surprises on progress or timelines. Her preparation of official communication letters and socialization decks has been of a consistently high standard."
+            "comment": "Communicates very effectively with internal and external stakeholders, adapting tone and detail. Proactive on progress and timelines; letters and decks of consistently high standard.",
+            "full": "Fatima manages communication with a wide range of stakeholders very effectively, both internally and externally, adapting her tone and level of detail to each audience. She communicates clearly and proactively where she stands on each deliverable, so there are no surprises on progress or timelines. Her preparation of official communication letters and socialization decks has been of a consistently high standard."
           },
           "Initiative": {
             "rating": "strong",
-            "comment": "Fatima flags issues early and does not wait for direction before acting when it is within her remit. She takes full ownership of the deliverables assigned to her, such as the media training, official communication letters and socialization decks, and drives them through to completion independently."
+            "comment": "Flags issues early and acts within her remit without waiting. Owns and drives media training, official letters and socialisation decks to completion.",
+            "full": "Fatima flags issues early and does not wait for direction before acting when it is within her remit. She takes full ownership of the deliverables assigned to her, such as the media training, official communication letters and socialization decks, and drives them through to completion independently."
           },
           "Decision-Making & Accountability": {
             "rating": "strong",
-            "comment": "Fatima shows very strong ownership and accountability for her outcomes. She consistently sticks to agreed timelines and takes responsibility for the quality of her work across multiple projects, including the NDC trainings and the media training."
+            "comment": "Very strong ownership: sticks to agreed timelines and answers for the quality of her work across NDC and media training.",
+            "full": "Fatima shows very strong ownership and accountability for her outcomes. She consistently sticks to agreed timelines and takes responsibility for the quality of her work across multiple projects, including the NDC trainings and the media training."
           },
           "Capability Development": {
             "rating": "strong",
-            "comment": "Fatima actively seeks opportunities to grow, both through self-learning and by taking on new challenges such as the Jahizoun event panel discussion. She applies what she learns directly in her work, particularly in how she communicates and coordinates with stakeholders. She is open to feedback and acts on it quickly."
+            "comment": "Seeks growth through self-learning and new challenges such as the Jahizoun event panel, and acts on feedback quickly.",
+            "full": "Fatima actively seeks opportunities to grow, both through self-learning and by taking on new challenges such as the Jahizoun event panel discussion. She applies what she learns directly in her work, particularly in how she communicates and coordinates with stakeholders. She is open to feedback and acts on it quickly."
           },
           "Inspirational Leadership": {
             "rating": "strong",
-            "comment": "Fatima brings consistent professionalism, reliability and a strong work ethic, including during periods of high workload. She remains calm and solution-oriented under pressure, which has a positive effect on the team. Colleagues and stakeholders can rely on her, and she contributes to a collaborative and positive working environment."
+            "comment": "Consistently professional and reliable, calm and solution-oriented under pressure. Lifts the team.",
+            "full": "Fatima brings consistent professionalism, reliability and a strong work ethic, including during periods of high workload. She remains calm and solution-oriented under pressure, which has a positive effect on the team. Colleagues and stakeholders can rely on her, and she contributes to a collaborative and positive working environment."
           },
           "Strategic Thinking": {
             "rating": "effective",
-            "comment": "Fatima anticipates the short-term impact of decisions on timelines and stakeholders and adjusts plans accordingly. She connects her day-to-day coordination to the wider programme objectives. As a next step, I would encourage her to look further ahead, bringing forward more of her own views on how our programmes could evolve and challenging existing approaches where she sees a better alternative."
+            "comment": "Anticipates the short-term impact of decisions and links her work to programme objectives. Next: look further ahead and challenge existing approaches with her own views.",
+            "full": "Fatima anticipates the short-term impact of decisions on timelines and stakeholders and adjusts plans accordingly. She connects her day-to-day coordination to the wider programme objectives. As a next step, I would encourage her to look further ahead, bringing forward more of her own views on how our programmes could evolve and challenging existing approaches where she sees a better alternative."
           },
           "Adaptability": {
             "rating": "strong",
-            "comment": "Fatima is very adaptable and handles changing priorities, urgent requests and compressed timelines well."
+            "comment": "Handles changing priorities, urgent requests and compressed timelines well.",
+            "full": "Fatima is very adaptable and handles changing priorities, urgent requests and compressed timelines well."
           },
           "Systemic Analysis & Planning": {
             "rating": "strong",
-            "comment": "Fatima plans her work in a structured way, taking into account stakeholder requirements, timelines and risks."
+            "comment": "Plans in a structured way around stakeholder requirements, timelines and risks.",
+            "full": "Fatima plans her work in a structured way, taking into account stakeholder requirements, timelines and risks."
           }
         }
       }
-    }
+    },
+    "commentaryTitle": "Commentary as of 2nd Quarterly Evaluation",
+    "commentaryDate": "October 2026",
+    "overall": "The biggest progression in the cohort: from Developing on three competencies in Q2 to Strong on seven of eight in Q3 under a new line manager. Systemic Analysis & Planning, the Q2 growth area, is now a strength."
   },
   "saif-al-hammadi": {
     "lineManager": "Juhina Elmajdoub",
