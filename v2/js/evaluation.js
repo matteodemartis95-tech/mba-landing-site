@@ -300,43 +300,109 @@ const EVALUATIONS = {
       "Effective Communication & Influence": {
         "2025 Q4": "effective",
         "2026 Q1": "effective",
-        "2026 Q2": "effective"
+        "2026 Q2": "effective",
+        "2026 Q3": "effective"
       },
       "Initiative": {
         "2025 Q4": "effective",
         "2026 Q1": "effective",
-        "2026 Q2": "developing"
+        "2026 Q2": "developing",
+        "2026 Q3": "effective"
       },
       "Decision-Making & Accountability": {
         "2025 Q4": "strong",
         "2026 Q1": "strong",
-        "2026 Q2": "developing"
+        "2026 Q2": "developing",
+        "2026 Q3": "effective"
       },
       "Capability Development": {
         "2025 Q4": "effective",
         "2026 Q1": "effective",
-        "2026 Q2": "developing"
+        "2026 Q2": "developing",
+        "2026 Q3": "effective"
       },
       "Systemic Analysis & Planning": {
         "2025 Q4": "effective",
         "2026 Q1": "effective",
-        "2026 Q2": "developing"
+        "2026 Q2": "developing",
+        "2026 Q3": "effective"
+      },
+      "Inspirational Leadership": {
+        "2026 Q3": "effective"
+      },
+      "Strategic Thinking": {
+        "2026 Q3": "effective"
+      },
+      "Adaptability": {
+        "2026 Q3": "effective"
       }
     },
     "strengths": [
-      "Communicates effectively, combining deep MOD knowledge with a clear drive to improve how things are done",
-      "Learns fast, once she understand the rationale she rarely repets mistakes"
+      "Ownership of Ruwaad and the Jahizoun 2 bootcamp planning, solving issues before escalation",
+      "Structured planning and trusted stakeholder and vendor relationships",
+      "Positive influence on peers: composed, supportive and collaborative"
     ],
     "improvements": [
-      "Builds confidence in independent decision-making, not just validation-seeking",
-      "Deepens systemic analysis and planning",
-      "Improves ownership and drive initiative that are a value add to the team"
+      "Self-belief: recognise the value she adds at each step of a project",
+      "Brief MOD senior leadership more often to grow her network and influence",
+      "Take individual ownership of targeted projects in the HR team and drive them to completion"
     ],
     "masters": [
       "Completed ScorePlus GMAT course",
-      "Weights weather to pursue an MBA in January 2028",
-      "Applying to NYU MBA, January 2028"
-    ]
+      "Considering an MBA in January 2028, NYU Abu Dhabi in view"
+    ],
+    "quarterly": {
+      "2026 Q3": {
+        "manager": "Declan Noone",
+        "competencies": {
+          "Effective Communication & Influence": {
+            "rating": "effective",
+            "comment": "Clear, strong progression on executive decks and written proposals. Her Jahizoun 2 launch performance was noted by MOD and Armed Forces leadership present.",
+            "full": "Waood has continously focused on developing this competency. Her work shows a clear and strong progression across executive level decks and written proposals. Her performance during the Jahizoun 2 launch has been very positively received and noted  by leadership within the MOD/AF who were present at th event.\nWith continued support and guidance Waood will no doubt continue her upward trajectory in enhancing her rating on this competency."
+          },
+          "Initiative": {
+            "rating": "effective",
+            "comment": "Owned the Ruwaad programme and the Jahizoun 2 bootcamp planning, spotting issues and fixing them before they needed escalation. Solution-oriented and collaborative.",
+            "full": "Waood throughout the reporting period has taken ownership of a series of projects not least of which were the Ruwaad Program and preparatory planning for the Jahizoun 2 Bootcamp. She leveraged her knowledge and experience throughout, identified potential issues/challenges and took the initiative to address those before they became an item that required escalation to leadership.\nI have found her to very solution orientated, readily providing alternative options while also very willing to engage in a collaborative problem solving process."
+          },
+          "Decision-Making & Accountability": {
+            "rating": "effective",
+            "comment": "Comfortable making decisions and accepting accountability, drawing on her experience with growing confidence. Briefs the team on actions taken and takes guidance on board.",
+            "full": "As previously stated with her knowledge and experience Waood is very comfortable taking the initiative, making decisions and accepting accountability/responsibility for her work. Waood has significant professional experience and as she has grown into her role in the team she has recognised the value she brings from those experiences, she now leverages that experience with confidence and readily steps into roles assuming responsibility and decision making authority.\nFurthermore, Waood regularly checks in, and briefs me or my colleagues on actions taken, sense checks her approach and willingly takes onboard mentoring/guidance."
+          },
+          "Capability Development": {
+            "rating": "effective",
+            "comment": "Always seeking development opportunities and new tools in learning and leadership development. Seeks frequent feedback and integrates lessons learned.",
+            "full": "Always seeking developmental opportunities. Keenly interested in getting involved in new projects/initiatives and exploring the potential of new tools in Learning and Leadership Development.\nWaood is very aware that Jahizoun is a development journey and consequently has embraced the new challenges, identified personal lessons learned and integrated them into her work.\nShe seeks frequent feedback in order to continue her development journey and is very open to guidance and mentorship."
+          },
+          "Inspirational Leadership": {
+            "rating": "effective",
+            "comment": "Clear progression since August. Undervalues her influence: she lifts the mood and motivation of peers, never loses composure, and is a trusted colleague to delegate to.",
+            "full": "An area she continues to work on. From August I have seen a clear progression in this competency.\nWaood undervalues her influence in this space and this is a self-confidence issue. She has a significantly positive impact on the mood and motivation of her peers. I have never seen her lose composure under pressure. She is solution orientated and just gets the job done but remains approachable and supportive throughout.\nA value her as a trusted colleague, I can with confidence delegate work to her or work alongside her on projects/initiatives. I value and trust her inputs and frequently take on her valued guidance on a number of topics where her experience and knowledge is important to the success of those projects/initiativs.\nShe is collaborative my nature, supports those around her and tactfully resolves any issues that may arise."
+          },
+          "Strategic Thinking": {
+            "rating": "effective",
+            "comment": "Consistently anticipates trends and the impact of decisions on workload, stakeholders and requirements, and links them to her actions and advice.",
+            "full": "As mentioned previously in the above listed comptencies Waood is consistently anticipating and identifying trends, patterns, and impact of decisions on workload, requirements, stakeholder needs and asks. She links these to her actions, and the advice/guidance she provides to ensure a positive impact on deliverables."
+          },
+          "Adaptability": {
+            "rating": "effective",
+            "comment": "Embraces rapid change, adapts to new needs and stays focused on outcomes, as Ruwaad and the J2 bootcamp planning showed.",
+            "full": "Waood embraces the dynamic rate of change on factors which impact deliverables. She quickly adapts to change needs and requirements, provides support where needed and remains focused on the key outcomes. \nWorking on Ruwaad and the planning for the J2 Bootcamp afforded her significant exposure to rapid changing situations, she readily rose to the challenge and peformed ."
+          },
+          "Systemic Analysis & Planning": {
+            "rating": "effective",
+            "comment": "Puts structured, adaptive plans and processes in place, briefs stakeholders regularly and keeps trusted relationships with them and with vendors.",
+            "full": "Event from the impact of her work. All the comments listed above are an indication of her ability to systematically analyse and plan accordingly. She works hard to put a structured plan and processes in place which are adaptive to changing situations, she regularly briefs stakeholders on status of programs/initiatives, and maintains a trusted relationship with both them and vendors as a consequence."
+          }
+        },
+        "summary": "Maintain focus and continue to take ownership of the new projects she will have in her new team. Continue to work on her self-belief and see the value she adds at each step of a projects journey. The new role in the HR Team will provide her with a multitude of new stretch opportunities and I would suggest that she be given individual ownership of targeted projects/initiatives which she can drive forward to completion. \nConsidering her growing confidence in her communication and influencing skills I would recommend a greater frequency of opportunities for her to brief senior leadership in MOD on projects/initiatives that she is involved in. This well her continued growth in this competency while helping her increase her network and sphere of influence.",
+        "summaryLabel": "Areas of focus"
+      }
+    },
+    "commentaryTitle": "Commentary as of 2nd Quarterly Evaluation",
+    "commentaryDate": "October 2026",
+    "overall": "From Developing on four of five competencies in Q2 to Effective on all eight in Q3, with Declan Noone noting a clear upward trajectory. She moves to the HR team next, where stretch projects of her own are recommended."
   },
   "theyab-almeqbaali": {
     "lineManager": "Naguib Bebawi",
