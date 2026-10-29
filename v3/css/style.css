@@ -537,3 +537,12 @@ td .approx { color: var(--text-3); font-size: 11px; margin-left: 4px; }
 .ev-bubble-rating { display: inline-flex; align-items: center; gap: 6px; font-weight: 600; margin-bottom: 8px; }
 .ev-bubble-rating .sw { width: 12px; height: 12px; border-radius: 3px; border: 1px solid var(--border); display: inline-block; }
 .ev-bubble-text { white-space: pre-line; color: var(--text-2); }
+.rank-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; padding: 0 16px 16px; }
+.rank-box { display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 12px 6px 10px; border: 1px solid var(--border); border-radius: 12px; background: var(--surface-2); text-align: center; color: inherit; min-width: 0; }
+.rank-box:hover { border-color: var(--accent); }
+.rank-box .avatar { width: 58px; height: 58px; }
+.rank-box.top .avatar { box-shadow: 0 0 0 3px #1baf7a; }
+.rank-box.bottom .avatar { box-shadow: 0 0 0 3px #e34948; }
+.rank-name { font-size: 12.5px; font-weight: 600; line-height: 1.2; }
+.rank-sub { font-size: 11px; color: var(--text-3); }
+.rank-note { padding: 0 4px; line-height: 1.4; }
