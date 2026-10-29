@@ -428,7 +428,7 @@
     const qs = Object.keys(ev.quarterly || {}).filter(q => ev.quarterly[q].summary).sort();
     if (!qs.length) return "";
     const q = qs[qs.length - 1], r = ev.quarterly[q];
-    return `<div class="comm-block"><h3 class="comm-title ic-dot">Line manager summary · ${esc(q)}</h3><p class="comm-text">${esc(r.summary)}${r.manager ? ` <span class="muted">— ${esc(r.manager)}</span>` : ""}</p></div>`;
+    return `<div class="comm-block"><h3 class="comm-title ic-dot">${esc(r.summaryLabel || "Line manager summary")} · ${esc(q)}</h3><p class="comm-text">${esc(r.summary)}${r.manager ? ` <span class="muted">— ${esc(r.manager)}</span>` : ""}</p></div>`;
   }
   function commBlock(title, items, icon) {
     if (!items || !items.length) return "";
