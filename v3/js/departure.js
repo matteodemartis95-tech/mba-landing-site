@@ -38,7 +38,7 @@ const JOURNEYS = {
     ]
   },
   IMD: {
-    start: "2027-01-07",
+    start: "2027-01-04",
     label: "IMD MBA · January 2027 intake",
     phases: [
       { label: "MBA · Campus", place: "Lausanne, Switzerland", start: "2027-01", end: "2027-12", color: G1 },
