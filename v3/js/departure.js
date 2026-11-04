@@ -20,6 +20,7 @@ const DEPARTURE_META = {
 const G1 = "#0f4c35", G2 = "#1b7a4e", G3 = "#35a86a", G4 = "#cfe9d9";
 const JOURNEYS = {
   INSEAD: {
+    start: "2027-01-07",
     label: "INSEAD MBA · January 2027 intake",
     phases: [
       { label: "Periods 1–3 · Campus", place: "Fontainebleau, France", start: "2027-01", end: "2027-07", color: G1 },
@@ -29,6 +30,7 @@ const JOURNEYS = {
     ]
   },
   HEC: {
+    start: "2027-01-04",
     label: "HEC Paris MBA · January 2027 intake",
     phases: [
       { label: "MBA · Campus", place: "Jouy-en-Josas, France", start: "2027-01", end: "2027-12", color: G1, note: "phase dates to be confirmed" },
@@ -36,6 +38,7 @@ const JOURNEYS = {
     ]
   },
   IMD: {
+    start: "2027-01-07",
     label: "IMD MBA · January 2027 intake",
     phases: [
       { label: "MBA · Campus", place: "Lausanne, Switzerland", start: "2027-01", end: "2027-12", color: G1 },
@@ -43,6 +46,7 @@ const JOURNEYS = {
     ]
   },
   NYUAD: {
+    start: "2027-01-15",
     label: "NYU Stern at NYU Abu Dhabi MBA · January 2027 intake",
     phases: [
       { label: "MBA · Campus", place: "Abu Dhabi", start: "2027-01", end: "2027-12", color: G1 },
@@ -50,6 +54,7 @@ const JOURNEYS = {
     ]
   },
   CBS: {
+    start: "2027-01-11",
     label: "Columbia Business School MBA · January 2027 (J-Term)",
     phases: [
       { label: "MBA · Campus", place: "New York, USA", start: "2027-01", end: "2027-12", color: G1, note: "16-month programme, end date to be confirmed" },

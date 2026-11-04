@@ -1086,7 +1086,8 @@
     }).join("");
     const key = [];
     if (dep.due && dep.status !== "done") key.push({ date: parseDate(dep.due), title: `${sc.short} deposit due`, sub: money(dep) });
-    if (j && j.phases[0] && j.phases[0].start) key.push({ date: parseDate(j.phases[0].start + "-01"), title: "Programme starts", sub: `${sc.short} · ${j.phases[0].place}` });
+    const startDate = j ? parseDate(j.start) || (j.phases[0] && j.phases[0].start ? parseDate(j.phases[0].start + "-01") : null) : null;
+    if (startDate) key.push({ date: startDate, title: "Programme starts", sub: `${sc.short} · ${j.phases[0].place}` });
     key.sort((x, y) => x.date - y.date);
     return `
       <div class="profile-grid">
@@ -1106,7 +1107,7 @@
             <div class="panel-head"><h2>Summary</h2></div>
             <dl class="kv">
               <dt>Going to</dt><dd>${esc(sc.short)}, ${esc(c.intake || "January 2027")}</dd>
-              <dt>Departure</dt><dd>${j && j.phases[0].start ? monthLabel(j.phases[0].start) : "—"}${j && j.phases[0].place ? " · " + esc(j.phases[0].place.split(",")[0]) : ""}</dd>
+              <dt>Programme start</dt><dd>${startDate ? fmt(startDate) : "—"}${j && j.phases[0].place ? " · " + esc(j.phases[0].place.split(",")[0]) : ""}</dd>
               ${d.internship ? `<dt>Internship</dt><dd>${esc(d.internship)}</dd>` : ""}
               <dt>Checklist</dt><dd>${depDone(d)} of ${depTotal(d)} done</dd>
               <dt>Next</dt><dd>${key[0] ? `${esc(key[0].title)} · ${fmt(key[0].date)}` : "—"}</dd>
