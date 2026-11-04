@@ -1059,12 +1059,14 @@
         <div class="dep-note muted small">Amounts in AED use the rates of ${esc(DM.ratesDate || "")}: ${Object.entries(DM.rates || {}).map(([k, v]) => `1 ${k} = ${v} AED`).join(" · ")}.</div>
       </div>`;
   }
+  const MONTHS_FULL = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+  function monthFull(ym) { return MONTHS_FULL[Number(ym.split("-")[1]) - 1]; }
   function journeyBar(j, d) {
     if (!j) return "";
     const ph = j.phases.map(p => {
-      let place = p.place; if (p.label === "Summer internship" && d.internship) place = d.internship;
-      const span = p.start ? `${monthLabel(p.start)}${p.end ? "–" + monthLabel(p.end) : ""}` : "";
-      return `<div class="jseg" style="background:${esc(p.color || "#555")}" title="${esc(p.note || "")}"><b>${esc(p.label)}</b><span>${esc(place)}${span ? " · " + span : ""}</span></div>`;
+      let place = p.place; if (/internship/i.test(p.label) && d.internship) place = d.internship;
+      const span = p.start ? (p.end ? `${monthFull(p.start)} – ${monthFull(p.end)}` : `${monthFull(p.start)} ${p.start.split("-")[0]}`) : "";
+      return `<div class="jseg" style="background:${esc(p.color || "#555")};color:${esc(p.text || "#fff")}" title="${esc(p.note || "")}"><span class="j-title">${esc(p.label)}</span><b class="j-when">${esc(span)}</b><span class="j-place">${esc(place)}</span></div>`;
     }).join("");
     return `<div class="journey">${ph}</div>`;
   }
@@ -1098,7 +1100,6 @@
             <div class="dep-note">${esc(DM.onboarding || "")}</div>
             <table class="dep-table one"><thead><tr><th>Item</th><th>Status</th><th>Owner</th><th>Due</th></tr></thead><tbody>${rowsHtml}</tbody></table>
           </div>
-          ${others.length ? `<div class="panel"><div class="panel-head"><h2>Other applications</h2><span class="small muted">closed</span></div>${others.map(o => `<div class="dep-other"><span>${esc(school(o.school).name)}</span>${statusPill(o)}</div>`).join("")}</div>` : ""}
         </div>
         <div class="side">
           <div class="panel">
