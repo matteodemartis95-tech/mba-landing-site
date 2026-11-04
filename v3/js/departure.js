@@ -17,7 +17,9 @@ const DEPARTURE_META = {
 };
 
 /* Journey colours: a green scale, dark to light; "text" is the text colour on that segment. */
-const G1 = "#0f4c35", G2 = "#1b7a4e", G3 = "#35a86a", G4 = "#cfe9d9";
+const G1 = "#0f4c35", G2 = "#1b7a4e", G3 = "#35a86a", G4 = "#cfe9d9";          /* INSEAD: greens */
+const B1 = "#0b2e5c", B4 = "#d6e4f5", BT = "#0b2e5c";                           /* HEC, IMD, Columbia: blues */
+const P1 = "#3b1f6e", P4 = "#e6dcf5", PT = "#3b1f6e";                           /* NYU Abu Dhabi: purples */
 const JOURNEYS = {
   INSEAD: {
     start: "2027-01-07",
@@ -33,32 +35,32 @@ const JOURNEYS = {
     start: "2027-01-04",
     label: "HEC Paris MBA · January 2027 intake",
     phases: [
-      { label: "MBA · Campus", place: "Jouy-en-Josas, France", start: "2027-01", end: "2027-12", color: G1, note: "phase dates to be confirmed" },
-      { label: "Return", place: "EO Secondment, Abu Dhabi", start: "2028-01", end: "", color: G4, text: "#0f4c35" }
+      { label: "MBA · Campus", place: "Jouy-en-Josas, France", start: "2027-01", end: "2027-12", color: B1, note: "phase dates to be confirmed" },
+      { label: "Return", place: "EO Secondment, Abu Dhabi", start: "2028-01", end: "", color: B4, text: BT }
     ]
   },
   IMD: {
     start: "2027-01-04",
     label: "IMD MBA · January 2027 intake",
     phases: [
-      { label: "MBA · Campus", place: "Lausanne, Switzerland", start: "2027-01", end: "2027-12", color: G1 },
-      { label: "Return", place: "EO Secondment, Abu Dhabi", start: "2028-01", end: "", color: G4, text: "#0f4c35" }
+      { label: "MBA · Campus", place: "Lausanne, Switzerland", start: "2027-01", end: "2027-12", color: B1 },
+      { label: "Return", place: "EO Secondment, Abu Dhabi", start: "2028-01", end: "", color: B4, text: BT }
     ]
   },
   NYUAD: {
     start: "2027-01-15",
     label: "NYU Stern at NYU Abu Dhabi MBA · January 2027 intake",
     phases: [
-      { label: "MBA · Campus", place: "Abu Dhabi", start: "2027-01", end: "2027-12", color: G1 },
-      { label: "Return", place: "EO Secondment, Abu Dhabi", start: "2028-01", end: "", color: G4, text: "#0f4c35" }
+      { label: "MBA · Campus", place: "Abu Dhabi", start: "2027-01", end: "2027-12", color: P1 },
+      { label: "Return", place: "EO Secondment, Abu Dhabi", start: "2028-01", end: "", color: P4, text: PT }
     ]
   },
   CBS: {
     start: "2027-01-11",
     label: "Columbia Business School MBA · January 2027 (J-Term)",
     phases: [
-      { label: "MBA · Campus", place: "New York, USA", start: "2027-01", end: "2027-12", color: G1, note: "16-month programme, end date to be confirmed" },
-      { label: "Return", place: "EO Secondment, Abu Dhabi", start: "2028-01", end: "", color: G4, text: "#0f4c35" }
+      { label: "MBA · Campus", place: "New York, USA", start: "2027-01", end: "2027-12", color: B1, note: "16-month programme, end date to be confirmed" },
+      { label: "Return", place: "EO Secondment, Abu Dhabi", start: "2028-01", end: "", color: B4, text: BT }
     ]
   }
 };
