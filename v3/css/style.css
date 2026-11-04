@@ -575,7 +575,9 @@ td .approx { color: var(--text-3); font-size: 11px; margin-left: 4px; }
 .dep-main .app-name { font-size: 16px; font-weight: 700; }
 .dep-main .app-head .status { margin-left: auto; }
 .dep-other { display: flex; justify-content: space-between; align-items: center; padding: 10px 16px; border-top: 1px solid var(--border); font-size: 13px; }
-.kd { display: flex; gap: 12px; align-items: center; padding: 8px 0; border-bottom: 1px solid var(--border); } .kd:last-child { border-bottom: 0; } .kd.past { opacity: .55; }
-.kd-date { width: 56px; flex: none; text-align: center; background: var(--surface-2); border-radius: 10px; padding: 6px 0; line-height: 1.15; } .kd-date b { display: block; font-size: 17px; } .kd-date span { display: block; font-size: 10px; color: var(--text-3); text-transform: uppercase; letter-spacing: .03em; }
-.kd { padding: 10px 0; }
+.kd { display: flex; gap: 14px; align-items: center; padding: 12px 0; border-bottom: 1px solid var(--border); } .kd:last-child { border-bottom: 0; } .kd.past { opacity: .55; }
+.kd-date { width: 62px; min-height: 62px; flex: none; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; background: var(--surface-2); border: 1px solid var(--border); border-radius: 12px; line-height: 1.1; overflow: hidden; }
+.kd-date b { display: block; font-size: 20px; font-weight: 700; }
+.kd-date span { display: block; font-size: 10px; color: var(--text-3); text-transform: uppercase; letter-spacing: .04em; white-space: nowrap; }
+.kd-date span + span { font-size: 9.5px; margin-top: 1px; }
 .kd-title { font-size: 13px; font-weight: 600; }
