@@ -122,7 +122,7 @@ const EVALUATIONS = {
     "lineManager": "Al-Emad project lead",
     "function": "Al-Emad",
     "corporateExchangeProject": "UAE National Intellectual Property Strategy and modernisation of the MoD education & training ecosystem",
-    "previousFunction": "Staff Officer 2 J6 (IT & Communications), Presidential Guard Falcons Brigade (2024–2025)",
+    "previousFunction": "Presidency Guard",
     "academicQualifications": "Master of Engineering Management, Abu Dhabi University (2022)",
     "reportFirm": "Kearney",
     "phases": {
@@ -283,7 +283,7 @@ const EVALUATIONS = {
     "lineManager": "Declan Noone",
     "function": "T&LD",
     "corporateExchangeProject": "National Academy",
-    "previousFunction": "National Service & Reserve Staff (GHQ)",
+    "previousFunction": "National Service",
     "academicQualifications": "Masters in Leadership",
     "reportFirm": "",
     "phases": {
@@ -408,7 +408,7 @@ const EVALUATIONS = {
     "lineManager": "Naguib Bebawi",
     "function": "Defense Policy",
     "corporateExchangeProject": "UAE Financial Industry Regulatory Entity",
-    "previousFunction": "Research Support & Analysis Staff Officer, Ministry of Defence (2019–2025)",
+    "previousFunction": "Defence Intelligence & Security Authority",
     "academicQualifications": "MSc Intelligence Analysis, Rabdan Academy (2020)",
     "reportFirm": "Kearney",
     "phases": {
@@ -543,7 +543,7 @@ const EVALUATIONS = {
     "lineManager": "Rania Rostom",
     "function": "Strategic Communications",
     "corporateExchangeProject": "Central Bank of the UAE reverse-solicitation policy benchmark, stablecoin payment use cases for a global payments company, and a Saudi banking-licence application",
-    "previousFunction": "Head of Monitor and Control, Signal Corps, Ministry of Defence (2024–2025)",
+    "previousFunction": "Joint Support",
     "academicQualifications": "BSc Information Technology, Networking and Security, Ajman University (2019)",
     "reportFirm": "Kearney",
     "phases": {
@@ -638,7 +638,7 @@ const EVALUATIONS = {
     "lineManager": "Aleksandra Socevic",
     "function": "Human Resources",
     "corporateExchangeProject": "Organizational Design (OD) Support",
-    "previousFunction": "Human Resources Officer",
+    "previousFunction": "Defence Personnel Authority",
     "academicQualifications": "BSc Information Systems and Technology Management, Zayed University (2018)",
     "reportFirm": "PwC",
     "phases": {
@@ -798,7 +798,7 @@ const EVALUATIONS = {
     "lineManager": "Gregor Lisjak",
     "function": "Al-Emad",
     "corporateExchangeProject": "Financial and digital transformation",
-    "previousFunction": "Officer and instructor, Presidential Guard (operations, training and strategic development, 2020–2025)",
+    "previousFunction": "Presidency Guard",
     "academicQualifications": "Bachelor of Human Resources Management, Abu Dhabi University (2026)",
     "reportFirm": "PwC",
     "phases": {
@@ -893,7 +893,7 @@ const EVALUATIONS = {
     "lineManager": "Elvie Lahournere",
     "function": "Strategic Management",
     "corporateExchangeProject": "DGE Survey Management",
-    "previousFunction": "Captain in Leadership & Strategic Operations",
+    "previousFunction": "Joint Support",
     "academicQualifications": "LL.M. International Business Law, University Paris II Panthéon-Assas (2025)",
     "reportFirm": "PwC",
     "phases": {
@@ -1050,7 +1050,7 @@ const EVALUATIONS = {
     "lineManager": "Rania Rostom",
     "function": "Strategic Communications",
     "corporateExchangeProject": "DGE Survey Management",
-    "previousFunction": "Signal Corps, Ministry of Defence (IT and communications infrastructure, 2024–2025)",
+    "previousFunction": "Joint Support",
     "academicQualifications": "Bachelor's in Information Security Technology Engineering, Abu Dhabi Polytechnic (2022)",
     "reportFirm": "PwC",
     "phases": {
@@ -1145,7 +1145,7 @@ const EVALUATIONS = {
     "lineManager": "Saif Al Siksek",
     "function": "Digital & AI",
     "corporateExchangeProject": "Compliance Level – Sorbonne",
-    "previousFunction": "Head of Safety & Quality Department, Ministry of Defence (2022–2025)",
+    "previousFunction": "Infrastructure and Logistics Organization",
     "academicQualifications": "Professional Diploma, Preparing Occupational Health & Safety Trainers, University of Sharjah (2023)",
     "reportFirm": "PwC",
     "phases": {
@@ -1279,7 +1279,7 @@ const EVALUATIONS = {
     "lineManager": "Saif Al Siksek",
     "function": "Digital & AI",
     "corporateExchangeProject": "Job families classification for the Federal Authority for Identity, Citizenship, Customs & Port Security, and restructuring of the Dubai Police Criminal Investigation Sector",
-    "previousFunction": "Head of Recruitment Section, Ministry of Defence (2022–2025)",
+    "previousFunction": "Defence Personnel Authority",
     "academicQualifications": "Bachelor's in Financial Management, Abu Dhabi University (2015)",
     "reportFirm": "PwC",
     "phases": {
@@ -1440,7 +1440,7 @@ const EVALUATIONS = {
     "lineManager": "Elvie Lahournere",
     "function": "Optimization",
     "corporateExchangeProject": "Inst. Transformation of Social Sector",
-    "previousFunction": "Research Specialist & Engineering Lead, UAE Armed Forces (2023–2024)",
+    "previousFunction": "Joint Air Operations",
     "academicQualifications": "BSc Electronic Engineering, Higher Colleges of Technology, Sharjah (2021)",
     "reportFirm": "PwC",
     "phases": {
@@ -1575,7 +1575,7 @@ const EVALUATIONS = {
     "lineManager": "Aleksandra Socevic",
     "function": "T&LD",
     "corporateExchangeProject": "Energy-sector strategy for Masdar and the Abu Dhabi Department of Energy",
-    "previousFunction": "National Defence College",
+    "previousFunction": "National Defense College",
     "academicQualifications": "MBA, Organizational Excellence & Quality Management, Abu Dhabi University (2021)",
     "reportFirm": "Oliver Wyman",
     "phases": {
@@ -1738,7 +1738,7 @@ const EVALUATIONS = {
     "lineManager": "Mark Withington",
     "function": "Al-Emad",
     "corporateExchangeProject": "Khutwa Program",
-    "previousFunction": "Trainee",
+    "previousFunction": "Executive Office of the Minister of Defence",
     "academicQualifications": "Bachelor's in Electrical Engineering",
     "reportFirm": "Oliver Wyman",
     "phases": {
@@ -1898,7 +1898,7 @@ const EVALUATIONS = {
     "lineManager": "Ansh Karha",
     "function": "Al-Emad",
     "corporateExchangeProject": "Force transformation, energy, digital transformation and AI projects",
-    "previousFunction": "Military officer, command, training and operations (2018–2025); JTAC instructor",
+    "previousFunction": "Presidency Guard",
     "academicQualifications": "Bachelor's in Human Resources, Abu Dhabi University (2026)",
     "reportFirm": "Oliver Wyman",
     "phases": {
@@ -1993,7 +1993,7 @@ const EVALUATIONS = {
     "lineManager": "Ameera Al Ahbabi",
     "function": "Strategic Management",
     "corporateExchangeProject": "Department of Culture & Tourism (business cases and roadmaps for new public programmes, e.g. museums) and EV charging infrastructure roadmap",
-    "previousFunction": "Trainee consultant, KHUTWA Programme (MoD transformation projects delivered with Kearney)",
+    "previousFunction": "Executive Office of the Minister of Defence",
     "academicQualifications": "BSc Aerospace Engineering, Khalifa University (2021)",
     "reportFirm": "Oliver Wyman",
     "phases": {
