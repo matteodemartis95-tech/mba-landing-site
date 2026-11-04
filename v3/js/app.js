@@ -1116,7 +1116,7 @@
           </div>
           <div class="panel">
             <div class="panel-head"><h2>Key dates</h2></div>
-            <div class="panel-body">${key.map(k => `<div class="kd ${daysFrom(k.date) < 0 ? "past" : ""}"><div class="kd-date"><b>${k.date.getDate()}</b><span>${MONTHS[k.date.getMonth()]}</span><span>${k.date.getFullYear()}</span></div><div><div class="kd-title">${esc(k.title)}</div><div class="small muted">${esc(k.sub || "")}</div></div></div>`).join("") || `<div class="empty">No dates yet.</div>`}</div>
+            <div class="kd-list">${key.map(k => `<div class="kd ${daysFrom(k.date) < 0 ? "past" : ""}"><div class="kd-date"><b>${k.date.getDate()}</b><span>${MONTHS[k.date.getMonth()]}</span><span>${k.date.getFullYear()}</span></div><div><div class="kd-title">${esc(k.title)}</div><div class="small muted">${esc(k.sub || "")}</div></div></div>`).join("") || `<div class="empty">No dates yet.</div>`}</div>
           </div>
         </div>
       </div>`;
