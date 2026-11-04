@@ -413,6 +413,15 @@ const CANDIDATES = [
           "note": "Two alumni interviews."
         },
         "notes": "Rejected by INSEAD."
+      },
+      {
+        "school": "HEC",
+        "status": "submitted",
+        "interview": {
+          "date": "",
+          "note": ""
+        },
+        "notes": "HEC submitted (4 Nov 2026)."
       }
     ]
   },
