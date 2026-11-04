@@ -1105,7 +1105,7 @@ const EVALUATIONS = {
     ],
     "masters": [
       "Completed ScorePlus GMAT course",
-      "Applying to INSEAD MBA, January 2027"
+      "Admitted to INSEAD MBA, January 2027 intake"
     ],
     "docs": [
       {

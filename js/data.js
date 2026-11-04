@@ -479,12 +479,12 @@ const CANDIDATES = [
     "applications": [
       {
         "school": "INSEAD",
-        "status": "interviewed",
+        "status": "admitted",
         "interview": {
           "date": "",
-          "note": "Interview completed; awaiting final decision."
+          "note": "Interview completed."
         },
-        "notes": ""
+        "notes": "Admitted to INSEAD (offer received 4 Nov 2026)."
       }
     ]
   },
