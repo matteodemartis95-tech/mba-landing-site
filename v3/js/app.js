@@ -25,6 +25,7 @@
     try { localStorage.setItem(TLD_KEY, JSON.stringify(courses)); localStorage.setItem(TLD_KEY + ":base", TLD_HASH); } catch (e) { toast("Could not save locally: " + e.message); }
   }
   function hasLocalCourses() { try { return !!localStorage.getItem(TLD_KEY); } catch (e) { return false; } }
+  const DEP = window.DEPARTURE_DATA || { DEPARTURE_META: { rates: {}, items: [], statuses: {} }, JOURNEYS: {}, DEPARTURE: {} };
   const J2 = window.J2_DATA || { J2_FIRMS: [], J2_CANDIDATES: [] };
   const J2_KEY = "jahizoun-mba-tracker:v3-j2";
   const J2_HASH = hashString(JSON.stringify(J2.J2_CANDIDATES));
@@ -252,8 +253,8 @@
       <div class="tiles">
         ${tile("all", "Candidates", total, `${candidates.filter(c => c.programme === "Jahizoun").length} Jahizoun · ${candidates.filter(c => c.programme === "EDGE").length} EDGE`, "accent")}
         ${tile("submitted", "Applications submitted", submitted, "across all schools", "accent")}
-        ${tile("scheduled", "Interviews scheduled", scheduledApps, `${withDate} with a confirmed date`, "warning")}
         ${tile("admitted", "Admitted", admitted, "offers received", "good")}
+        ${depTile()}
         ${qeTile}
       </div>
       <div class="overview">
@@ -707,6 +708,8 @@
   }
 
   function renderMba(c) {
+    const dpt = DEP.DEPARTURE[c.id];
+    if (dpt) return renderDepartureMba(c, dpt);
     const ni = nextInterview(c);
     return `
       <div class="profile-grid">
@@ -997,6 +1000,126 @@
     });
   }
 
+  /* ---------- pre-departure ---------- */
+  const DM = DEP.DEPARTURE_META;
+  function depRows() {
+    return Object.keys(DEP.DEPARTURE).map(id => ({ c: candidates.find(x => x.id === id), d: DEP.DEPARTURE[id] })).filter(x => x.c);
+  }
+  function aed(amount, cur) { const r = (DM.rates || {})[cur]; return r ? Math.round(amount * r).toLocaleString("en-GB") + " AED" : ""; }
+  function money(dep) { return dep.amount ? `${dep.amount.toLocaleString("en-GB")} ${esc(dep.currency || "")}` : "amount tbc"; }
+  function depStatus(item, key) { const k = item && item.status || "todo"; const lbl = key === "deposit" ? ({ done: "Paid", todo: "To pay", progress: "In progress", na: "Not required" })[k] : DM.statuses[k]; return `<span class="dchip ${k}">${esc(lbl || k)}</span>`; }
+  function depDone(d) { return DM.items.filter(i => (d[i.key] || {}).status === "done").length; }
+  function depTotal(d) { return DM.items.filter(i => (d[i.key] || {}).status !== "na").length; }
+  function nextDeposit(rows) {
+    const due = rows.filter(x => x.d.deposit && x.d.deposit.status !== "done" && parseDate(x.d.deposit.due)).sort((a, b) => parseDate(a.d.deposit.due) - parseDate(b.d.deposit.due));
+    return due[0] || null;
+  }
+  function depTile() {
+    const rows = depRows(); if (!rows.length) return "";
+    const paid = rows.filter(x => (x.d.deposit || {}).status === "done").length;
+    const nd = nextDeposit(rows);
+    return `<a class="tile" href="#/departure"><div class="label"><span class="dot warning"></span>Pre-departure</div><div class="value">${paid} <span class="value-sub">/ ${rows.length} deposits paid</span></div><div class="sub">${nd ? `Next: ${esc(school(nd.d.school).short)} deposit by ${fmt(parseDate(nd.d.deposit.due))}` : "No deposit due"}</div></a>`;
+  }
+  function renderDeparture() {
+    const rows = depRows();
+    const paid = rows.filter(x => (x.d.deposit || {}).status === "done").length;
+    const visaRows = rows.filter(x => (x.d.visa || {}).status !== "na"), visaDone = visaRows.filter(x => x.d.visa.status === "done").length;
+    const nd = nextDeposit(rows);
+    const bySchool = {}; rows.forEach(x => (bySchool[x.d.school] = bySchool[x.d.school] || []).push(x));
+    const order = ["INSEAD", "HEC", "IMD", "CBS", "NYUAD"].filter(k => bySchool[k]).concat(Object.keys(bySchool).filter(k => !["INSEAD", "HEC", "IMD", "CBS", "NYUAD"].includes(k)));
+    const counts = order.map(k => `${bySchool[k].length} ${school(k).short}`).join(" · ");
+    return `
+      <a class="back" href="#/jahizoun">← All candidates</a>
+      <div class="page-head">
+        <div><h1>Pre-departure</h1><p>Candidates with an accepted MBA offer and the status of their pre-departure duties. Click a row to open the candidate's journey.</p></div>
+        <div class="muted small">Updated ${fmt(today, true)}</div>
+      </div>
+      <div class="tiles">
+        <div class="tile static"><div class="label"><span class="dot accent"></span>Departing</div><div class="value">${rows.length}</div><div class="sub">${counts}</div></div>
+        <div class="tile static"><div class="label"><span class="dot good"></span>Deposits paid</div><div class="value">${paid} <span class="value-sub">/ ${rows.length}</span></div><div class="sub">${nd ? `Next: ${esc(school(nd.d.school).short)} by ${fmt(parseDate(nd.d.deposit.due))}` : "All paid"}</div></div>
+        <div class="tile static"><div class="label"><span class="dot warning"></span>Visas done</div><div class="value">${visaDone} <span class="value-sub">/ ${visaRows.length}</span></div><div class="sub">${rows.length - visaRows.length} not required</div></div>
+        <div class="tile static"><div class="label"><span class="dot violet"></span>Next deadline</div><div class="value" style="font-size:20px">${nd ? fmt(parseDate(nd.d.deposit.due)) : "—"}</div><div class="sub">${nd ? `${esc(school(nd.d.school).short)} deposit · ${rows.filter(x => x.d.school === nd.d.school && x.d.deposit.status !== "done").length} candidate${rows.filter(x => x.d.school === nd.d.school && x.d.deposit.status !== "done").length === 1 ? "" : "s"}` : ""}</div></div>
+      </div>
+      <div class="panel">
+        <div class="panel-head"><h2>Pre-departure checklist</h2><span class="small muted">${Object.keys(DM.statuses).map(k => `<span class="dchip ${k} mini">${esc(DM.statuses[k])}</span>`).join(" ")}</span></div>
+        <div class="dep-note">${esc(DM.onboarding || "")}</div>
+        <div class="table-wrap"><table class="dep-table">
+          <thead><tr><th>Candidate</th>${DM.items.map(i => `<th>${esc(i.label)}<span class="th-sub">${esc(i.owner)}</span></th>`).join("")}<th>Done</th></tr></thead>
+          <tbody>
+          ${order.map(k => `
+            <tr class="grp"><td colspan="${DM.items.length + 2}">${esc((DEP.JOURNEYS[k] || {}).label || school(k).name)}${k === "INSEAD" ? " · Fontainebleau → internship → Singapore" : ""}</td></tr>
+            ${bySchool[k].sort((a, b) => nameOf(a.c).localeCompare(nameOf(b.c))).map(x => `
+              <tr class="row" data-href="#/candidate/${esc(x.c.id)}/mba">
+                <td><a class="who" href="#/candidate/${esc(x.c.id)}/mba">${avatar(x.c)}<span>${esc(nameOf(x.c))}</span></a></td>
+                ${DM.items.map(i => { const it = x.d[i.key] || { status: "todo" }; const sub = i.key === "deposit" ? `${money(it)}${it.status === "done" ? (it.paid ? " · paid " + fmt(parseDate(it.paid)) : "") : (it.due ? " · due " + fmt(parseDate(it.due)) : "")}` : (it.note || ""); return `<td>${depStatus(it, i.key)}${sub ? `<span class="th-sub">${esc(sub)}</span>` : ""}</td>`; }).join("")}
+                <td class="muted">${depDone(x.d)} / ${depTotal(x.d)}</td>
+              </tr>`).join("")}`).join("")}
+          </tbody>
+        </table></div>
+        <div class="dep-note muted small">Amounts in AED use the rates of ${esc(DM.ratesDate || "")}: ${Object.entries(DM.rates || {}).map(([k, v]) => `1 ${k} = ${v} AED`).join(" · ")}.</div>
+      </div>`;
+  }
+  function journeyBar(j, d) {
+    if (!j) return "";
+    const ph = j.phases.map(p => {
+      let place = p.place; if (p.label === "Summer internship" && d.internship) place = d.internship;
+      const span = p.start ? `${monthLabel(p.start)}${p.end ? "–" + monthLabel(p.end) : ""}` : "";
+      return `<div class="jseg" style="background:${esc(p.color || "#555")}" title="${esc(p.note || "")}"><b>${esc(p.label)}</b><span>${esc(place)}${span ? " · " + span : ""}</span></div>`;
+    }).join("");
+    return `<div class="journey">${ph}</div>`;
+  }
+  function monthLabel(ym) { const [y, m] = ym.split("-").map(Number); return MONTHS[m - 1] + " " + String(y).slice(2); }
+  function renderDepartureMba(c, d) {
+    const a = c.applications.find(x => x.school === d.school) || { status: "admitted", notes: "" };
+    const j = DEP.JOURNEYS[d.school]; const sc = school(d.school);
+    const others = c.applications.filter(x => x.school !== d.school);
+    const dep = d.deposit || {};
+    const rowsHtml = DM.items.map(i => {
+      const it = d[i.key] || { status: "todo" };
+      let label = i.label, due = "";
+      if (i.key === "deposit") { label = `Deposit · ${money(it)}${it.amount && aed(it.amount, it.currency) ? " ≈ " + aed(it.amount, it.currency) : ""}`; due = it.status === "done" ? (it.paid ? "Paid " + fmt(parseDate(it.paid)) : "Paid") : (it.due ? fmt(parseDate(it.due)) : "—"); }
+      else if (i.key === "housing") { label = `Housing${j && j.phases.filter(p => p.label !== "Return" && p.label !== "Summer internship").length > 1 ? " · " + j.phases.filter(p => p.label !== "Return" && p.label !== "Summer internship").map(p => p.place.split(",")[0]).join(" and ") : ""}`; due = it.due ? fmt(parseDate(it.due)) : "—"; }
+      else due = it.due ? fmt(parseDate(it.due)) : "—";
+      return `<tr><td>${esc(label)}</td><td>${depStatus(it, i.key)}</td><td class="muted">${esc(it.owner || i.owner)}</td><td class="muted">${esc(due)}</td></tr>`;
+    }).join("");
+    const key = [];
+    if (dep.due && dep.status !== "done") key.push({ date: parseDate(dep.due), title: `${sc.short} deposit due`, sub: money(dep) });
+    if (j) j.phases.forEach(p => { if (p.start) key.push({ date: parseDate(p.start + "-01"), title: `${p.label} starts`, sub: (p.label === "Summer internship" && d.internship) ? d.internship : p.place }); });
+    key.sort((x, y) => x.date - y.date);
+    return `
+      <div class="profile-grid">
+        <div class="apps">
+          <div class="panel app dep-main">
+            <div class="app-head"><img class="logo" src="${esc(asset(sc.logo))}" alt=""><div><div class="app-name">${esc(sc.name)}</div><div class="small muted">${esc((j || {}).label || "")} · offer accepted</div></div><span class="status good"><span class="st good"></span>Admitted · going</span></div>
+            <div class="panel-head sub"><h2>Programme journey</h2><span class="small muted">${j && j.phases[0].start ? monthLabel(j.phases[0].start) + " → " + monthLabel(j.phases[j.phases.length - 1].start) : ""}</span></div>
+            ${journeyBar(j, d)}
+            ${j && j.phases.some(p => p.note) ? `<div class="dep-note muted small">${esc(j.phases.filter(p => p.note).map(p => p.label + ": " + p.note).join(" · "))}</div>` : ""}
+            <div class="panel-head sub"><h2>Pre-departure checklist</h2><span class="small muted">${depDone(d)} of ${depTotal(d)} done</span></div>
+            <div class="dep-note">${esc(DM.onboarding || "")}</div>
+            <table class="dep-table one"><thead><tr><th>Item</th><th>Status</th><th>Owner</th><th>Due</th></tr></thead><tbody>${rowsHtml}</tbody></table>
+          </div>
+          ${others.length ? `<div class="panel"><div class="panel-head"><h2>Other applications</h2><span class="small muted">closed</span></div>${others.map(o => `<div class="dep-other"><span>${esc(school(o.school).name)}</span>${statusPill(o)}</div>`).join("")}</div>` : ""}
+        </div>
+        <div class="side">
+          <div class="panel">
+            <div class="panel-head"><h2>Summary</h2></div>
+            <dl class="kv">
+              <dt>Going to</dt><dd>${esc(sc.short)}, ${esc(c.intake || "January 2027")}</dd>
+              <dt>Departure</dt><dd>${j && j.phases[0].start ? monthLabel(j.phases[0].start) : "—"}${j && j.phases[0].place ? " · " + esc(j.phases[0].place.split(",")[0]) : ""}</dd>
+              ${d.internship ? `<dt>Internship</dt><dd>${esc(d.internship)}</dd>` : ""}
+              <dt>Checklist</dt><dd>${depDone(d)} of ${depTotal(d)} done</dd>
+              <dt>Next</dt><dd>${key[0] ? `${esc(key[0].title)} · ${fmt(key[0].date)}` : "—"}</dd>
+              <dt>Test score</dt><dd>${esc(c.test || "—")}</dd>
+            </dl>
+          </div>
+          <div class="panel">
+            <div class="panel-head"><h2>Key dates</h2></div>
+            <div class="panel-body">${key.map(k => `<div class="kd ${daysFrom(k.date) < 0 ? "past" : ""}"><div class="kd-date"><b>${k.date.getDate()}</b><span>${MONTHS[k.date.getMonth()]} ${String(k.date.getFullYear()).slice(2)}</span></div><div><div class="kd-title">${esc(k.title)}</div><div class="small muted">${esc(k.sub || "")}</div></div></div>`).join("") || `<div class="empty">No dates yet.</div>`}</div>
+          </div>
+        </div>
+      </div>`;
+  }
+
   /* ---------- rendering: deadlines ---------- */
   function renderDeadlines() {
     const usedSchools = new Set(candidates.flatMap(c => c.applications.map(a => a.school)));
@@ -1262,11 +1385,12 @@
     else if (mj) { view = "j2profile"; html = renderJ2Profile(decodeURIComponent(mj[1])); }
     else if (h.startsWith("#/jahizoun2")) { view = "j2"; html = renderJ2(); }
     else if (mc) { view = "course"; html = renderCourse(decodeURIComponent(mc[1])); }
+    else if (h.startsWith("#/departure")) { view = "departure"; html = renderDeparture(); }
     else if (h.startsWith("#/deadlines")) { view = "deadlines"; html = renderDeadlines(); }
     else if (h.startsWith("#/jahizoun")) { view = "home"; html = renderHome(); }
     else html = renderTld();
     app.innerHTML = html;
-    document.querySelectorAll("#nav a").forEach(a => a.classList.toggle("active", a.dataset.route === (view === "profile" ? "home" : view === "course" ? "tld" : view === "j2profile" ? "j2" : view)));
+    document.querySelectorAll("#nav a").forEach(a => a.classList.toggle("active", a.dataset.route === (view === "profile" || view === "departure" ? "home" : view === "course" ? "tld" : view === "j2profile" ? "j2" : view)));
     if (view !== "profile") window.scrollTo(0, 0);
     if (view === "home") bindHome();
     if (view === "j2") bindJ2();
@@ -1318,6 +1442,7 @@
     }
   });
   app.addEventListener("click", e => {
+    const tr = e.target.closest("tr.row[data-href]"); if (tr && !e.target.closest("a")) { location.hash = tr.dataset.href; return; }
     const ec = e.target.closest("[data-edit-course]"); if (ec) { openCourseEditor(ec.dataset.editCourse); return; }
     const ej = e.target.closest("[data-edit-j2]"); if (ej) { openJ2Editor(ej.dataset.editJ2); return; }
     const dj = e.target.closest("[data-del-j2]");

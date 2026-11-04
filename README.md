@@ -88,3 +88,7 @@ Open `index.html` in a browser, or serve the folder (for example `python3 -m htt
 ## Jahizoun 2 (V3 only)
 
 The **Jahizoun 2** banner lists the second cohort, currently on Corporate Exchange. Data lives in `v3/js/jahizoun2.js` (`J2_FIRMS` for the filter buttons, `J2_CANDIDATES` with id, name, firm, photo, academicQualifications, previousFunction, docs, notes). Edit on the dashboard (Edit mode → "+ Add Jahizoun 2 candidate" / "Edit" on a profile, photo files are resized to a 320px square in the browser) and publish with "Copy jahizoun2.js" → `v3/js/jahizoun2.js`. CVs go in `docs/` as `<id>-cv.pdf`.
+
+## Pre-departure (V3 only)
+
+The **Pre-departure** tile on the Jahizoun 1 page opens `#/departure`: one row per candidate with an accepted MBA offer and the status of deposit, visa, health insurance and housing. The same data drives the candidate's MBA tab (programme journey + checklist). Data lives in `v3/js/departure.js`: `DEPARTURE_META` (rates to AED with their date, items, onboarding note), `JOURNEYS` (phases per school) and `DEPARTURE[candidate id]` (school, deposit amount/currency/due/paid, status of each item: done · progress · todo · na). Edit by hand on GitHub.
