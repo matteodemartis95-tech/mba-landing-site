@@ -561,18 +561,21 @@ td .approx { color: var(--text-3); font-size: 11px; margin-left: 4px; }
 .dep-table .who .avatar { width: 34px; height: 34px; border-width: 2px; }
 .th-sub { display: block; font-size: 11px; font-weight: 400; color: var(--text-3); text-transform: none; letter-spacing: 0; margin-top: 3px; }
 .dep-table.one th:first-child, .dep-table.one td:first-child { width: 42%; }
-.journey { display: flex; gap: 6px; padding: 12px 16px 6px; flex-wrap: wrap; }
+.journey { display: flex; gap: 10px; padding: 18px 20px 22px; flex-wrap: wrap; }
 .jseg { flex: 1 1 160px; border-radius: 10px; padding: 9px 12px; color: #fff; min-width: 0; }
 .jseg .j-title { display: block; font-size: 12px; font-weight: 600; opacity: .85; letter-spacing: .01em; }
 .jseg .j-when { display: block; font-size: 15px; font-weight: 700; margin: 3px 0 2px; }
 .jseg .j-place { display: block; font-size: 12px; opacity: .9; }
-.jseg { padding: 11px 14px; }
-.panel-head.sub { border-top: 1px solid var(--border); }
+.jseg { padding: 14px 16px; border-radius: 12px; }
+.panel-head.sub { border-top: 1px solid var(--border); padding-top: 16px; padding-bottom: 12px; }
+.dep-main .dep-note { padding: 10px 20px 12px; }
+.dep-main .dep-table th, .dep-main .dep-table td { padding: 12px 20px; }
 .dep-main .app-head { padding: 14px 16px; display: flex; align-items: center; gap: 12px; }
 .dep-main .app-head .logo { width: 64px; height: 44px; object-fit: contain; flex: none; }
 .dep-main .app-name { font-size: 16px; font-weight: 700; }
 .dep-main .app-head .status { margin-left: auto; }
 .dep-other { display: flex; justify-content: space-between; align-items: center; padding: 10px 16px; border-top: 1px solid var(--border); font-size: 13px; }
 .kd { display: flex; gap: 12px; align-items: center; padding: 8px 0; border-bottom: 1px solid var(--border); } .kd:last-child { border-bottom: 0; } .kd.past { opacity: .55; }
-.kd-date { width: 44px; text-align: center; background: var(--surface-2); border-radius: 10px; padding: 4px 0; line-height: 1.1; } .kd-date b { display: block; font-size: 16px; } .kd-date span { font-size: 10px; color: var(--text-3); text-transform: uppercase; }
+.kd-date { width: 56px; flex: none; text-align: center; background: var(--surface-2); border-radius: 10px; padding: 6px 0; line-height: 1.15; } .kd-date b { display: block; font-size: 17px; } .kd-date span { display: block; font-size: 10px; color: var(--text-3); text-transform: uppercase; letter-spacing: .03em; }
+.kd { padding: 10px 0; }
 .kd-title { font-size: 13px; font-weight: 600; }

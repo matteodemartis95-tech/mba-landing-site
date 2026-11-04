@@ -1080,13 +1080,13 @@
       const it = d[i.key] || { status: "todo" };
       let label = i.label, due = "";
       if (i.key === "deposit") { label = `Deposit · ${money(it)}${it.amount && aed(it.amount, it.currency) ? " ≈ " + aed(it.amount, it.currency) : ""}`; due = it.status === "done" ? (it.paid ? "Paid " + fmt(parseDate(it.paid)) : "Paid") : (it.due ? fmt(parseDate(it.due)) : "—"); }
-      else if (i.key === "housing") { label = `Housing${j && j.phases.filter(p => p.label !== "Return" && p.label !== "Summer internship").length > 1 ? " · " + j.phases.filter(p => p.label !== "Return" && p.label !== "Summer internship").map(p => p.place.split(",")[0]).join(" and ") : ""}`; due = it.due ? fmt(parseDate(it.due)) : "—"; }
+      else if (i.key === "housing") { const campus = j ? j.phases.filter(p => !/return|internship/i.test(p.label)) : []; label = `Housing${campus.length > 1 ? " · " + campus.map(p => p.place.split(",")[0]).join(" and ") : ""}`; due = it.due ? fmt(parseDate(it.due)) : "—"; }
       else due = it.due ? fmt(parseDate(it.due)) : "—";
       return `<tr><td>${esc(label)}</td><td>${depStatus(it, i.key)}</td><td class="muted">${esc(it.owner || i.owner)}</td><td class="muted">${esc(due)}</td></tr>`;
     }).join("");
     const key = [];
     if (dep.due && dep.status !== "done") key.push({ date: parseDate(dep.due), title: `${sc.short} deposit due`, sub: money(dep) });
-    if (j) j.phases.forEach(p => { if (p.start) key.push({ date: parseDate(p.start + "-01"), title: `${p.label} starts`, sub: (p.label === "Summer internship" && d.internship) ? d.internship : p.place }); });
+    if (j && j.phases[0] && j.phases[0].start) key.push({ date: parseDate(j.phases[0].start + "-01"), title: "Programme starts", sub: `${sc.short} · ${j.phases[0].place}` });
     key.sort((x, y) => x.date - y.date);
     return `
       <div class="profile-grid">
@@ -1115,7 +1115,7 @@
           </div>
           <div class="panel">
             <div class="panel-head"><h2>Key dates</h2></div>
-            <div class="panel-body">${key.map(k => `<div class="kd ${daysFrom(k.date) < 0 ? "past" : ""}"><div class="kd-date"><b>${k.date.getDate()}</b><span>${MONTHS[k.date.getMonth()]} ${String(k.date.getFullYear()).slice(2)}</span></div><div><div class="kd-title">${esc(k.title)}</div><div class="small muted">${esc(k.sub || "")}</div></div></div>`).join("") || `<div class="empty">No dates yet.</div>`}</div>
+            <div class="panel-body">${key.map(k => `<div class="kd ${daysFrom(k.date) < 0 ? "past" : ""}"><div class="kd-date"><b>${k.date.getDate()}</b><span>${MONTHS[k.date.getMonth()]}</span><span>${k.date.getFullYear()}</span></div><div><div class="kd-title">${esc(k.title)}</div><div class="small muted">${esc(k.sub || "")}</div></div></div>`).join("") || `<div class="empty">No dates yet.</div>`}</div>
           </div>
         </div>
       </div>`;
