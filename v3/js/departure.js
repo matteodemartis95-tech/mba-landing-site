@@ -69,18 +69,238 @@ const JOURNEYS = {
 
 const insead = (extra) => Object.assign({ school: "INSEAD", deposit: { status: "todo", amount: 12000, currency: "EUR", due: "2026-11-22" }, visa: { status: "todo" }, insurance: { status: "todo" }, housing: { status: "todo" } }, extra || {});
 const DEPARTURE = {
-  "haneen-aljneibi": insead(),
-  "mohamed-al-hameli": insead(),
-  "theyab-almeqbaali": insead({ internship: "UAE Embassy, Washington DC" }),
-  "abdulrahman-almarzooqi": insead(),
-  "fatima-balnoub": { school: "IMD", deposit: { status: "done", amount: 10000, currency: "CHF" }, visa: { status: "todo" }, insurance: { status: "todo" }, housing: { status: "todo" } },
-  "waleed-almansoori": { school: "IMD", deposit: { status: "todo", amount: 10000, currency: "CHF" }, visa: { status: "todo" }, insurance: { status: "todo" }, housing: { status: "todo" } },
-  "saeed-al-sereidi": { school: "NYUAD", deposit: { status: "done", amount: 2000, currency: "USD" }, visa: { status: "na" }, insurance: { status: "na" }, housing: { status: "na" } },
-  "mouza-al-zaabi": { school: "NYUAD", deposit: { status: "done", amount: 2000, currency: "USD" }, visa: { status: "na" }, insurance: { status: "na" }, housing: { status: "na" } },
-  "mohammed-al-mahri": { school: "NYUAD", deposit: { status: "done", amount: 2000, currency: "USD" }, visa: { status: "na" }, insurance: { status: "na" }, housing: { status: "na" } },
-  "khalifa-al-mansoori": { school: "CBS", deposit: { status: "done", amount: 3000, currency: "USD" }, visa: { status: "todo" }, insurance: { status: "todo" }, housing: { status: "todo" } },
-  "saoud-alkaabi": { school: "HEC", deposit: { status: "done", amount: 9000, currency: "EUR", due: "2026-11-23" }, visa: { status: "todo" }, insurance: { status: "todo" }, housing: { status: "todo" } },
-  "mohamed-al-naqabi": { school: "HEC", deposit: { status: "todo", amount: 9000, currency: "EUR", due: "2026-11-23" }, visa: { status: "todo" }, insurance: { status: "todo" }, housing: { status: "todo" } }
+  "haneen-aljneibi": {
+    "school": "INSEAD",
+    "deposit": {
+      "status": "todo",
+      "amount": 12000,
+      "currency": "EUR",
+      "due": "2026-11-22"
+    },
+    "visa": {
+      "status": "progress",
+      "note": "Letter sent to MOD E&T · 6 Nov 2026"
+    },
+    "insurance": {
+      "status": "progress",
+      "note": "Letter sent to MOD E&T · 6 Nov 2026"
+    },
+    "housing": {
+      "status": "progress",
+      "note": "Letter sent to MOD E&T · 6 Nov 2026"
+    }
+  },
+  "mohamed-al-hameli": {
+    "school": "INSEAD",
+    "deposit": {
+      "status": "todo",
+      "amount": 12000,
+      "currency": "EUR",
+      "due": "2026-11-22"
+    },
+    "visa": {
+      "status": "progress",
+      "note": "Letter sent to MOD E&T · 6 Nov 2026"
+    },
+    "insurance": {
+      "status": "progress",
+      "note": "Letter sent to MOD E&T · 6 Nov 2026"
+    },
+    "housing": {
+      "status": "progress",
+      "note": "Letter sent to MOD E&T · 6 Nov 2026"
+    }
+  },
+  "theyab-almeqbaali": {
+    "school": "INSEAD",
+    "deposit": {
+      "status": "todo",
+      "amount": 12000,
+      "currency": "EUR",
+      "due": "2026-11-22"
+    },
+    "visa": {
+      "status": "progress",
+      "note": "Letter sent to MOD E&T · 6 Nov 2026"
+    },
+    "insurance": {
+      "status": "progress",
+      "note": "Letter sent to MOD E&T · 6 Nov 2026"
+    },
+    "housing": {
+      "status": "progress",
+      "note": "Letter sent to MOD E&T · 6 Nov 2026"
+    },
+    "internship": "UAE Embassy, Washington DC"
+  },
+  "abdulrahman-almarzooqi": {
+    "school": "INSEAD",
+    "deposit": {
+      "status": "todo",
+      "amount": 12000,
+      "currency": "EUR",
+      "due": "2026-11-22"
+    },
+    "visa": {
+      "status": "todo"
+    },
+    "insurance": {
+      "status": "todo"
+    },
+    "housing": {
+      "status": "todo"
+    }
+  },
+  "fatima-balnoub": {
+    "school": "IMD",
+    "deposit": {
+      "status": "done",
+      "amount": 10000,
+      "currency": "CHF"
+    },
+    "visa": {
+      "status": "progress",
+      "note": "Letter sent to MOD E&T · 6 Nov 2026"
+    },
+    "insurance": {
+      "status": "progress",
+      "note": "Letter sent to MOD E&T · 6 Nov 2026"
+    },
+    "housing": {
+      "status": "progress",
+      "note": "Letter sent to MOD E&T · 6 Nov 2026"
+    }
+  },
+  "waleed-almansoori": {
+    "school": "IMD",
+    "deposit": {
+      "status": "todo",
+      "amount": 10000,
+      "currency": "CHF"
+    },
+    "visa": {
+      "status": "todo"
+    },
+    "insurance": {
+      "status": "todo"
+    },
+    "housing": {
+      "status": "todo"
+    }
+  },
+  "saeed-al-sereidi": {
+    "school": "NYUAD",
+    "deposit": {
+      "status": "done",
+      "amount": 2000,
+      "currency": "USD"
+    },
+    "visa": {
+      "status": "na"
+    },
+    "insurance": {
+      "status": "na"
+    },
+    "housing": {
+      "status": "na"
+    }
+  },
+  "mouza-al-zaabi": {
+    "school": "NYUAD",
+    "deposit": {
+      "status": "done",
+      "amount": 2000,
+      "currency": "USD"
+    },
+    "visa": {
+      "status": "na"
+    },
+    "insurance": {
+      "status": "na"
+    },
+    "housing": {
+      "status": "na"
+    }
+  },
+  "mohammed-al-mahri": {
+    "school": "NYUAD",
+    "deposit": {
+      "status": "done",
+      "amount": 2000,
+      "currency": "USD"
+    },
+    "visa": {
+      "status": "na"
+    },
+    "insurance": {
+      "status": "na"
+    },
+    "housing": {
+      "status": "na"
+    }
+  },
+  "khalifa-al-mansoori": {
+    "school": "CBS",
+    "deposit": {
+      "status": "done",
+      "amount": 3000,
+      "currency": "USD"
+    },
+    "visa": {
+      "status": "progress",
+      "note": "Letter sent to MOD E&T · 6 Nov 2026"
+    },
+    "insurance": {
+      "status": "progress",
+      "note": "Letter sent to MOD E&T · 6 Nov 2026"
+    },
+    "housing": {
+      "status": "progress",
+      "note": "Letter sent to MOD E&T · 6 Nov 2026"
+    }
+  },
+  "saoud-alkaabi": {
+    "school": "HEC",
+    "deposit": {
+      "status": "done",
+      "amount": 9000,
+      "currency": "EUR",
+      "due": "2026-11-23"
+    },
+    "visa": {
+      "status": "progress",
+      "note": "Letter sent to MOD E&T · 6 Nov 2026"
+    },
+    "insurance": {
+      "status": "progress",
+      "note": "Letter sent to MOD E&T · 6 Nov 2026"
+    },
+    "housing": {
+      "status": "progress",
+      "note": "Letter sent to MOD E&T · 6 Nov 2026"
+    }
+  },
+  "mohamed-al-naqabi": {
+    "school": "HEC",
+    "deposit": {
+      "status": "todo",
+      "amount": 9000,
+      "currency": "EUR",
+      "due": "2026-11-23"
+    },
+    "visa": {
+      "status": "progress",
+      "note": "Letter sent to MOD E&T · 6 Nov 2026"
+    },
+    "insurance": {
+      "status": "progress",
+      "note": "Letter sent to MOD E&T · 6 Nov 2026"
+    },
+    "housing": {
+      "status": "progress",
+      "note": "Letter sent to MOD E&T · 6 Nov 2026"
+    }
+  }
 };
 
 /* Do not edit below this line. */
