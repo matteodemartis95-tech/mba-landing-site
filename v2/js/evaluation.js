@@ -85,12 +85,12 @@ const EXTRA_CANDIDATES = [
     "applications": [
       {
         "school": "HEC",
-        "status": "submitted",
+        "status": "rejected",
         "interview": {
           "date": "",
           "note": ""
         },
-        "notes": "HEC submitted; awaiting interview invitation."
+        "notes": "No offer received (Nov 2026)."
       },
       {
         "school": "IMD",
@@ -1352,8 +1352,7 @@ const EVALUATIONS = {
     ],
     "masters": [
       "Completed ScorePlus and GuideMe GMAT course",
-      "HEC Paris: submitted, awaiting interview invitation",
-      "IMD: not admitted"
+      "No MBA offer for January 2027: HEC and IMD did not admit"
     ],
     "docs": [
       {
@@ -1811,8 +1810,7 @@ const EVALUATIONS = {
     ],
     "masters": [
       "Completed ScorePlus and GuideMe GMAT course",
-      "Columbia: interviewed, awaiting decision",
-      "HEC Paris: submitted, awaiting update"
+      "No MBA offer for January 2027: Columbia and HEC did not admit"
     ],
     "quarterly": {
       "2026 Q2": {

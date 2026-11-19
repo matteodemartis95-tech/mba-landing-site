@@ -298,7 +298,7 @@
     if (dpt) { footK = "Going to"; footV = `<strong>${esc(school(dpt.school).short)}</strong>${startDate ? " · " + fmt(startDate, true) : ""}`; }
     else if (adm.length) { footK = "Admitted"; footV = adm.map(a => `<strong>${esc(school(a.school).short)}</strong>`).join(", ") + (c.intake ? ` · ${esc(c.intake)}` : ""); }
     else if (noMba(c)) footV = `<span class="muted">No MBA planned</span>`;
-    else footV = `<span class="muted">No offer yet${pending.length ? " · " + pending.map(a => esc(school(a.school).short)).join(", ") + " pending" : ""}</span>`;
+    else footV = `<span class="muted">${pending.length ? "No offer yet · " + pending.map(a => esc(school(a.school).short)).join(", ") + " pending" : (c.applications.length ? "No offer" : "No applications")}</span>`;
     return `
       <a class="card ${c.programme === "EDGE" ? "edge" : "jahizoun"}" href="#/candidate/${esc(c.id)}">
         <div class="card-top">
