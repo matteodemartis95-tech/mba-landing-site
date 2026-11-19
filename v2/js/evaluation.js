@@ -566,37 +566,52 @@ const EVALUATIONS = {
       "Effective Communication & Influence": {
         "2025 Q4": "strong",
         "2026 Q1": "strong",
-        "2026 Q2": "effective"
+        "2026 Q2": "effective",
+        "2026 Q3": "strong"
       },
       "Initiative": {
         "2025 Q4": "effective",
         "2026 Q1": "effective",
-        "2026 Q2": "strong"
+        "2026 Q2": "strong",
+        "2026 Q3": "strong"
       },
       "Decision-Making & Accountability": {
         "2025 Q4": "effective",
         "2026 Q1": "effective",
-        "2026 Q2": "developing"
+        "2026 Q2": "developing",
+        "2026 Q3": "effective"
       },
       "Capability Development": {
         "2025 Q4": "effective",
         "2026 Q1": "effective",
-        "2026 Q2": "strong"
+        "2026 Q2": "strong",
+        "2026 Q3": "strong"
       },
       "Systemic Analysis & Planning": {
         "2025 Q4": "effective",
         "2026 Q1": "effective",
-        "2026 Q2": "developing"
+        "2026 Q2": "developing",
+        "2026 Q3": "effective"
+      },
+      "Inspirational Leadership": {
+        "2026 Q3": "effective"
+      },
+      "Strategic Thinking": {
+        "2026 Q3": "effective"
+      },
+      "Adaptability": {
+        "2026 Q3": "effective"
       }
     },
     "strengths": [
-      "Builds trusted relationships across MOD stakeholders, balancing candor with diplomacy",
-      "Takes initiative leading branch coordination unprompted",
-      "Learns fast, embracing Communications from an IT background"
+      "Shapes the narrative and brand positioning with clear, compelling communication",
+      "Proactive risk mitigation that keeps a complex brand project on track",
+      "Learns new functions at speed and leads with an authentic style"
     ],
     "improvements": [
-      "Builds structured, forward-looking planning",
-      "Shifts from reactive reporting to proactive planning"
+      "Formal project plans with approval timelines, dependencies, risks and buffers",
+      "Strategic storytelling: formal training or mentoring on narrative and messaging",
+      "Lead branch-facing sessions and take a visible role in the identity rollout"
     ],
     "masters": [
       "Completed ScorePlus GMAT course",
@@ -615,27 +630,82 @@ const EVALUATIONS = {
         "competencies": {
           "Effective Communication & Influence": {
             "rating": "effective",
-            "comment": "Khaled has successfully built a strong relationship with the MOD Leadership Comms team. He listens with intent and is well able to respond in real time in framing his perspectives to help influence the progress and outcome of projects.  He balances being both amiable and a 'speak your mind' approach effectively. He understands the importance of investing time and navigating stakeholders' expectations."
+            "comment": "Built a strong relationship with the MOD Leadership Comms team. Listens with intent, frames his views in real time and balances candour with diplomacy.",
+            "full": "Khaled has successfully built a strong relationship with the MOD Leadership Comms team. He listens with intent and is well able to respond in real time in framing his perspectives to help influence the progress and outcome of projects.  He balances being both amiable and a 'speak your mind' approach effectively. He understands the importance of investing time and navigating stakeholders' expectations."
           },
           "Initiative": {
             "rating": "strong",
-            "comment": "Khaled demonstrates strong initiative  - his curiosity and interest in the space of Communications is clear and enables him to reflect along the way and find opportunities to show initiative and thoughtfulness - this has been particularly clear during the brand identity project on his work on the narrative and messaging in particular, but across the board as well. Moreover, he has built a strong rapport with the branches in terms of understanding needs and taking the lead on all the coordination and the logistics."
+            "comment": "Strong initiative, clearest on the brand identity project and in taking the lead on branch coordination and logistics.",
+            "full": "Khaled demonstrates strong initiative  - his curiosity and interest in the space of Communications is clear and enables him to reflect along the way and find opportunities to show initiative and thoughtfulness - this has been particularly clear during the brand identity project on his work on the narrative and messaging in particular, but across the board as well. Moreover, he has built a strong rapport with the branches in terms of understanding needs and taking the lead on all the coordination and the logistics."
           },
           "Decision-Making & Accountability": {
             "rating": "developing",
-            "comment": "Khaled shows confidence and thoughtfulness in the decisions within his scope of responsibility and as a result is able to keep the work moving along"
+            "comment": "Confident and thoughtful within his scope, which keeps the work moving.",
+            "full": "Khaled shows confidence and thoughtfulness in the decisions within his scope of responsibility and as a result is able to keep the work moving along"
           },
           "Capability Development": {
             "rating": "strong",
-            "comment": "I have been very impressed with the way that Khaled has embraced Communications.  Khaled comes from a strong IT background and has never previously worked in the field of Communications.  Having said that because he displays an incredible strong growth mindset and true learner qualities - his eagerness, curiosity and positive attitude - puts him at 'Strong' for me ... he is soaking it up all and fast. I would go on to say that should he want to pursue a career in the space of Strategic Communications, he comes at it with the right mindset and is building a strong foundation. I happily invest time coaching him on the space because of this."
+            "comment": "Embraced communications from a strong IT background with a real growth mindset: eager, curious, fast.",
+            "full": "I have been very impressed with the way that Khaled has embraced Communications.  Khaled comes from a strong IT background and has never previously worked in the field of Communications.  Having said that because he displays an incredible strong growth mindset and true learner qualities - his eagerness, curiosity and positive attitude - puts him at 'Strong' for me ... he is soaking it up all and fast. I would go on to say that should he want to pursue a career in the space of Strategic Communications, he comes at it with the right mindset and is building a strong foundation. I happily invest time coaching him on the space because of this."
           },
           "Systemic Analysis & Planning": {
             "rating": "developing",
-            "comment": "with three months in the role. Khaled understands the planning and the focus now is to deepen that know how further. I have been impressed with Khaled's planning on our work with the branches in particular and his initiative and thoughtfulness in coordinating with them on their different needs."
+            "comment": "Three months in, understands the planning and now needs to deepen it. Impressive planning on the branch work.",
+            "full": "with three months in the role. Khaled understands the planning and the focus now is to deepen that know how further. I have been impressed with Khaled's planning on our work with the branches in particular and his initiative and thoughtfulness in coordinating with them on their different needs."
           }
         }
+      },
+      "2026 Q3": {
+        "manager": "Rania Rostom",
+        "competencies": {
+          "Effective Communication & Influence": {
+            "rating": "strong",
+            "comment": "A strong communicator who now shapes the narrative structure for the new brand positioning. Thorough work and compelling in presentations and discussions.",
+            "full": "Khaled is a strong communicator and influencer and now he has pushed even further and applied this skill effectively with ample clear thinking into writing and shaping the structure of the narrative flow which will be applied to the new brand positioning.  His work is thought through and thorough - and moreover he is an effective and compelling communicator in presentations and discussions."
+          },
+          "Initiative": {
+            "rating": "strong",
+            "comment": "Extremely proactive, always one step ahead to mitigate risk and keep the complex brand project on track and on time.",
+            "full": "Khaled is  extremely proactive and works hard to be one step ahead - woking to mitigate risk and keep projects on track and on timeline. In this complex brand project, he has done extremely well"
+          },
+          "Decision-Making & Accountability": {
+            "rating": "effective",
+            "comment": "A strong problem solver who makes the key decisions at pivot points, as shown managing suppliers and production teams during sample production.",
+            "full": "Khaled is strong problem solver and understand the criticality of making key decisions at pivot points during a project to keep it on track,  and he has done exactly so in managing the different suppliers and production teams during the sample production process."
+          },
+          "Capability Development": {
+            "rating": "strong",
+            "comment": "Moves towards ambiguity with confidence and learns new capabilities at speed. The attributes of a next-generation leader.",
+            "full": "Khaled moves towards ambiguity with confidence  - once again, to jump into a whole new functional area and show that he can eagerly nad openly learn new capabiltieis and competencies with the speed at which he has done speaks volumes to his ability as a next generation leader  - well and able and ready to take on uncertainty and devise a path and plan.  These are cirtical attributes to leadership which will be much needed in this world we navigate."
+          },
+          "Inspirational Leadership": {
+            "rating": "effective",
+            "comment": "A respected, naturally sociable and cooperative leader whose authentic style scores highly with peers and senior leaders.",
+            "full": "Khaled is a respected and well admited leader - he is naturally sociable , cooperative and shares only his learnings which positively influences others of his peers and his authetic style scores highly with senior leaders as well."
+          },
+          "Strategic Thinking": {
+            "rating": "effective",
+            "comment": "Strategic capacity has grown in volumes: better planning, judgement and inclusiveness in driving outcomes.",
+            "full": "Khaled strategic capacity has grown in volumes over the past few month with better planning, judgement and inclusiveness in driving key strategic outcomes."
+          },
+          "Adaptability": {
+            "rating": "effective",
+            "comment": "Solutions-oriented and keeps pushing forward.",
+            "full": "Khaled has most certianly showed a great amount of adaptibility  - he is solutions oriented and keeps pushing forward."
+          },
+          "Systemic Analysis & Planning": {
+            "rating": "effective",
+            "comment": "Improving hugely: steps back to absorb the big picture, then moves the key levers forward.",
+            "full": "This area for Khaled continues to improve in a huge way  and I am impressed with how much he has come forward on that. The proof is always in the outcome and he has has shown that he is able to step  back and absorb the big picture then diving in to move the key levers forward."
+          }
+        },
+        "summary": "1. Rolling out the narrative framework: present it to all branches, as recommended by the Executive Director, and support them in applying it to build their own narrative and messaging.\n2. Project planning and risk management: build formal project plans that anticipate approval timelines, dependencies and risks, with buffers, so delays have less impact on the overall timeline.\n3. Strategic storytelling: build on self-directed reading with formal training or mentoring to deepen narrative and messaging expertise.\n4. Leadership and influence: lead branch-facing sessions and take a more visible role in guiding others through the identity rollout.",
+        "summaryLabel": "Areas of focus"
       }
-    }
+    },
+    "commentaryTitle": "Commentary as of 2nd Quarterly Evaluation",
+    "commentaryDate": "November 2026",
+    "overall": "Up from Q2 to Q3: Communication moved from Effective to Strong and Decision-Making and Systemic Analysis from Developing to Effective, giving three Strong and five Effective. Next step is rolling out the narrative framework to all branches. Admitted to HEC Paris for January 2027."
   },
   "buti-al-suwaidi": {
     "lineManager": "Aleksandra Socevic",
@@ -798,7 +868,7 @@ const EVALUATIONS = {
     "overall": "Clear progress from Q2 to Q3: from Developing on all five competencies to Effective on seven of eight. Systemic Analysis & Planning remains the one development area and is the focus for the next quarter."
   },
   "khalifa-al-mansoori": {
-    "lineManager": "Gregor Lisjak",
+    "lineManager": "Benjamin Pierre",
     "function": "Al-Emad",
     "corporateExchangeProject": "Financial and digital transformation",
     "previousFunction": "Presidency Guard",
@@ -822,41 +892,57 @@ const EVALUATIONS = {
       "Effective Communication & Influence": {
         "2025 Q4": "effective",
         "2026 Q1": "effective",
-        "2026 Q2": "effective"
+        "2026 Q2": "effective",
+        "2026 Q3": "strong"
       },
       "Initiative": {
         "2025 Q4": "strong",
         "2026 Q1": "strong",
-        "2026 Q2": "effective"
+        "2026 Q2": "effective",
+        "2026 Q3": "strong"
       },
       "Decision-Making & Accountability": {
         "2025 Q4": "na",
         "2026 Q1": "na",
-        "2026 Q2": "developing"
+        "2026 Q2": "developing",
+        "2026 Q3": "strong"
       },
       "Capability Development": {
         "2025 Q4": "effective",
         "2026 Q1": "effective",
-        "2026 Q2": "developing"
+        "2026 Q2": "developing",
+        "2026 Q3": "strong"
       },
       "Systemic Analysis & Planning": {
         "2025 Q4": "effective",
         "2026 Q1": "effective",
-        "2026 Q2": "developing"
+        "2026 Q2": "developing",
+        "2026 Q3": "effective"
+      },
+      "Inspirational Leadership": {
+        "2026 Q3": "strong"
+      },
+      "Strategic Thinking": {
+        "2026 Q3": "effective"
+      },
+      "Adaptability": {
+        "2026 Q3": "strong"
       }
     },
     "strengths": [
-      "Engages confidently in client meetings and present his work clearly to senior counterparts",
-      "Checks in on his own progress without always being prompted"
+      "Owns Arabic translation and officer support across the workshops",
+      "Builds strong relationships and presents outputs with confidence",
+      "Positive team spirit that lifts the other Jahizoun members"
     ],
     "improvements": [
-      "Accelerates delivery pace to avoid slowing workstream turnaround",
-      "Improves the upfront planning of assignments",
-      "Strengthens working relationship with the team"
+      "Strategic thinking: from valuable insights to shaping recommendations",
+      "Systematic planning of his own deliverables, beyond process design",
+      "Delivery pace, the Q2 concern, to be sustained under heavier workloads"
     ],
     "masters": [
       "Completed ScorePlus GMAT course",
-      "Applying to HEC and IMD MBA, January 2027"
+      "Admitted to Columbia Business School (J-Term, January 2027); offer accepted",
+      "HEC Paris: admitted, offer declined"
     ],
     "docs": [
       {
@@ -870,27 +956,80 @@ const EVALUATIONS = {
         "competencies": {
           "Effective Communication & Influence": {
             "rating": "effective",
-            "comment": "Khalifa communicated well in client meetings, bringing thoughtful points and adding genuine value to the discussion. He engaged constructively with stakeholders and was able to represent his work clearly when presenting to the client. To build on this strength, Khalifa should keep extending the same clarity and structure into his day-to-day written updates, not just client-facing moments."
+            "comment": "Communicated well in client meetings, adding genuine value, and presented his work clearly. Next: bring the same clarity to day-to-day exchanges with the team.",
+            "full": "Khalifa communicated well in client meetings, bringing thoughtful points and adding genuine value to the discussion. He engaged constructively with stakeholders and was able to represent his work clearly when presenting to the client. To build on this strength, Khalifa should keep extending the same clarity and structure into his day-to-day written updates, not just client-facing moments."
           },
           "Initiative": {
             "rating": "effective",
-            "comment": "Khalifa showed proactivity at times, checking in on his work and progress, though this was not yet consistent. Development focus going forward should be on proactively flagging where he is in his tasks on a more regular basis, and on signalling early when he has capacity to take on more, rather than waiting to be asked."
+            "comment": "Proactive at times but not yet consistent. Focus: flag progress regularly and signal early when he has capacity.",
+            "full": "Khalifa showed proactivity at times, checking in on his work and progress, though this was not yet consistent. Development focus going forward should be on proactively flagging where he is in his tasks on a more regular basis, and on signalling early when he has capacity to take on more, rather than waiting to be asked."
           },
           "Decision-Making & Accountability": {
             "rating": "developing",
-            "comment": "Khalifa completed the tasks assigned to him, but turnaround time was consistently slower than expected, which affected overall delivery pace. In addition, the quality of some outputs did not fully match the standard and expectations that had been explained to him upfront. Building stronger habits around pacing his work and checking outputs against the brief before submission will be an important next step."
+            "comment": "Tasks completed but turnaround consistently slower than expected and quality not always to the standard set. Focus: stronger delivery habits.",
+            "full": "Khalifa completed the tasks assigned to him, but turnaround time was consistently slower than expected, which affected overall delivery pace. In addition, the quality of some outputs did not fully match the standard and expectations that had been explained to him upfront. Building stronger habits around pacing his work and checking outputs against the brief before submission will be an important next step."
           },
           "Capability Development": {
             "rating": "developing",
-            "comment": "Khalifa engaged with his assigned tasks and showed willingness to take on the work given to him, meeting expectations for this stage of development. He stayed somewhat distanced from the wider team, and building closer personal relationships with colleagues would help him get more out of the consulting learning experience — including more informal mentoring, feedback, and knowledge-sharing. Continuing to seek feedback proactively and applying lessons from each task to the next will also help him build speed and consistency over time."
+            "comment": "Willing to take on the work assigned. Stayed somewhat distant from the wider team; closer relationships would get more out of the experience.",
+            "full": "Khalifa engaged with his assigned tasks and showed willingness to take on the work given to him, meeting expectations for this stage of development. He stayed somewhat distanced from the wider team, and building closer personal relationships with colleagues would help him get more out of the consulting learning experience — including more informal mentoring, feedback, and knowledge-sharing. Continuing to seek feedback proactively and applying lessons from each task to the next will also help him build speed and consistency over time."
           },
           "Systemic Analysis & Planning": {
             "rating": "developing",
-            "comment": "Khalifa generally approached his tasks in a reasonable way, but the gap between expected and delivered quality suggests his upfront planning of an assignment could be stronger. Taking a moment to map out what a complete, high-quality output looks like before starting would help him deliver faster and closer to the mark on the first pass."
+            "comment": "Upfront planning could be stronger: map what a complete, high-quality output looks like before starting.",
+            "full": "Khalifa generally approached his tasks in a reasonable way, but the gap between expected and delivered quality suggests his upfront planning of an assignment could be stronger. Taking a moment to map out what a complete, high-quality output looks like before starting would help him deliver faster and closer to the mark on the first pass."
+          }
+        }
+      },
+      "2026 Q3": {
+        "manager": "Benjamin Pierre",
+        "competencies": {
+          "Effective Communication & Influence": {
+            "rating": "strong",
+            "comment": "Mobilised Jahizoun support for workshop note-taking, built strong relationships with the officers and presented workstream outputs clearly and confidently.",
+            "full": "Proactively mobilised Jahizun support to assist with workshop note-taking, built strong relationships with the officers, and presented workstream outputs clearly and confidently."
+          },
+          "Initiative": {
+            "rating": "strong",
+            "comment": "Provided translation support and constructive feedback, sought additional responsibilities and engaged officers and stakeholders independently.",
+            "full": "Provided translation support and constructive feedback, actively seeking additional responsibilities and independently engaging with officers and stakeholders."
+          },
+          "Decision-Making & Accountability": {
+            "rating": "strong",
+            "comment": "Took ownership of Arabic translation, supporting the officers directly throughout the workshops.",
+            "full": "Took ownership of Arabic translation, providing direct support to officers throughout the workshops."
+          },
+          "Capability Development": {
+            "rating": "strong",
+            "comment": "Developed technical capabilities on his own initiative, including EOAI, to raise productivity and support delivery.",
+            "full": "Proactively developed technical capabilities, learning to use tools such as EOAI to enhance productivity and support project delivery."
+          },
+          "Inspirational Leadership": {
+            "rating": "strong",
+            "comment": "Kept a positive, professional atmosphere with officers and senior stakeholders and encouraged other Jahizoun members with a consistently positive attitude.",
+            "full": "Maintained a positive and professional working atmosphere, engaging with officers and senior stakeholders in a courteous, respectful and approachable manner. Demonstrated strong team spirit and encouraged other Jahizun members through a consistently positive attitude."
+          },
+          "Strategic Thinking": {
+            "rating": "effective",
+            "comment": "Strong strategic input in initiative reviews, connecting strategic objectives with tactical considerations.",
+            "full": "Demonstrated strong strategic thinking during initiative reviews, providing valuable insights that connected strategic-level objectives with tactical considerations."
+          },
+          "Adaptability": {
+            "rating": "strong",
+            "comment": "Adapted quickly across workshops, grasping topics fast and adjusting to changing schedules and requirements.",
+            "full": "Showed strong adaptability across different situations, particularly during workshops, quickly understanding discussion topics and adjusting effectively to changing schedules and requirements."
+          },
+          "Systemic Analysis & Planning": {
+            "rating": "effective",
+            "comment": "Strengthened quality control and translation with a structured approach and a reporting document for officers and translators.",
+            "full": "Strengthened quality control and translation processes by developing a structured approach and producing a reporting document to improve consistency and support both officers and translators."
           }
         }
       }
-    }
+    },
+    "commentaryTitle": "Commentary as of 2nd Quarterly Evaluation",
+    "commentaryDate": "November 2026",
+    "overall": "The sharpest contrast in the cohort: Developing on three competencies in Q2 under his Corporate Exchange manager, Strong on six of eight in Q3 at the EO under Benjamin Pierre. Admitted to Columbia and HEC; going to Columbia in January 2027."
   },
   "mohamed-al-hameli": {
     "lineManager": "Elvie Lahournere",
@@ -1074,37 +1213,52 @@ const EVALUATIONS = {
       "Effective Communication & Influence": {
         "2025 Q4": "strong",
         "2026 Q1": "strong",
-        "2026 Q2": "effective"
+        "2026 Q2": "effective",
+        "2026 Q3": "strong"
       },
       "Initiative": {
         "2025 Q4": "effective",
         "2026 Q1": "effective",
-        "2026 Q2": "strong"
+        "2026 Q2": "strong",
+        "2026 Q3": "strong"
       },
       "Decision-Making & Accountability": {
         "2025 Q4": "effective",
         "2026 Q1": "effective",
-        "2026 Q2": "developing"
+        "2026 Q2": "developing",
+        "2026 Q3": "effective"
       },
       "Capability Development": {
         "2025 Q4": "effective",
         "2026 Q1": "effective",
-        "2026 Q2": "strong"
+        "2026 Q2": "strong",
+        "2026 Q3": "effective"
       },
       "Systemic Analysis & Planning": {
         "2025 Q4": "effective",
         "2026 Q1": "effective",
-        "2026 Q2": "developing"
+        "2026 Q2": "developing",
+        "2026 Q3": "strong"
+      },
+      "Inspirational Leadership": {
+        "2026 Q3": "strong"
+      },
+      "Strategic Thinking": {
+        "2026 Q3": "effective"
+      },
+      "Adaptability": {
+        "2026 Q3": "strong"
       }
     },
     "strengths": [
-      "Owns work with drive, proactively thinking through risks",
-      "Learns fast, immersed herself in Communications despite coming from an IT background",
-      "Confident, composed communication, navigating stakeholder discussions well"
+      "Outstanding public speaker and communicator, from Women in Defence to the Jahizoun 2 launch",
+      "Self-starter who takes projects to the finish line",
+      "Calm, confident presence that leaders and stakeholders rely on"
     ],
     "improvements": [
-      "Builds independent decision-making as her functional understanding deepens",
-      "Strengthens planning and systemic analysis skills in the new Communications space"
+      "Keep building independent decision-making as her functional knowledge deepens",
+      "Strategic thinking: from solid to leading on longer-term direction",
+      "Broaden exposure across the many facets of communications"
     ],
     "masters": [
       "Completed ScorePlus GMAT course",
@@ -1122,27 +1276,80 @@ const EVALUATIONS = {
         "competencies": {
           "Effective Communication & Influence": {
             "rating": "effective",
-            "comment": "Haneen is a clear thinker and well composed in the way she structures and articulates her perspectives and in presentations.  Additionally, her outreach to different stakeholders results in the desired outcomes and actions. I admire her confidence - she is collected and effective in navigating discussions."
+            "comment": "Clear thinker, composed in structuring and presenting her views. Her outreach gets the outcomes and actions she needs.",
+            "full": "Haneen is a clear thinker and well composed in the way she structures and articulates her perspectives and in presentations.  Additionally, her outreach to different stakeholders results in the desired outcomes and actions. I admire her confidence - she is collected and effective in navigating discussions."
           },
           "Initiative": {
             "rating": "strong",
-            "comment": "On Initiative, Haneen is a self-starter and drives her work with a lot of pride and a strong sense of ownership. Her inquisitive nature allows her to thoroughly think through possibilities and risks."
+            "comment": "A self-starter who drives her work with pride and ownership, thinking through possibilities and risks.",
+            "full": "On Initiative, Haneen is a self-starter and drives her work with a lot of pride and a strong sense of ownership. Her inquisitive nature allows her to thoroughly think through possibilities and risks."
           },
           "Decision-Making & Accountability": {
             "rating": "developing",
-            "comment": "Within her scope of assignments and responsibilities, Haneen makes sound decisions to keep the work= progressing.  As she gains a deeper understanding of communications, she will be able to take action independently and develop new approaches and solutions."
+            "comment": "Sound decisions within her scope. Next: act independently and develop new approaches as her understanding of communications deepens.",
+            "full": "Within her scope of assignments and responsibilities, Haneen makes sound decisions to keep the work= progressing.  As she gains a deeper understanding of communications, she will be able to take action independently and develop new approaches and solutions."
           },
           "Capability Development": {
             "rating": "strong",
-            "comment": "Having come from the word of IT and entering Communications for the first time, I am well impressed with how much Haneen has immersed herself in the space.  She asks excellent questions - her curiosity is her competitive edge and she is a quick learner."
+            "comment": "Impressive immersion in communications from an IT background. Her curiosity is her competitive edge.",
+            "full": "Having come from the word of IT and entering Communications for the first time, I am well impressed with how much Haneen has immersed herself in the space.  She asks excellent questions - her curiosity is her competitive edge and she is a quick learner."
           },
           "Systemic Analysis & Planning": {
             "rating": "developing",
-            "comment": "In this new space, this point requires deeper understanding of the function.  Having said that, Haneen is demonstrating a strong show of what it takes to plan a project as she has shown through her work on Project 50 media campaign and the Jahizoun communications plan."
+            "comment": "Needs deeper knowledge of the function, but already showed solid planning on the Project 50 campaign and the Jahizoun communications plan.",
+            "full": "In this new space, this point requires deeper understanding of the function.  Having said that, Haneen is demonstrating a strong show of what it takes to plan a project as she has shown through her work on Project 50 media campaign and the Jahizoun communications plan."
+          }
+        }
+      },
+      "2026 Q3": {
+        "manager": "Rania Rostom",
+        "competencies": {
+          "Effective Communication & Influence": {
+            "rating": "strong",
+            "comment": "A highly capable public speaker: stellar delivery at Women in Defence and the Jahizoun 2 launch, prepared thoroughly from message to delivery. Given media training on her potential.",
+            "full": "Haneen has grown into a highly capable public speaker and has delivered stellar performance in two key events - Women In Defence and Jahzioun Cohort 2 launch.  She put careful and thorough work into her preparation  - from messaging to delivery. She articulates her key points with intent and clarity.  Moreoever, the MOD Communications team have given her media training based on her potential.  This is undoubtedly one of very strong areas."
+          },
+          "Initiative": {
+            "rating": "strong",
+            "comment": "Always looking for the next challenge, open to new responsibilities and proactive in taking projects to the finish line.",
+            "full": "Haneen is always looking for a new challenge and is open for new responsbilities and tasks.  She contnuously takes initiative to improve and move forward in taking her projects to the finish line proactively."
+          },
+          "Decision-Making & Accountability": {
+            "rating": "effective",
+            "comment": "An independent self-starter and doer who moves projects forward through thoughtful judgement.",
+            "full": "Haneen is an independent self starter and doer - and is able to move her projects through thoughtful judegement and decision making."
+          },
+          "Capability Development": {
+            "rating": "effective",
+            "comment": "Impressive learning curve in communications, driven by curiosity and a strong growth mindset outside her comfort zone.",
+            "full": "Its truly impressive to see how much Haneen has learnt in the space of communications - her curiousity is a great asset - always asking great questions.  Of course, that space and function has so many facets to it and so far she has proven a strong growth mindset and readiness to take on new learnings in areas outside her comfort zone."
+          },
+          "Inspirational Leadership": {
+            "rating": "strong",
+            "comment": "An inspirational young leader and role model: calm confidence and composure that positions her well with leaders and stakeholders.",
+            "full": "Haeen is most certainly an inpsirational young leader and role model. Her ability to project   a calm confidence and self-assured composure  positions her favourable with leaders and stakeholders."
+          },
+          "Strategic Thinking": {
+            "rating": "effective",
+            "comment": "Solid strategic thinking, considerably grown and shown effectively in her assigned responsibilities.",
+            "full": "Haneen shows solid strategic thinking and she has considerably grown in that area demonstrating that trait effectively in assigned tasks and responsibilities."
+          },
+          "Adaptability": {
+            "rating": "strong",
+            "comment": "Moved onto the Al-Emad project and quickly built strong relationships there. Her can-do attitude makes others count on her.",
+            "full": "Haneen has shown a wide range in terms of adapability,  I moved her onto the Emad project and she was once again well able to establish strong relationships with her key stakeholders and others on the project. Again, her demeanour and can do attitude invites others to count on her as a reliable partner."
+          },
+          "Systemic Analysis & Planning": {
+            "rating": "strong",
+            "comment": "A very strong analytical approach, applied effectively to her projects and processes.",
+            "full": "Haneen has a very strong analytical approach and she applies it effectively to her project and processes she is working on."
           }
         }
       }
-    }
+    },
+    "commentaryTitle": "Commentary as of 2nd Quarterly Evaluation",
+    "commentaryDate": "November 2026",
+    "overall": "A big step from Q2 to Q3: from Developing on two competencies to Strong on five of eight. Decision-Making and Systemic Analysis, the Q2 growth areas, are now Effective and Strong. Rania Rostom calls her an inspirational young leader. Admitted to INSEAD for January 2027."
   },
   "mohamed-al-naqabi": {
     "lineManager": "Saif Al Siksek",
@@ -1896,7 +2103,7 @@ const EVALUATIONS = {
     "overall": "The sharpest turnaround in the cohort: Developing on four of five competencies in Q2 under his Corporate Exchange manager, Strong on all eight in Q3 at the EO under Mark Withington, who rates him above expectations across the board."
   },
   "saoud-alkaabi": {
-    "lineManager": "Ansh Karha",
+    "lineManager": "Benjamin Pierre",
     "function": "Al-Emad",
     "corporateExchangeProject": "Force transformation, energy, digital transformation and AI projects",
     "previousFunction": "Presidency Guard",
@@ -1920,41 +2127,57 @@ const EVALUATIONS = {
       "Effective Communication & Influence": {
         "2025 Q4": "strong",
         "2026 Q1": "strong",
-        "2026 Q2": "effective"
+        "2026 Q2": "effective",
+        "2026 Q3": "strong"
       },
       "Initiative": {
         "2025 Q4": "effective",
         "2026 Q1": "effective",
-        "2026 Q2": "developing"
+        "2026 Q2": "developing",
+        "2026 Q3": "strong"
       },
       "Decision-Making & Accountability": {
         "2025 Q4": "effective",
         "2026 Q1": "effective",
-        "2026 Q2": "developing"
+        "2026 Q2": "developing",
+        "2026 Q3": "strong"
       },
       "Capability Development": {
         "2025 Q4": "strong",
         "2026 Q1": "strong",
-        "2026 Q2": "effective"
+        "2026 Q2": "effective",
+        "2026 Q3": "strong"
       },
       "Systemic Analysis & Planning": {
         "2025 Q4": "effective",
         "2026 Q1": "effective",
-        "2026 Q2": "effective"
+        "2026 Q2": "effective",
+        "2026 Q3": "effective"
+      },
+      "Inspirational Leadership": {
+        "2026 Q3": "strong"
+      },
+      "Strategic Thinking": {
+        "2026 Q3": "effective"
+      },
+      "Adaptability": {
+        "2026 Q3": "strong"
       }
     },
     "strengths": [
-      "Communicates and listen well in discussions and collaborates effectively",
-      "Transfers institutional knowledge to the team",
-      "Adapts quickly to unfamiliar ways of working, progressing measurably from contextual input to structured, solution-oriented contribution"
+      "Takes on responsibility unasked and engages officers and stakeholders directly",
+      "Builds new tools skills such as EOAI and trains colleagues on them",
+      "Trusted relationships and confident presentation of workstream outputs"
     ],
     "improvements": [
-      "Frames clear problem statement and initial hypotheses before moving into solution design",
-      "Anticipates needs and raises issues with proposed solutions"
+      "Present directly to senior leadership and lead workstream briefings",
+      "Own selected deliverables individually so his contribution is visible beyond the joint work with Khalifa",
+      "Strategic thinking: from useful perspective to shaping recommendations"
     ],
     "masters": [
       "Completed ScorePlus GMAT course",
-      "Applying to HEC and IMD MBA January 2027"
+      "Admitted to HEC Paris MBA, January 2027 intake; offer accepted",
+      "Columbia: interviewed, no offer"
     ],
     "docs": [
       {
@@ -1968,27 +2191,82 @@ const EVALUATIONS = {
         "competencies": {
           "Effective Communication & Influence": {
             "rating": "effective",
-            "comment": "Communicates clearly in structured settings and contributes to meetings and MOM documentation. Written outputs have at times required rework to meet quality standards, suggesting a need to invest more time in self-review before submission. Would benefit from seeking clarity on expectations upfront and from structuring written deliverables more independently. Building confidence in tailoring communication to different audiences will be an important next step.."
+            "comment": "Clear in structured settings and meeting notes. Written outputs sometimes needed rework: invest more in self-review and clarify expectations upfront.",
+            "full": "Communicates clearly in structured settings and contributes to meetings and MOM documentation. Written outputs have at times required rework to meet quality standards, suggesting a need to invest more time in self-review before submission. Would benefit from seeking clarity on expectations upfront and from structuring written deliverables more independently. Building confidence in tailoring communication to different audiences will be an important next step.."
           },
           "Initiative": {
             "rating": "developing",
-            "comment": "Executes assigned tasks reliably when directed, including coordination support and entity engagement logistics. Has not consistently demonstrated proactive identification of gaps or self-initiated process improvements within the workstream. The default mode has been to wait for direction rather than anticipate needs. Development focus should shift toward spotting issues early, raising them with suggested solutions, and acting within authority without requiring prompting."
+            "comment": "Reliable on assigned tasks, but tended to wait for direction rather than spot gaps or propose improvements.",
+            "full": "Executes assigned tasks reliably when directed, including coordination support and entity engagement logistics. Has not consistently demonstrated proactive identification of gaps or self-initiated process improvements within the workstream. The default mode has been to wait for direction rather than anticipate needs. Development focus should shift toward spotting issues early, raising them with suggested solutions, and acting within authority without requiring prompting."
           },
           "Decision-Making & Accountability": {
             "rating": "developing",
-            "comment": "Takes responsibility for assigned tasks and follows through on coordination activities with reasonable reliability. Within defined scope, decisions are generally sound. However, output quality has at times required managerial review and correction before meeting workstream standards, indicating that judgement on what constitutes a complete and accurate deliverable needs further development. Building stronger habits around self-checking and considering downstream impact before submission will be key."
+            "comment": "Follows through reliably within scope; some outputs needed managerial correction before meeting the standard.",
+            "full": "Takes responsibility for assigned tasks and follows through on coordination activities with reasonable reliability. Within defined scope, decisions are generally sound. However, output quality has at times required managerial review and correction before meeting workstream standards, indicating that judgement on what constitutes a complete and accurate deliverable needs further development. Building stronger habits around self-checking and considering downstream impact before submission will be key."
           },
           "Capability Development": {
             "rating": "effective",
-            "comment": "Engaged meaningfully in the ecosystem workstream and gained valuable exposure to whole-of-nation defence concepts, stakeholder engagement processes, and coordination mechanisms. Growth opportunity lies in proactively seeking  assignments and integrating feedback more systematically into subsequent deliverables would accelerate development noticeably."
+            "comment": "Gained valuable exposure to whole-of-nation defence concepts and stakeholder engagement. Next: seek assignments and integrate feedback more systematically.",
+            "full": "Engaged meaningfully in the ecosystem workstream and gained valuable exposure to whole-of-nation defence concepts, stakeholder engagement processes, and coordination mechanisms. Growth opportunity lies in proactively seeking  assignments and integrating feedback more systematically into subsequent deliverables would accelerate development noticeably."
           },
           "Systemic Analysis & Planning": {
             "rating": "effective",
-            "comment": "Provided support on note-taking and logistics across several entity engagements, contributing to the overall coordination effort of the workstream.  A more structured approach to tracking workstream tasks, flagging bottlenecks early, and anticipating information needs would strengthen contribution at this level."
+            "comment": "Supported note-taking and logistics across engagements. Next: track tasks, flag bottlenecks early and anticipate information needs.",
+            "full": "Provided support on note-taking and logistics across several entity engagements, contributing to the overall coordination effort of the workstream.  A more structured approach to tracking workstream tasks, flagging bottlenecks early, and anticipating information needs would strengthen contribution at this level."
           }
         }
+      },
+      "2026 Q3": {
+        "manager": "Benjamin Pierre",
+        "competencies": {
+          "Effective Communication & Influence": {
+            "rating": "strong",
+            "comment": "Engaged other Jahizoun members for workshop note-taking, built trusted relationships with the officers and presented workstream outputs with clarity and confidence.",
+            "full": "Engaged other Jahizun members to support note-taking during the workshops, built trusted relationships with the officers and presented workstream outputs with clarity and confidence."
+          },
+          "Initiative": {
+            "rating": "strong",
+            "comment": "Took on extra responsibilities unasked, supporting translation and sharing constructive feedback, and engaged officers and stakeholders directly.",
+            "full": "Took on additional responsibilities without being asked, supporting translation and sharing constructive feedback, and engaged directly with officers and stakeholders."
+          },
+          "Decision-Making & Accountability": {
+            "rating": "strong",
+            "comment": "Shared ownership of Arabic translation with Khalifa, supporting the officers across the workshops.",
+            "full": "Shared ownership of Arabic translation with Khalifa, supporting the officers directly across the workshops."
+          },
+          "Capability Development": {
+            "rating": "strong",
+            "comment": "Built new technical skills on his own initiative, including EOAI, and trained other team members on them.",
+            "full": "Built new technical skills on his own initiative, including the use of EOAI, to work more efficiently and support delivery, and helped train other team members on these tools."
+          },
+          "Inspirational Leadership": {
+            "rating": "strong",
+            "comment": "Contributed to a positive, professional atmosphere and motivated other Jahizoun members with a constructive attitude.",
+            "full": "Contributed to a positive and professional team atmosphere, interacting with officers and senior stakeholders in a respectful and approachable way. Showed strong team spirit and motivated other Jahizun members through a constructive attitude."
+          },
+          "Strategic Thinking": {
+            "rating": "effective",
+            "comment": "Useful perspective in initiative reviews, linking strategic objectives with tactical considerations.",
+            "full": "Brought a useful perspective to the initiative reviews, linking strategic objectives with tactical considerations."
+          },
+          "Adaptability": {
+            "rating": "strong",
+            "comment": "Adapted well across workshops, grasping topics quickly and adjusting to changing schedules and needs.",
+            "full": "Adapted well to a wide range of situations, especially in workshops, where he quickly grasped the topics under discussion and adjusted to changing schedules and needs."
+          },
+          "Systemic Analysis & Planning": {
+            "rating": "effective",
+            "comment": "Built a structured quality control and translation process with Khalifa, including a reporting document that improves consistency.",
+            "full": "Built a structured quality control and translation process together with Khalifa, including a reporting document that improves consistency for both officers and translators."
+          }
+        },
+        "summary": "Gain more exposure to presenting directly to senior leadership, taking the lead on briefing workstream outputs in front of senior stakeholders to build confidence and composure under pressure. Take ownership of selected deliverables individually, so that his own contribution becomes more visible alongside the joint work with Khalifa.",
+        "summaryLabel": "Areas of focus"
       }
-    }
+    },
+    "commentaryTitle": "Commentary as of 2nd Quarterly Evaluation",
+    "commentaryDate": "November 2026",
+    "overall": "Strong progress from Q2 to Q3: from Developing on Initiative and Decision-Making to Strong on six of eight competencies under Benjamin Pierre. Next step is visibility, presenting to senior leadership and owning deliverables in his own name. Admitted to HEC Paris for January 2027."
   },
   "saeed-al-sereidi": {
     "lineManager": "Ameera Al Ahbabi",
