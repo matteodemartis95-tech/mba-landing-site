@@ -400,6 +400,36 @@ const EVALUATIONS = {
         },
         "summary": "Maintain focus and continue to take ownership of the new projects she will have in her new team. Continue to work on her self-belief and see the value she adds at each step of a projects journey. The new role in the HR Team will provide her with a multitude of new stretch opportunities and I would suggest that she be given individual ownership of targeted projects/initiatives which she can drive forward to completion. \nConsidering her growing confidence in her communication and influencing skills I would recommend a greater frequency of opportunities for her to brief senior leadership in MOD on projects/initiatives that she is involved in. This well her continued growth in this competency while helping her increase her network and sphere of influence.",
         "summaryLabel": "Areas of focus"
+      },
+      "2026 Q2": {
+        "manager": "Declan Noone",
+        "competencies": {
+          "Effective Communication & Influence": {
+            "rating": "effective",
+            "comment": "Clear, logical and adaptive communicator who blends MOD knowledge with curiosity about improving ways of working. Next: more opportunities to brief and influence leadership, and stronger storytelling.",
+            "full": "Regularly demonstrates a clear, logical and adaptive communication style. Waood utilises her professional experience to shape her communication style to her audience. She is a vey intentional and deliberate thinker blending her knowledge of MOD, its ways of working with an intellectual curiousity focused on how best to improve things/ways of working so as to deliver a positive and improved outcome. \nWe will work on increasing her opportunities to brief/communicate and influence leadership within the MOD and EO in the coming months. Particular focus will be on helping her coitinue to build an increasingly confident delivery and storytelling capabilities."
+          },
+          "Initiative": {
+            "rating": "developing",
+            "comment": "Cautious start, then growing ownership: now runs Ruwaad day to day and coached Maha on it. Next: own and drive initiatives from concept to execution.",
+            "full": "A slow and steady start with an initial cautious approach to taking ownership and initiative. This is to be expected at the early stages of her time with the team. Over the last 2/3 weeks Waood has started to take more ownership of tasks and specifically with the Ruwaad program. She now operates the day to day running of the program and has taken time out to walk Maha through all the requirements of organising and conducting the training for this program.\nWaood has begun to identify areas of improvement, taking actions and decisions she deems as necessary without referring back to me. Instead she is confidently relying on her own experience and judgement to take action as required.\nI would like to see Waood rely more on the knowledge and experience she has in this field and start to own and drive initiatives that she beliefs are a value add. Taking them from concept to approvals and eventually execution.\nI will work with her in the coming months to help identify what support and guidance she needs to help her in achieving those goals."
+          },
+          "Decision-Making & Accountability": {
+            "rating": "developing",
+            "comment": "Capable, but needs to feel empowered to decide and be accountable. Focus: confidence and room to learn from mistakes.",
+            "full": "As mentioned in the 'Initiative' section above, this is a competency that I will need to work with her on in the coming months. Ensuring that she feels empowered to make decisions and take accountability for doing so. \nA key enabler of this is exposure and experience of doing so within the EO & MOD environments. She no doubt has the capability to do so but her professional experience to date may not have afforded her the opportunity to build on this competency, having working in a very structured and heirarchical environment. This is about building her confidence and creating the space that allows her to make mistakes and learn from them rather than fearing the consequences."
+          },
+          "Capability Development": {
+            "rating": "developing",
+            "comment": "Inquisitive but does not always say so. Once she understands the why, she integrates new knowledge fast and rarely repeats a mistake. Next: challenge assumptions, own her development.",
+            "full": "Waood has a very inquisitive mind but does not always verbalise it. This competency is not a stand alone and in fact is directly connected to 'initiative' in Waood's case. \n\nWaood needs to work on understanding the 'why' and be comfortable and confident in challenging both her own and others assumptions. In my experience she does quickly integrate new knowledge and skills in to her work once she has spent time understanding the 'why' and once she learns something new she does refer back to it consistently as a point of reference. Consequently, its very rare that a mistake is repeated. \n\nMy job will be (similar to other competencies) empowering her to take ownership of her own development, provide guidance and support where needed but to allow her to identify her how pathways."
+          },
+          "Systemic Analysis & Planning": {
+            "rating": "developing",
+            "comment": "Work in progress, improving every week. Bring critical thinking to the fore with what-next tools and frameworks.",
+            "full": "This is a work in progress. Each week is seeing an improvement in this space. Each new opportunity is affording Waood the chance to work on this competency. Again the need to bring her inquisitive mind and critical thinking to the fore is important. Enabling an understanding of the 'why' must be supported with a 'what next' series of questions/tools/frameworks."
+          }
+        }
       }
     },
     "commentaryTitle": "Commentary as of 2nd Quarterly Evaluation",
@@ -535,11 +565,41 @@ const EVALUATIONS = {
         },
         "summary": "Continue building consistency in end-to-end ownership and delivery as responsibilities expand, while maintaining the strong balance between professional development and core team priorities.",
         "summaryLabel": "Areas of focus"
+      },
+      "2026 Q2": {
+        "manager": "Naguib Bebawi",
+        "competencies": {
+          "Effective Communication & Influence": {
+            "rating": "effective",
+            "comment": "Brings enthusiasm and useful MOD knowledge to the International Military Cooperation team. Engages constructively and shares institutional context.",
+            "full": "Effective: Theyab brings visible enthusiasm and useful knowledge of the Ministry of Defence to his work with the International Military Cooperation team. He engages constructively, shares relevant institutional context, and contributes positively to team and stakeholder discussions."
+          },
+          "Initiative": {
+            "rating": "strong",
+            "comment": "Strong energy and willingness to support, active interest in new tasks. His MOD familiarity helps navigate stakeholders and processes.",
+            "full": "Strong: Theyab shows strong energy and willingness to support the team, takes an active interest in new tasks, and seeks opportunities to contribute. His familiarity with the MOD environment has been helpful in navigating stakeholders and internal processes."
+          },
+          "Decision-Making & Accountability": {
+            "rating": "effective",
+            "comment": "Sound judgement and responds well to feedback. Priority: accountability for deliverables through better planning, early confirmation of expectations and end-to-end completion.",
+            "full": "Effective: Theyab generally demonstrates sound judgement within the scope of his role and responds positively to direction and feedback. His key development priority is to strengthen accountability for deliverables through better planning, early confirmation of expectations, and more consistent end-to-end completion of agreed outputs."
+          },
+          "Capability Development": {
+            "rating": "strong",
+            "comment": "Genuine commitment to learning, including GMAT and MBA preparation. Balance development with core team priorities so delivery stays consistent.",
+            "full": "Strong: Theyab has demonstrated a genuine commitment to learning, including GMAT and MBA preparation. This ambition is encouraged, but development activities should be balanced appropriately with core team priorities so they do not affect the consistency or timeliness of day-to-day delivery."
+          },
+          "Systemic Analysis & Planning": {
+            "rating": "effective",
+            "comment": "MOD knowledge is a useful foundation for analysis. Next: clearer work planning, earlier identification of dependencies, reliable delivery against deadlines.",
+            "full": "Effective: Theyab's knowledge of the MOD and growing understanding of international military cooperation provide a useful foundation for analysing issues and stakeholder context. To progress further, he should apply this knowledge through clearer work planning, earlier identification of dependencies, and reliable delivery against agreed deadlines."
+          }
+        }
       }
     },
     "commentaryTitle": "Commentary as of 2nd Quarterly Evaluation",
     "commentaryDate": "October 2026",
-    "overall": "First quarterly rating under Naguib Bebawi: Strong on six of eight competencies, Effective on Decision-Making and Inspirational Leadership. Admitted to INSEAD for January 2027."
+    "overall": "Clear progression from Q2 to Q3 under Naguib Bebawi: Strong on six of eight in Q3, with Systemic Analysis moving from Effective to Strong. The Q2 priority, end-to-end accountability for deliverables, is still the focus as responsibilities expand. Admitted to INSEAD for January 2027."
   },
   "khaled-alteneiji": {
     "lineManager": "Rania Rostom",
@@ -1774,11 +1834,37 @@ const EVALUATIONS = {
         },
         "summary": "Mohammed demonstrates strong leadership skills and has the potential to take on a broader role in optimisation and engineering-related initiatives. Giving him ownership of more of these topics would help him gain practical experience in assessing challenges, coordinating stakeholders and guiding work through to completion. It would also give him opportunities to strengthen his decision-making and develop confidence in leading more complex assignments. Targeted training and higher education would complement this hands-on experience, deepen his technical expertise and prepare him for greater responsibilities.",
         "summaryLabel": "Areas of focus"
+      },
+      "2026 Q2": {
+        "manager": "Elvie Lahournere",
+        "competencies": {
+          "Effective Communication & Influence": {
+            "rating": "developing",
+            "comment": "Progress over six months: more structured and persuasive presentations, improving delivery of key messages to stakeholders."
+          },
+          "Initiative": {
+            "rating": "developing",
+            "comment": "Leads the Renovation Program and supports National Services Optimisation. Next: drive progress beyond assigned tasks by spotting opportunities and anticipating challenges."
+          },
+          "Decision-Making & Accountability": {
+            "rating": "effective",
+            "comment": "Shows accountability for assigned responsibilities and contributes steadily across both initiatives."
+          },
+          "Capability Development": {
+            "rating": "developing",
+            "comment": "Positive attitude; the expectation now is higher output, stronger execution and tangible outcomes."
+          },
+          "Systemic Analysis & Planning": {
+            "rating": "developing",
+            "comment": "Next: greater end-to-end ownership of deliverables, driving activities to completion with less reliance on colleagues for follow-up."
+          }
+        },
+        "full": ""
       }
     },
     "commentaryTitle": "Commentary as of 2nd Quarterly Evaluation",
     "commentaryDate": "October 2026",
-    "overall": "Effective on seven of eight competencies and Strong on Adaptability in his first quarterly rating. His manager sees strong leadership potential and recommends giving him ownership of more complex assignments, backed by targeted training and his MBA."
+    "overall": "A marked improvement from Q2 to Q3 under Elvie Lahournere: from Developing on four of five competencies to Effective on seven of eight and Strong on Adaptability. The Q2 call for more initiative and end-to-end ownership has been answered through the National Service project. Admitted to NYU Abu Dhabi for January 2027."
   },
   "fatima-balnoub": {
     "lineManager": "Aleksandra Socevic",
@@ -2387,11 +2473,36 @@ const EVALUATIONS = {
             "comment": ""
           }
         }
+      },
+      "2026 Q2": {
+        "manager": "Ameera Al Ahbabi",
+        "competencies": {
+          "Effective Communication & Influence": {
+            "rating": "developing",
+            "comment": ""
+          },
+          "Initiative": {
+            "rating": "effective",
+            "comment": ""
+          },
+          "Decision-Making & Accountability": {
+            "rating": "developing",
+            "comment": ""
+          },
+          "Capability Development": {
+            "rating": "effective",
+            "comment": ""
+          },
+          "Systemic Analysis & Planning": {
+            "rating": "effective",
+            "comment": ""
+          }
+        }
       }
     },
     "commentaryTitle": "Commentary as of 2nd Quarterly Evaluation",
     "commentaryDate": "October 2026",
-    "overall": "First quarterly rating at the EO: Strong on Strategic Thinking, Adaptability and Systemic Analysis & Planning, Effective on Communication, Initiative and Capability Development. Decision-Making and Inspirational Leadership were not assessed yet. His line manager gave ratings only, no written comments."
+    "overall": "Progress from Q2 to Q3 under Ameera Al Ahbabi: Communication and Decision-Making were Developing in Q2; in Q3 Communication is Effective and he is Strong on Strategic Thinking, Adaptability and Systemic Analysis. Both quarters carry ratings only, no written comments. Admitted to NYU Abu Dhabi for January 2027."
   },
   "abdulrahman-almarzooqi": {
     "lineManager": "",
