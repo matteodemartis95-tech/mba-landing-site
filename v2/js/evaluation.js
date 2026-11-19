@@ -20,6 +20,8 @@ const EVAL_META = {
   commentaryTitle: "Commentary as of 1st Quarterly Evaluation",
   commentaryDate: "August 2026",
   /* Quarterly evaluation cycle (every 3 months). status: "completed" or "planned". */
+  // Top / bottom candidates shown on the Jahizoun 1 page (V3). Edit the ids; leave empty to rank automatically on the latest ratings.
+  ranking: { top: ["haneen-aljneibi", "mohamed-al-hameli", "theyab-almeqbaali"], bottom: ["buti-al-suwaidi"] },
   quarterlyEvaluations: [
     { label: "1st", date: "2026-08-31", status: "completed" },
     { label: "2nd", date: "2026-09-30", status: "completed" },

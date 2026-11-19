@@ -322,20 +322,24 @@
     return { q, avg: vals.reduce((t, v) => t + map[v], 0) / vals.length, strong: vals.filter(v => v === "strong").length, n: vals.length };
   }
   function ranking() {
-    const ranked = candidates.filter(c => c.programme === "Jahizoun").map(c => ({ c, s: latestScore(c) })).filter(x => x.s)
-      .sort((a, b) => b.s.avg - a.s.avg || b.s.strong - a.s.strong || b.s.n - a.s.n || nameOf(a.c).localeCompare(nameOf(b.c)));
-    const box = (x, cls) => `<a class="rank-box ${cls}" href="#/candidate/${esc(x.c.id)}" title="${esc(x.s.q)} · average ${x.s.avg.toFixed(2)} of 3 · ${x.s.strong} Strong">${avatar(x.c)}<div class="rank-name">${esc(nameOf(x.c))}</div><div class="rank-sub">${esc(x.s.q)}</div></a>`;
-    const top = ranked.slice(0, 3), bottom = ranked.slice(-3).reverse();
+    const pool = candidates.filter(c => c.programme === "Jahizoun").map(c => ({ c, s: latestScore(c) }));
+    const manual = META.ranking && ((META.ranking.top || []).length || (META.ranking.bottom || []).length);
+    const pick = ids => ids.map(id => pool.find(x => x.c.id === id)).filter(Boolean);
+    const ranked = pool.filter(x => x.s).sort((a, b) => b.s.avg - a.s.avg || b.s.strong - a.s.strong || b.s.n - a.s.n || nameOf(a.c).localeCompare(nameOf(b.c)));
+    const top = manual ? pick(META.ranking.top || []) : ranked.slice(0, 3);
+    const bottom = manual ? pick(META.ranking.bottom || []) : ranked.slice(-3).reverse();
+    const box = (x, cls) => `<a class="rank-box ${cls}" href="#/candidate/${esc(x.c.id)}" title="${x.s ? esc(x.s.q) + " · average " + x.s.avg.toFixed(2) + " of 3 · " + x.s.strong + " Strong" : ""}">${avatar(x.c)}<div class="rank-name">${esc(nameOf(x.c))}</div><div class="rank-sub">${x.s ? esc(x.s.q) : ""}</div></a>`;
+    const title = (base, n) => n === 3 ? base + " 3" : base;
     return `
       <div class="panel rank">
-        <div class="panel-head"><h2>Top 3</h2><span class="small muted">latest evaluation</span></div>
+        <div class="panel-head"><h2>${title("Top", top.length)}</h2><span class="small muted">latest evaluation</span></div>
         <div class="rank-list">${top.map(x => box(x, "top")).join("")}</div>
       </div>
       <div class="panel rank">
-        <div class="panel-head"><h2>Bottom 3</h2><span class="small muted">latest evaluation</span></div>
+        <div class="panel-head"><h2>${title("Bottom", bottom.length)}</h2><span class="small muted">latest evaluation</span></div>
         <div class="rank-list">${bottom.map(x => box(x, "bottom")).join("")}</div>
       </div>
-      <div class="small muted rank-note">Ranked on each Jahizoun candidate's most recent quarterly ratings: Strong 3, Effective 2, Developing 1, averaged over the competencies assessed. ${ranked.length} of ${candidates.filter(c => c.programme === "Jahizoun").length} candidates rated.</div>`;
+      <div class="small muted rank-note">${manual ? "Selection by T&LD on the quarterly evaluations." : `Ranked on each Jahizoun candidate's most recent quarterly ratings: Strong 3, Effective 2, Developing 1, averaged over the competencies assessed. ${ranked.length} of ${pool.length} candidates rated.`}</div>`;
   }
   function agenda() {
     const items = [];
