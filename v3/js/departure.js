@@ -293,13 +293,16 @@ const DEPARTURE = {
       "currency": "EUR"
     },
     "visa": {
-      "status": "todo"
+      "status": "progress",
+      "note": "Letter sent to MOD E&T · 19 Nov 2026"
     },
     "insurance": {
-      "status": "todo"
+      "status": "progress",
+      "note": "Letter sent to MOD E&T · 19 Nov 2026"
     },
     "housing": {
-      "status": "todo"
+      "status": "progress",
+      "note": "Letter sent to MOD E&T · 19 Nov 2026"
     }
   }
 };
