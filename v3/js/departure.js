@@ -136,10 +136,11 @@ const DEPARTURE = {
   "abdulrahman-almarzooqi": {
     "school": "INSEAD",
     "deposit": {
-      "status": "todo",
+      "status": "done",
       "amount": 12000,
       "currency": "EUR",
-      "due": "2026-11-22"
+      "due": "2026-11-22",
+      "paid": "2026-11-19"
     },
     "visa": {
       "status": "todo"
@@ -169,23 +170,6 @@ const DEPARTURE = {
     "housing": {
       "status": "progress",
       "note": "Letter sent to MOD E&T · 6 Nov 2026"
-    }
-  },
-  "waleed-almansoori": {
-    "school": "IMD",
-    "deposit": {
-      "status": "todo",
-      "amount": 10000,
-      "currency": "CHF"
-    },
-    "visa": {
-      "status": "todo"
-    },
-    "insurance": {
-      "status": "todo"
-    },
-    "housing": {
-      "status": "todo"
     }
   },
   "saeed-al-sereidi": {
@@ -299,6 +283,23 @@ const DEPARTURE = {
     "housing": {
       "status": "progress",
       "note": "Letter sent to MOD E&T · 6 Nov 2026"
+    }
+  },
+  "khaled-alteneiji": {
+    "school": "HEC",
+    "deposit": {
+      "status": "todo",
+      "amount": 9000,
+      "currency": "EUR"
+    },
+    "visa": {
+      "status": "todo"
+    },
+    "insurance": {
+      "status": "todo"
+    },
+    "housing": {
+      "status": "todo"
     }
   }
 };

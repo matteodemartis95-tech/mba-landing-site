@@ -598,7 +598,8 @@ const EVALUATIONS = {
     ],
     "masters": [
       "Completed ScorePlus GMAT course",
-      "Applying to INSEAD MBA, January 2027"
+      "Admitted to HEC Paris MBA, January 2027 intake",
+      "INSEAD: not admitted"
     ],
     "docs": [
       {
@@ -2163,7 +2164,9 @@ const EVALUATIONS = {
     "ratings": {},
     "strengths": [],
     "improvements": [],
-    "masters": [],
+    "masters": [
+      "Admitted to IMD MBA; start postponed to 2027"
+    ],
     "docs": [
       {
         "label": "CV",
