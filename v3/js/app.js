@@ -290,12 +290,15 @@
   }
 
   function card(c) {
-    const ni = nextInterview(c);
-    const pend = pendingInterviews(c);
-    let footK = "Interview", footV;
-    if (ni) { footK = "Next interview"; footV = `<strong class="${daysFrom(ni.date) <= 7 ? "soon" : ""}">${fmt(ni.date, true)}</strong> · ${esc(school(ni.school).short)}`; }
-    else if (pend.length) footV = `<strong class="pending">Date pending</strong> · ${pend.map(a => esc(school(a.school).short)).join(", ")}`;
-    else footV = `<span class="muted">None scheduled yet</span>`;
+    const adm = c.applications.filter(a => a.status === "admitted");
+    const pending = c.applications.filter(a => !["admitted", "rejected", "withdrawn"].includes(eff(a)));
+    const dpt = DEP.DEPARTURE[c.id]; const j = dpt ? DEP.JOURNEYS[dpt.school] : null;
+    const startDate = j ? (parseDate(j.start) || (j.phases[0] && j.phases[0].start ? parseDate(j.phases[0].start + "-01") : null)) : null;
+    let footK = "MBA", footV;
+    if (dpt) { footK = "Going to"; footV = `<strong>${esc(school(dpt.school).short)}</strong>${startDate ? " · " + fmt(startDate, true) : ""}`; }
+    else if (adm.length) { footK = "Admitted"; footV = adm.map(a => `<strong>${esc(school(a.school).short)}</strong>`).join(", ") + (c.intake ? ` · ${esc(c.intake)}` : ""); }
+    else if (noMba(c)) footV = `<span class="muted">No MBA planned</span>`;
+    else footV = `<span class="muted">No offer yet${pending.length ? " · " + pending.map(a => esc(school(a.school).short)).join(", ") + " pending" : ""}</span>`;
     return `
       <a class="card ${c.programme === "EDGE" ? "edge" : "jahizoun"}" href="#/candidate/${esc(c.id)}">
         <div class="card-top">
@@ -306,11 +309,12 @@
           </div>
         </div>
         <div class="card-schools">
-          ${c.applications.map(a => `<span class="school-chip" title="${esc(school(a.school).name)}: ${esc(status(eff(a)).label)}"><img class="logo" src="${esc(asset(school(a.school).logo))}" alt=""><span>${esc(school(a.school).short)}</span><span class="st ${status(eff(a)).tone}"></span></span>`).join("") || (noMba(c) ? "" : `<span class="muted small">No schools yet</span>`)}
+          ${adm.map(a => `<span class="school-chip" title="${esc(school(a.school).name)}: admitted"><img class="logo" src="${esc(asset(school(a.school).logo))}" alt=""><span>${esc(school(a.school).short)}</span><span class="st good"></span></span>`).join("")}
         </div>
-        <div class="card-foot"><div><div class="foot-k">${footK}</div><div class="foot-v">${footV}</div></div>${noMba(c) ? "" : `<span class="muted">${c.applications.length} school${c.applications.length === 1 ? "" : "s"}</span>`}</div>
+        <div class="card-foot"><div><div class="foot-k">${footK}</div><div class="foot-v">${footV}</div></div></div>
       </a>`;
   }
+
 
   function latestScore(c) {
     const ev = evalOf(c); if (!ev || !ev.ratings) return null;
