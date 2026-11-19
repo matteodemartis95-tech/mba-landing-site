@@ -340,7 +340,7 @@ const COURSES = [
     "name": "LDP",
     "fullName": "Leadership Development Programme · Leadership Bootcamp with HNI",
     "color": "#4a3aa7",
-    "trained": 574,
+    "trained": 607,
     "target": 1000,
     "unit": "people trained",
     "status": "",
@@ -412,7 +412,7 @@ const COURSES = [
         "start": "2026-10-19",
         "end": "2026-10-23",
         "participants": null,
-        "status": "running",
+        "status": "completed",
         "note": "National Defence College (NDC)"
       },
       {
@@ -420,7 +420,7 @@ const COURSES = [
         "start": "2026-11-02",
         "end": "2026-11-06",
         "participants": null,
-        "status": "planned",
+        "status": "completed",
         "note": "National Defence College (NDC)"
       },
       {
@@ -428,7 +428,7 @@ const COURSES = [
         "start": "2026-11-09",
         "end": "2026-11-13",
         "participants": null,
-        "status": "planned",
+        "status": "completed",
         "note": "National Defence College (NDC)"
       },
       {
@@ -436,7 +436,7 @@ const COURSES = [
         "start": "2026-11-09",
         "end": "2026-11-13",
         "participants": null,
-        "status": "planned",
+        "status": "completed",
         "note": "MOD Dubai · to be confirmed"
       },
       {
@@ -480,12 +480,12 @@ const COURSES = [
         "note": "National Defence College (NDC)"
       }
     ],
-    "cohortsDone": 24,
+    "cohortsDone": 27,
     "cohortsTotal": 33,
     "kpis": [
       {
         "label": "Average attendance rate",
-        "value": "73%"
+        "value": "71%"
       },
       {
         "label": "Satisfaction score",
